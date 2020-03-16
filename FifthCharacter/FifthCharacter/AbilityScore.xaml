@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FifthCharacter.AbilityScore">
+    <ContentView.Content>
+        <Grid RowSpacing="-10"
+              ColumnSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Text="{Binding AbilityName}"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Subtitle" 
+                   FontAttributes="Bold"
+                   Padding="0,0,0,5"/>
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Text="{Binding AbilityModifier}"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.RowSpan="6"
+                   VerticalOptions="Center"
+                   HorizontalOptions="CenterAndExpand"
+                   Text="{Binding AbilityScore}"
+                   FontSize="Header"
+                   FontAttributes="Bold"/>
+            
+            <StackLayout Orientation="Horizontal"
+                         Grid.Row="1"
+                         Grid.Column="1">
+                <CheckBox IsChecked="{Binding SavingThrowProficiency}"
+                          VerticalOptions="Center"
+                          IsEnabled="False"/>
+                <Label Text="Saving Throw"
+                       VerticalOptions="Center"
+                       FontSize="Micro"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding SavingThrowModifier}"
+                       FontSize="Micro"
+                       VerticalOptions="Center"
+                       TextDecorations="Underline"/>
+            </StackLayout>
+            
+            <StackLayout x:Name="Skill1"
+                         Orientation="Horizontal"
+                         Grid.Row="2"
+                         Grid.Column="1"
+                         IsVisible="{Binding Skill1Exists}">
+                <CheckBox IsChecked="{Binding Skill1Proficiency}"
+                          VerticalOptions="Center"
+                          IsEnabled="False"/>
+                <Label Text="{Binding Skill1Name}"
+                       VerticalOptions="Center"
+                       FontSize="Micro"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Skill1Modifier}"
+                       FontSize="Micro"
+                       VerticalOptions="Center"
+                       TextDecorations="Underline"/>
+            </StackLayout>
+            
+            <StackLayout x:Name="Skill2"
+                         Orientation="Horizontal"
+                         Grid.Row="3"
+                         Grid.Column="1"
+                         IsVisible="{Binding Skill2Exists}">
+                <CheckBox IsChecked="{Binding Skill2Proficiency}"
+                          VerticalOptions="Center"
+                          IsEnabled="False"/>
+                <Label Text="{Binding Skill2Name}"
+                       VerticalOptions="Center"
+                       FontSize="Micro"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Skill2Modifier}"
+                       FontSize="Micro"
+                       VerticalOptions="Center"
+                       TextDecorations="Underline"/>
+            </StackLayout>
+            
+            <StackLayout x:Name="Skill3"
+                         Orientation="Horizontal"
+                         Grid.Row="4"
+                         Grid.Column="1"
+                         IsVisible="{Binding Skill3Exists}">
+                <CheckBox IsChecked="{Binding Skill3Proficiency}"
+                          VerticalOptions="Center"
+                          IsEnabled="False"/>
+                <Label Text="{Binding Skill3Name}"
+                       VerticalOptions="Center"
+                       FontSize="Micro"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Skill3Modifier}"
+                       FontSize="Micro"
+                       VerticalOptions="Center"
+                       TextDecorations="Underline"/>
+            </StackLayout>
+            
+            <StackLayout x:Name="Skill4"
+                         Orientation="Horizontal"
+                         Grid.Row="5"
+                         Grid.Column="1"
+                         IsVisible="{Binding Skill4Exists}">
+                <CheckBox IsChecked="{Binding Skill4Proficiency}"
+                          VerticalOptions="Center"
+                          IsEnabled="False"/>
+                <Label Text="{Binding Skill4Name}"
+                       VerticalOptions="Center"
+                       FontSize="Micro"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Skill4Modifier}"
+                       FontSize="Micro"
+                       VerticalOptions="Center"
+                       TextDecorations="Underline"/>
+            </StackLayout>
+            
+            <StackLayout x:Name="Skill5"
+                         Orientation="Horizontal"
+                         Grid.Row="6"
+                         Grid.Column="1"
+                         IsVisible="{Binding Skill5Exists}">
+                <CheckBox IsChecked="{Binding Skill5Proficiency}"
+                          VerticalOptions="Center"
+                          IsEnabled="False"/>
+                <Label Text="{Binding Skill5Name}"
+                       VerticalOptions="Center"
+                       FontSize="Micro"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Skill5Modifier}"
+                       FontSize="Micro"
+                       VerticalOptions="Center"
+                       TextDecorations="Underline"/>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
