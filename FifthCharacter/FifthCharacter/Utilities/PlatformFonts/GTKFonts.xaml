@@ -19,7 +19,7 @@
     <Thickness x:Key="CheckboxMargin">
         <x:Arguments>
             <!--Left-->
-            <x:Double>-5</x:Double>
+            <x:Double>0</x:Double>
             <!--Top-->
             <x:Double>-50</x:Double>
             <!--Right-->
