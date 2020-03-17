@@ -15,12 +15,17 @@
                     Wrap="Wrap"
                     AlignContent="Start">
 
-            <local:CharacterInfo>
-                <x:Arguments>
-                    <local:CharacterInfoVM/>
-                </x:Arguments>
-            </local:CharacterInfo>
-            
+            <Frame FlexLayout.Basis="100%"
+                   HorizontalOptions="FillAndExpand"
+                   FlexLayout.Grow="1"
+                   BackgroundColor="{DynamicResource PopupWindowColor}"
+                   BorderColor="Transparent">
+                <local:CharacterInfo>
+                    <x:Arguments>
+                        <local:CharacterInfoVM/>
+                    </x:Arguments>
+                </local:CharacterInfo>
+            </Frame>
             
 
             <local:AbilityScore>

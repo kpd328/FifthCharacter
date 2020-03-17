@@ -8,35 +8,29 @@
     <ContentView.Content>
         <Grid HorizontalOptions="CenterAndExpand"
               VerticalOptions="Start"
-              ColumnSpacing="10">
+              ColumnSpacing="15">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Frame Grid.Row="0"
-                   Grid.RowSpan="2"
-                   Grid.Column="0"
-                   BackgroundColor="{DynamicResource PopupWindowColor}"
-                   BorderColor="Transparent"
-                   VerticalOptions="FillAndExpand"
-                   HorizontalOptions="FillAndExpand"
-                   Padding="0,0,5,0">
-                <Label Text="{Binding CharacterName}"
-                       FontAttributes="Bold"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="EndAndExpand"
-                       FontSize="{DynamicResource FontCharacterName}"/>
-            </Frame>
-            <Label Text="{Binding ClassLevel}"
+            <Label Text="{Binding CharacterName}"
+                   FontAttributes="Bold"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="EndAndExpand"
+                   FontSize="{DynamicResource FontCharacterName}"
                    Grid.Row="0"
-                   Grid.Column="1"
-                   FontSize="{DynamicResource FontCharacterInfo}"/>
+                   Grid.RowSpan="2"
+                   Grid.Column="0"/>
+            <Label Text="{Binding ClassLevel}"
+                Grid.Row="0"
+                Grid.Column="1"
+                FontSize="{DynamicResource FontCharacterInfo}"/>
             <Label Text="{Binding Background}"
                    Grid.Row="0"
                    Grid.Column="2"
