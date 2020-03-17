@@ -73,8 +73,9 @@
                 <Label Text="{Binding SavingThrowModifier}"
                        FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"
-                       HorizontalOptions="End"/>
+                       HorizontalOptions="End"
+                       BackgroundColor="White"
+                       TextColor="Black"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill1"
@@ -100,8 +101,9 @@
                 <Label Text="{Binding Skill1Modifier}"
                        FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"
-                       HorizontalOptions="End"/>
+                       HorizontalOptions="End"
+                       BackgroundColor="White"
+                       TextColor="Black"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill2"
@@ -127,8 +129,9 @@
                 <Label Text="{Binding Skill2Modifier}"
                        FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"
-                       HorizontalOptions="End"/>
+                       HorizontalOptions="End"
+                       BackgroundColor="White"
+                       TextColor="Black"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill3"
@@ -154,8 +157,9 @@
                 <Label Text="{Binding Skill3Modifier}"
                        FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"
-                       HorizontalOptions="End"/>
+                       HorizontalOptions="End"
+                       BackgroundColor="White"
+                       TextColor="Black"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill4"
@@ -181,8 +185,9 @@
                 <Label Text="{Binding Skill4Modifier}"
                        FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"
-                       HorizontalOptions="End"/>
+                       HorizontalOptions="End"
+                       BackgroundColor="White"
+                       TextColor="Black"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill5"
@@ -208,8 +213,9 @@
                 <Label Text="{Binding Skill5Modifier}"
                        FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"
-                       HorizontalOptions="End"/>
+                       HorizontalOptions="End"
+                       BackgroundColor="White"
+                       TextColor="Black"/>
             </StackLayout>
         </Grid>
     </ContentView.Content>

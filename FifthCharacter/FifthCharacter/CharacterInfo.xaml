@@ -7,7 +7,8 @@
              x:Class="FifthCharacter.CharacterInfo">
     <ContentView.Content>
         <Grid HorizontalOptions="CenterAndExpand"
-              VerticalOptions="Start">
+              VerticalOptions="Start"
+              ColumnSpacing="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -18,31 +19,44 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Text="{Binding CharacterName}"
-                   FontAttributes="Bold"
-                   Grid.Row="0"
+            <Frame Grid.Row="0"
                    Grid.RowSpan="2"
                    Grid.Column="0"
-                   VerticalOptions="End"
-                   HorizontalOptions="End"/>
+                   BackgroundColor="{DynamicResource PopupWindowColor}"
+                   BorderColor="Transparent"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   Padding="0,0,5,0">
+                <Label Text="{Binding CharacterName}"
+                       FontAttributes="Bold"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="EndAndExpand"
+                       FontSize="{DynamicResource FontCharacterName}"/>
+            </Frame>
             <Label Text="{Binding ClassLevel}"
                    Grid.Row="0"
-                   Grid.Column="1"/>
+                   Grid.Column="1"
+                   FontSize="{DynamicResource FontCharacterInfo}"/>
             <Label Text="{Binding Background}"
                    Grid.Row="0"
-                   Grid.Column="2"/>
+                   Grid.Column="2"
+                   FontSize="{DynamicResource FontCharacterInfo}"/>
             <Label Text="{Binding PlayerName}"
                    Grid.Row="0"
-                   Grid.Column="3"/>
+                   Grid.Column="3"
+                   FontSize="{DynamicResource FontCharacterInfo}"/>
             <Label Text="{Binding Race}"
                    Grid.Row="1"
-                   Grid.Column="1"/>
+                   Grid.Column="1"
+                   FontSize="{DynamicResource FontCharacterInfo}"/>
             <Label Text="{Binding Alignment}"
                    Grid.Row="1"
-                   Grid.Column="2"/>
+                   Grid.Column="2"
+                   FontSize="{DynamicResource FontCharacterInfo}"/>
             <Label Text="{Binding ExperiencePoints}"
                    Grid.Row="1"
-                   Grid.Column="3"/>
+                   Grid.Column="3"
+                   FontSize="{DynamicResource FontCharacterInfo}"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

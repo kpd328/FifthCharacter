@@ -20,6 +20,8 @@
                     <local:CharacterInfoVM/>
                 </x:Arguments>
             </local:CharacterInfo>
+            
+            
 
             <local:AbilityScore>
                 <x:Arguments>
