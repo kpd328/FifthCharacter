@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using FifthCharacter.Utilities;
+using Rg.Plugins.Popup.Services;
+using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace FifthCharacter {
@@ -13,6 +11,14 @@ namespace FifthCharacter {
     public partial class MainPage : ContentPage {
         public MainPage() {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e) {
+            if(Device.RuntimePlatform == Device.GTK) {
+                DependencyService.Get<IPopup>().PushAsync(new TestGTKPopup());
+            } else {
+                PopupNavigation.Instance.PushAsync(new TestPopup());
+            }
         }
     }
 }
