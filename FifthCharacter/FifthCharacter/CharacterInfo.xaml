@@ -6,17 +6,43 @@
              mc:Ignorable="d"
              x:Class="FifthCharacter.CharacterInfo">
     <ContentView.Content>
-        <StackLayout Orientation="Horizontal"
-                     HorizontalOptions="CenterAndExpand"
-                     VerticalOptions="Start">
+        <Grid HorizontalOptions="CenterAndExpand"
+              VerticalOptions="Start">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <Label Text="{Binding CharacterName}"
-                   FontAttributes="Bold"/>
-            <Label Text="{Binding ClassLevel}"/>
-            <Label Text="{Binding Background}"/>
-            <Label Text="{Binding PlayerName}"/>
-            <Label Text="{Binding Race}"/>
-            <Label Text="{Binding Alignment}"/>
-            <Label Text="{Binding ExperiencePoints}"/>
-        </StackLayout>
+                   FontAttributes="Bold"
+                   Grid.Row="0"
+                   Grid.RowSpan="2"
+                   Grid.Column="0"
+                   VerticalOptions="End"
+                   HorizontalOptions="End"/>
+            <Label Text="{Binding ClassLevel}"
+                   Grid.Row="0"
+                   Grid.Column="1"/>
+            <Label Text="{Binding Background}"
+                   Grid.Row="0"
+                   Grid.Column="2"/>
+            <Label Text="{Binding PlayerName}"
+                   Grid.Row="0"
+                   Grid.Column="3"/>
+            <Label Text="{Binding Race}"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+            <Label Text="{Binding Alignment}"
+                   Grid.Row="1"
+                   Grid.Column="2"/>
+            <Label Text="{Binding ExperiencePoints}"
+                   Grid.Row="1"
+                   Grid.Column="3"/>
+        </Grid>
     </ContentView.Content>
 </ContentView>
