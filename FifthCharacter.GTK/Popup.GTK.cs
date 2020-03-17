@@ -18,7 +18,8 @@ namespace FifthCharacter.GTK {
 
         public void PushAsync(Page page) {
             var _popup = page.CreateContainer();
-            var _window = new Window(WindowType.Popup);
+            var _window = new Window(page.Title);
+            _window.SetSize(255, 255);
             _window.Add(_popup);
             PopupStack.Push(_window);
             _window.Show();

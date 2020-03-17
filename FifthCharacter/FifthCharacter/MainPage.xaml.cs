@@ -12,13 +12,5 @@ namespace FifthCharacter {
         public MainPage() {
             InitializeComponent();
         }
-
-        private void Button_Clicked(object sender, EventArgs e) {
-            if(Device.RuntimePlatform == Device.GTK) {
-                DependencyService.Get<IPopup>().PushAsync(new TestGTKPopup());
-            } else {
-                PopupNavigation.Instance.PushAsync(new TestPopup());
-            }
-        }
     }
 }
