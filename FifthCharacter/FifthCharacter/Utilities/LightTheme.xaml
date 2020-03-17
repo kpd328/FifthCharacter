@@ -14,4 +14,5 @@
     <Color x:Key="TransperantBackgroundColor">#56000000</Color>
     <Color x:Key="SeparatorLineColor">#ececec</Color>
     <Color x:Key="PopupWindowColor">#FFFFFF</Color>
+    <Color x:Key="InvertColor">#000000</Color>
 </ResourceDictionary>

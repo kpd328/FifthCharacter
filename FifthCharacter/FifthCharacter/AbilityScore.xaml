@@ -8,8 +8,7 @@
              Margin="5"
              BackgroundColor="{DynamicResource PopupWindowColor}">
     <ContentView.Content>
-        <Grid RowSpacing="-10"
-              ColumnSpacing="10">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -29,40 +28,53 @@
                    Grid.ColumnSpan="2"
                    Text="{Binding AbilityName}"
                    HorizontalOptions="CenterAndExpand"
-                   FontSize="Subtitle" 
+                   FontSize="{DynamicResource FontAbilityTitle}" 
                    FontAttributes="Bold"
                    Padding="0,0,0,5"/>
             <Label Grid.Row="1"
                    Grid.Column="0"
                    VerticalOptions="Center"
-                   HorizontalOptions="Center"
+                   HorizontalOptions="FillAndExpand"
+                   HorizontalTextAlignment="Center"
                    Text="{Binding AbilityModifier}"
-                   FontSize="Large"
-                   FontAttributes="Bold"/>
-            <Label Grid.Row="1"
+                   FontSize="{DynamicResource FontAbilityMod}"
+                   FontAttributes="Bold"
+                   BackgroundColor="Accent"/>
+            <Frame BorderColor="Accent"
+                   Grid.Row="1"
                    Grid.Column="0"
                    Grid.RowSpan="6"
-                   VerticalOptions="Center"
-                   HorizontalOptions="CenterAndExpand"
-                   Text="{Binding AbilityScore}"
-                   FontSize="Header"
-                   FontAttributes="Bold"/>
-            
+                   BackgroundColor="Transparent">
+                <Label VerticalOptions="Center"
+                       HorizontalOptions="CenterAndExpand"
+                       Text="{Binding AbilityScore}"
+                       FontSize="{DynamicResource FontAbilityScore}"
+                       FontAttributes="Bold"/>
+            </Frame>
+
             <StackLayout Orientation="Horizontal"
                          Grid.Row="1"
                          Grid.Column="1"
-                         Padding="0,0,10,0">
+                         Padding="0,0,10,0"
+                         HorizontalOptions="FillAndExpand">
                 <CheckBox IsChecked="{Binding SavingThrowProficiency}"
                           VerticalOptions="Center"
-                          IsEnabled="False"/>
+                          IsEnabled="False"
+                          Color="Accent"
+                          HorizontalOptions="Start"
+                          ScaleX="{DynamicResource ScaleCheckboxX}"
+                          ScaleY="{DynamicResource ScaleCheckboxY}"
+                          Margin="{DynamicResource CheckboxMargin}"/>
                 <Label Text="Saving Throw"
                        VerticalOptions="Center"
-                       FontSize="Micro"
-                       FontAttributes="Bold"/>
+                       FontSize="{DynamicResource FontSkillLabel}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"/>
                 <Label Text="{Binding SavingThrowModifier}"
-                       FontSize="Micro"
+                       FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"/>
+                       TextDecorations="Underline"
+                       HorizontalOptions="End"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill1"
@@ -70,18 +82,26 @@
                          Grid.Row="2"
                          Grid.Column="1"
                          IsVisible="{Binding Skill1Exists}"
-                         Padding="0,0,10,0">
+                         Padding="0,0,10,0"
+                         HorizontalOptions="FillAndExpand">
                 <CheckBox IsChecked="{Binding Skill1Proficiency}"
                           VerticalOptions="Center"
-                          IsEnabled="False"/>
+                          IsEnabled="False"
+                          Color="{DynamicResource InvertColor}"
+                          HorizontalOptions="Start"
+                          ScaleX="{DynamicResource ScaleCheckboxX}"
+                          ScaleY="{DynamicResource ScaleCheckboxY}"
+                          Margin="{DynamicResource CheckboxMargin}"/>
                 <Label Text="{Binding Skill1Name}"
                        VerticalOptions="Center"
-                       FontSize="Micro"
-                       FontAttributes="Bold"/>
+                       FontSize="{DynamicResource FontSkillLabel}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"/>
                 <Label Text="{Binding Skill1Modifier}"
-                       FontSize="Micro"
+                       FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"/>
+                       TextDecorations="Underline"
+                       HorizontalOptions="End"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill2"
@@ -89,18 +109,26 @@
                          Grid.Row="3"
                          Grid.Column="1"
                          IsVisible="{Binding Skill2Exists}"
-                         Padding="0,0,10,0">
+                         Padding="0,0,10,0"
+                         HorizontalOptions="FillAndExpand">
                 <CheckBox IsChecked="{Binding Skill2Proficiency}"
                           VerticalOptions="Center"
-                          IsEnabled="False"/>
+                          IsEnabled="False"
+                          Color="{DynamicResource InvertColor}"
+                          HorizontalOptions="Start"
+                          ScaleX="{DynamicResource ScaleCheckboxX}"
+                          ScaleY="{DynamicResource ScaleCheckboxY}"
+                          Margin="{DynamicResource CheckboxMargin}"/>
                 <Label Text="{Binding Skill2Name}"
                        VerticalOptions="Center"
-                       FontSize="Micro"
-                       FontAttributes="Bold"/>
+                       FontSize="{DynamicResource FontSkillLabel}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"/>
                 <Label Text="{Binding Skill2Modifier}"
-                       FontSize="Micro"
+                       FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"/>
+                       TextDecorations="Underline"
+                       HorizontalOptions="End"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill3"
@@ -108,18 +136,26 @@
                          Grid.Row="4"
                          Grid.Column="1"
                          IsVisible="{Binding Skill3Exists}"
-                         Padding="0,0,10,0">
+                         Padding="0,0,10,0"
+                         HorizontalOptions="FillAndExpand">
                 <CheckBox IsChecked="{Binding Skill3Proficiency}"
                           VerticalOptions="Center"
-                          IsEnabled="False"/>
+                          IsEnabled="False"
+                          Color="{DynamicResource InvertColor}"
+                          HorizontalOptions="Start"
+                          ScaleX="{DynamicResource ScaleCheckboxX}"
+                          ScaleY="{DynamicResource ScaleCheckboxY}"
+                          Margin="{DynamicResource CheckboxMargin}"/>
                 <Label Text="{Binding Skill3Name}"
                        VerticalOptions="Center"
-                       FontSize="Micro"
-                       FontAttributes="Bold"/>
+                       FontSize="{DynamicResource FontSkillLabel}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"/>
                 <Label Text="{Binding Skill3Modifier}"
-                       FontSize="Micro"
+                       FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"/>
+                       TextDecorations="Underline"
+                       HorizontalOptions="End"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill4"
@@ -127,18 +163,26 @@
                          Grid.Row="5"
                          Grid.Column="1"
                          IsVisible="{Binding Skill4Exists}"
-                         Padding="0,0,10,0">
+                         Padding="0,0,10,0"
+                         HorizontalOptions="FillAndExpand">
                 <CheckBox IsChecked="{Binding Skill4Proficiency}"
                           VerticalOptions="Center"
-                          IsEnabled="False"/>
+                          IsEnabled="False"
+                          Color="{DynamicResource InvertColor}"
+                          HorizontalOptions="Start"
+                          ScaleX="{DynamicResource ScaleCheckboxX}"
+                          ScaleY="{DynamicResource ScaleCheckboxY}"
+                          Margin="{DynamicResource CheckboxMargin}"/>
                 <Label Text="{Binding Skill4Name}"
                        VerticalOptions="Center"
-                       FontSize="Micro"
-                       FontAttributes="Bold"/>
+                       FontSize="{DynamicResource FontSkillLabel}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"/>
                 <Label Text="{Binding Skill4Modifier}"
-                       FontSize="Micro"
+                       FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"/>
+                       TextDecorations="Underline"
+                       HorizontalOptions="End"/>
             </StackLayout>
             
             <StackLayout x:Name="Skill5"
@@ -146,18 +190,26 @@
                          Grid.Row="6"
                          Grid.Column="1"
                          IsVisible="{Binding Skill5Exists}"
-                         Padding="0,0,10,0">
+                         Padding="0,0,10,0"
+                         HorizontalOptions="FillAndExpand">
                 <CheckBox IsChecked="{Binding Skill5Proficiency}"
                           VerticalOptions="Center"
-                          IsEnabled="False"/>
+                          IsEnabled="False"
+                          Color="{DynamicResource InvertColor}"
+                          HorizontalOptions="Start"
+                          ScaleX="{DynamicResource ScaleCheckboxX}"
+                          ScaleY="{DynamicResource ScaleCheckboxY}"
+                          Margin="{DynamicResource CheckboxMargin}"/>
                 <Label Text="{Binding Skill5Name}"
                        VerticalOptions="Center"
-                       FontSize="Micro"
-                       FontAttributes="Bold"/>
+                       FontSize="{DynamicResource FontSkillLabel}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"/>
                 <Label Text="{Binding Skill5Modifier}"
-                       FontSize="Micro"
+                       FontSize="{DynamicResource FontSkillLabel}"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"/>
+                       TextDecorations="Underline"
+                       HorizontalOptions="End"/>
             </StackLayout>
         </Grid>
     </ContentView.Content>

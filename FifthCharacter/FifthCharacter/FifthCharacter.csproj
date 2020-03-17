@@ -21,15 +21,36 @@
     <EmbeddedResource Update="AbilityScore.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="CharacterInfo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Utilities\DarkTheme.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Utilities\LightTheme.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Utilities\PlatformFonts\iOSFonts.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="NewCharacter\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Utilities\PlatformFonts\FallbackFonts.xaml.cs">
+      <DependentUpon>FallbackFonts.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Utilities\PlatformFonts\GTKFonts.xaml.cs">
+      <DependentUpon>GTKFonts.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Utilities\PlatformFonts\UWPFonts.xaml.cs">
+      <DependentUpon>UWPFonts.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Utilities\PlatformFonts\AndroidFonts.xaml.cs">
+      <DependentUpon>AndroidFonts.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

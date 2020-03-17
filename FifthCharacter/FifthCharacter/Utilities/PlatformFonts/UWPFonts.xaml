@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FifthCharacter.Utilities.PlatformFonts.UWPFonts">
+    <x:Double x:Key="FontSkillLabel">12</x:Double>
+    <x:Double x:Key="FontAbilityMod">24</x:Double>
+    <x:Double x:Key="FontAbilityScore">48</x:Double>
+    <x:Double x:Key="FontAbilityTitle">20</x:Double>
+
+    <x:Single x:Key="ScaleCheckboxX">0.8</x:Single>
+    <x:Single x:Key="ScaleCheckboxY">0.8</x:Single>
+
+    <Thickness x:Key="CheckboxMargin">
+        <x:Arguments>
+            <!--Left-->
+            <x:Double>-5</x:Double>
+            <!--Top-->
+            <x:Double>-50</x:Double>
+            <!--Right-->
+            <x:Double>-15</x:Double>
+            <!--Bottom-->
+            <x:Double>-50</x:Double>
+        </x:Arguments>
+    </Thickness>
+</ResourceDictionary>

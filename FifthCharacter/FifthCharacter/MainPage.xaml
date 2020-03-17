@@ -7,48 +7,55 @@
              xmlns:abilities="clr-namespace:FifthCharacter.Abilities"
              mc:Ignorable="d"
              x:Class="FifthCharacter.MainPage">
+    <ScrollView VerticalOptions="Start">
+        <FlexLayout x:Name="FlexContainer"
+                    Direction="Row"
+                    AlignItems="Start"
+                    JustifyContent="Start"
+                    Wrap="Wrap"
+                    AlignContent="Start">
 
-    <FlexLayout x:Name="FlexContainer"
-                Direction="Row"
-                AlignItems="Start"
-                JustifyContent="Start"
-                Wrap="Wrap">
+            <local:CharacterInfo>
+                <x:Arguments>
+                    <local:CharacterInfoVM/>
+                </x:Arguments>
+            </local:CharacterInfo>
 
-        <local:AbilityScore>
-            <x:Arguments>
-                <abilities:StrengthAbility/>
-            </x:Arguments>
-        </local:AbilityScore>
+            <local:AbilityScore>
+                <x:Arguments>
+                    <abilities:StrengthAbility/>
+                </x:Arguments>
+            </local:AbilityScore>
 
-        <local:AbilityScore>
-            <x:Arguments>
-                <abilities:DexterityAbility/>
-            </x:Arguments>
-        </local:AbilityScore>
+            <local:AbilityScore>
+                <x:Arguments>
+                    <abilities:DexterityAbility/>
+                </x:Arguments>
+            </local:AbilityScore>
 
-        <local:AbilityScore>
-            <x:Arguments>
-                <abilities:ConstitutionAbility/>
-            </x:Arguments>
-        </local:AbilityScore>
+            <local:AbilityScore>
+                <x:Arguments>
+                    <abilities:ConstitutionAbility/>
+                </x:Arguments>
+            </local:AbilityScore>
 
-        <local:AbilityScore>
-            <x:Arguments>
-                <abilities:IntelligenceAbility/>
-            </x:Arguments>
-        </local:AbilityScore>
+            <local:AbilityScore>
+                <x:Arguments>
+                    <abilities:IntelligenceAbility/>
+                </x:Arguments>
+            </local:AbilityScore>
 
-        <local:AbilityScore>
-            <x:Arguments>
-                <abilities:WisdomAbility/>
-            </x:Arguments>
-        </local:AbilityScore>
+            <local:AbilityScore>
+                <x:Arguments>
+                    <abilities:WisdomAbility/>
+                </x:Arguments>
+            </local:AbilityScore>
 
-        <local:AbilityScore>
-            <x:Arguments>
-                <abilities:CharismaAbility/>
-            </x:Arguments>
-        </local:AbilityScore>
-    </FlexLayout>
-
+            <local:AbilityScore>
+                <x:Arguments>
+                    <abilities:CharismaAbility/>
+                </x:Arguments>
+            </local:AbilityScore>
+        </FlexLayout>
+    </ScrollView>
 </ContentPage>
