@@ -4,22 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="FifthCharacter.AbilityScore">
+             x:Class="FifthCharacter.AbilityScore"
+             Margin="5"
+             BackgroundColor="{DynamicResource PopupWindowColor}">
     <ContentView.Content>
         <Grid RowSpacing="-10"
               ColumnSpacing="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
             <Label Grid.Row="0"
@@ -48,7 +50,8 @@
             
             <StackLayout Orientation="Horizontal"
                          Grid.Row="1"
-                         Grid.Column="1">
+                         Grid.Column="1"
+                         Padding="0,0,10,0">
                 <CheckBox IsChecked="{Binding SavingThrowProficiency}"
                           VerticalOptions="Center"
                           IsEnabled="False"/>
@@ -66,7 +69,8 @@
                          Orientation="Horizontal"
                          Grid.Row="2"
                          Grid.Column="1"
-                         IsVisible="{Binding Skill1Exists}">
+                         IsVisible="{Binding Skill1Exists}"
+                         Padding="0,0,10,0">
                 <CheckBox IsChecked="{Binding Skill1Proficiency}"
                           VerticalOptions="Center"
                           IsEnabled="False"/>
@@ -84,7 +88,8 @@
                          Orientation="Horizontal"
                          Grid.Row="3"
                          Grid.Column="1"
-                         IsVisible="{Binding Skill2Exists}">
+                         IsVisible="{Binding Skill2Exists}"
+                         Padding="0,0,10,0">
                 <CheckBox IsChecked="{Binding Skill2Proficiency}"
                           VerticalOptions="Center"
                           IsEnabled="False"/>
@@ -102,7 +107,8 @@
                          Orientation="Horizontal"
                          Grid.Row="4"
                          Grid.Column="1"
-                         IsVisible="{Binding Skill3Exists}">
+                         IsVisible="{Binding Skill3Exists}"
+                         Padding="0,0,10,0">
                 <CheckBox IsChecked="{Binding Skill3Proficiency}"
                           VerticalOptions="Center"
                           IsEnabled="False"/>
@@ -120,7 +126,8 @@
                          Orientation="Horizontal"
                          Grid.Row="5"
                          Grid.Column="1"
-                         IsVisible="{Binding Skill4Exists}">
+                         IsVisible="{Binding Skill4Exists}"
+                         Padding="0,0,10,0">
                 <CheckBox IsChecked="{Binding Skill4Proficiency}"
                           VerticalOptions="Center"
                           IsEnabled="False"/>
@@ -138,7 +145,8 @@
                          Orientation="Horizontal"
                          Grid.Row="6"
                          Grid.Column="1"
-                         IsVisible="{Binding Skill5Exists}">
+                         IsVisible="{Binding Skill5Exists}"
+                         Padding="0,0,10,0">
                 <CheckBox IsChecked="{Binding Skill5Proficiency}"
                           VerticalOptions="Center"
                           IsEnabled="False"/>

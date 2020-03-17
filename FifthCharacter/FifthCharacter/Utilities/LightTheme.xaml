@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="FifthCharacter.Utilities.LightTheme">
+    <Color x:Key="PrimaryColor">#098CCD</Color>
+    <Color x:Key="PrimaryDarkColor">#092acd</Color>
+    <Color x:Key="PrimaryTintColor">#FFFFFF</Color>
+    <Color x:Key="PageBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="NavigationBarColor">#098CCD</Color>
+    <Color x:Key="PrimaryTextColor">#3f3f3f</Color>
+    <Color x:Key="SecondaryTextColor">#6e6e6e</Color>
+    <Color x:Key="SubTextColor">#969696</Color>
+    <Color x:Key="OverlayTextColor">#FFFFFF</Color>
+    <Color x:Key="TransperantBackgroundColor">#56000000</Color>
+    <Color x:Key="SeparatorLineColor">#ececec</Color>
+    <Color x:Key="PopupWindowColor">#FFFFFF</Color>
+</ResourceDictionary>

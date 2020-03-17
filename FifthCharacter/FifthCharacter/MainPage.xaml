@@ -3,14 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:FifthCharacter"
+             xmlns:abilities="clr-namespace:FifthCharacter.Abilities"
              mc:Ignorable="d"
              x:Class="FifthCharacter.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <FlexLayout x:Name="FlexContainer"
+                Direction="Row"
+                AlignItems="Start"
+                JustifyContent="Start"
+                Wrap="Wrap">
+
+        <local:AbilityScore>
+            <x:Arguments>
+                <abilities:StrengthAbility/>
+            </x:Arguments>
+        </local:AbilityScore>
+
+        <local:AbilityScore>
+            <x:Arguments>
+                <abilities:DexterityAbility/>
+            </x:Arguments>
+        </local:AbilityScore>
+
+        <local:AbilityScore>
+            <x:Arguments>
+                <abilities:ConstitutionAbility/>
+            </x:Arguments>
+        </local:AbilityScore>
+
+        <local:AbilityScore>
+            <x:Arguments>
+                <abilities:IntelligenceAbility/>
+            </x:Arguments>
+        </local:AbilityScore>
+
+        <local:AbilityScore>
+            <x:Arguments>
+                <abilities:WisdomAbility/>
+            </x:Arguments>
+        </local:AbilityScore>
+
+        <local:AbilityScore>
+            <x:Arguments>
+                <abilities:CharismaAbility/>
+            </x:Arguments>
+        </local:AbilityScore>
+    </FlexLayout>
 
 </ContentPage>

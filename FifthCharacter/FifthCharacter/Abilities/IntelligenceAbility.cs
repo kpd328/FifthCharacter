@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FifthCharacter.Abilities {
     public class IntelligenceAbility : AAbilityVM {
-        public override string AbilityName => "Intellicgence";
+        public override string AbilityName => "Intelligence";
         public override string AbilityScore => AbilityManager.IntelligenceScore.ToString();
         public override string AbilityModifier => AbilityManager.IntelligenceModifier;
 
