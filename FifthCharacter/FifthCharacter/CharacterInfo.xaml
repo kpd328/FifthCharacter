@@ -28,29 +28,35 @@
                    Grid.RowSpan="2"
                    Grid.Column="0"/>
             <Label Text="{Binding ClassLevel}"
-                Grid.Row="0"
-                Grid.Column="1"
-                FontSize="{DynamicResource FontCharacterInfo}"/>
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   FontSize="{DynamicResource FontCharacterInfo}"
+                   VerticalOptions="End"/>
             <Label Text="{Binding Background}"
                    Grid.Row="0"
                    Grid.Column="2"
-                   FontSize="{DynamicResource FontCharacterInfo}"/>
+                   FontSize="{DynamicResource FontCharacterInfo}"
+                   VerticalOptions="End"/>
             <Label Text="{Binding PlayerName}"
                    Grid.Row="0"
                    Grid.Column="3"
-                   FontSize="{DynamicResource FontCharacterInfo}"/>
+                   FontSize="{DynamicResource FontCharacterInfo}"
+                   VerticalOptions="End"/>
             <Label Text="{Binding Race}"
                    Grid.Row="1"
                    Grid.Column="1"
-                   FontSize="{DynamicResource FontCharacterInfo}"/>
+                   FontSize="{DynamicResource FontCharacterInfo}"
+                   VerticalOptions="End"/>
             <Label Text="{Binding Alignment}"
                    Grid.Row="1"
                    Grid.Column="2"
-                   FontSize="{DynamicResource FontCharacterInfo}"/>
+                   FontSize="{DynamicResource FontCharacterInfo}"
+                   VerticalOptions="End"/>
             <Label Text="{Binding ExperiencePoints}"
                    Grid.Row="1"
                    Grid.Column="3"
-                   FontSize="{DynamicResource FontCharacterInfo}"/>
+                   FontSize="{DynamicResource FontCharacterInfo}"
+                   VerticalOptions="End"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

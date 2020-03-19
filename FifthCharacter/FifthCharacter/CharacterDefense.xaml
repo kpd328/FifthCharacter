@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:FifthCharacter"
+             mc:Ignorable="d"
+             x:Class="FifthCharacter.CharacterDefense">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <local:BoolToColorConverter x:Key="boolToColor"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="CenterAndExpand"
+                     Spacing="10">
+            <Frame BackgroundColor="{DynamicResource DefenseWidgetColor}"
+                   BorderColor="Accent"
+                   Padding="5"
+                   WidthRequest="100">
+                <StackLayout Orientation="Vertical"
+                             VerticalOptions="FillAndExpand">
+                    <Label Text="{Binding ArmorClass}"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
+                           FontSize="{DynamicResource FontDefenseValue}"
+                           LineBreakMode="NoWrap"/>
+                    <Label Text="Armor Class"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"
+                           TextDecorations="Underline"
+                           FontSize="{DynamicResource FontDefenseLabel}"
+                           LineBreakMode="NoWrap"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="{DynamicResource DefenseWidgetColor}"
+                   BorderColor="Accent"
+                   Padding="5"
+                   WidthRequest="100">
+                <StackLayout Orientation="Vertical"
+                             VerticalOptions="FillAndExpand">
+                    <Label Text="{Binding InitiativeBonus}"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
+                           FontSize="{DynamicResource FontDefenseValue}"
+                           LineBreakMode="NoWrap"/>
+                    <Label Text="Initiative"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"
+                           TextDecorations="Underline"
+                           FontSize="{DynamicResource FontDefenseLabel}"
+                           LineBreakMode="NoWrap"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="{DynamicResource DefenseWidgetColor}"
+                   BorderColor="Accent"
+                   Padding="5"
+                   WidthRequest="100">
+                <StackLayout Orientation="Vertical"
+                             VerticalOptions="FillAndExpand">
+                    <Label Text="{Binding Speed}"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
+                           FontSize="{DynamicResource FontDefenseValue}"
+                           LineBreakMode="NoWrap"/>
+                    <Label Text="Speed"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"
+                           TextDecorations="Underline"
+                           FontSize="{DynamicResource FontDefenseLabel}"
+                           LineBreakMode="NoWrap"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="{DynamicResource DefenseWidgetColor}"
+                   BorderColor="Accent"
+                   Padding="5"
+                   WidthRequest="200">
+                <StackLayout Orientation="Vertical"
+                             VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal"
+                                 VerticalOptions="Start"
+                                 HorizontalOptions="Center">
+                        <Label Text="Hit Point Maximum"
+                               TextColor="Black"
+                               HorizontalOptions="End"
+                               VerticalOptions="Start"
+                               FontSize="{DynamicResource FontDefenseLabel}"
+                               LineBreakMode="NoWrap"/>
+                        <Label Text="{Binding HitPointMaximum}"
+                               TextColor="Black"
+                               TextDecorations="Underline"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start"
+                               FontSize="{DynamicResource FontDefenseLabel}"
+                               LineBreakMode="NoWrap"/>
+                    </StackLayout>
+                    <Label Text="{Binding HitPointCurrent}"
+                           FontAttributes="Bold"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
+                           TextColor="{Binding HasTempHitPoints, Converter={StaticResource boolToColor}}"
+                           FontSize="{DynamicResource FontDefenseValue}"
+                           LineBreakMode="NoWrap"/>
+                    <Label Text="Current Hit Points"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"
+                           TextDecorations="Underline"
+                           FontSize="{DynamicResource FontDefenseLabel}"
+                           LineBreakMode="NoWrap"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="{DynamicResource DefenseWidgetColor}"
+                   BorderColor="Accent"
+                   Padding="5"
+                   WidthRequest="200">
+                <StackLayout Orientation="Vertical"
+                             VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal"
+                                 VerticalOptions="Start"
+                                 HorizontalOptions="Center">
+                        <Label Text="Total"
+                               TextColor="Black"
+                               HorizontalOptions="End"
+                               VerticalOptions="Start"
+                               FontSize="{DynamicResource FontDefenseLabel}"
+                               LineBreakMode="NoWrap"/>
+                        <Label Text="{Binding HitDiceTotal}"
+                               TextColor="Black"
+                               TextDecorations="Underline"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start"
+                               FontSize="{DynamicResource FontDefenseLabel}"
+                               LineBreakMode="NoWrap"/>
+                    </StackLayout>
+                    <Label Text="{Binding HitDiceCurrent}"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
+                           FontSize="{DynamicResource FontDefenseValue}"
+                           LineBreakMode="NoWrap"/>
+                    <Label Text="Hit Dice"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"
+                           TextDecorations="Underline"
+                           FontSize="{DynamicResource FontDefenseLabel}"
+                           LineBreakMode="NoWrap"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="{DynamicResource DefenseWidgetColor}"
+                   BorderColor="Accent"
+                   Padding="5"
+                   WidthRequest="100">
+                <StackLayout Orientation="Vertical"
+                             VerticalOptions="FillAndExpand">
+                    <Label Text="{Binding PassivePerception}"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
+                           FontSize="{DynamicResource FontDefenseValue}"
+                           LineBreakMode="NoWrap"/>
+                    <Label Text="Passive Perception"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"
+                           TextDecorations="Underline"
+                           FontSize="{DynamicResource FontDefenseLabel}"
+                           LineBreakMode="NoWrap"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

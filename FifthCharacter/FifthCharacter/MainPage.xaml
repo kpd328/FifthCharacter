@@ -17,7 +17,6 @@
 
             <Frame FlexLayout.Basis="100%"
                    HorizontalOptions="FillAndExpand"
-                   FlexLayout.Grow="1"
                    BackgroundColor="{DynamicResource PopupWindowColor}"
                    BorderColor="Transparent">
                 <local:CharacterInfo>
@@ -26,39 +25,45 @@
                     </x:Arguments>
                 </local:CharacterInfo>
             </Frame>
-            
 
-            <local:AbilityScore>
+            <local:CharacterDefense FlexLayout.Basis="100%"
+                                    HorizontalOptions="FillAndExpand">
+                <x:Arguments>
+                    <local:CharacterDefenseVM/>
+                </x:Arguments>
+            </local:CharacterDefense>
+
+            <local:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:StrengthAbility/>
                 </x:Arguments>
             </local:AbilityScore>
 
-            <local:AbilityScore>
+            <local:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:DexterityAbility/>
                 </x:Arguments>
             </local:AbilityScore>
 
-            <local:AbilityScore>
+            <local:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:ConstitutionAbility/>
                 </x:Arguments>
             </local:AbilityScore>
 
-            <local:AbilityScore>
+            <local:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:IntelligenceAbility/>
                 </x:Arguments>
             </local:AbilityScore>
 
-            <local:AbilityScore>
+            <local:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:WisdomAbility/>
                 </x:Arguments>
             </local:AbilityScore>
 
-            <local:AbilityScore>
+            <local:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:CharismaAbility/>
                 </x:Arguments>

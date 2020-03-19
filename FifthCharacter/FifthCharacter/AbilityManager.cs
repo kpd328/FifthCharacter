@@ -114,6 +114,6 @@ namespace FifthCharacter {
         public static string Persuasion => PersuasionModifier.ToString("+0;-#");
 
         //Passives
-        private static int PassivePerception => 10 + PerceptionModifier;
+        public static int PassivePerception => 10 + PerceptionModifier;
     }
 }

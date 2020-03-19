@@ -15,4 +15,5 @@
     <Color x:Key="SeparatorLineColor">#131313</Color>
     <Color x:Key="PopupWindowColor">#171717</Color>
     <Color x:Key="InvertColor">#ffffff</Color>
+    <Color x:Key="DefenseWidgetColor">#AAFFFFFF</Color>
 </ResourceDictionary>
