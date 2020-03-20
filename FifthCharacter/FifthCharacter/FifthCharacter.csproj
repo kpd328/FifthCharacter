@@ -21,6 +21,13 @@
     <EmbeddedResource Update="AbilityScore.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="AttacksList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Attacks\Mechanics\Property\WeapPropTxt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WeapPropTxt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="CharacterDefense.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -43,6 +50,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Attacks\Mechanics\Property\WeapPropTxt.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WeapPropTxt.resx</DependentUpon>
+    </Compile>
     <Compile Update="Utilities\PlatformFonts\FallbackFonts.xaml.cs">
       <DependentUpon>FallbackFonts.xaml</DependentUpon>
     </Compile>
