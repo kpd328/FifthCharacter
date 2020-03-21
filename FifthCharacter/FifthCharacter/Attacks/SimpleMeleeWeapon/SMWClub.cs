@@ -12,8 +12,8 @@ namespace FifthCharacter.Attacks.SimpleMeleeWeapon {
         public override string DamageDice => "1d4";
         public override string DamageType => "Bludgeoning";
 
-        public override string Cost => "1sp";
-        public override string Weight => "2lb.";
+        public override string Cost => "1 sp";
+        public override string Weight => "2 lb.";
         public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>() {
             new  PropertyLight()
         };
