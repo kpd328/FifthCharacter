@@ -18,20 +18,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AbilityScore.xaml">
+    <EmbeddedResource Update="View\AbilityScore.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AttacksList.xaml">
+    <EmbeddedResource Update="View\AttacksList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Attacks\Mechanics\Property\WeapPropTxt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WeapPropTxt.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="CharacterDefense.xaml">
+    <EmbeddedResource Update="View\CharacterDefense.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="CharacterInfo.xaml">
+    <EmbeddedResource Update="View\CharacterInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Utilities\DarkTheme.xaml">

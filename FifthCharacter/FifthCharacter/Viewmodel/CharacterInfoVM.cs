@@ -1,8 +1,10 @@
-﻿using System;
+﻿using FifthCharacter.StatsManager;
+using FifthCharacter.View;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FifthCharacter {
+namespace FifthCharacter.Viewmodel {
     public class CharacterInfoVM {
         public string CharacterName => CharacterManager.CharacterName;
         public string ClassLevel => CharacterManager.ClassLevel;
@@ -15,7 +17,7 @@ namespace FifthCharacter {
         private CharacterInfo View;
 
         public void Bind(CharacterInfo view) {
-            this.View = view;
+            View = view;
             View.BindingContext = this;
         }
     }

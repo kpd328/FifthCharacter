@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:FifthCharacter"
+             xmlns:vm="clr-namespace:FifthCharacter.Viewmodel"
              mc:Ignorable="d"
-             x:Class="FifthCharacter.CharacterDefense">
+             x:Class="FifthCharacter.View.CharacterDefense">
     <ContentView.Resources>
         <ResourceDictionary>
-            <local:BoolToColorConverter x:Key="boolToColor"/>
+            <vm:BoolToColorConverter x:Key="boolToColor"/>
         </ResourceDictionary>
     </ContentView.Resources>
     <ContentView.Content>

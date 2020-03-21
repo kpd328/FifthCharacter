@@ -1,8 +1,9 @@
-﻿using System;
+﻿using FifthCharacter.View;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FifthCharacter {
+namespace FifthCharacter.Viewmodel {
     public interface IAbilityVM {
         //Properties
         string AbilityName { get; }
