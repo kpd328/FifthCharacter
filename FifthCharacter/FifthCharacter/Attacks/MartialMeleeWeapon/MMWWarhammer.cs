@@ -6,18 +6,20 @@ using System.Text;
 
 namespace FifthCharacter.Attacks.MartialMeleeWeapon {
     public class MMWWarhammer : AMartialMeleeWeapon {
-        public override string Name => throw new NotImplementedException();
+        public override string Name => "Warhammer";
 
         public override string AttackBonus => throw new NotImplementedException();
 
-        public override string DamageDice => throw new NotImplementedException();
+        public override string DamageDice => "1d8";
 
-        public override string DamageType => throw new NotImplementedException();
+        public override string DamageType => "Bludgeoning";
 
-        public override string Cost => throw new NotImplementedException();
+        public override string Cost => "15 gp";
 
-        public override string Weight => throw new NotImplementedException();
+        public override string Weight => "2 lb.";
 
-        public override IList<IWeaponProperty> Properties => throw new NotImplementedException();
+        public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>() {
+            new PropertyVersatile(1,10)
+        };
     }
 }
