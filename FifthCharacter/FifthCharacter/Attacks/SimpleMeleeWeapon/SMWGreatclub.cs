@@ -1,5 +1,6 @@
 ﻿using FifthCharacter.Attacks.Abstract;
 using FifthCharacter.Attacks.Mechanics;
+using FifthCharacter.Attacks.Mechanics.Property;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +20,7 @@ namespace FifthCharacter.Attacks.SimpleMeleeWeapon {
         public override string Weight => "10 lb.";
 
         public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>() {
-            new  PropertTwoHanded()
+            new  PropertyTwoHanded()
         };
     }
 }
