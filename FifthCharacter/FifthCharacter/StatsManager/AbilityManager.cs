@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FifthCharacter {
+namespace FifthCharacter.StatsManager {
     public static class AbilityManager {
         //TODO: Save scores to static location
 
@@ -107,7 +107,7 @@ namespace FifthCharacter {
         private static int DeceptionModifier => DeceptionProficiency ? CharismaMod + ProficiencyBonus : CharismaMod;
         private static int IntimidationModifier => IntimidationProficiency ? CharismaMod + ProficiencyBonus : CharismaMod;
         private static int PerformanceModifier => PerformanceProficiency ? CharismaMod + ProficiencyBonus : CharismaMod;
-        private static int PersuasionModifier => PersuasionProficiency? CharismaMod + ProficiencyBonus : CharismaMod;
+        private static int PersuasionModifier => PersuasionProficiency ? CharismaMod + ProficiencyBonus : CharismaMod;
         public static string Deception => DeceptionModifier.ToString("+0;-#");
         public static string Intimidation => IntimidationModifier.ToString("+0;-#");
         public static string Performance => PerformanceModifier.ToString("+0;-#");

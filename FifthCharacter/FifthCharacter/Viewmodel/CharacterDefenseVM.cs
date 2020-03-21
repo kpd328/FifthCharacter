@@ -1,10 +1,12 @@
-﻿using System;
+﻿using FifthCharacter.StatsManager;
+using FifthCharacter.View;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using Xamarin.Forms;
 
-namespace FifthCharacter {
+namespace FifthCharacter.Viewmodel {
     public class CharacterDefenseVM {
         //TODO: Set color of HitPointCurrent based on CharacterManager.HasTempHitPoints
         public string ArmorClass => CharacterManager.ArmorClass.ToString();
@@ -20,7 +22,7 @@ namespace FifthCharacter {
         private CharacterDefense View;
 
         public void Bind(CharacterDefense view) {
-            this.View = view;
+            View = view;
             View.BindingContext = this;
         }
     }

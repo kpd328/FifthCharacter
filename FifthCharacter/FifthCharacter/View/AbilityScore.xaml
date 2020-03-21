@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="FifthCharacter.AbilityScore"
+             x:Class="FifthCharacter.View.AbilityScore"
              Margin="5"
              BackgroundColor="{DynamicResource PopupWindowColor}">
     <ContentView.Content>

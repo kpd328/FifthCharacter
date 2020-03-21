@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FifthCharacter {
+namespace FifthCharacter.StatsManager {
     /*
      * This class helps with facilitating gathering information on the active character
      * from static memory and switching which avaliable characters the user can switch

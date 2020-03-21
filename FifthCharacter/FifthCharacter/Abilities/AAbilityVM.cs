@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FifthCharacter.Viewmodel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
