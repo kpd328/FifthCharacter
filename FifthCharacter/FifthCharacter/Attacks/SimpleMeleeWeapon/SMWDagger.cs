@@ -6,18 +6,20 @@ using System.Text;
 
 namespace FifthCharacter.Attacks.SimpleMeleeWeapon {
     public class SMWDagger : ASimpleMeleeWeapon {
-        public override string Name => throw new NotImplementedException();
+        public override string Name => "Dagger";
 
-        public override string AttackBonus { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override string AttackBonus { get; set; }
 
-        public override string DamageDice => throw new NotImplementedException();
+        public override string DamageDice => "1d4";
 
-        public override string DamageType => throw new NotImplementedException();
+        public override string DamageType => "Piercing";
 
-        public override string Cost => throw new NotImplementedException();
+        public override string Cost => "2 gp";
 
-        public override string Weight => throw new NotImplementedException();
+        public override string Weight => "1 lb.";
 
-        public override IList<IWeaponProperty> Properties => throw new NotImplementedException();
+        public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>() {
+            new  PropertyLight(), new PropertyFinesse(), new PropertyThrown(20,60)
+        };
     }
 }
