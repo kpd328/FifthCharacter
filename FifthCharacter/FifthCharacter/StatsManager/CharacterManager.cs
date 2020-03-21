@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FifthCharacter {
+namespace FifthCharacter.StatsManager {
     public static class CharacterManager {
         //TODO: Save information to static location
 

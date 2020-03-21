@@ -5,6 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:FifthCharacter"
              xmlns:abilities="clr-namespace:FifthCharacter.Abilities"
+             xmlns:vm="clr-namespace:FifthCharacter.Viewmodel"
+             xmlns:v="clr-namespace:FifthCharacter.View"
              mc:Ignorable="d"
              x:Class="FifthCharacter.MainPage">
     <ScrollView VerticalOptions="Start">
@@ -19,55 +21,55 @@
                    HorizontalOptions="FillAndExpand"
                    BackgroundColor="{DynamicResource PopupWindowColor}"
                    BorderColor="Transparent">
-                <local:CharacterInfo>
+                <v:CharacterInfo>
                     <x:Arguments>
-                        <local:CharacterInfoVM/>
+                        <vm:CharacterInfoVM/>
                     </x:Arguments>
-                </local:CharacterInfo>
+                </v:CharacterInfo>
             </Frame>
 
-            <local:CharacterDefense FlexLayout.Basis="100%"
+            <v:CharacterDefense FlexLayout.Basis="100%"
                                     HorizontalOptions="FillAndExpand">
                 <x:Arguments>
-                    <local:CharacterDefenseVM/>
+                    <vm:CharacterDefenseVM/>
                 </x:Arguments>
-            </local:CharacterDefense>
+            </v:CharacterDefense>
 
-            <local:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:StrengthAbility/>
                 </x:Arguments>
-            </local:AbilityScore>
+            </v:AbilityScore>
 
-            <local:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:DexterityAbility/>
                 </x:Arguments>
-            </local:AbilityScore>
+            </v:AbilityScore>
 
-            <local:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:ConstitutionAbility/>
                 </x:Arguments>
-            </local:AbilityScore>
+            </v:AbilityScore>
 
-            <local:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:IntelligenceAbility/>
                 </x:Arguments>
-            </local:AbilityScore>
+            </v:AbilityScore>
 
-            <local:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:WisdomAbility/>
                 </x:Arguments>
-            </local:AbilityScore>
+            </v:AbilityScore>
 
-            <local:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Grow="1">
                 <x:Arguments>
                     <abilities:CharismaAbility/>
                 </x:Arguments>
-            </local:AbilityScore>
+            </v:AbilityScore>
         </FlexLayout>
     </ScrollView>
 </ContentPage>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FifthCharacter.View;
+using FifthCharacter.Viewmodel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,16 +1,18 @@
-﻿using System;
+﻿using FifthCharacter.Interface;
+using FifthCharacter.View;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace FifthCharacter {
+namespace FifthCharacter.Viewmodel {
     public class AttacksListVM {
         private AttacksList View;
 
         public ObservableCollection<IAttack> Attacks { get; set; }
 
         public void Bind(AttacksList view) {
-            this.View = view;
+            View = view;
             View.BindingContext = this;
         }
     }

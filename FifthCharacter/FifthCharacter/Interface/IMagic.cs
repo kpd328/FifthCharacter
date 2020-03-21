@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FifthCharacter {
+namespace FifthCharacter.Interface {
     public interface IMagic {
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FifthCharacter.Viewmodel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +8,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FifthCharacter {
+namespace FifthCharacter.View {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AttacksList : ContentView {
-        public AttacksList(AttacksListVM attacksList) {
+    public partial class AbilityScore : ContentView {
+        public AbilityScore(IAbilityVM ability) {
             InitializeComponent();
-            attacksList.Bind(this);
+            ability.Bind(this);
         }
     }
 }
