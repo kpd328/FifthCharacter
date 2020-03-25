@@ -70,6 +70,12 @@
                     <abilities:CharismaAbility/>
                 </x:Arguments>
             </v:AbilityScore>
+
+            <v:AttacksList>
+                <x:Arguments>
+                    <vm:AttacksListVM/>
+                </x:Arguments>
+            </v:AttacksList>
         </FlexLayout>
     </ScrollView>
 </ContentPage>

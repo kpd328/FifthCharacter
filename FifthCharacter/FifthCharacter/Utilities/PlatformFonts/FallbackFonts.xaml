@@ -24,4 +24,10 @@
             <x:Double>-10</x:Double>
         </x:Arguments>
     </Thickness>
+
+    <Thickness x:Key="AttacksListPadding">
+        <x:Arguments>
+            <x:Double>10</x:Double>
+        </x:Arguments>
+    </Thickness>
 </ResourceDictionary>

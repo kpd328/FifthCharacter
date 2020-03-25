@@ -6,14 +6,25 @@
              mc:Ignorable="d"
              x:Class="FifthCharacter.View.AttacksList">
     <ContentView.Content>
-        <ListView ItemsSource="{Binding Attacks}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Frame BackgroundColor="{DynamicResource PopupWindowColor}"
+               Padding="{DynamicResource AttacksListPadding}">
+            <ListView ItemsSource="{Binding Attacks}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="Transparent"
+                                   BorderColor="Accent">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding AttackBonus}"/>
+                                    <Label Text="{Binding DamageDice}"/>
+                                    <Label Text="{Binding DamageType}"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
     </ContentView.Content>
 </ContentView>
