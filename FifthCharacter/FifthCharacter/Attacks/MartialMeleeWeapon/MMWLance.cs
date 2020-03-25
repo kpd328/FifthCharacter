@@ -1,5 +1,7 @@
 ﻿using FifthCharacter.Attacks.Abstract;
 using FifthCharacter.Attacks.Mechanics;
+using FifthCharacter.Attacks.Mechanics.Property;
+using FifthCharacter.Attacks.Mechanics.Property.Special;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,7 +22,7 @@ namespace FifthCharacter.Attacks.MartialMeleeWeapon {
 
         public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>() {
             new PropertyReach(),
-            new PropertySpecial()
+            new PropertySpecialLance()
         };
     }
 }

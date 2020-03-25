@@ -1,5 +1,6 @@
 ﻿using FifthCharacter.Attacks.Abstract;
 using FifthCharacter.Attacks.Mechanics;
+using FifthCharacter.Attacks.Mechanics.Property;
 using System;
 using System.Collections.Generic;
 using System.Text;

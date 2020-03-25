@@ -5,6 +5,7 @@ using System.Text;
 namespace FifthCharacter.Attacks.Mechanics.Property {
     public class PropertyAmmunition : IWeaponProperty {
         public string TextDescription => WeapPropTxt.Ammunition;
+        public string PropertyName => WeapPropName.Ammunition;
         private int RangeOpt { get; set; }
         private int RangeMax { get; set; }
 

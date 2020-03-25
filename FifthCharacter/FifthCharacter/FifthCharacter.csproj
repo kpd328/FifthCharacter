@@ -18,6 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Attacks\Mechanics\Property\WeapPropName.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WeapPropName.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\AbilityScore.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -50,6 +54,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Attacks\Mechanics\Property\WeapPropName.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WeapPropName.resx</DependentUpon>
+    </Compile>
     <Compile Update="Attacks\Mechanics\Property\WeapPropTxt.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

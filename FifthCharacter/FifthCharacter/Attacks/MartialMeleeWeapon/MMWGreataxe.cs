@@ -1,12 +1,13 @@
 ﻿using FifthCharacter.Attacks.Abstract;
 using FifthCharacter.Attacks.Mechanics;
+using FifthCharacter.Attacks.Mechanics.Property;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FifthCharacter.Attacks.MartialMeleeWeapon {
-    public class MMWGreatsword : AMartialMeleeWeapon {
-        public override string Name => "Greataxe"
+    public class MMWGreataxe : AMartialMeleeWeapon {
+        public override string Name => "Greataxe";
 
         public override string AttackBonus => throw new NotImplementedException();
 
