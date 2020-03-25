@@ -5,6 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="FifthCharacter.Utilities.PlatformFonts.AndroidFonts">
+    <x:String x:Key="MaterialIcons">MaterialIcons-Regular.ttf#Material Icons</x:String>
+    
     <x:Double x:Key="FontSkillLabel">8</x:Double>
     <x:Double x:Key="FontAbilityMod">14</x:Double>
     <x:Double x:Key="FontAbilityScore">24</x:Double>

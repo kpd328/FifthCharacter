@@ -5,6 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="FifthCharacter.Utilities.PlatformFonts.GTKFonts">
+    <x:String x:Key="MaterialIcons">Assets/Fonts/MaterialIcons-Regular.ttf#Material Icons</x:String>
+    
     <x:Double x:Key="FontSkillLabel">12</x:Double>
     <x:Double x:Key="FontAbilityMod">24</x:Double>
     <x:Double x:Key="FontAbilityScore">48</x:Double>
