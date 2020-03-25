@@ -22,14 +22,14 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class WeapPropTxt {
+    internal class WeapPropName {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal WeapPropTxt() {
+        internal WeapPropName() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FifthCharacter.Attacks.Mechanics.Property.WeapPropTxt", typeof(WeapPropTxt).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FifthCharacter.Attacks.Mechanics.Property.WeapPropName", typeof(WeapPropName).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use a weapon that has the Ammunition property to make a ranged Attack only if you have Ammunition to fire from the weapon. Each time you Attack with the weapon, you expend one piece of Ammunition. Drawing the Ammunition from a Quiver, case, or other container is part of the Attack (you need a free hand to load a one-handed weapon). At the end of the battle, you can recover half your expended Ammunition by taking a minute to Search the battlefield. If you use a weapon that has the Ammunition property [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Ammunition.
         /// </summary>
         internal static string Ammunition {
             get {
@@ -70,7 +70,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When Making an Attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the Attack and Damage Rolls. You must use the same modifier for both rolls..
+        ///   Looks up a localized string similar to Finesse.
         /// </summary>
         internal static string Finesse {
             get {
@@ -79,7 +79,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Small creatures have disadvantage on Attack rolls with heavy Weapons. A heavy weapon’s size and bulk make it too large for a Small creature to use effectively..
+        ///   Looks up a localized string similar to Heavy.
         /// </summary>
         internal static string Heavy {
             get {
@@ -88,7 +88,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A light weapon is small and easy to handle, making it ideal for use when fighting with two Weapons..
+        ///   Looks up a localized string similar to Light.
         /// </summary>
         internal static string Light {
             get {
@@ -97,7 +97,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Because of the time required to load this weapon, you can fire only one piece of Ammunition from it when you use an action, Bonus Action, or Reaction to fire it, regardless of the number of attacks you can normally make..
+        ///   Looks up a localized string similar to Loading.
         /// </summary>
         internal static string Loading {
             get {
@@ -106,7 +106,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A weapon that can be used to make a ranged Attack has a range in parentheses after the Ammunition or thrown property. The range lists two numbers. The first is the weapon’s normal range in feet, and the second indicates the weapon’s long range. When attacking a target beyond normal range, you have disadvantage on the Attack roll. You can’t Attack a target beyond the weapon’s long range..
+        ///   Looks up a localized string similar to Range.
         /// </summary>
         internal static string Range {
             get {
@@ -115,7 +115,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This weapon adds 5 feet to your reach when you Attack with it, as well as when determining your reach for Opportunity Attacks with it..
+        ///   Looks up a localized string similar to Reach.
         /// </summary>
         internal static string Reach {
             get {
@@ -124,7 +124,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A weapon with the special property has unusual rules governing its use, explained in the weapon’s description..
+        ///   Looks up a localized string similar to Special.
         /// </summary>
         internal static string Special {
             get {
@@ -133,25 +133,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have disadvantage when you use a lance to Attack a target within 5 feet of you. Also, a lance requires two hands to wield when you aren&apos;t mounted..
-        /// </summary>
-        internal static string Special_Lance {
-            get {
-                return ResourceManager.GetString("Special_Lance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A Large or smaller creature hit by a net is Restrained until it is freed. A net has no effect on creatures that are formless, or creatures that are Huge or larger. A creature can use its action to make a DC 10 Strength check, freeing itself or another creature within its reach on a success. Dealing 5 slashing damage to the net (AC 10) also frees the creature without harming it, ending the effect and destroying the net. When you use an action, Bonus Action, or Reaction to Attack with a net, you can make only [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Special_Net {
-            get {
-                return ResourceManager.GetString("Special_Net", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to If a weapon has the thrown property, you can throw the weapon to make a ranged Attack. If the weapon is a melee weapon, you use the same ability modifier for that Attack roll and damage roll that you would use for a melee Attack with the weapon. For example, if you throw a Handaxe, you use your Strength, but if you throw a Dagger, you can use either your Strength or your Dexterity, since the Dagger has the finesse property..
+        ///   Looks up a localized string similar to Thrown.
         /// </summary>
         internal static string Thrown {
             get {
@@ -160,7 +142,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This weapon requires two hands when you Attack with it..
+        ///   Looks up a localized string similar to Two-Handed.
         /// </summary>
         internal static string Two_Handed {
             get {
@@ -169,7 +151,7 @@ namespace FifthCharacter.Attacks.Mechanics.Property {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee Attack..
+        ///   Looks up a localized string similar to Versatile.
         /// </summary>
         internal static string Versatile {
             get {

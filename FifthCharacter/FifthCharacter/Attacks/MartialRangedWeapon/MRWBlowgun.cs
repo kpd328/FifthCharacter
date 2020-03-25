@@ -6,19 +6,19 @@ using System.Text;
 
 namespace FifthCharacter.Attacks.MartialRangedWeapon {
     public class MRWBlowgun : AMartialRangedWeapon {
-        public override string Name => throw new NotImplementedException();
+        public override string Name => "Blowgun";
 
         public override string AttackBonus => throw new NotImplementedException();
 
-        public override string DamageDice => throw new NotImplementedException();
+        public override string DamageDice => "1d1";
 
-        public override string DamageType => throw new NotImplementedException();
+        public override string DamageType => "Piercing";
 
         public override string Range => throw new NotImplementedException();
 
-        public override string Cost => throw new NotImplementedException();
+        public override string Cost => "10 gp";
 
-        public override string Weight => throw new NotImplementedException();
+        public override string Weight => "1 lb.";
 
         public override IList<IWeaponProperty> Properties => throw new NotImplementedException();
     }

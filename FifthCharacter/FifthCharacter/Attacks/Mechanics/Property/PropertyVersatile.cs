@@ -6,6 +6,7 @@ using System.Text;
 namespace FifthCharacter.Attacks.Mechanics.Property {
     public class PropertyVersatile : IWeaponProperty {
         public string TextDescription => WeapPropTxt.Versatile;
+        public string PropertyName => WeapPropName.Versatile;
         private Dice Dice { get; set; }
         public string Die => Dice.ToString;
 

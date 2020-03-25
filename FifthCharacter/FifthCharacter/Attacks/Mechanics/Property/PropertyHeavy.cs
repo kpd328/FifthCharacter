@@ -5,5 +5,6 @@ using System.Text;
 namespace FifthCharacter.Attacks.Mechanics.Property {
     public class PropertyHeavy : IWeaponProperty {
         public string TextDescription => WeapPropTxt.Heavy;
+        public string PropertyName => WeapPropName.Heavy;
     }
 }

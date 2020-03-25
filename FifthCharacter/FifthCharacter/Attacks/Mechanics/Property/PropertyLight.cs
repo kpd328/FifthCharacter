@@ -5,5 +5,6 @@ using System.Text;
 namespace FifthCharacter.Attacks.Mechanics.Property {
     public class PropertyLight : IWeaponProperty {
         public string TextDescription => WeapPropTxt.Light;
+        public string PropertyName => WeapPropName.Light;
     }
 }
