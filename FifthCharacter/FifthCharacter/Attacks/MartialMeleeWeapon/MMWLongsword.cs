@@ -9,7 +9,7 @@ namespace FifthCharacter.Attacks.MartialMeleeWeapon {
     public class MMWLongsword : AMartialMeleeWeapon {
         public override string Name => "Longsword";
 
-        public override string AttackBonus => throw new NotImplementedException();
+        public override string AttackBonus { get; }
 
         public override string DamageDice => "1d8";
 

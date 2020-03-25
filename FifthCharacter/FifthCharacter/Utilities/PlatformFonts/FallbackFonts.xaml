@@ -16,6 +16,8 @@
     <x:Double x:Key="FontDefenseLabel">8</x:Double>
     <x:Double x:Key="FontDefenseValue">24</x:Double>
 
+    <x:Double x:Key="SizeIconButton">8</x:Double>
+
     <x:Single x:Key="ScaleCheckboxX">0.8</x:Single>
     <x:Single x:Key="ScaleCheckboxY">0.8</x:Single>
 
@@ -28,6 +30,19 @@
     <Thickness x:Key="AttacksListPadding">
         <x:Arguments>
             <x:Double>10</x:Double>
+        </x:Arguments>
+    </Thickness>
+
+    <Thickness x:Key="IconButtonPadding">
+        <x:Arguments>
+            <!--Left-->
+            <x:Double>0</x:Double>
+            <!--Top-->
+            <x:Double>0</x:Double>
+            <!--Right-->
+            <x:Double>-5</x:Double>
+            <!--Bottom-->
+            <x:Double>0</x:Double>
         </x:Arguments>
     </Thickness>
 </ResourceDictionary>

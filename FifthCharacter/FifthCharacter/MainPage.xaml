@@ -76,6 +76,12 @@
                     <vm:AttacksListVM/>
                 </x:Arguments>
             </v:AttacksList>
+
+            <v:SpellList>
+                <x:Arguments>
+                    <vm:SpellListVM/>
+                </x:Arguments>
+            </v:SpellList>
         </FlexLayout>
     </ScrollView>
 </ContentPage>

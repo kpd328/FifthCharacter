@@ -42,6 +42,8 @@ namespace FifthCharacter {
                 SetFonts(mergedDictionaries);
                 break;
             }
+
+            mergedDictionaries.Add(new XamMaterialIcons());
         }
 
         void SetFonts(ICollection<ResourceDictionary> mergedDictionaries) {

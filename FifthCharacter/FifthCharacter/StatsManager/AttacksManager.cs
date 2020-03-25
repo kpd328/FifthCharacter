@@ -1,5 +1,8 @@
-﻿using FifthCharacter.Attacks.SimpleMeleeWeapon;
+﻿using FifthCharacter.Attacks.MartialMeleeWeapon;
+using FifthCharacter.Attacks.SimpleMeleeWeapon;
+using FifthCharacter.Attacks.SimpleRangedWeapon;
 using FifthCharacter.Interface;
+using FifthCharacter.Spells.Evocation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,8 +13,12 @@ namespace FifthCharacter.StatsManager {
         public static ObservableCollection<IAttack> Attacks { get; private set; }
 
         static AttacksManager() {
-            Attacks = new ObservableCollection<IAttack>();
-            Attacks.Add(new SMWClub());
+            Attacks = new ObservableCollection<IAttack> {
+                new SMWDagger(),
+                new SMWHandaxe(),
+                new MMWLongsword(),
+                new FireBolt()
+            };
         }
     }
 }

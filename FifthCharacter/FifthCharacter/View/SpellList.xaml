@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="FifthCharacter.View.AttacksList">
+             x:Class="FifthCharacter.View.SpellList">
     <ContentView.Content>
         <Frame BackgroundColor="{DynamicResource PopupWindowColor}"
                Padding="{DynamicResource AttacksListPadding}">
             <StackLayout Orientation="Vertical"
-                         Spacing="10">
+                   Spacing="10">
                 <StackLayout x:Name="HeaderButtons"
                              Orientation="Horizontal"
                              HorizontalOptions="EndAndExpand">
@@ -22,17 +22,29 @@
                         </ImageButton.Source>
                     </ImageButton>
                 </StackLayout>
-                <ListView ItemsSource="{Binding Attacks}">
+                <ListView ItemsSource="{Binding Spells}"
+                          IsGroupingEnabled="True">
+                    <ListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Level}"/>
+                                    <!--Add Spell Slots from Magic Manager-->
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.GroupHeaderTemplate>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <Frame BackgroundColor="Transparent"
                                        BorderColor="Accent">
                                     <StackLayout Orientation="Horizontal">
+                                        <CheckBox Color="Accent"
+                                                  ScaleX="{DynamicResource ScaleCheckboxX}"
+                                                  ScaleY="{DynamicResource ScaleCheckboxY}"
+                                                  Margin="{DynamicResource CheckboxMargin}"/>
                                         <Label Text="{Binding Name}"/>
-                                        <Label Text="{Binding AttackBonus}"/>
-                                        <Label Text="{Binding DamageDice}"/>
-                                        <Label Text="{Binding DamageType}"/>
                                     </StackLayout>
                                 </Frame>
                             </ViewCell>

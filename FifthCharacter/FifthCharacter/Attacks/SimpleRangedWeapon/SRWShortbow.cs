@@ -6,9 +6,9 @@ using System.Text;
 
 namespace FifthCharacter.Attacks.SimpleRangedWeapon {
     public class SRWShortbow : ASimpleRangedWeapon {
-        public override string Name => throw new NotImplementedException();
+        public override string Name => "Shortbow";
 
-        public override string AttackBonus { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override string AttackBonus { get; set; }
 
         public override string DamageDice => throw new NotImplementedException();
 
