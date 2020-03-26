@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Margin="5"
+             x:Class="FifthCharacter.View.FeaturesList">
+    <ContentView.Content>
+        <StackLayout Orientation="Vertical"
+                     Spacing="10"
+                     BackgroundColor="{DynamicResource PopupWindowColor}"
+                     Padding="{DynamicResource AttacksListPadding}">
+            <Label Text="Features"
+                   HorizontalOptions="FillAndExpand"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <StackLayout Orientation="Vertical"
+                         BindableLayout.ItemsSource="{Binding Features}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Name}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

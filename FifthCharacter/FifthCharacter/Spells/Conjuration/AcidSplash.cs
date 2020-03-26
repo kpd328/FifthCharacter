@@ -18,5 +18,6 @@ namespace FifthCharacter.Spells.Conjuration {
         public override string Targets => "One creature within range, or choose two creatures within range that are within 5 feet of each other.";
         public override string AreaOfEffect => "N/A";
         public override string Name => "Acid Splash";
+        public new bool PreparedCaster => false;
     }
 }

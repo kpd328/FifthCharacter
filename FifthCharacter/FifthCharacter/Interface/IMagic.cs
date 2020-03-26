@@ -13,6 +13,7 @@ namespace FifthCharacter.Interface {
         string Duration { get; }
         string Targets { get; }
         string AreaOfEffect { get; }
+        bool PreparedCaster { get; }
     }
 
     public enum SpellLevel {

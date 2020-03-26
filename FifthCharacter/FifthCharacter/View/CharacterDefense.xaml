@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:FifthCharacter.Viewmodel"
              mc:Ignorable="d"
+             Margin="5"
              x:Class="FifthCharacter.View.CharacterDefense">
     <ContentView.Resources>
         <ResourceDictionary>

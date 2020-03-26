@@ -4,42 +4,47 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Margin="5"
              x:Class="FifthCharacter.View.AttacksList">
     <ContentView.Content>
-        <Frame BackgroundColor="{DynamicResource PopupWindowColor}"
-               Padding="{DynamicResource AttacksListPadding}">
-            <StackLayout Orientation="Vertical"
-                         Spacing="10">
-                <StackLayout x:Name="HeaderButtons"
-                             Orientation="Horizontal"
-                             HorizontalOptions="EndAndExpand">
-                    <ImageButton BackgroundColor="Transparent"
-                                 Padding="{DynamicResource IconButtonPadding}">
-                        <ImageButton.Source>
-                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
-                                             Glyph="{DynamicResource AddCircle}"
-                                             Size="{DynamicResource SizeIconButton}"/>
-                        </ImageButton.Source>
-                    </ImageButton>
-                </StackLayout>
-                <ListView ItemsSource="{Binding Attacks}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Frame BackgroundColor="Transparent"
-                                       BorderColor="Accent">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding Name}"/>
-                                        <Label Text="{Binding AttackBonus}"/>
-                                        <Label Text="{Binding DamageDice}"/>
-                                        <Label Text="{Binding DamageType}"/>
-                                    </StackLayout>
-                                </Frame>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+        <StackLayout Orientation="Vertical"
+                     Spacing="10"
+                     BackgroundColor="{DynamicResource PopupWindowColor}"
+                     Padding="{DynamicResource AttacksListPadding}">
+            <StackLayout x:Name="HeaderButtons"
+                         Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand">
+                <Label Text="Attacks"
+                       HorizontalOptions="FillAndExpand"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"/>
+                <ImageButton BackgroundColor="Transparent"
+                             Padding="{DynamicResource IconButtonPadding}"
+                             HorizontalOptions="End">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                         Glyph="{DynamicResource AddCircle}"
+                                         Size="{DynamicResource SizeIconButton}"/>
+                    </ImageButton.Source>
+                </ImageButton>
             </StackLayout>
-        </Frame>
+            <StackLayout Orientation="Vertical"
+                         BindableLayout.ItemsSource="{Binding Attacks}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="Transparent"
+                               BorderColor="Accent"
+                               Padding="{DynamicResource ListFramePadding}">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding AttackBonus}"/>
+                                <Label Text="{Binding DamageDice}"/>
+                                <Label Text="{Binding DamageType}"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </StackLayout>
     </ContentView.Content>
 </ContentView>

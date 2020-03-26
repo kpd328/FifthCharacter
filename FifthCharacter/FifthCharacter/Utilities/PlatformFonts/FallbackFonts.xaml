@@ -21,6 +21,8 @@
     <x:Single x:Key="ScaleCheckboxX">0.8</x:Single>
     <x:Single x:Key="ScaleCheckboxY">0.8</x:Single>
 
+    <x:Single x:Key="AbilityBasis">250</x:Single>
+
     <Thickness x:Key="CheckboxMargin">
         <x:Arguments>
             <x:Double>-10</x:Double>
@@ -41,6 +43,19 @@
             <x:Double>0</x:Double>
             <!--Right-->
             <x:Double>-5</x:Double>
+            <!--Bottom-->
+            <x:Double>0</x:Double>
+        </x:Arguments>
+    </Thickness>
+
+    <Thickness x:Key="ListFramePadding">
+        <x:Arguments>
+            <!--Left-->
+            <x:Double>0</x:Double>
+            <!--Top-->
+            <x:Double>0</x:Double>
+            <!--Right-->
+            <x:Double>0</x:Double>
             <!--Bottom-->
             <x:Double>0</x:Double>
         </x:Arguments>

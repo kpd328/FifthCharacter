@@ -29,59 +29,83 @@
             </Frame>
 
             <v:CharacterDefense FlexLayout.Basis="100%"
-                                    HorizontalOptions="FillAndExpand">
+                                HorizontalOptions="FillAndExpand">
                 <x:Arguments>
                     <vm:CharacterDefenseVM/>
                 </x:Arguments>
             </v:CharacterDefense>
 
-            <v:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                            FlexLayout.Grow="2">
                 <x:Arguments>
                     <abilities:StrengthAbility/>
                 </x:Arguments>
             </v:AbilityScore>
 
-            <v:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                            FlexLayout.Grow="2">
                 <x:Arguments>
                     <abilities:DexterityAbility/>
                 </x:Arguments>
             </v:AbilityScore>
 
-            <v:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                            FlexLayout.Grow="2">
                 <x:Arguments>
                     <abilities:ConstitutionAbility/>
                 </x:Arguments>
             </v:AbilityScore>
 
-            <v:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                            FlexLayout.Grow="2">
                 <x:Arguments>
                     <abilities:IntelligenceAbility/>
                 </x:Arguments>
             </v:AbilityScore>
 
-            <v:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                            FlexLayout.Grow="2">
                 <x:Arguments>
                     <abilities:WisdomAbility/>
                 </x:Arguments>
             </v:AbilityScore>
 
-            <v:AbilityScore FlexLayout.Grow="1">
+            <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                            FlexLayout.Grow="2">
                 <x:Arguments>
                     <abilities:CharismaAbility/>
                 </x:Arguments>
             </v:AbilityScore>
 
-            <v:AttacksList>
+            <!--Enforce New Line-->
+            <Frame FlexLayout.Basis="100%"
+                   BackgroundColor="Transparent"
+                   BorderColor="Transparent"
+                   MinimumHeightRequest="0"
+                   HeightRequest="0"
+                   Padding="-5"/>
+            <!---->
+
+            <v:AttacksList FlexLayout.Basis="300"
+                           FlexLayout.Grow="1">
                 <x:Arguments>
                     <vm:AttacksListVM/>
                 </x:Arguments>
             </v:AttacksList>
 
-            <v:SpellList>
+            <v:SpellList FlexLayout.Basis="300"
+                         FlexLayout.Grow="1">
                 <x:Arguments>
                     <vm:SpellListVM/>
                 </x:Arguments>
             </v:SpellList>
+
+            <v:FeaturesList FlexLayout.Basis="300"
+                            FlexLayout.Grow="1">
+                <x:Arguments>
+                    <vm:FeaturesListVM/>
+                </x:Arguments>
+            </v:FeaturesList>
         </FlexLayout>
     </ScrollView>
 </ContentPage>

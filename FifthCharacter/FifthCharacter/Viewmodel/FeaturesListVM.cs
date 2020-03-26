@@ -4,19 +4,16 @@ using FifthCharacter.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Text;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace FifthCharacter.Viewmodel {
-    public class AttacksListVM {
-        private AttacksList View;
+    public class FeaturesListVM {
+        private FeaturesList View;
 
-        public ObservableCollection<IAttack> Attacks => AttacksManager.Attacks;
+        public ObservableCollection<IFeature> Features => FeaturesManager.Features;
 
-        public void Bind(AttacksList view) {
-            View = view;
+        public void Bind(FeaturesList view) {
+            this.View = view;
             View.BindingContext = this;
         }
     }

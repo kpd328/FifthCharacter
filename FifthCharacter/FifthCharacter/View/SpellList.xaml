@@ -4,54 +4,63 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Margin="5"
              x:Class="FifthCharacter.View.SpellList">
     <ContentView.Content>
-        <Frame BackgroundColor="{DynamicResource PopupWindowColor}"
-               Padding="{DynamicResource AttacksListPadding}">
-            <StackLayout Orientation="Vertical"
-                   Spacing="10">
-                <StackLayout x:Name="HeaderButtons"
-                             Orientation="Horizontal"
-                             HorizontalOptions="EndAndExpand">
-                    <ImageButton BackgroundColor="Transparent"
-                                 Padding="{DynamicResource IconButtonPadding}">
-                        <ImageButton.Source>
-                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
-                                             Glyph="{DynamicResource AddCircle}"
-                                             Size="{DynamicResource SizeIconButton}"/>
-                        </ImageButton.Source>
-                    </ImageButton>
-                </StackLayout>
-                <ListView ItemsSource="{Binding Spells}"
-                          IsGroupingEnabled="True">
-                    <ListView.GroupHeaderTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Level}"/>
-                                    <!--Add Spell Slots from Magic Manager-->
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.GroupHeaderTemplate>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Frame BackgroundColor="Transparent"
-                                       BorderColor="Accent">
-                                    <StackLayout Orientation="Horizontal">
-                                        <CheckBox Color="Accent"
-                                                  ScaleX="{DynamicResource ScaleCheckboxX}"
-                                                  ScaleY="{DynamicResource ScaleCheckboxY}"
-                                                  Margin="{DynamicResource CheckboxMargin}"/>
-                                        <Label Text="{Binding Name}"/>
-                                    </StackLayout>
-                                </Frame>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+        <StackLayout Orientation="Vertical"
+                     Spacing="10"
+                     BackgroundColor="{DynamicResource PopupWindowColor}"
+                     Padding="{DynamicResource AttacksListPadding}">
+            <StackLayout x:Name="HeaderButtons"
+                         Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand">
+                <Label Text="Spells"
+                       HorizontalOptions="FillAndExpand"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"/>
+                <ImageButton BackgroundColor="Transparent"
+                             Padding="{DynamicResource IconButtonPadding}"
+                             HorizontalOptions="Center">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                         Glyph="{DynamicResource AddCircle}"
+                                         Size="{DynamicResource SizeIconButton}"/>
+                    </ImageButton.Source>
+                </ImageButton>
             </StackLayout>
-        </Frame>
+            <ListView ItemsSource="{Binding Spells}"
+                      IsGroupingEnabled="True"
+                      HeightRequest="300">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Level}"/>
+                                <!--Add Spell Slots from Magic Manager-->
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="Transparent"
+                                   BorderColor="Accent"
+                                   Padding="{DynamicResource ListFramePadding}">
+                                <StackLayout Orientation="Horizontal">
+                                    <CheckBox IsVisible="{Binding PreparedCaster}"
+                                              IsEnabled="{Binding PreparedCaster}"
+                                              Color="{DynamicResource InvertColor}"
+                                              ScaleX="{DynamicResource ScaleCheckboxX}"
+                                              ScaleY="{DynamicResource ScaleCheckboxY}"
+                                              Margin="{DynamicResource CheckboxMargin}"/>
+                                    <Label Text="{Binding Name}"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentView.Content>
 </ContentView>

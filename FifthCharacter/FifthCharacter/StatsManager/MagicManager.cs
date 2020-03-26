@@ -13,10 +13,11 @@ using System.Text;
 namespace FifthCharacter.StatsManager {
     public static class MagicManager {
         public static ObservableCollection<SpellLevelGroup> SpellsKnown { get; private set; }
+        public static bool IsPreparedCaster { get; private set; } = true; //The value of this should be pulled from the spellcasting class
 
         static MagicManager() {
             SpellsKnown = new ObservableCollection<SpellLevelGroup>() {
-                new SpellLevelGroup("Cantrip", new IMagic[]{
+                new SpellLevelGroup("Cantrips", new IMagic[]{
                     new FireBolt(),
                     new AcidSplash()
                 }),

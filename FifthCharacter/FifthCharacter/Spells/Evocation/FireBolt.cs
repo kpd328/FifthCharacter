@@ -18,6 +18,7 @@ namespace FifthCharacter.Spells.Evocation {
         public override string Duration => "Instantanious";
         public override string Targets => "A crature or object within range";
         public override string AreaOfEffect => "N/A";
+        public new bool PreparedCaster => false;
 
         public override string Name => "Fire Bolt";
         public string AttackBonus { get; }
