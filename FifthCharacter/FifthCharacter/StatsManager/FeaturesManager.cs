@@ -1,15 +1,17 @@
-﻿using FifthCharacter.Interface;
-using System;
-using System.Collections.Generic;
+﻿using FifthCharacter.Features.Class.Fighter;
+using FifthCharacter.Interface;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace FifthCharacter.StatsManager {
     public static class FeaturesManager {
         public static ObservableCollection<IFeature> Features { get; private set; }
 
         static FeaturesManager() {
-            Features = new ObservableCollection<IFeature>();
+            Features = new ObservableCollection<IFeature>() {
+                new FFighterFightingStyle(FightingStyle.DUELING),
+                new FFighterSecondWind(),
+                new FFighterActionSurge()
+            };
         }
     }
 }

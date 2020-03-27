@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:u="clr-namespace:FifthCharacter.Utilities"
              mc:Ignorable="d"
              Margin="5"
              x:Class="FifthCharacter.View.FeaturesList">
@@ -19,7 +20,20 @@
                          BindableLayout.ItemsSource="{Binding Features}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Label Text="{Binding Name}"/>
+                        <Frame BackgroundColor="Transparent"
+                               BorderColor="Accent"
+                               Padding="{DynamicResource ListFramePadding}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Popup}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal"
+                                         HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Name}"
+                                       HorizontalOptions="FillAndExpand"
+                                       HorizontalTextAlignment="Start"/>
+                                <u:CheckboxGroup BoxCount="{Binding ActiveUses}"/>
+                            </StackLayout>
+                        </Frame>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
