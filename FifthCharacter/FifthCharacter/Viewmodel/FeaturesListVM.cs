@@ -1,4 +1,4 @@
-﻿using FifthCharacter.Interface;
+﻿using FifthCharacter.Plugin.Interface;
 using FifthCharacter.StatsManager;
 using FifthCharacter.View;
 using System;

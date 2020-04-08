@@ -1,4 +1,4 @@
-﻿using FifthCharacter.Interface;
+﻿using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Utilities;
 using FifthCharacter.View.Popup;
 using Rg.Plugins.Popup.Services;

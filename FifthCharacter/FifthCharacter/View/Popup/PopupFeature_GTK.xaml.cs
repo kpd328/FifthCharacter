@@ -1,4 +1,4 @@
-﻿using FifthCharacter.Interface;
+﻿using FifthCharacter.Plugin.Interface;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

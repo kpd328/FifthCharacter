@@ -1,5 +1,5 @@
 ﻿using FifthCharacter.Attacks.Mechanics;
-using FifthCharacter.Interface;
+using FifthCharacter.Plugin.Interface;
 using System.Collections.Generic;
 
 namespace FifthCharacter.Attacks.Abstract {

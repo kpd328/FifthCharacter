@@ -1,7 +1,7 @@
 ﻿using FifthCharacter.Attacks.MartialMeleeWeapon;
 using FifthCharacter.Attacks.SimpleMeleeWeapon;
 using FifthCharacter.Attacks.SimpleRangedWeapon;
-using FifthCharacter.Interface;
+using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Spells.Evocation;
 using System;
 using System.Collections.Generic;

@@ -1,11 +1,7 @@
-﻿using FifthCharacter.Interface;
-using FifthCharacter.Spells;
+﻿using FifthCharacter.Spells;
 using FifthCharacter.StatsManager;
 using FifthCharacter.View;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace FifthCharacter.Viewmodel {
     public class SpellListVM {

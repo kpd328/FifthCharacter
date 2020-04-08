@@ -1,5 +1,5 @@
 ﻿using FifthCharacter.Features.Class.Fighter;
-using FifthCharacter.Interface;
+using FifthCharacter.Plugin.Interface;
 using System.Collections.ObjectModel;
 
 namespace FifthCharacter.StatsManager {

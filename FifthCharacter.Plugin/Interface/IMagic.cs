@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FifthCharacter.Interface {
+namespace FifthCharacter.Plugin.Interface {
     public interface IMagic {
         string Name { get; }
         SpellLevel SpellLevel { get; }

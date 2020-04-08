@@ -1,5 +1,5 @@
 ﻿using FifthCharacter.Attacks.Abstract;
-using FifthCharacter.Interface;
+using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Spells.Abstract;
 using System;
 using System.Collections.Generic;

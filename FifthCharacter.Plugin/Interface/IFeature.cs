@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace FifthCharacter.Interface {
+namespace FifthCharacter.Plugin.Interface {
     public interface IFeature {
         string Name { get; }
         string Source { get; }

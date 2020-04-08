@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FifthCharacter.Interface {
+namespace FifthCharacter.Plugin.Interface {
     public interface IAttack {
         string Name { get; }
         string AttackBonus { get; }

@@ -1,4 +1,5 @@
-﻿using FifthCharacter.Utilities;
+﻿using FifthCharacter.Plugin;
+using FifthCharacter.Utilities;
 using FifthCharacter.Utilities.PlatformFonts;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,17 @@ using Xamarin.Forms.Xaml;
 
 namespace FifthCharacter {
     public partial class App : Application {
+        internal PluginLoader Plugins;
+
         public App() {
             InitializeComponent();
+
+            try {
+                Plugins = new PluginLoader();
+                Plugins.LoadPlugins();
+            } catch(Exception e) {
+                System.Diagnostics.Debug.WriteLine(string.Format("Plugins could not be loaded: {0}", e.Message));
+            }
 
             MainPage = new NavigationPage(new MainPage());
         }

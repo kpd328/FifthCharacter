@@ -1,4 +1,4 @@
-﻿using FifthCharacter.Interface;
+﻿using FifthCharacter.Plugin.Interface;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

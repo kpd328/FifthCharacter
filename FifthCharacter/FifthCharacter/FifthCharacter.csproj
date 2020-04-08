@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\FifthCharacter.Plugin\FifthCharacter.Plugin.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Attacks\Mechanics\Property\WeapPropName.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WeapPropName.Designer.cs</LastGenOutput>

@@ -1,4 +1,4 @@
-﻿using FifthCharacter.Interface;
+﻿using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Spells;
 using FifthCharacter.Spells.Abjuration;
 using FifthCharacter.Spells.Conjuration;
