@@ -1,6 +1,6 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin.Attacks.Abstract;
+using FifthCharacter.Plugin.Interface;
 using System.Collections.Generic;
-using WotC.FifthEd.SRD.Attacks.Abstract;
 using WotC.FifthEd.SRD.Spells.Abstract;
 
 namespace WotC.FifthEd.SRD.Spells.Evocation {

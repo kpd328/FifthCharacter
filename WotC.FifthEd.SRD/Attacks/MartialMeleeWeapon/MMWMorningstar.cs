@@ -1,8 +1,7 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin.Attacks.Abstract;
+using FifthCharacter.Plugin.Interface;
 using System;
 using System.Collections.Generic;
-using WotC.FifthEd.SRD.Attacks.Abstract;
-using WotC.FifthEd.SRD.Attacks.Mechanics;
 
 namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
     public class MMWMorningstar : AMartialMeleeWeapon {

@@ -1,4 +1,4 @@
-﻿namespace WotC.FifthEd.SRD.Attacks.Abstract {
+﻿namespace FifthCharacter.Plugin.Attacks.Abstract {
     public interface IRangedSpellAttack : ISpellAttack {
     }
 }

@@ -1,11 +1,10 @@
 ﻿using FifthCharacter.Plugin.Interface;
 using System.Collections.Generic;
-using WotC.FifthEd.SRD.Attacks.Mechanics;
 
-namespace WotC.FifthEd.SRD.Attacks.Abstract {
+namespace FifthCharacter.Plugin.Attacks.Abstract {
     public abstract class AMartialWeapon : IAttack {
         public abstract string Name { get; }
-        public string ID => string.Format("{0}.{1}.{2}", SRD5.Name, GetType().Name, Name);
+        public string ID => string.Format("{0}.{1}", GetType().Name, Name);
         public abstract string AttackBonus { get; }
         public abstract string DamageDice { get; }
         public abstract string DamageType { get; }

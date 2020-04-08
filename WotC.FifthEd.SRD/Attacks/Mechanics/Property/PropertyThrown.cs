@@ -1,4 +1,6 @@
-﻿namespace WotC.FifthEd.SRD.Attacks.Mechanics.Property {
+﻿using FifthCharacter.Plugin.Attacks.Abstract;
+
+namespace WotC.FifthEd.SRD.Attacks.Mechanics.Property {
     public class PropertyThrown : IWeaponProperty {
         public string TextDescription => WeapPropTxt.Thrown;
         public string PropertyName => WeapPropName.Thrown;

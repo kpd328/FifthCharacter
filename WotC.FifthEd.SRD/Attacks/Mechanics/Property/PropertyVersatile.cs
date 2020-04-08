@@ -1,4 +1,5 @@
-﻿using FifthCharacter.Plugin.Tools;
+﻿using FifthCharacter.Plugin.Attacks.Abstract;
+using FifthCharacter.Plugin.Tools;
 
 namespace WotC.FifthEd.SRD.Attacks.Mechanics.Property {
     public class PropertyVersatile : IWeaponProperty {
