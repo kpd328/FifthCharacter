@@ -1,4 +1,5 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin.Features.Abstract;
+using FifthCharacter.Plugin.Interface;
 
 namespace WotC.FifthEd.SRD.Features.Class.Fighter {
     public class FFighterFightingStyle : AFeatureFighter {
@@ -56,14 +57,5 @@ namespace WotC.FifthEd.SRD.Features.Class.Fighter {
         public FFighterFightingStyle(FightingStyle style) => FightingStyle = style;
 
         public override IFeature GetInstance() => new FFighterFightingStyle(FightingStyle);
-    }
-
-    public enum FightingStyle {
-        ARCHERY,
-        DEFENSE,
-        DUELING,
-        GREATWEAPONFIGHTING,
-        PROTECTION,
-        TWOWEAPONFIGHTING
     }
 }
