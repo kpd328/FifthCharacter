@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FifthCharacter.Plugin.Interface;
+using System;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Attacks.Abstract;
 using WotC.FifthEd.SRD.Attacks.Mechanics;
@@ -18,5 +19,7 @@ namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
         public override string Weight => "2 lb.";
 
         public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>();
+
+        public override IAttack GetInstance() => new MMWFlail();
     }
 }

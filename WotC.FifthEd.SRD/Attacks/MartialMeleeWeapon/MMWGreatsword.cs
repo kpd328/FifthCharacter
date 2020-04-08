@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FifthCharacter.Plugin.Interface;
+using System;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Attacks.Abstract;
 using WotC.FifthEd.SRD.Attacks.Mechanics;
@@ -22,5 +23,7 @@ namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
             new PropertyHeavy(),
             new PropertyTwoHanded()
         };
+
+        public override IAttack GetInstance() => new MMWGreatsword();
     }
 }

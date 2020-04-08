@@ -1,5 +1,15 @@
 ﻿using FifthCharacter.Plugin;
 using FifthCharacter.Plugin.Tools;
+using WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon;
+using WotC.FifthEd.SRD.Attacks.MartialRangedWeapon;
+using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
+using WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon;
+using WotC.FifthEd.SRD.Features.Class.Fighter;
+using WotC.FifthEd.SRD.Spells.Abjuration;
+using WotC.FifthEd.SRD.Spells.Conjuration;
+using WotC.FifthEd.SRD.Spells.Enchantment;
+using WotC.FifthEd.SRD.Spells.Evocation;
+using WotC.FifthEd.SRD.Spells.Transmutation;
 
 namespace WotC.FifthEd.SRD {
     public class SRD5 : IPlugin {
@@ -15,10 +25,91 @@ namespace WotC.FifthEd.SRD {
         public string PluginVersion => Version;
         public string PluginID => ID;
 
-        public RaceDictionary Races => throw new System.NotImplementedException();
-        public MagicDictionary Magic => throw new System.NotImplementedException();
-        public AttackDictionary Attacks => throw new System.NotImplementedException();
-        public FeatureDictionary Features => throw new System.NotImplementedException();
-        public PlayerClassDictionary PlayerClasses => throw new System.NotImplementedException();
+        public RaceDictionary Races => new RaceDictionary();
+        public MagicDictionary Magic => new MagicDictionary() {
+            //Abjuration Spells
+            new Aid(),
+            new Alarm(),
+
+            //Conjuration Spells
+            new AcidSplash(),
+
+            //Divination Spells
+
+            //Enchantment Spells
+            new AnimalFriendship(),
+
+            //Evocation Spells
+            new FireBolt(),
+
+            //Illusion Spells
+
+            //Necromancy Spells
+
+            //Transmutation Spells
+            new AlterSelf()
+        };
+        //Only uncomment 'new' statements when their classes no longer throw 'NotImplementedException'
+        public AttackDictionary Attacks => new AttackDictionary() {
+            //Martial Melee Weapons
+            //new MMWBattleaxe(),
+            //new MMWFlail(),
+            //new MMWGlaive(),
+            //new MMWGreataxe(),
+            //new MMWGreatsword(),
+            //new MMWHalberd(),
+            //new MMWLance(),
+            new MMWLongsword(),
+            //new MMWMaul(),
+            //new MMWMorningstar(),
+            //new MMWPike(),
+            //new MMWRapier(),
+            //new MMWScimitar(),
+            //new MMWShortsword(),
+            //new MMWTrident(),
+            //new MMWWarhammer(),
+            //new MMWWarPick(),
+            //new MMWWhip(),
+
+            //Martial Ranged Weapons
+            //new MRWBlowgun(),
+            //new MRWHandCrossbow(),
+            //new MRWHeavyCrossbow(),
+            //new MRWLongbow(),
+            //new MRWNet(),
+
+            //Simple Melee Weapons
+            new SMWClub(),
+            new SMWDagger(),
+            new SMWGreatclub(),
+            new SMWHandaxe(),
+            new SMWJavelin(),
+            new SMWLightHammer(),
+            new SMWMace(),
+            new SMWQuarterstaff(),
+            new SMWSickle(),
+            new SMWSpear(),
+
+            //Simple Ranged Weapons
+            //new SRWDart(),
+            //new SRWLightCrossbow(),
+            //new SRWShortbow(),
+            //new SRWSling(),
+
+            //Evocation Spell Attacks
+            new FireBolt()
+        };
+        public FeatureDictionary Features => new FeatureDictionary() {
+            //Fighter Class Features
+            new FFighterActionSurge(),
+            new FFighterFightingStyle(FightingStyle.ARCHERY),
+            new FFighterFightingStyle(FightingStyle.DEFENSE),
+            new FFighterFightingStyle(FightingStyle.DUELING),
+            new FFighterFightingStyle(FightingStyle.GREATWEAPONFIGHTING),
+            new FFighterFightingStyle(FightingStyle.PROTECTION),
+            new FFighterFightingStyle(FightingStyle.TWOWEAPONFIGHTING),
+            new FFighterSecondWind()
+        };
+        public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary();
     }
 }

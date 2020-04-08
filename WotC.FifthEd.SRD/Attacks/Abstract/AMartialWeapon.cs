@@ -14,5 +14,7 @@ namespace WotC.FifthEd.SRD.Attacks.Abstract {
         public abstract string Cost { get; }
         public abstract string Weight { get; }
         public abstract IList<IWeaponProperty> Properties { get; }
+
+        public abstract IAttack GetInstance();
     }
 }

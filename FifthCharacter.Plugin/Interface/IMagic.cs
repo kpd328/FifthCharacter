@@ -14,7 +14,8 @@ namespace FifthCharacter.Plugin.Interface {
         string Duration { get; }
         string Targets { get; }
         string AreaOfEffect { get; }
-        bool PreparedCaster { get; }
+
+        IMagic GetInstance();
     }
 
     public enum SpellLevel {

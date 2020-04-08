@@ -1,5 +1,4 @@
-﻿using FifthCharacter.Features.Class.Fighter;
-using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin.Interface;
 using System.Collections.ObjectModel;
 
 namespace FifthCharacter.StatsManager {
@@ -8,9 +7,9 @@ namespace FifthCharacter.StatsManager {
 
         static FeaturesManager() {
             Features = new ObservableCollection<IFeature>() {
-                new FFighterFightingStyle(FightingStyle.DUELING),
-                new FFighterSecondWind(),
-                new FFighterActionSurge()
+                App.Plugins.Features["Fighting Style (Dueling)"].GetInstance(),
+                App.Plugins.Features["Second Wind"].GetInstance(),
+                App.Plugins.Features["Action Surge"].GetInstance()
             };
         }
     }

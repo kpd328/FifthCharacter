@@ -1,5 +1,4 @@
-﻿using FifthCharacter.Spells;
-using FifthCharacter.StatsManager;
+﻿using FifthCharacter.StatsManager;
 using FifthCharacter.View;
 using System.Collections.ObjectModel;
 

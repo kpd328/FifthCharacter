@@ -8,7 +8,7 @@ using Xamarin.Forms.Xaml;
 
 namespace FifthCharacter {
     public partial class App : Application {
-        internal PluginLoader Plugins;
+        internal static PluginLoader Plugins;
 
         public App() {
             InitializeComponent();

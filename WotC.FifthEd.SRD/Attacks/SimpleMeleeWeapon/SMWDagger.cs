@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using FifthCharacter.Plugin.Interface;
+using System.Collections.Generic;
 using WotC.FifthEd.SRD.Attacks.Abstract;
 using WotC.FifthEd.SRD.Attacks.Mechanics;
 using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
@@ -20,5 +21,7 @@ namespace WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon {
         public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>() {
             new  PropertyLight(), new PropertyFinesse(), new PropertyThrown(20,60)
         };
+
+        public override IAttack GetInstance() => new SMWDagger();
     }
 }

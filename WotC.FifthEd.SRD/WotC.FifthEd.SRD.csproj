@@ -5,6 +5,15 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.530" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\FifthCharacter.Plugin\FifthCharacter.Plugin.csproj" />
   </ItemGroup>
@@ -20,6 +29,22 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Features\Class\Fighter\FeatureFighterText.Designer.cs">
+      <DependentUpon>FeatureFighterText.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\Class\Fighter\FightingStyleText.Designer.cs">
+      <DependentUpon>FightingStyleText.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Popup\PopupFeature.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Popup\PopupFeature_GTK.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +54,14 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Attacks\Mechanics\Property\WeapPropTxt.resx">
       <LastGenOutput>WeapPropTxt.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Class\Fighter\FeatureFighterText.resx">
+      <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Class\Fighter\FightingStyleText.resx">
+      <LastGenOutput>FightingStyleText.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>

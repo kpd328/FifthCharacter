@@ -20,8 +20,8 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.396" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.530" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,14 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Features\Class\Fighter\FeatureFighterText.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Features\Class\Fighter\FightingStyleText.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>FightingStyleText.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="View\AbilityScore.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -61,28 +53,12 @@
     <EmbeddedResource Update="View\FeaturesList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Popup\PopupFeature.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\Popup\PopupFeature_GTK.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="View\SpellList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\Class\Fighter\FeatureFighterText.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>FeatureFighterText.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Features\Class\Fighter\FightingStyleText.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>FightingStyleText.resx</DependentUpon>
-    </Compile>
     <Compile Update="Utilities\PlatformFonts\FallbackFonts.xaml.cs">
       <DependentUpon>FallbackFonts.xaml</DependentUpon>
     </Compile>

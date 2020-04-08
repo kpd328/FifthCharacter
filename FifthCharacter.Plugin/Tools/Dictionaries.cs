@@ -6,7 +6,10 @@ namespace FifthCharacter.Plugin.Tools {
     public class RaceDictionary : KeyedCollection<string, IRace> {
         protected override string GetKeyForItem(IRace item) => item.Name;
         public void AddAll(IEnumerable<IRace> toAdd) {
-            foreach(IRace race in toAdd) {
+            if (toAdd == null) {
+                return;
+            }
+            foreach (IRace race in toAdd) {
                 Add(race);
             }
         }
@@ -15,6 +18,9 @@ namespace FifthCharacter.Plugin.Tools {
     public class MagicDictionary : KeyedCollection<string, IMagic> {
         protected override string GetKeyForItem(IMagic item) => item.Name;
         public void AddAll(IEnumerable<IMagic> toAdd) {
+            if (toAdd == null) {
+                return;
+            }
             foreach (IMagic magic in toAdd) {
                 Add(magic);
             }
@@ -24,6 +30,9 @@ namespace FifthCharacter.Plugin.Tools {
     public class AttackDictionary : KeyedCollection<string, IAttack> {
         protected override string GetKeyForItem(IAttack item) => item.Name;
         public void AddAll(IEnumerable<IAttack> toAdd) {
+            if (toAdd == null) {
+                return;
+            }
             foreach (IAttack attack in toAdd) {
                 Add(attack);
             }
@@ -33,6 +42,9 @@ namespace FifthCharacter.Plugin.Tools {
     public class FeatureDictionary : KeyedCollection<string, IFeature> {
         protected override string GetKeyForItem(IFeature item) => item.Name;
         public void AddAll(IEnumerable<IFeature> toAdd) {
+            if (toAdd == null) {
+                return;
+            }
             foreach (IFeature feature in toAdd) {
                 Add(feature);
             }
@@ -42,6 +54,9 @@ namespace FifthCharacter.Plugin.Tools {
     public class PlayerClassDictionary : KeyedCollection<string, IPlayerClass> {
         protected override string GetKeyForItem(IPlayerClass item) => item.Name;
         public void AddAll(IEnumerable<IPlayerClass> toAdd) {
+            if (toAdd == null) {
+                return;
+            }
             foreach (IPlayerClass playerClass in toAdd) {
                 Add(playerClass);
             }

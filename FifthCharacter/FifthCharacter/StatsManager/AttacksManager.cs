@@ -1,23 +1,16 @@
-﻿using FifthCharacter.Attacks.MartialMeleeWeapon;
-using FifthCharacter.Attacks.SimpleMeleeWeapon;
-using FifthCharacter.Attacks.SimpleRangedWeapon;
-using FifthCharacter.Plugin.Interface;
-using FifthCharacter.Spells.Evocation;
-using System;
-using System.Collections.Generic;
+﻿using FifthCharacter.Plugin.Interface;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace FifthCharacter.StatsManager {
     public static class AttacksManager {
         public static ObservableCollection<IAttack> Attacks { get; private set; }
 
         static AttacksManager() {
-            Attacks = new ObservableCollection<IAttack> {
-                new SMWDagger(),
-                new SMWHandaxe(),
-                new MMWLongsword(),
-                new FireBolt()
+            Attacks = new ObservableCollection<IAttack>() {
+                App.Plugins.Attacks["Dagger"].GetInstance(),
+                App.Plugins.Attacks["Handaxe"].GetInstance(),
+                App.Plugins.Attacks["Longsword"].GetInstance(),
+                App.Plugins.Attacks["Fire Bolt"].GetInstance()
             };
         }
     }

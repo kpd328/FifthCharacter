@@ -23,5 +23,7 @@ namespace FifthCharacter.Plugin.Interface {
         /// can work properly for Android, iOS, and UWP.
         /// </summary>
         ICommand Popup { get; }
+
+        IFeature GetInstance();
     }
 }

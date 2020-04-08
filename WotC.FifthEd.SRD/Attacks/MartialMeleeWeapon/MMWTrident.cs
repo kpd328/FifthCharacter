@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FifthCharacter.Plugin.Interface;
+using System;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Attacks.Abstract;
 using WotC.FifthEd.SRD.Attacks.Mechanics;
@@ -22,5 +23,7 @@ namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
             new PropertyThrown(20,60),
             new PropertyVersatile(1,8)
         };
+
+        public override IAttack GetInstance() => new MMWTrident();
     }
 }

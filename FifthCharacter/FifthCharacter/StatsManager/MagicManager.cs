@@ -1,14 +1,5 @@
 ﻿using FifthCharacter.Plugin.Interface;
-using FifthCharacter.Spells;
-using FifthCharacter.Spells.Abjuration;
-using FifthCharacter.Spells.Conjuration;
-using FifthCharacter.Spells.Enchantment;
-using FifthCharacter.Spells.Evocation;
-using FifthCharacter.Spells.Transmutation;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace FifthCharacter.StatsManager {
     public static class MagicManager {
@@ -18,16 +9,16 @@ namespace FifthCharacter.StatsManager {
         static MagicManager() {
             SpellsKnown = new ObservableCollection<SpellLevelGroup>() {
                 new SpellLevelGroup("Cantrips", new IMagic[]{
-                    new FireBolt(),
-                    new AcidSplash()
+                    App.Plugins.Magic["Fire Bolt"].GetInstance(),
+                    App.Plugins.Magic["Acid Splash"].GetInstance()
                 }),
                 new SpellLevelGroup("1st Level", new IMagic[]{
-                    new AnimalFriendship(),
-                    new Alarm()
+                    App.Plugins.Magic["Animal Friendship"].GetInstance(),
+                    App.Plugins.Magic["Alarm"].GetInstance()
                 }),
                 new SpellLevelGroup("2nd Level", new IMagic[]{
-                    new AlterSelf(),
-                    new Aid()
+                    App.Plugins.Magic["Alter Self"].GetInstance(),
+                    App.Plugins.Magic["Aid"].GetInstance()
                 }),
                 new SpellLevelGroup("3rd Level"),
                 new SpellLevelGroup("4th Level"),

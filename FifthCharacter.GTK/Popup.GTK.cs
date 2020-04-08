@@ -1,9 +1,8 @@
 ﻿using FifthCharacter.GTK;
-using FifthCharacter.Utilities;
+using FifthCharacter.Plugin.Interface;
 using Gtk;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.GTK;
 using Xamarin.Forms.Platform.GTK.Extensions;
 
 [assembly: Dependency(typeof(Popup))]

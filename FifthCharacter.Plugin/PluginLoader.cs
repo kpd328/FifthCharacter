@@ -8,11 +8,11 @@ using System.Reflection;
 namespace FifthCharacter.Plugin {
     public class PluginLoader {
         public static List<IPlugin> Plugins { get; private set; }
-        public RaceDictionary Races { get; private set; }
-        public MagicDictionary Magic { get; private set; }
-        public AttackDictionary Attacks { get; private set; }
-        public FeatureDictionary Features { get; private set; }
-        public PlayerClassDictionary PlayerClasses { get; private set; }
+        public RaceDictionary Races { get; private set; } = new RaceDictionary();
+        public MagicDictionary Magic { get; private set; } = new MagicDictionary();
+        public AttackDictionary Attacks { get; private set; } = new AttackDictionary();
+        public FeatureDictionary Features { get; private set; } = new FeatureDictionary();
+        public PlayerClassDictionary PlayerClasses { get; private set; } = new PlayerClassDictionary();
 
         public void LoadPlugins() {
             Plugins = new List<IPlugin>();

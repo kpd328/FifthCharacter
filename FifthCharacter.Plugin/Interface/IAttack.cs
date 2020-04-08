@@ -10,5 +10,7 @@ namespace FifthCharacter.Plugin.Interface {
         string DamageDice { get; }
         string DamageType { get; }
         string Range { get; }
+
+        IAttack GetInstance();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FifthCharacter.Plugin.Interface;
+using System;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Attacks.Abstract;
 using WotC.FifthEd.SRD.Attacks.Mechanics;
@@ -20,5 +21,7 @@ namespace WotC.FifthEd.SRD.Attacks.MartialRangedWeapon {
         public override string Weight => "3 lb.";
 
         public override IList<IWeaponProperty> Properties => throw new NotImplementedException();
+
+        public override IAttack GetInstance() => new MRWHandCrossbow();
     }
 }
