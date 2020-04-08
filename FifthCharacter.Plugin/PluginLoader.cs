@@ -21,7 +21,8 @@ namespace FifthCharacter.Plugin {
                 string[] files = Directory.GetFiles(Constants.FolderName);
                 foreach(string file in files) {
                     if (file.EndsWith(".dll")) {
-                        Assembly.LoadFile(Path.GetFullPath(file));
+                        //Assembly.LoadFile(Path.GetFullPath(file));
+                        Assembly.UnsafeLoadFrom(Path.GetFullPath(file));
                     }
                 }
             }
