@@ -3,6 +3,7 @@
 namespace FifthCharacter.Plugin.Interface {
     public interface IFeature {
         string Name { get; }
+        string ID { get; }
         string Source { get; }
         string Text { get; }
         /// <summary>

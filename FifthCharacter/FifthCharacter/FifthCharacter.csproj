@@ -29,10 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Attacks\Mechanics\Property\WeapPropName.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>WeapPropName.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Features\Class\Fighter\FeatureFighterText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>
@@ -46,10 +42,6 @@
     </EmbeddedResource>
     <EmbeddedResource Update="View\AttacksList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Attacks\Mechanics\Property\WeapPropTxt.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>WeapPropTxt.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="View\CharacterDefense.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -81,16 +73,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Attacks\Mechanics\Property\WeapPropName.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>WeapPropName.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Attacks\Mechanics\Property\WeapPropTxt.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>WeapPropTxt.resx</DependentUpon>
-    </Compile>
     <Compile Update="Features\Class\Fighter\FeatureFighterText.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

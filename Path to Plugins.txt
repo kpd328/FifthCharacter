@@ -1,0 +1,1 @@
+x86 UWP (Debug): %RepositoryDirectory%\FifthCharacter\FifthCharacter\FifthCharacter.UWP\bin\x86\Debug\AppX\Plugins

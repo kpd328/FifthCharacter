@@ -1,14 +1,19 @@
-﻿using System;
+﻿using FifthCharacter.Plugin.Tools;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace FifthCharacter.Plugin {
     public class PluginLoader {
-        public static List<IPlugin> Plugins { get; set; }
-        
+        public static List<IPlugin> Plugins { get; private set; }
+        public RaceDictionary Races { get; private set; }
+        public MagicDictionary Magic { get; private set; }
+        public AttackDictionary Attacks { get; private set; }
+        public FeatureDictionary Features { get; private set; }
+        public PlayerClassDictionary PlayerClasses { get; private set; }
+
         public void LoadPlugins() {
             Plugins = new List<IPlugin>();
 
@@ -28,6 +33,14 @@ namespace FifthCharacter.Plugin {
                 .ToArray();
             foreach(Type type in types) {
                 Plugins.Add((IPlugin)Activator.CreateInstance(type));
+            }
+
+            foreach(IPlugin plugin in Plugins) {
+                Races.AddAll(plugin.Races);
+                Magic.AddAll(plugin.Magic);
+                Attacks.AddAll(plugin.Attacks);
+                Features.AddAll(plugin.Features);
+                PlayerClasses.AddAll(plugin.PlayerClasses);
             }
         }
     }

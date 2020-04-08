@@ -5,6 +5,7 @@ using System.Text;
 namespace FifthCharacter.Plugin.Interface {
     public interface IMagic {
         string Name { get; }
+        string ID { get; }
         SpellLevel SpellLevel { get; }
         bool Ritual { get; }
         string CastingTime { get; }
