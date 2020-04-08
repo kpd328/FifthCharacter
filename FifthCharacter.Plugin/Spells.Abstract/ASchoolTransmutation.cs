@@ -1,7 +1,7 @@
 ﻿using FifthCharacter.Plugin.Interface;
 using System.Collections.Generic;
 
-namespace WotC.FifthEd.SRD.Spells.Abstract {
+namespace FifthCharacter.Plugin.Spells.Abstract {
     public abstract class ASchoolTransmutation : IMagic {
         public abstract SpellLevel SpellLevel { get; }
         public abstract bool Ritual { get; }
@@ -12,7 +12,7 @@ namespace WotC.FifthEd.SRD.Spells.Abstract {
         public abstract string Targets { get; }
         public abstract string AreaOfEffect { get; }
         public abstract string Name { get; }
-        public string ID => string.Format("{0}.{1}.{2}", SRD5.Name, GetType().Name, Name);
+        public string ID => string.Format("{0}.{1}", GetType().Name, Name);
 
         public abstract IMagic GetInstance();
     }

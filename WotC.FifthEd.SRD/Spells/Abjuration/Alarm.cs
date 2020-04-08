@@ -1,6 +1,6 @@
 ﻿using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Spells.Abstract;
 using System.Collections.Generic;
-using WotC.FifthEd.SRD.Spells.Abstract;
 
 namespace WotC.FifthEd.SRD.Spells.Abjuration {
     public class Alarm : ASchoolAbjuration {
