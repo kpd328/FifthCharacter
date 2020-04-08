@@ -52,31 +52,31 @@ namespace WotC.FifthEd.SRD {
         //Only uncomment 'new' statements when their classes no longer throw 'NotImplementedException'
         public AttackDictionary Attacks => new AttackDictionary() {
             //Martial Melee Weapons
-            //new MMWBattleaxe(),
-            //new MMWFlail(),
-            //new MMWGlaive(),
-            //new MMWGreataxe(),
-            //new MMWGreatsword(),
-            //new MMWHalberd(),
-            //new MMWLance(),
+            new MMWBattleaxe(),
+            new MMWFlail(),
+            new MMWGlaive(),
+            new MMWGreataxe(),
+            new MMWGreatsword(),
+            new MMWHalberd(),
+            new MMWLance(),
             new MMWLongsword(),
-            //new MMWMaul(),
-            //new MMWMorningstar(),
-            //new MMWPike(),
-            //new MMWRapier(),
-            //new MMWScimitar(),
-            //new MMWShortsword(),
-            //new MMWTrident(),
-            //new MMWWarhammer(),
-            //new MMWWarPick(),
-            //new MMWWhip(),
+            new MMWMaul(),
+            new MMWMorningstar(),
+            new MMWPike(),
+            new MMWRapier(),
+            new MMWScimitar(),
+            new MMWShortsword(),
+            new MMWTrident(),
+            new MMWWarhammer(),
+            new MMWWarPick(),
+            new MMWWhip(),
 
             //Martial Ranged Weapons
-            //new MRWBlowgun(),
-            //new MRWHandCrossbow(),
-            //new MRWHeavyCrossbow(),
-            //new MRWLongbow(),
-            //new MRWNet(),
+            new MRWBlowgun(),
+            new MRWHandCrossbow(),
+            new MRWHeavyCrossbow(),
+            new MRWLongbow(),
+            new MRWNet(),
 
             //Simple Melee Weapons
             new SMWClub(),
@@ -91,10 +91,10 @@ namespace WotC.FifthEd.SRD {
             new SMWSpear(),
 
             //Simple Ranged Weapons
-            //new SRWDart(),
-            //new SRWLightCrossbow(),
-            //new SRWShortbow(),
-            //new SRWSling(),
+            new SRWDart(),
+            new SRWLightCrossbow(),
+            new SRWShortbow(),
+            new SRWSling(),
 
             //Evocation Spell Attacks
             new FireBolt()

@@ -8,17 +8,11 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
     public class MMWShortsword : AMartialMeleeWeapon {
         public override string Name => "Shortsword";
-
-        public override string AttackBonus => throw new NotImplementedException();
-
+        public override string AttackBonus { get; }
         public override string DamageDice => "1d6";
-
         public override string DamageType => "Piercing";
-
         public override string Cost => "10 gp";
-
         public override string Weight => "2 lb.";
-
         public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>() {
             new PropertyFinesse(),
             new PropertyLight()
