@@ -1,0 +1,32 @@
+﻿using FifthCharacter.Plugin.Attacks.Abstract;
+using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Spells.Abstract;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace WotC.FifthEd.SRD.Spells.Evocation {
+    public class ArcaneSword : ASchoolEvocation, IMeleeSpellAttack {
+        public override SpellLevel SpellLevel => throw new NotImplementedException();
+        public override bool Ritual => throw new NotImplementedException();
+        public override string CastingTime => throw new NotImplementedException();
+        public override string Range => throw new NotImplementedException();
+        public override IList<string> Components => throw new NotImplementedException();
+        public override string Duration => throw new NotImplementedException();
+        public override string Targets => throw new NotImplementedException();
+        public override string AreaOfEffect => throw new NotImplementedException();
+        public override string Name => throw new NotImplementedException();
+
+        public string AttackBonus => throw new NotImplementedException();
+        public string DamageDice => throw new NotImplementedException();
+        public string DamageType => throw new NotImplementedException();
+
+        public override IMagic GetInstance() {
+            throw new NotImplementedException();
+        }
+
+        IAttack IAttack.GetInstance() {
+            throw new NotImplementedException();
+        }
+    }
+}

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Xamarin.Forms;
 
 namespace FifthCharacter.Plugin {
     public class PluginLoader {
@@ -21,7 +22,6 @@ namespace FifthCharacter.Plugin {
                 string[] files = Directory.GetFiles(Constants.FolderName);
                 foreach(string file in files) {
                     if (file.EndsWith(".dll")) {
-                        //Assembly.LoadFile(Path.GetFullPath(file));
                         Assembly.UnsafeLoadFrom(Path.GetFullPath(file));
                     }
                 }
