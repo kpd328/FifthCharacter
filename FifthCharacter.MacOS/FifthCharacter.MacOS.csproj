@@ -59,6 +59,10 @@
     </XamMacArch>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="netstandard" />
+    <Reference Include="Rg.Plugins.Popup, Version=2.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rg.Plugins.Popup.2.0.0.2\lib\xamarinmac20\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
