@@ -117,18 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AbilityScoreImprovement" xml:space="preserve">
+    <value>When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</value>
+    <comment>4th Level</comment>
+  </data>
   <data name="ActionSurge" xml:space="preserve">
-    <value>Starting at 2nd leveI, you can push yourself beyond your normal limits for a moment. On your turn, you can take
-one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or
-long rest before you can use it again.\nStarting at 17th level, you can use it twice before a rest, but only once on
-the same turn.</value>
+    <value>Starting at 2nd leveI, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again.\nStarting at 17th level, you can use it twice before a rest, but only once on the same turn.</value>
+    <comment>2nd Level, 17th Level</comment>
   </data>
   <data name="FightingStyle" xml:space="preserve">
     <value>You adopt a particular style of fighting as your specialty. Choose one of the following options (Archery, Defense, Dueling, Great Weapon Fighting, Protection, Two-Weapon Fighting). You can't take a Fighting Style option more than once, even if you later get to choose again.</value>
+    <comment>1st Level</comment>
+  </data>
+  <data name="MartialArchetype" xml:space="preserve">
+    <value>At 3rd level, you choose an archetype that you strive toemulate in your combat styles and techniques, such as Champion. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level.</value>
+    <comment>3rd Level</comment>
   </data>
   <data name="SecondWind" xml:space="preserve">
-    <value>You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use
-a bonus action to regain hit points equal to 1d10 + your fighter leveI. Once you use this feature, you must finish a short or
-long rest before you can use it again.</value>
+    <value>You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter leveI. Once you use this feature, you must finish a short or long rest before you can use it again.</value>
+    <comment>1st Level</comment>
   </data>
 </root>

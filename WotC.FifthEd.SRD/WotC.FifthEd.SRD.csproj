@@ -10,7 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.2" />
+    <PackageReference Include="SD.Tools.Algorithmia" Version="1.4.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.530" />
   </ItemGroup>
 
@@ -29,12 +30,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Features\Class\Fighter\FeatureFighterText.Designer.cs">
+    <Compile Update="Features\PlayerClass\Fighter\FeatureFighterText.Designer.cs">
       <DependentUpon>FeatureFighterText.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Features\Class\Fighter\FightingStyleText.Designer.cs">
+    <Compile Update="Features\PlayerClass\Fighter\FightingStyleText.Designer.cs">
       <DependentUpon>FightingStyleText.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -56,11 +57,11 @@
       <LastGenOutput>WeapPropTxt.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Features\Class\Fighter\FeatureFighterText.resx">
+    <EmbeddedResource Update="Features\PlayerClass\Fighter\FeatureFighterText.resx">
       <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Features\Class\Fighter\FightingStyleText.resx">
+    <EmbeddedResource Update="Features\PlayerClass\Fighter\FightingStyleText.resx">
       <LastGenOutput>FightingStyleText.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>

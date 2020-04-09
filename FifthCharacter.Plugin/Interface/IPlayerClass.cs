@@ -7,9 +7,12 @@ namespace FifthCharacter.Plugin.Interface {
         string Name { get; }
         string ID { get; }
         Dice HitDicePerLevel { get; }
-        Dictionary<int, IFeature> ClassFeatures { get; }
+        Dice CurrentTotalHitDice { get; }
+        IList<IFeature> ClassFeatures { get; }
+        int Level { get; }
 
         IPlayerClass GetInstance();
         IPlayerClass GetInstance(FightingStyle style);
+        void LevelUp();
     }
 }

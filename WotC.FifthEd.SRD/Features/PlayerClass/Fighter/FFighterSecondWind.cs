@@ -1,6 +1,6 @@
 ﻿using FifthCharacter.Plugin.Interface;
 
-namespace WotC.FifthEd.SRD.Features.Class.Fighter {
+namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
     public class FFighterSecondWind : AFeatureFighter {
         public override string Name => "Second Wind";
         public override string Text => FeatureFighterText.SecondWind;

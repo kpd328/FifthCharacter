@@ -1,10 +1,12 @@
 ﻿using FifthCharacter.Plugin;
+using FifthCharacter.Plugin.Features.Abstract;
 using FifthCharacter.Plugin.Tools;
 using WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.MartialRangedWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon;
-using WotC.FifthEd.SRD.Features.Class.Fighter;
+using WotC.FifthEd.SRD.Features.PlayerClass.Fighter;
+using WotC.FifthEd.SRD.PlayerClass;
 using WotC.FifthEd.SRD.Spells.Abjuration;
 using WotC.FifthEd.SRD.Spells.Conjuration;
 using WotC.FifthEd.SRD.Spells.Enchantment;
@@ -110,6 +112,8 @@ namespace WotC.FifthEd.SRD {
             new FFighterFightingStyle(FightingStyle.TWOWEAPONFIGHTING),
             new FFighterSecondWind()
         };
-        public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary();
+        public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
+            new Fighter()
+        };
     }
 }

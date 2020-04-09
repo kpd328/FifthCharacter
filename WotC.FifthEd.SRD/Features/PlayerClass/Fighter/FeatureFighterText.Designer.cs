@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WotC.FifthEd.SRD.Features.Class.Fighter {
+namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WotC.FifthEd.SRD.Features.Class.Fighter {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WotC.FifthEd.SRD.Features.Class.Fighter.FeatureFighterText", typeof(FeatureFighterText).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WotC.FifthEd.SRD.Features.PlayerClass.Fighter.FeatureFighterText", typeof(FeatureFighterText).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,10 +61,16 @@ namespace WotC.FifthEd.SRD.Features.Class.Fighter {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Starting at 2nd leveI, you can push yourself beyond your normal limits for a moment. On your turn, you can take
-        ///one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or
-        ///long rest before you can use it again.\nStarting at 17th level, you can use it twice before a rest, but only once on
-        ///the same turn..
+        ///   Looks up a localized string similar to When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature..
+        /// </summary>
+        internal static string AbilityScoreImprovement {
+            get {
+                return ResourceManager.GetString("AbilityScoreImprovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting at 2nd leveI, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again.\nStarting at 17th level, you can use it twice before a rest, but only once on the same turn..
         /// </summary>
         internal static string ActionSurge {
             get {
@@ -82,9 +88,16 @@ namespace WotC.FifthEd.SRD.Features.Class.Fighter {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use
-        ///a bonus action to regain hit points equal to 1d10 + your fighter leveI. Once you use this feature, you must finish a short or
-        ///long rest before you can use it again..
+        ///   Looks up a localized string similar to At 3rd level, you choose an archetype that you strive toemulate in your combat styles and techniques, such as Champion. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level..
+        /// </summary>
+        internal static string MartialArchetype {
+            get {
+                return ResourceManager.GetString("MartialArchetype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter leveI. Once you use this feature, you must finish a short or long rest before you can use it again..
         /// </summary>
         internal static string SecondWind {
             get {

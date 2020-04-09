@@ -5,7 +5,7 @@ using System.Windows.Input;
 using WotC.FifthEd.SRD.Popup;
 using Xamarin.Forms;
 
-namespace WotC.FifthEd.SRD.Features.Class.Fighter {
+namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
     public abstract class AFeatureFighter : IFeature {
         public abstract string Name { get; }
         public string Source => "Class Fighter";

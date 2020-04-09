@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WotC.FifthEd.SRD.Features.Class.Fighter {
+namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WotC.FifthEd.SRD.Features.Class.Fighter {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WotC.FifthEd.SRD.Features.Class.Fighter.FightingStyleText", typeof(FightingStyleText).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WotC.FifthEd.SRD.Features.PlayerClass.Fighter.FightingStyleText", typeof(FightingStyleText).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

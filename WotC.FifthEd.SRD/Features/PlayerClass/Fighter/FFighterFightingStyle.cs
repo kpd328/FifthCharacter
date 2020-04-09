@@ -1,7 +1,7 @@
 ﻿using FifthCharacter.Plugin.Features.Abstract;
 using FifthCharacter.Plugin.Interface;
 
-namespace WotC.FifthEd.SRD.Features.Class.Fighter {
+namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
     public class FFighterFightingStyle : AFeatureFighter {
         public override string Name {
             get {
