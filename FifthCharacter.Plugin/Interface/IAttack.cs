@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 
 namespace FifthCharacter.Plugin.Interface {
     public interface IAttack {
@@ -10,6 +11,8 @@ namespace FifthCharacter.Plugin.Interface {
         string DamageDice { get; }
         string DamageType { get; }
         string Range { get; }
+
+        ICommand Popup { get; }
 
         IAttack GetInstance();
     }
