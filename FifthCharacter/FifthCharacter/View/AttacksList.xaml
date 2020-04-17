@@ -20,7 +20,8 @@
                        HorizontalTextAlignment="Center"/>
                 <ImageButton BackgroundColor="Transparent"
                              Padding="{DynamicResource IconButtonPadding}"
-                             HorizontalOptions="End">
+                             HorizontalOptions="End"
+                             Command="{Binding AddAttack}">
                     <ImageButton.Source>
                         <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
                                          Glyph="{DynamicResource AddCircle}"

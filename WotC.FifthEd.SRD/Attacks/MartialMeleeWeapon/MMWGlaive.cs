@@ -9,7 +9,7 @@ namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
         public override string Name => "Glaive";
         public override string AttackBonus { get; }
         public override string DamageDice => "1d10";
-        public override string DamageType => throw new NotImplementedException();
+        public override string DamageType => "Slashing";
         public override string Cost => "20 gp";
         public override string Weight => "6 lb.";
         public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>() {
