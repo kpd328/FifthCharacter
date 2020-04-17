@@ -24,22 +24,6 @@ namespace WotC.FifthEd.SRD.Spells.Evocation {
         public string DamageDice => throw new NotImplementedException();
         public string DamageType => throw new NotImplementedException();
 
-        private ICommand _popup;
-        public ICommand Popup => _popup ?? (_popup = new Command(() => {
-            switch (Device.RuntimePlatform) {
-                case Device.UWP:
-                case Device.iOS:
-                case Device.Android:
-                    PopupNavigation.Instance.PushAsync(new PopupAttack(this));
-                    break;
-                case Device.GTK:
-                    DependencyService.Get<IPopup>().PushAsync(new PopupAttack_GTK(this));
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
-        }));
-
         public override IMagic GetInstance() => new AcidArrow();
 
         IAttack IAttack.GetInstance() => new AcidArrow();

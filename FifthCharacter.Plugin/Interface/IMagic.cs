@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Windows.Input;
 
 namespace FifthCharacter.Plugin.Interface {
     public interface IMagic {
@@ -14,6 +13,8 @@ namespace FifthCharacter.Plugin.Interface {
         string Duration { get; }
         string Targets { get; }
         string AreaOfEffect { get; }
+
+        ICommand Popup { get; }
 
         IMagic GetInstance();
     }
