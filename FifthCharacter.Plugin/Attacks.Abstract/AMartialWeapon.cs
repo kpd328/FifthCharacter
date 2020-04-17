@@ -1,5 +1,6 @@
 ﻿using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Popup;
+using FifthCharacter.Plugin.StatsManager;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace FifthCharacter.Plugin.Attacks.Abstract {
 
         public abstract string Cost { get; }
         public abstract string Weight { get; }
+        public abstract string WeaponType { get; }
         public abstract IList<IWeaponProperty> Properties { get; }
 
         private ICommand _popup;
@@ -33,6 +35,12 @@ namespace FifthCharacter.Plugin.Attacks.Abstract {
                 default:
                     throw new NotImplementedException();
             }
+        }));
+
+        private ICommand _addAttack;
+        public ICommand AddAttack => _addAttack ?? (_addAttack = new Command(() => {
+            AttacksManager.Attacks.Add(this);
+            PopupNavigation.Instance.PopAsync();
         }));
 
         public abstract IAttack GetInstance();

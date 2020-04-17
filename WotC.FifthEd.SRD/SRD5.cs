@@ -96,10 +96,7 @@ namespace WotC.FifthEd.SRD {
             new SRWDart(),
             new SRWLightCrossbow(),
             new SRWShortbow(),
-            new SRWSling(),
-
-            //Evocation Spell Attacks
-            new FireBolt()
+            new SRWSling()
         };
         public FeatureDictionary Features => new FeatureDictionary() {
             //Fighter Class Features

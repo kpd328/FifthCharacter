@@ -40,7 +40,8 @@
                                 <TapGestureRecognizer Command="{Binding Popup}"/>
                             </Frame.GestureRecognizers>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Name}"
+                                       HorizontalOptions="StartAndExpand"/>
                                 <Label Text="{Binding AttackBonus}"/>
                                 <Label Text="{Binding DamageDice}"/>
                                 <Label Text="{Binding DamageType}"/>

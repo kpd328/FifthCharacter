@@ -26,6 +26,14 @@ namespace WotC.FifthEd.SRD.Spells.Evocation {
         public string AttackBonus { get; }
         public string DamageDice => "1d10";
         public string DamageType => "Fire";
+        public string WeaponType => "Ranged Spell Attack";
+
+        private ICommand _addAttack;
+        public ICommand AddAttack => _addAttack ?? (_addAttack = new Command(() => {
+            PopupNavigation.Instance.PopAsync();
+        }));
+
+        public IList<IWeaponProperty> Properties => new List<IWeaponProperty>();
 
         public override IMagic GetInstance() => new FireBolt();
         IAttack IAttack.GetInstance() => new FireBolt();

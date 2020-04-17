@@ -23,9 +23,16 @@ namespace WotC.FifthEd.SRD.Spells.Evocation {
         public string AttackBonus { get; }
         public string DamageDice => throw new NotImplementedException();
         public string DamageType => throw new NotImplementedException();
+        public string WeaponType => "Melee Spell Attack";
+
+        private ICommand _addAttack;
+        public ICommand AddAttack => _addAttack ?? (_addAttack = new Command(() => {
+            PopupNavigation.Instance.PopAsync();
+        }));
+
+        public IList<IWeaponProperty> Properties => new List<IWeaponProperty>();
 
         public override IMagic GetInstance() => new ArcaneSword();
-
         IAttack IAttack.GetInstance() => new ArcaneSword();
     }
 }

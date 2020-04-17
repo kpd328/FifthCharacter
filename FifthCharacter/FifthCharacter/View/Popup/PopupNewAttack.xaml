@@ -40,13 +40,48 @@
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding AddAttack}"/>
                             </Frame.GestureRecognizers>
-                            <StackLayout Orientation="Horizontal">
+                            <Grid HorizontalOptions="FillAndExpand"
+                                  VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
                                 <Label Text="{Binding Name}"
-                                       HorizontalOptions="StartAndExpand"/>
-                                <Label Text="{Binding AttackBonus}"/>
-                                <Label Text="{Binding DamageDice}"/>
-                                <Label Text="{Binding DamageType}"/>
-                            </StackLayout>
+                                       FontAttributes="Bold"
+                                       Grid.Row="0"
+                                       Grid.Column="0"/>
+                                <Label Text="{Binding WeaponType}"
+                                       FontAttributes="Italic"
+                                       Grid.Row="0"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding AttackBonus}"
+                                       Grid.Row="0"
+                                       Grid.Column="2"/>
+                                <Label Text="{Binding DamageDice}"
+                                       Grid.Row="0"
+                                       Grid.Column="3"/>
+                                <Label Text="{Binding DamageType}"
+                                       Grid.Row="0"
+                                       Grid.Column="4"/>
+                                <StackLayout Orientation="Vertical"
+                                             Grid.Row="1"
+                                             Grid.Column="0"
+                                             Grid.ColumnSpan="5"
+                                             BindableLayout.ItemsSource="{Binding Properties}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding PropertyName}"/>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
                         </Frame>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>

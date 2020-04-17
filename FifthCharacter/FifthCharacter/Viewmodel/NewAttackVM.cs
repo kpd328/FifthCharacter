@@ -13,11 +13,6 @@ namespace FifthCharacter.Viewmodel {
 
         public ObservableCollection<IAttack> AttacksList { get; private set; }
 
-        private ICommand _addAttack;
-        public ICommand AddAttack => _addAttack ?? (_addAttack = new Command(() => {
-            PopupNavigation.Instance.PopAsync();
-        }));
-
         public NewAttackVM() {
             AttacksList = new ObservableCollection<IAttack>(App.Plugins.Attacks.AsEnumerable());
         }
