@@ -1,5 +1,7 @@
 ﻿using FifthCharacter.Plugin.Features.Abstract;
 using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Proficiencies.Armor;
+using FifthCharacter.Plugin.Proficiencies.Attacks;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
 using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
@@ -31,18 +33,23 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             //Add other features as implemented
         };
 
-        internal Fighter() {
+        internal Fighter() { }
 
-        }
-
-        internal Fighter(bool isPrimary) : base() {
+        private Fighter(bool isPrimary) : base() {
             if (isPrimary) {
                 ProficiencyManager.Proficiencies.Add(new ProfStrengthSave("Class Fighter"));
                 ProficiencyManager.Proficiencies.Add(new ProfConstitutionSave("Class Fighter"));
-                //TODO: Add prof to all armor, shields, simple weapons, and martial weapons
+                ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon("Class Fighter"));
+                ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon("Class Fighter"));
+                ProficiencyManager.Proficiencies.Add(new ProfArmor("Class Fighter"));
+                ProficiencyManager.Proficiencies.Add(new ProfArmorShield("Class Fighter"));
                 //TODO: Add prompt to pick skills
             } else {
-                //TODO: Add prof to light armor, medium armor, shields, simple weapons, martial weapons
+                ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon("Class Fighter"));
+                ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon("Class Fighter"));
+                ProficiencyManager.Proficiencies.Add(new ProfArmorLight("Class Fighter"));
+                ProficiencyManager.Proficiencies.Add(new ProfArmorMedium("Class Fighter"));
+                ProficiencyManager.Proficiencies.Add(new ProfArmorShield("Class Fighter"));
             }
         }
 
