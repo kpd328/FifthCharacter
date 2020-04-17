@@ -1,4 +1,4 @@
-﻿namespace FifthCharacter.StatsManager {
+﻿namespace FifthCharacter.Plugin.StatsManager {
     /// <summary>
     /// As a note, this is very TEMPORARY.
     /// PLEASE, reimplement with something

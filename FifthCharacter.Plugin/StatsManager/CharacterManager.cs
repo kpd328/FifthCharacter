@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FifthCharacter.StatsManager {
+﻿namespace FifthCharacter.Plugin.StatsManager {
     public static class CharacterManager {
         //TODO: Save information to static location
 

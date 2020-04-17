@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FifthCharacter.StatsManager {
+﻿namespace FifthCharacter.Plugin.StatsManager {
     /*
      * This class helps with facilitating gathering information on the active character
      * from static memory and switching which avaliable characters the user can switch

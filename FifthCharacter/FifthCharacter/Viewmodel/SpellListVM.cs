@@ -1,4 +1,4 @@
-﻿using FifthCharacter.StatsManager;
+﻿using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.View;
 using System.Collections.ObjectModel;
 

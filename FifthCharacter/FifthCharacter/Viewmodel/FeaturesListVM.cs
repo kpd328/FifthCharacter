@@ -1,10 +1,7 @@
 ﻿using FifthCharacter.Plugin.Interface;
-using FifthCharacter.StatsManager;
+using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.View;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace FifthCharacter.Viewmodel {
     public class FeaturesListVM {

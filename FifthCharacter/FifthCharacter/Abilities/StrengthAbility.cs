@@ -1,7 +1,4 @@
-﻿using FifthCharacter.StatsManager;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using FifthCharacter.Plugin.StatsManager;
 
 namespace FifthCharacter.Abilities {
     public class StrengthAbility : AAbilityVM {
