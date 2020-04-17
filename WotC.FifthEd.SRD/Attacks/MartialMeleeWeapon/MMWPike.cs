@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
     public class MMWPike : AMartialMeleeWeapon {
         public override string Name => "Pike";
-        public override string AttackBonus { get; }
         public override string DamageDice => "1d10";
         public override string DamageType => "Piercing";
         public override string Cost => "5 gp";

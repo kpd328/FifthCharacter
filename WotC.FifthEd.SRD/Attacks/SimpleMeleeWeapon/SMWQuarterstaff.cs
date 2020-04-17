@@ -6,7 +6,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon {
     public class SMWQuarterstaff : ASimpleMeleeWeapon {
         public override string Name => "Quarterstaff";
-        public override string AttackBonus { get; set; }
         public override string DamageDice => "1d6";
         public override string DamageType => "Bludgeoning";
         public override string Cost => "2 sp";

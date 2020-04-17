@@ -58,6 +58,9 @@
                 <Label Text="{Binding AttackBonus}"
                        HorizontalOptions="Start"
                        HorizontalTextAlignment="Start"/>
+                <Label Text="To Attack"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"/>
                 <Label Text="{Binding DamageDice}"
                        HorizontalOptions="FillAndExpand"
                        HorizontalTextAlignment="End"/>

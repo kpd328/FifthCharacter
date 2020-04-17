@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.MartialRangedWeapon {
     public class MRWHandCrossbow : AMartialRangedWeapon {
         public override string Name => "Hand Crossbow";
-        public override string AttackBonus { get; }
         public override string DamageDice => "1d6";
         public override string DamageType => "Piercing";
         public override string Range => "30/120 ft";

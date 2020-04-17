@@ -6,7 +6,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon {
     public class SMWDagger : ASimpleMeleeWeapon {
         public override string Name => "Dagger";
-        public override string AttackBonus { get; set; }
         public override string DamageDice => "1d4";
         public override string DamageType => "Piercing";
         public override string Cost => "2 gp";

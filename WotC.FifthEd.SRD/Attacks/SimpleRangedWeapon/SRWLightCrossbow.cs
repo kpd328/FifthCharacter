@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon {
     public class SRWLightCrossbow : ASimpleRangedWeapon {
         public override string Name => "Light Crossbow";
-        public override string AttackBonus { get; set; }
         public override string DamageDice => "1d8";
         public override string DamageType => "Piercing";
         public override string Range => "80/320 ft";

@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
     public class MMWWhip : AMartialMeleeWeapon {
         public override string Name => "Whip";
-        public override string AttackBonus { get; }
         public override string DamageDice => "1d4";
         public override string DamageType => "Slashing";
         public override string Cost => "2 gp";

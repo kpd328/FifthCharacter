@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
     public class MMWGlaive : AMartialMeleeWeapon {
         public override string Name => "Glaive";
-        public override string AttackBonus { get; }
         public override string DamageDice => "1d10";
         public override string DamageType => "Slashing";
         public override string Cost => "20 gp";

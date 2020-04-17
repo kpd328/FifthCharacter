@@ -12,12 +12,12 @@
         public static int ProficiencyBonus { get; set; }
 
         //Ability Score Modifiers
-        private static int StrengthMod => (StrengthScore - 10) / 2;
-        private static int DexterityMod => (DexterityScore - 10) / 2;
-        private static int ConstitutionMod => (ConstitutionScore - 10) / 2;
-        private static int IntelligenceMod => (IntelligenceScore - 10) / 2;
-        private static int WisdomMod => (WisdomScore - 10) / 2;
-        private static int CharismaMod => (CharismaScore - 10) / 2;
+        public static int StrengthMod => (StrengthScore - 10) / 2;
+        public static int DexterityMod => (DexterityScore - 10) / 2;
+        public static int ConstitutionMod => (ConstitutionScore - 10) / 2;
+        public static int IntelligenceMod => (IntelligenceScore - 10) / 2;
+        public static int WisdomMod => (WisdomScore - 10) / 2;
+        public static int CharismaMod => (CharismaScore - 10) / 2;
 
         public static string StrengthModifier => StrengthMod.ToString("+0;-#");
         public static string DexterityModifier => DexterityMod.ToString("+0;-#");
@@ -27,12 +27,12 @@
         public static string CharismaModifier => CharismaMod.ToString("+0;-#");
 
         //Saving Throws
-        public static bool StrengthSaveProficiency { get; set; }
-        public static bool DexteritySaveProficiency { get; set; }
-        public static bool ConstitutionSaveProficiency { get; set; }
-        public static bool IntelligenceSaveProficiency { get; set; }
-        public static bool WisdomSaveProficiency { get; set; }
-        public static bool CharismaSaveProficiency { get; set; }
+        public static bool StrengthSaveProficiency => ProficiencyManager.CheckByName("Strength Saving Throws", Interface.ProficiencyType.SAVING_THROW);
+        public static bool DexteritySaveProficiency => ProficiencyManager.CheckByName("Dexterity Saving Throws", Interface.ProficiencyType.SAVING_THROW);
+        public static bool ConstitutionSaveProficiency => ProficiencyManager.CheckByName("Constitution Saving Throws", Interface.ProficiencyType.SAVING_THROW);
+        public static bool IntelligenceSaveProficiency => ProficiencyManager.CheckByName("Intelligence Saving Throws", Interface.ProficiencyType.SAVING_THROW);
+        public static bool WisdomSaveProficiency => ProficiencyManager.CheckByName("Wisdom Saving Throws", Interface.ProficiencyType.SAVING_THROW);
+        public static bool CharismaSaveProficiency => ProficiencyManager.CheckByName("Charisma Saving Throw", Interface.ProficiencyType.SAVING_THROW);
 
         private static int StrengthSaveVal => StrengthSaveProficiency ? StrengthMod + ProficiencyBonus : StrengthMod;
         private static int DexteritySaveVal => DexteritySaveProficiency ? DexterityMod + ProficiencyBonus : DexterityMod;

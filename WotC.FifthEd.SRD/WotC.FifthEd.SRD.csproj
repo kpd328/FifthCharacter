@@ -67,4 +67,12 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Proficiencies\Armor\" />
+    <Folder Include="Proficiencies\Languages\" />
+    <Folder Include="Proficiencies\Skills\" />
+    <Folder Include="Proficiencies\Tools\" />
+    <Folder Include="Proficiencies\Weapons\" />
+  </ItemGroup>
+
 </Project>

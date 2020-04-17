@@ -1,5 +1,7 @@
 ﻿using FifthCharacter.Plugin.Features.Abstract;
 using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Proficiencies.SavingThrows;
+using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using SD.Tools.Algorithmia.GeneralDataStructures;
 using System.Collections.Generic;
@@ -29,13 +31,23 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             //Add other features as implemented
         };
 
-        public Fighter() { }
-        private Fighter(FightingStyle style) : this() {
-            ClassFeatures.Add(new FFighterFightingStyle(style));
+        internal Fighter() {
+
         }
 
-        public IPlayerClass GetInstance() => new Fighter() { Level = 1, CurrentTotalHitDice = new Dice(HitDicePerLevel) };
-        public IPlayerClass GetInstance(FightingStyle style) => new Fighter(style) { Level = 1, CurrentTotalHitDice = new Dice(HitDicePerLevel) };
+        internal Fighter(bool isPrimary) : base() {
+            if (isPrimary) {
+                ProficiencyManager.Proficiencies.Add(new ProfStrengthSave("Class Fighter"));
+                ProficiencyManager.Proficiencies.Add(new ProfConstitutionSave("Class Fighter"));
+                //TODO: Add prof to all armor, shields, simple weapons, and martial weapons
+                //TODO: Add prompt to pick skills
+            } else {
+                //TODO: Add prof to light armor, medium armor, shields, simple weapons, martial weapons
+            }
+        }
+
+        public IPlayerClass TakeAsPrimaryClass() => new Fighter(true) { Level = 1, CurrentTotalHitDice = new Dice(HitDicePerLevel) };
+        public IPlayerClass TakeAsSecondaryClass() => new Fighter(false) { Level = 1, CurrentTotalHitDice = new Dice(HitDicePerLevel) };
 
         public void LevelUp() {
             Level++;

@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon {
     public class SRWShortbow : ASimpleRangedWeapon {
         public override string Name => "Shortbow";
-        public override string AttackBonus { get; set; }
         public override string DamageDice => "1d6";
         public override string DamageType => "Piercing";
         public override string Range => "80/320 ft";

@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
     public class MMWGreatsword : AMartialMeleeWeapon {
         public override string Name => "Greatsword";
-        public override string AttackBonus { get; }
         public override string DamageDice => "2d6";
         public override string DamageType => "Slashing";
         public override string Cost => "50 gp";

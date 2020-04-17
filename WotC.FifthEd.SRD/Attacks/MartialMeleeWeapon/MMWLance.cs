@@ -8,7 +8,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property.Special;
 namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
     public class MMWLance : AMartialMeleeWeapon {
         public override string Name => "Lance";
-        public override string AttackBonus { get; }
         public override string DamageDice => "1d12";
         public override string DamageType => "Piercing";
         public override string Cost => "10 gp";

@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.MartialRangedWeapon {
     public class MRWBlowgun : AMartialRangedWeapon {
         public override string Name => "Blowgun";
-        public override string AttackBonus { get; }
         public override string DamageDice => "1d1";
         public override string DamageType => "Piercing";
         public override string Range => "25/100 ft";

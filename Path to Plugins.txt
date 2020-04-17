@@ -1,3 +1,5 @@
 x86 UWP (Debug): %RepositoryDirectory%\FifthCharacter\FifthCharacter\FifthCharacter.UWP\bin\x86\Debug\AppX\Plugins
 
+x64 UWP (Debug): %RepositoryDirectory%\FifthCharacter\FifthCharacter\FifthCharacter.UWP\bin\x64\Debug\AppX\Plugins
+
 GTK (Debug) %RepositoryDirectory%\FifthCharacter\FifthCharacter.GTK\bin\Debug\Plugins

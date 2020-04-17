@@ -11,8 +11,8 @@ namespace FifthCharacter.Plugin.Interface {
         IList<IFeature> ClassFeatures { get; }
         int Level { get; }
 
-        IPlayerClass GetInstance();
-        IPlayerClass GetInstance(FightingStyle style);
+        IPlayerClass TakeAsPrimaryClass();
+        IPlayerClass TakeAsSecondaryClass();
         void LevelUp();
     }
 }

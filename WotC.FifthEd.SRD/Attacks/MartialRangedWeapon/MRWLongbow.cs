@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.MartialRangedWeapon {
     public class MRWLongbow : AMartialRangedWeapon {
         public override string Name => "Longbow";
-        public override string AttackBonus { get; }
         public override string DamageDice => "1d8";
         public override string DamageType => "Piercing";
         public override string Range => "150/600 ft";

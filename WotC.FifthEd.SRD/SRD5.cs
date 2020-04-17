@@ -53,7 +53,6 @@ namespace WotC.FifthEd.SRD {
         };
         //Only uncomment 'new' statements when their classes no longer throw 'NotImplementedException'
         public AttackDictionary Attacks => new AttackDictionary() {
-            //Martial Melee Weapons
             new MMWBattleaxe(),
             new MMWFlail(),
             new MMWGlaive(),
@@ -69,18 +68,14 @@ namespace WotC.FifthEd.SRD {
             new MMWScimitar(),
             new MMWShortsword(),
             new MMWTrident(),
-            new MMWWarhammer(),
             new MMWWarPick(),
+            new MMWWarhammer(),
             new MMWWhip(),
-
-            //Martial Ranged Weapons
             new MRWBlowgun(),
             new MRWHandCrossbow(),
             new MRWHeavyCrossbow(),
             new MRWLongbow(),
             new MRWNet(),
-
-            //Simple Melee Weapons
             new SMWClub(),
             new SMWDagger(),
             new SMWGreatclub(),
@@ -91,8 +86,6 @@ namespace WotC.FifthEd.SRD {
             new SMWQuarterstaff(),
             new SMWSickle(),
             new SMWSpear(),
-
-            //Simple Ranged Weapons
             new SRWDart(),
             new SRWLightCrossbow(),
             new SRWShortbow(),

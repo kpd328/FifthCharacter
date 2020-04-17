@@ -7,7 +7,6 @@ using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
 namespace WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon {
     public class SRWDart : ASimpleRangedWeapon {
         public override string Name => "Dart";
-        public override string AttackBonus { get; set; }
         public override string DamageDice => "1d4";
         public override string DamageType => "Piercing";
         public override string Range => "20/60 ft";
