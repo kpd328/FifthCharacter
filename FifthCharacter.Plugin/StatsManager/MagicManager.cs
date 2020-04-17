@@ -1,8 +1,11 @@
 ﻿using FifthCharacter.Plugin.Interface;
+using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace FifthCharacter.Plugin.StatsManager {
     public static class MagicManager {
+        //Constants
         private const string CANTRIP = "Cantrips";
         private const string FIRST_LEVEL = "1st Level";
         private const string SECOND_LEVEL = "2nd Level";
@@ -14,8 +17,100 @@ namespace FifthCharacter.Plugin.StatsManager {
         private const string EIGHTH_LEVEL = "8th Level";
         private const string NINTH_LEVEL = "9th Level";
 
+        //Properties
+        private static double _spellcasterLevel;
+        /// <summary>
+        /// This should be set to <c>true</c> if and only if the character is either a primary caster or is multiclassing 
+        /// </summary>
+        public static bool IsMulticlassing { get; set; }
+        public static int SpellcasterLevel {
+            get {
+                if (IsMulticlassing) {
+                    return (int)Math.Floor(_spellcasterLevel);
+                } else {
+                    return (int)Math.Ceiling(_spellcasterLevel);
+                }
+            }
+        }
         public static ObservableCollection<SpellLevelGroup> SpellsKnown { get; private set; } = new ObservableCollection<SpellLevelGroup>();
+        public static ObservableCollection<SpellSlot> SpellSlots { get; private set; } = new ObservableCollection<SpellSlot>();
         public static bool IsPreparedCaster { get; private set; } = true; //The value of this should be pulled from the spellcasting class
+
+        //Public Methods
+        public static void AddSpellcasterLevel(SpellcasterClass spellcaster) {
+            switch (spellcaster) {
+                case SpellcasterClass.PRIMARY:
+                    _spellcasterLevel++;
+                    break;
+                case SpellcasterClass.SECONDARY:
+                    _spellcasterLevel += 0.5;
+                    break;
+                case SpellcasterClass.TERTIARY:
+                    _spellcasterLevel += (1.0 / 3.0);
+                    break;
+                case SpellcasterClass.NONE:
+                    break;
+            }
+
+            switch (SpellcasterLevel) {
+                case 1:
+                    SpellSlots.Add(new SpellSlot() { SpellLevel = 1, TotalSlots = 2 }) ;
+                    break;
+                case 2:
+                    SpellSlots.Where(l => l.SpellLevel == 1).FirstOrDefault().TotalSlots++;
+                    break;
+                case 3:
+                    SpellSlots.Where(l => l.SpellLevel == 1).FirstOrDefault().TotalSlots++;
+                    SpellSlots.Add(new SpellSlot() { SpellLevel = 2, TotalSlots = 2 });
+                    break;
+                case 4:
+                    SpellSlots.Where(l => l.SpellLevel == 2).FirstOrDefault().TotalSlots++;
+                    break;
+                case 5:
+                    SpellSlots.Add(new SpellSlot() { SpellLevel = 3, TotalSlots = 2 });
+                    break;
+                case 6:
+                    SpellSlots.Where(l => l.SpellLevel == 3).FirstOrDefault().TotalSlots++;
+                    break;
+                case 7:
+                    SpellSlots.Add(new SpellSlot() { SpellLevel = 4, TotalSlots = 1 });
+                    break;
+                case 8:
+                    SpellSlots.Where(l => l.SpellLevel == 4).FirstOrDefault().TotalSlots++;
+                    break;
+                case 9:
+                    SpellSlots.Add(new SpellSlot() { SpellLevel = 5, TotalSlots = 1 });
+                    break;
+                case 10:
+                    SpellSlots.Where(l => l.SpellLevel == 5).FirstOrDefault().TotalSlots++;
+                    break;
+                case 11:
+                    SpellSlots.Add(new SpellSlot() { SpellLevel = 6, TotalSlots = 1 });
+                    break;
+                case 13:
+                    SpellSlots.Add(new SpellSlot() { SpellLevel = 7, TotalSlots = 1 });
+                    break;
+                case 15:
+                    SpellSlots.Add(new SpellSlot() { SpellLevel = 8, TotalSlots = 1 });
+                    break;
+                case 17:
+                    SpellSlots.Add(new SpellSlot() { SpellLevel = 9, TotalSlots = 1 });
+                    break;
+                case 18:
+                    SpellSlots.Where(l => l.SpellLevel == 5).FirstOrDefault().TotalSlots++;
+                    break;
+                case 19:
+                    SpellSlots.Where(l => l.SpellLevel == 6).FirstOrDefault().TotalSlots++;
+                    break;
+                case 20:
+                    SpellSlots.Where(l => l.SpellLevel == 7).FirstOrDefault().TotalSlots++;
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+
         public static void AddSpell(IMagic spell) {
             string _level = SpellLevelToString(spell.SpellLevel);
             if(_level == "") {
@@ -39,6 +134,7 @@ namespace FifthCharacter.Plugin.StatsManager {
             }
         }
 
+        //Private Methods
         private static int LevelTextToInt(string level) {
             switch (level) {
                 case CANTRIP:
@@ -91,5 +187,12 @@ namespace FifthCharacter.Plugin.StatsManager {
             }
             return "";
         }
+    }
+
+    public enum SpellcasterClass {
+        PRIMARY,
+        SECONDARY,
+        TERTIARY,
+        NONE
     }
 }
