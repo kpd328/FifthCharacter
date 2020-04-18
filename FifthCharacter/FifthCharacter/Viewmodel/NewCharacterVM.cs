@@ -6,6 +6,37 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
 
+/*
+ * New Character:
+ * 
+ * Page 1:\
+ * -Name
+ * -Player Name
+ * -Race
+ * -Class
+ * -Background
+ * -Allignment
+ * 
+ * Page 2 (if applicable):
+ * -Subrace (if applicable)
+ * -Race options (if applicable)
+ * 
+ * Page 3 (if applicable):
+ * -Background options (if applicable)
+ * 
+ * Page 4:
+ * -Class options
+ * 
+ * Page 5 (if applicable):
+ * -Magic Options
+ * 
+ * Page 6:
+ * -Ability Scores
+ * 
+ * Page 7:
+ * -Finalize?
+ */
+
 namespace FifthCharacter.Viewmodel {
     public class NewCharacterVM {
         PopupNewCharacter Page1;
