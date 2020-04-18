@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<p:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:p="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:a="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             mc:Ignorable="d"
+             x:Class="FifthCharacter.View.Popup.PopupNewCharacter">
+    <p:PopupPage.Animation>
+        <a:ScaleAnimation DurationIn="400"
+                          DurationOut="300"
+                          EasingIn="SinIn"
+                          EasingOut="SinOut"
+                          HasBackgroundAnimation="True"
+                          PositionIn="Center"
+                          PositionOut="Center"
+                          ScaleIn="1.2"
+                          ScaleOut="0.8"/>
+    </p:PopupPage.Animation>
+    <p:PopupPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Entry Text="{Binding Name}"
+                   Placeholder="Character Name"
+                   HorizontalOptions="FillAndExpand"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"/>
+            <Entry Text="{Binding PlayerName}"
+                   Placeholder="Player Name"
+                   HorizontalOptions="FillAndExpand"
+                   Grid.Row="0"
+                   Grid.Column="2"
+                   Grid.ColumnSpan="2"/>
+            <!--Race Picker row 1, columm 0, colspan 2-->
+            <!--Class Picker row 1, column 2, colspan 2-->
+            <!--Background Picker row 2, column 0, colspan 2-->
+            <Picker Title="Alignment"
+                    ItemsSource="{Binding PossibleAlignments}"
+                    SelectedItem="{Binding AlignmentString}"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"/>
+            <Button Text="Next"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="3"
+                    Grid.Column="3"/>
+        </Grid>
+    </p:PopupPage.Content>
+</p:PopupPage>

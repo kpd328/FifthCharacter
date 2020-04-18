@@ -6,10 +6,73 @@
              mc:Ignorable="d"
              x:Class="FifthCharacter.View.Popup.PopupNewAttack_GTK">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView BackgroundColor="{DynamicResource PopupWindowColor}"
+                    WidthRequest="300"
+                    MinimumWidthRequest="150"
+                    HeightRequest="500"
+                    MinimumHeightRequest="250"
+                    VerticalOptions="Center"
+                    HorizontalOptions="CenterAndExpand"
+                    Margin="5"
+                    Padding="10">
+            <StackLayout Orientation="Vertical"
+                         BindableLayout.ItemsSource="{Binding AttacksList}"
+                         HorizontalOptions="FillAndExpand">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="Transparent"
+                               BorderColor="Accent"
+                               Padding="{DynamicResource ListFramePadding}"
+                               HorizontalOptions="FillAndExpand">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding AddAttack}"/>
+                            </Frame.GestureRecognizers>
+                            <Grid HorizontalOptions="FillAndExpand"
+                                  VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}"
+                                       FontAttributes="Bold"
+                                       Grid.Row="0"
+                                       Grid.Column="0"/>
+                                <Label Text="{Binding WeaponType}"
+                                       FontAttributes="Italic"
+                                       Grid.Row="0"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding AttackBonus}"
+                                       Grid.Row="0"
+                                       Grid.Column="2"/>
+                                <Label Text="{Binding DamageDice}"
+                                       Grid.Row="0"
+                                       Grid.Column="3"/>
+                                <Label Text="{Binding DamageType}"
+                                       Grid.Row="0"
+                                       Grid.Column="4"/>
+                                <StackLayout Orientation="Vertical"
+                                             Grid.Row="1"
+                                             Grid.Column="0"
+                                             Grid.ColumnSpan="5"
+                                             BindableLayout.ItemsSource="{Binding Properties}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding PropertyName}"/>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

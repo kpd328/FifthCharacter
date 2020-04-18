@@ -14,16 +14,28 @@
                      HorizontalOptions="CenterAndExpand"
                      Margin="5"
                      Padding="10">
-            <Label Text="{Binding Name}"
-                   FontAttributes="Bold"
-                   HorizontalOptions="StartAndExpand"
-                   HorizontalTextAlignment="Start"
-                   VerticalOptions="End"/>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand"
+                         Spacing="5">
+                <Label Text="{Binding Name}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"
+                       VerticalOptions="End"/>
+                <Label Text="{Binding WeaponType}"
+                       FontAttributes="Italic"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Start"
+                       VerticalOptions="End"/>
+            </StackLayout>
             <Label Text="{Binding Range}"/>
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="FillAndExpand"
                          Spacing="5">
                 <Label Text="{Binding AttackBonus}"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"/>
+                <Label Text="To Attack"
                        HorizontalOptions="Start"
                        HorizontalTextAlignment="Start"/>
                 <Label Text="{Binding DamageDice}"
@@ -32,6 +44,35 @@
                 <Label Text="{Binding DamageType}"
                        HorizontalOptions="End"
                        HorizontalTextAlignment="Start"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical"
+                         Grid.Row="1"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="4"
+                         BindableLayout.ItemsSource="{Binding Properties}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding PropertyName}"
+                                   FontAttributes="Bold"
+                                   Grid.Row="0"
+                                   Grid.Column="0"/>
+                            <Label Text="{Binding TextDescription}"
+                                   LineBreakMode="WordWrap"
+                                   Grid.Row="1"
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="2"/>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

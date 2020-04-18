@@ -1,4 +1,6 @@
-﻿namespace FifthCharacter.Plugin.StatsManager {
+﻿using FifthCharacter.Plugin.Tools;
+
+namespace FifthCharacter.Plugin.StatsManager {
     public static class CharacterManager {
         //TODO: Save information to static location
 
@@ -8,7 +10,8 @@
         public static string Background { get; set; } = "Military Veteran"; //TODO: retrieve from character background
         public static string PlayerName { get; set; } = "John Doe";
         public static string Race { get; set; } = "Human"; //TODO: retrieve from character race
-        public static string Alignment { get; set; } = "LG"; //TODO: retrieve from enum
+        public static Alignment Alignment { get; set; }
+        public static string AlignmentText => Alignment.DisplayString(); //TODO: retrieve from enum
         public static int ExperiecePoints { get; set; } = 1200; //TODO: integrate with XP manager
 
         //Combat information
