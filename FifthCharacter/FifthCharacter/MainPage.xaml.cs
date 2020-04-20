@@ -1,4 +1,5 @@
 ﻿using FifthCharacter.Utilities;
+using FifthCharacter.Viewmodel;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.ComponentModel;
@@ -9,8 +10,11 @@ namespace FifthCharacter {
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage {
+        private ToolbarVM Toolbar;
+
         public MainPage() {
             InitializeComponent();
+            Toolbar = new ToolbarVM(this);
         }
     }
 }

@@ -19,7 +19,15 @@
                           ScaleOut="0.8"/>
     </p:PopupPage.Animation>
     <p:PopupPage.Content>
-        <Grid>
+        <Grid BackgroundColor="{DynamicResource PopupWindowColor}"
+              WidthRequest="300"
+              MinimumWidthRequest="150"
+              HeightRequest="500"
+              MinimumHeightRequest="250"
+              VerticalOptions="Center"
+              HorizontalOptions="CenterAndExpand"
+              Margin="5"
+              Padding="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -32,7 +40,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Entry Text="{Binding Name}"
+            <Entry Text="{Binding CharacterName}"
                    Placeholder="Character Name"
                    HorizontalOptions="FillAndExpand"
                    Grid.Row="0"
@@ -45,19 +53,27 @@
                    Grid.Column="2"
                    Grid.ColumnSpan="2"/>
             <!--Race Picker row 1, columm 0, colspan 2-->
-            <!--Class Picker row 1, column 2, colspan 2-->
+            <Picker Title="Class"
+                    ItemsSource="{Binding PossiblePlayerClasses}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding PlayerClassString}"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"/>
             <!--Background Picker row 2, column 0, colspan 2-->
             <Picker Title="Alignment"
                     ItemsSource="{Binding PossibleAlignments}"
                     SelectedItem="{Binding AlignmentString}"
                     HorizontalOptions="FillAndExpand"
-                    Grid.Row="3"
+                    Grid.Row="2"
                     Grid.Column="2"
                     Grid.ColumnSpan="2"/>
             <Button Text="Next"
                     HorizontalOptions="FillAndExpand"
                     Grid.Row="3"
-                    Grid.Column="3"/>
+                    Grid.Column="3"
+                    Command="{Binding Page1Next}"/>
         </Grid>
     </p:PopupPage.Content>
 </p:PopupPage>

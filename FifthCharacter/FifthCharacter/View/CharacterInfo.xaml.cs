@@ -11,9 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace FifthCharacter.View {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CharacterInfo : ContentView {
+        internal CharacterInfoVM Viewmodel;
+
         public CharacterInfo(CharacterInfoVM character) {
             InitializeComponent();
-            character.Bind(this);
+            Viewmodel = character;
+            Viewmodel.Bind(this);
         }
     }
 }
