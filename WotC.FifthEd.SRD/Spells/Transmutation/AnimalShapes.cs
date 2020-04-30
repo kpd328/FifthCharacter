@@ -15,6 +15,8 @@ namespace WotC.FifthEd.SRD.Spells.Transmutation {
         public override string AreaOfEffect => throw new NotImplementedException();
         public override string Name => throw new NotImplementedException();
 
+        public override string Description => throw new NotImplementedException();
+
         public override IMagic GetInstance() {
             throw new NotImplementedException();
         }

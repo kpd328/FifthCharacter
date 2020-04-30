@@ -15,6 +15,9 @@ namespace WotC.FifthEd.SRD.Spells.Enchantment {
         public override string AreaOfEffect => throw new NotImplementedException();
         public override string Name => throw new NotImplementedException();
 
+        public override string Description => throw new NotImplementedException();
+        public new string AtHigherLevels => AtHigherLevelsDescriptions.AnimalMessenger;
+
         public override IMagic GetInstance() {
             throw new NotImplementedException();
         }

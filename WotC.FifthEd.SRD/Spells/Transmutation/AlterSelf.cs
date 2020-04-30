@@ -17,6 +17,8 @@ namespace WotC.FifthEd.SRD.Spells.Transmutation {
         public override string AreaOfEffect => "N/A";
         public override string Name => "Alter Self";
 
+        public override string Description => SpellDescriptions.AlterSelf;
+
         public override IMagic GetInstance() => new AlterSelf();
     }
 }

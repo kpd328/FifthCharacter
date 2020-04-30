@@ -18,6 +18,9 @@ namespace WotC.FifthEd.SRD.Spells.Enchantment {
         public override string AreaOfEffect => "N/A";
         public override string Name => "Animal Friendship";
 
+        public override string Description => SpellDescriptions.AnimalFirendship;
+        public new string AtHigherLevels => AtHigherLevelsDescriptions.AnimalFriendship;
+
         public override IMagic GetInstance() => new AnimalFriendship();
     }
 }

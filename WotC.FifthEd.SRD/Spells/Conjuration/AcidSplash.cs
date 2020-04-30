@@ -17,6 +17,8 @@ namespace WotC.FifthEd.SRD.Spells.Conjuration {
         public override string AreaOfEffect => "N/A";
         public override string Name => "Acid Splash";
 
+        public override string Description => SpellDescriptions.AcidSplash;
+
         public override IMagic GetInstance() => new AcidSplash();
     }
 }

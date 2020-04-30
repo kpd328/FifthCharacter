@@ -32,6 +32,8 @@ namespace WotC.FifthEd.SRD.Spells.Evocation {
 
         public IList<IWeaponProperty> Properties => new List<IWeaponProperty>();
 
+        public override string Description => throw new NotImplementedException();
+
         public override IMagic GetInstance() => new ArcaneSword();
         IAttack IAttack.GetInstance() => new ArcaneSword();
     }

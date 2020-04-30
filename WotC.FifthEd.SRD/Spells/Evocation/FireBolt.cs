@@ -35,6 +35,8 @@ namespace WotC.FifthEd.SRD.Spells.Evocation {
 
         public IList<IWeaponProperty> Properties => new List<IWeaponProperty>();
 
+        public override string Description => "";
+
         public override IMagic GetInstance() => new FireBolt();
         IAttack IAttack.GetInstance() => new FireBolt();
     }
