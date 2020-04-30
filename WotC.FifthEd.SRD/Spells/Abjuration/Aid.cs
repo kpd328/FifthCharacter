@@ -17,6 +17,8 @@ namespace WotC.FifthEd.SRD.Spells.Abjuration {
         public override string Targets => "Up to three creatures within range";
         public override string AreaOfEffect => "N/A";
         public override string Name => "Aid";
+        public override string Description => SpellDescriptions.Aid;
+        public new string AtHigherLevels => AtHigherLevelsDescriptions.Aid;
 
         public override IMagic GetInstance() => new Aid();
     }

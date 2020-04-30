@@ -17,6 +17,7 @@ namespace WotC.FifthEd.SRD.Spells.Abjuration {
         public override string Targets => "A door, a window, or an area within range that is no larger than a 20-foot cube";
         public override string AreaOfEffect => "N/A";
         public override string Name => "Alarm";
+        public override string Description => SpellDescriptions.Alarm;
 
         public override IMagic GetInstance() => new Alarm();
     }

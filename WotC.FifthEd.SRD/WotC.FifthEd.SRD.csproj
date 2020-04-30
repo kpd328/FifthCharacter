@@ -46,6 +46,16 @@
     <Compile Update="Popup\PopupFeature_GTK.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Spells\AtHigherLevelsDescriptions.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AtHigherLevelsDescriptions.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Spells\SpellDescriptions.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SpellDescriptions.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +74,14 @@
     <EmbeddedResource Update="Features\PlayerClass\Fighter\FightingStyleText.resx">
       <LastGenOutput>FightingStyleText.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Spells\AtHigherLevelsDescriptions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AtHigherLevelsDescriptions.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Spells\SpellDescriptions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SpellDescriptions.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

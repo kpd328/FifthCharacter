@@ -15,6 +15,7 @@ namespace WotC.FifthEd.SRD.Spells.Abjuration {
         public override string Targets => throw new NotImplementedException();
         public override string AreaOfEffect => throw new NotImplementedException();
         public override string Name => throw new NotImplementedException();
+        public override string Description => throw new NotImplementedException();
 
         public override IMagic GetInstance() {
             throw new NotImplementedException();

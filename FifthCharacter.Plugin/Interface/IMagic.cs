@@ -13,6 +13,8 @@ namespace FifthCharacter.Plugin.Interface {
         string Duration { get; }
         string Targets { get; }
         string AreaOfEffect { get; }
+        string Description { get; }
+        string AtHigherLevels { get; }
 
         ICommand Popup { get; }
 

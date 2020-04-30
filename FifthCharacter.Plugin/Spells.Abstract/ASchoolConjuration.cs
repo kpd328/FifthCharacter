@@ -35,6 +35,9 @@ namespace FifthCharacter.Plugin.Spells.Abstract {
             }
         }));
 
+        public abstract string Description { get; }
+        public string AtHigherLevels => "";
+
         public abstract IMagic GetInstance();
     }
 }
