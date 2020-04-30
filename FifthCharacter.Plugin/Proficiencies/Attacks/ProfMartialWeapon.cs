@@ -1,11 +1,11 @@
 ﻿using FifthCharacter.Plugin.Proficiencies.Abstract;
 
 namespace FifthCharacter.Plugin.Proficiencies.Attacks {
-    public class ProfMartialWeapon : AProfWeapon {
+    public class ProfMRWHandCrossbows : AProfWeapon {
         public override string Name => "Martial Weapons";
         public override string Source { get; }
         public override string ID => "Weapon.Proficiency.AllMartial";
-        public ProfMartialWeapon(string source) {
+        public ProfMRWHandCrossbows(string source) {
             Source = source;
         }
     }

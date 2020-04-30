@@ -103,7 +103,18 @@ namespace WotC.FifthEd.SRD {
             new FFighterSecondWind()
         };
         public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
-            new Fighter()
+            new Barbarian(),
+            new Bard(),
+            new Cleric(),
+            new Druid(),
+            new Fighter(),
+            new Monk(),
+            new Paladin(),
+            new Ranger(),
+            new Rogue(),
+            new Sorcerer(),
+            new Warlock(),
+            new Wizard()
         };
     }
 }
