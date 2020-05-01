@@ -18,7 +18,7 @@ namespace FifthCharacter.Viewmodel {
                     PopupNavigation.Instance.PushAsync(new PopupNewCharacter(new NewCharacterVM(View)));
                     break;
                 case Device.GTK:
-                    //DependencyService.Get<IPopup>().PushAsync(new PopupNewCharacter_GTK(new NewCharacterVM()));
+                    DependencyService.Get<IPopup>().PushAsync(new PopupNewCharacter_GTK(new NewCharacterVM(View)));
                     break;
                 default:
                     throw new NotImplementedException();
