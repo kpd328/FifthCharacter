@@ -18,17 +18,9 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         public int Level { get; private set; }
         public Dice HitDicePerLevel => new Dice(1, 10);
         public Dice CurrentTotalHitDice { get; private set; }
-        public IList<IFeature> ClassFeatures => new List<IFeature>() {
-            new FFighterSecondWind()
-        };
+        public IList<IFeature> ClassFeatures => new List<IFeature>();
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
             { 1, new FFighterSecondWind() },
-            { 1, new FFighterFightingStyle(FightingStyle.ARCHERY) },
-            { 1, new FFighterFightingStyle(FightingStyle.DEFENSE) },
-            { 1, new FFighterFightingStyle(FightingStyle.DUELING) },
-            { 1, new FFighterFightingStyle(FightingStyle.GREATWEAPONFIGHTING) },
-            { 1, new FFighterFightingStyle(FightingStyle.PROTECTION) },
-            { 1, new FFighterFightingStyle(FightingStyle.TWOWEAPONFIGHTING) },
             { 2, new FFighterActionSurge() },
             { 4, new FFighterAbilityScoreImprovement() }
             //Add other features as implemented
@@ -52,6 +44,12 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
             }
+            var newFeatures = AllClassFeatures.GetValues(1, true);
+            foreach (IFeature f in newFeatures) {
+                ClassFeatures.Add(f);
+                FeaturesManager.Features.Add(f);
+            }
+            //TODO: Add prompt to pick fighting style
         }
 
         public IPlayerClass TakeAsPrimaryClass() => new Fighter(true) { Level = 1, CurrentTotalHitDice = new Dice(HitDicePerLevel) };
@@ -66,6 +64,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             var newFeatures = AllClassFeatures.GetValues(Level, true);
             foreach(IFeature f in newFeatures) {
                 ClassFeatures.Add(f);
+                FeaturesManager.Features.Add(f);
             }
         }
 

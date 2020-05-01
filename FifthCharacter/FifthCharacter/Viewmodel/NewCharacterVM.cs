@@ -3,10 +3,10 @@ using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using FifthCharacter.View.Popup;
 using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Input;
-using System.Linq;
 using Xamarin.Forms;
 
 /*
@@ -44,6 +44,25 @@ namespace FifthCharacter.Viewmodel {
     public class NewCharacterVM : INotifyPropertyChanged {
         private PopupNewCharacter Page1;
         private PopupNewCharacter_GTK Page1_GTK;
+
+        private PopupNCRaceOptions Page2;
+        //private PopupNCRaceOptions_GTK Page2_GTK;
+
+        private PopupNCBackgroundOptions Page3;
+        //private PopupNCBackgroundOptions_GTK Page3_GTK;
+
+        private PopupNCClassOptions Page4;
+        //private PopupNCClassOptions_GTK Page4_GTK;
+
+        private PopupNCMagicOptions Page5;
+        //private PopupNCMagicOptions_GTK Page5_GTK;
+
+        private PopupNCAbilityScores Page6;
+        //private PopupNCAbilityScores_GTK Page6_GTK;
+
+        private PopupNCFinalize Page7;
+        //private PopupNCFinalize_GTK Page7_GTK;
+
         private MainPage MainPage;
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -98,10 +117,43 @@ namespace FifthCharacter.Viewmodel {
         //Page 1 Commands
         private ICommand _page1next;
         public ICommand Page1Next => _page1next ?? (_page1next = new Command(() => {
-            //TODO: move on to next page
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
+                    //TODO: determine which page to move on to
+                    Page7 = new PopupNCFinalize() { BindingContext = this };
+                    PopupNavigation.Instance.PushAsync(Page7);
+                    break;
+                case Device.GTK:
+                    //Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
+                    //DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+        }));
 
-            //Temp
-            PopupNavigation.Instance.PopAsync();
+        //Page 7 Commands
+        private ICommand _page7next;
+        public ICommand Page7Next => _page7next ?? (_page7next = new Command(() => {
+            PopupNavigation.Instance.PopAllAsync();
+        }));
+
+        private ICommand _page7back;
+        public ICommand Page7Back => _page7back ?? (_page7back = new Command(() => {
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
+                    PopupNavigation.Instance.PopAsync();
+                    break;
+                case Device.GTK:
+                    //TODO: pop this page and go to the previous page
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
         }));
 
         //Constructors

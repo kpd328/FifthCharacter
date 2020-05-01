@@ -35,49 +35,63 @@
                     </v:CharacterInfo>
                 </Frame>
 
-                <v:CharacterDefense FlexLayout.Basis="100%"
+                <v:CharacterDefense x:Name="CharacterDefenseView"
+                                    x:FieldModifier="internal"
+                                    FlexLayout.Basis="100%"
                                     HorizontalOptions="FillAndExpand">
                     <x:Arguments>
                         <vm:CharacterDefenseVM/>
                     </x:Arguments>
                 </v:CharacterDefense>
 
-                <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                <v:AbilityScore x:Name="StrengthAbilityView"
+                                x:FieldModifier="internal"
+                                FlexLayout.Basis="{DynamicResource AbilityBasis}"
                                 FlexLayout.Grow="2">
                     <x:Arguments>
                         <abilities:StrengthAbility/>
                     </x:Arguments>
                 </v:AbilityScore>
 
-                <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                <v:AbilityScore x:Name="DexterityAbilityView"
+                                x:FieldModifier="internal"
+                                FlexLayout.Basis="{DynamicResource AbilityBasis}"
                                 FlexLayout.Grow="2">
                     <x:Arguments>
                         <abilities:DexterityAbility/>
                     </x:Arguments>
                 </v:AbilityScore>
 
-                <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                <v:AbilityScore x:Name="ConstitutionAbilityView"
+                                x:FieldModifier="internal"
+                                FlexLayout.Basis="{DynamicResource AbilityBasis}"
                                 FlexLayout.Grow="2">
                     <x:Arguments>
                         <abilities:ConstitutionAbility/>
                     </x:Arguments>
                 </v:AbilityScore>
 
-                <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                <v:AbilityScore x:Name="IntellegenceAbilityView"
+                                x:FieldModifier="internal"
+                                FlexLayout.Basis="{DynamicResource AbilityBasis}"
                                 FlexLayout.Grow="2">
                     <x:Arguments>
                         <abilities:IntelligenceAbility/>
                     </x:Arguments>
                 </v:AbilityScore>
 
-                <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                <v:AbilityScore x:Name="WisdomAbilityView"
+                                x:FieldModifier="internal"
+                                FlexLayout.Basis="{DynamicResource AbilityBasis}"
                                 FlexLayout.Grow="2">
                     <x:Arguments>
                         <abilities:WisdomAbility/>
                     </x:Arguments>
                 </v:AbilityScore>
 
-                <v:AbilityScore FlexLayout.Basis="{DynamicResource AbilityBasis}"
+                <v:AbilityScore x:Name="CharismaAbilityView"
+                                x:FieldModifier="internal"
+                                FlexLayout.Basis="{DynamicResource AbilityBasis}"
                                 FlexLayout.Grow="2">
                     <x:Arguments>
                         <abilities:CharismaAbility/>
@@ -93,21 +107,27 @@
                        Padding="-5"/>
                 <!---->
 
-                <v:AttacksList FlexLayout.Basis="300"
+                <v:AttacksList x:Name="AttacksListView"
+                               x:FieldModifier="internal"
+                               FlexLayout.Basis="300"
                                FlexLayout.Grow="1">
                     <x:Arguments>
                         <vm:AttacksListVM/>
                     </x:Arguments>
                 </v:AttacksList>
 
-                <v:SpellList FlexLayout.Basis="300"
+                <v:SpellList x:Name="SpellListView"
+                             x:FieldModifier="internal"
+                             FlexLayout.Basis="300"
                              FlexLayout.Grow="1">
                     <x:Arguments>
                         <vm:SpellListVM/>
                     </x:Arguments>
                 </v:SpellList>
 
-                <v:FeaturesList FlexLayout.Basis="300"
+                <v:FeaturesList x:Name="FeaturesListView"
+                                x:FieldModifier="internal"
+                                FlexLayout.Basis="300"
                                 FlexLayout.Grow="1">
                     <x:Arguments>
                         <vm:FeaturesListVM/>

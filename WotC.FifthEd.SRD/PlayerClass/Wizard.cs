@@ -34,6 +34,11 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfSRWLightCrossbow(SOURCE_TEXT));
                 //TODO: prompt to pick skills
             }
+            var newFeatures = AllClassFeatures.GetValues(Level, true);
+            foreach (IFeature f in newFeatures) {
+                ClassFeatures.Add(f);
+                FeaturesManager.Features.Add(f);
+            }
         }
 
         public IPlayerClass TakeAsPrimaryClass() => new Wizard(true) { Level = 1, CurrentTotalHitDice = new Dice(HitDicePerLevel) };
@@ -48,6 +53,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             var newFeatures = AllClassFeatures.GetValues(Level, true);
             foreach (IFeature f in newFeatures) {
                 ClassFeatures.Add(f);
+                FeaturesManager.Features.Add(f);
             }
         }
 

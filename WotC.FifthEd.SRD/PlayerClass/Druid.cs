@@ -49,6 +49,11 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
             }
+            var newFeatures = AllClassFeatures.GetValues(Level, true);
+            foreach (IFeature f in newFeatures) {
+                ClassFeatures.Add(f);
+                FeaturesManager.Features.Add(f);
+            }
         }
 
         public IPlayerClass TakeAsPrimaryClass() => new Druid(true) { Level = 1, CurrentTotalHitDice = new Dice(HitDicePerLevel) };
@@ -63,6 +68,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             var newFeatures = AllClassFeatures.GetValues(Level, true);
             foreach (IFeature f in newFeatures) {
                 ClassFeatures.Add(f);
+                FeaturesManager.Features.Add(f);
             }
         }
 
