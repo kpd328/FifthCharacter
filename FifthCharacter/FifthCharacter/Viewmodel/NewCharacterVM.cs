@@ -42,7 +42,8 @@ using Xamarin.Forms;
 
 namespace FifthCharacter.Viewmodel {
     public class NewCharacterVM : INotifyPropertyChanged {
-        PopupNewCharacter Page1;
+        private PopupNewCharacter Page1;
+        private PopupNewCharacter_GTK Page1_GTK;
         private MainPage MainPage;
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -69,14 +70,17 @@ namespace FifthCharacter.Viewmodel {
         }
         //TODO: Race select
         public IPlayerClass PlayerClass {
-            get => ClassManager.PrimaryClass;
+            get => _selectedPlayerClass;
             set {
-                if (ClassManager.PrimaryClass != value) {
+                if(value == null) {
+                    return;
+                }
+                _selectedPlayerClass = value;
+                if (ClassManager.PrimaryClass == null || ClassManager.PrimaryClass.GetType() != value.GetType()) {
                     ClassManager.TakeInitialClass(value);
                     OnPropertyChanged("PlayerClass");
                     MainPage.CharacterInfoView.Viewmodel.OnPropertyChanged("ClassLevel");
                 }
-                
             }
         }
         //TODO: Background select
@@ -113,6 +117,11 @@ namespace FifthCharacter.Viewmodel {
             Page1.BindingContext = this;
         }
 
+        public void Bind(PopupNewCharacter_GTK character) {
+            Page1_GTK = character;
+            Page1_GTK.BindingContext = this;
+        }
+
         protected virtual void OnPropertyChanged(string propertyName) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -123,7 +132,7 @@ namespace FifthCharacter.Viewmodel {
             set => Alignment = value.ParseToAlignment();
         }
 
-        public string PlayerClassString {
+        /*public string PlayerClassString {
             get {
                 if(PlayerClass != null) {
                     return PlayerClass.Name;
@@ -132,7 +141,8 @@ namespace FifthCharacter.Viewmodel {
                 }
             }
             set => PlayerClass = App.Plugins.PlayerClasses.Where(n => n.Name == value).FirstOrDefault();
-        }
+        }*/
+        private IPlayerClass _selectedPlayerClass = ClassManager.PrimaryClass;
 
         public IList<string> PossibleAlignments { get; } = new List<string>() {
             Alignment.LAWFUL_GOOD.DisplayString(),
