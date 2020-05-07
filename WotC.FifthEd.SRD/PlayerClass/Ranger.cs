@@ -4,7 +4,7 @@ using FifthCharacter.Plugin.Proficiencies.Attacks;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
 using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
-using SD.Tools.Algorithmia.GeneralDataStructures;
+using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
@@ -20,6 +20,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
 
         };
+        public SpellcasterClass SpellcasterClass => SpellcasterClass.SECONDARY;
 
         internal Ranger() { }
 
@@ -41,10 +42,12 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfMRWHandCrossbows(SOURCE_TEXT));
                 //TODO: prompt to pick skills
             }
-            var newFeatures = AllClassFeatures.GetValues(Level, true);
-            foreach (IFeature f in newFeatures) {
-                ClassFeatures.Add(f);
-                FeaturesManager.Features.Add(f);
+            IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
+            if (AllClassFeatures.TryGetValue(1, out newFeatures)) {
+                foreach (IFeature f in newFeatures) {
+                    ClassFeatures.Add(f);
+                    FeaturesManager.Features.Add(f);
+                }
             }
         }
 
@@ -57,10 +60,12 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             if (Level == SUBCLASS_LEVEL) {
                 SelectSubclass();
             }
-            var newFeatures = AllClassFeatures.GetValues(Level, true);
-            foreach (IFeature f in newFeatures) {
-                ClassFeatures.Add(f);
-                FeaturesManager.Features.Add(f);
+            IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
+            if (AllClassFeatures.TryGetValue(Level, out newFeatures)) {
+                foreach (IFeature f in newFeatures) {
+                    ClassFeatures.Add(f);
+                    FeaturesManager.Features.Add(f);
+                }
             }
         }
 

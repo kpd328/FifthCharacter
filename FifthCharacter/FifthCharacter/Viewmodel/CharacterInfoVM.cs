@@ -9,7 +9,7 @@ namespace FifthCharacter.Viewmodel {
         public string ClassLevel => CharacterManager.ClassLevel;
         public string Background => CharacterManager.Background;
         public string PlayerName => CharacterManager.PlayerName;
-        public string Race => CharacterManager.Race;
+        public string Race => CharacterManager.Race != null ? CharacterManager.Race.Name : "";
         public string Alignment => CharacterManager.Alignment.DisplayString();
         public string ExperiencePoints => CharacterManager.ExperiecePoints.ToString();
 

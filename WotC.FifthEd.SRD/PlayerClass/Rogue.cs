@@ -4,7 +4,7 @@ using FifthCharacter.Plugin.Proficiencies.Attacks;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
 using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
-using SD.Tools.Algorithmia.GeneralDataStructures;
+using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 
@@ -21,6 +21,8 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
 
         };
+        private SpellcasterClass _CurrentSpellcasterClass = SpellcasterClass.NONE;
+        public SpellcasterClass SpellcasterClass => _CurrentSpellcasterClass;
 
         internal Rogue() { }
 
@@ -34,17 +36,19 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfMMWRapier(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfMMWShortsword(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
-                //TODO: add theivs' tools
+                //TODO: add theives' tools
                 //TODO: prompt to pick skills
             } else {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
                 //TODO: add theivs' tools
                 //TODO: prompt to pick skills
             }
-            var newFeatures = AllClassFeatures.GetValues(Level, true);
-            foreach (IFeature f in newFeatures) {
-                ClassFeatures.Add(f);
-                FeaturesManager.Features.Add(f);
+            IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
+            if (AllClassFeatures.TryGetValue(1, out newFeatures)) {
+                foreach (IFeature f in newFeatures) {
+                    ClassFeatures.Add(f);
+                    FeaturesManager.Features.Add(f);
+                }
             }
         }
 
@@ -57,10 +61,12 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             if (Level == SUBCLASS_LEVEL) {
                 SelectSubclass();
             }
-            var newFeatures = AllClassFeatures.GetValues(Level, true);
-            foreach (IFeature f in newFeatures) {
-                ClassFeatures.Add(f);
-                FeaturesManager.Features.Add(f);
+            IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
+            if (AllClassFeatures.TryGetValue(Level, out newFeatures)) {
+                foreach (IFeature f in newFeatures) {
+                    ClassFeatures.Add(f);
+                    FeaturesManager.Features.Add(f);
+                }
             }
         }
 

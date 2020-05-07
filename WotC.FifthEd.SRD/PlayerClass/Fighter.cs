@@ -1,11 +1,10 @@
-﻿using FifthCharacter.Plugin.Features.Abstract;
-using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Proficiencies.Armor;
 using FifthCharacter.Plugin.Proficiencies.Attacks;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
 using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
-using SD.Tools.Algorithmia.GeneralDataStructures;
+using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Features.PlayerClass.Fighter;
 
@@ -25,6 +24,8 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             { 4, new FFighterAbilityScoreImprovement() }
             //Add other features as implemented
         };
+        private SpellcasterClass _CurrentSpellcasterClass = SpellcasterClass.NONE;
+        public SpellcasterClass SpellcasterClass => SpellcasterClass.NONE;
 
         internal Fighter() { }
 
@@ -44,12 +45,14 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
             }
-            var newFeatures = AllClassFeatures.GetValues(1, true);
-            foreach (IFeature f in newFeatures) {
-                ClassFeatures.Add(f);
-                FeaturesManager.Features.Add(f);
-            }
             //TODO: Add prompt to pick fighting style
+            IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
+            if(AllClassFeatures.TryGetValue(1, out newFeatures)) {
+                foreach (IFeature f in newFeatures) {
+                    ClassFeatures.Add(f);
+                    FeaturesManager.Features.Add(f);
+                }
+            }
         }
 
         public IPlayerClass TakeAsPrimaryClass() => new Fighter(true) { Level = 1, CurrentTotalHitDice = new Dice(HitDicePerLevel) };
@@ -61,10 +64,12 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             if(Level == SUBCLASS_LEVEL) {
                 SelectSubclass();
             }
-            var newFeatures = AllClassFeatures.GetValues(Level, true);
-            foreach(IFeature f in newFeatures) {
-                ClassFeatures.Add(f);
-                FeaturesManager.Features.Add(f);
+            IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
+            if (AllClassFeatures.TryGetValue(Level, out newFeatures)) {
+                foreach (IFeature f in newFeatures) {
+                    ClassFeatures.Add(f);
+                    FeaturesManager.Features.Add(f);
+                }
             }
         }
 

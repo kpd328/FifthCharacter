@@ -3,7 +3,7 @@ using FifthCharacter.Plugin.Proficiencies.Armor;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
 using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
-using SD.Tools.Algorithmia.GeneralDataStructures;
+using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.SimpleMeleeWeapon;
@@ -22,6 +22,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
 
         };
+        public SpellcasterClass SpellcasterClass => SpellcasterClass.PRIMARY;
 
         internal Druid() { }
 
@@ -49,10 +50,12 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
             }
-            var newFeatures = AllClassFeatures.GetValues(Level, true);
-            foreach (IFeature f in newFeatures) {
-                ClassFeatures.Add(f);
-                FeaturesManager.Features.Add(f);
+            IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
+            if (AllClassFeatures.TryGetValue(1, out newFeatures)) {
+                foreach (IFeature f in newFeatures) {
+                    ClassFeatures.Add(f);
+                    FeaturesManager.Features.Add(f);
+                }
             }
         }
 
@@ -65,10 +68,12 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             if (Level == SUBCLASS_LEVEL) {
                 SelectSubclass();
             }
-            var newFeatures = AllClassFeatures.GetValues(Level, true);
-            foreach (IFeature f in newFeatures) {
-                ClassFeatures.Add(f);
-                FeaturesManager.Features.Add(f);
+            IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
+            if (AllClassFeatures.TryGetValue(Level, out newFeatures)) {
+                foreach (IFeature f in newFeatures) {
+                    ClassFeatures.Add(f);
+                    FeaturesManager.Features.Add(f);
+                }
             }
         }
 

@@ -70,47 +70,86 @@ namespace FifthCharacter.Viewmodel {
         public string CharacterName {
             get => CharacterManager.CharacterName;
             set {
+                if (string.IsNullOrEmpty(value)) {
+                    IsNameSet = false;
+                } else {
+                    IsNameSet = true;
+                }
                 if (CharacterManager.CharacterName != value) {
                     CharacterManager.CharacterName = value;
                     OnPropertyChanged("CharacterName");
                     MainPage.CharacterInfoView.Viewmodel.OnPropertyChanged("CharacterName");
                 }
+                OnPropertyChanged("Page1CanMoveOn");
             }
         }
         public string PlayerName {
             get => CharacterManager.PlayerName;
             set {
+                if (string.IsNullOrEmpty(value)) {
+                    IsPlayernameSet = false;
+                } else {
+                    IsPlayernameSet = true;
+                }
                 if (CharacterManager.PlayerName != value) {
                     CharacterManager.PlayerName = value;
                     OnPropertyChanged("PlayerName");
                     MainPage.CharacterInfoView.Viewmodel.OnPropertyChanged("PlayerName");
                 }
+                OnPropertyChanged("Page1CanMoveOn");
             }
         }
-        //TODO: Race select
+        public IRace Race {
+            get => _selectedRace;
+            set {
+                if(value == null) {
+                    IsRaceSet = false;
+                    return;
+                }
+                _selectedRace = value;
+                if(CharacterManager.Race == null || CharacterManager.Race.GetType() != value.GetType()) {
+                    IsRaceSet = true;
+                    FeaturesManager.RemoveRaceFeatures();
+                    CharacterManager.Race = value.GetInstance();
+                    OnPropertyChanged("Race");
+                    MainPage.CharacterInfoView.Viewmodel.OnPropertyChanged("Race");
+                }
+                OnPropertyChanged("Page1CanMoveOn");
+            }
+
+        }
         public IPlayerClass PlayerClass {
             get => _selectedPlayerClass;
             set {
                 if(value == null) {
+                    IsClassSet = false;
                     return;
                 }
                 _selectedPlayerClass = value;
                 if (ClassManager.PrimaryClass == null || ClassManager.PrimaryClass.GetType() != value.GetType()) {
+                    IsClassSet = true;
                     ClassManager.TakeInitialClass(value);
                     OnPropertyChanged("PlayerClass");
                     MainPage.CharacterInfoView.Viewmodel.OnPropertyChanged("ClassLevel");
+                    MainPage.FeaturesListView.Viewmodel.OnPropertyChanged("Features");
                 }
+                OnPropertyChanged("Page1CanMoveOn");
             }
         }
         //TODO: Background select
         public Alignment Alignment {
             get => CharacterManager.Alignment;
             set {
+                if(value == Alignment.NONE) {
+                    IsAlignmentSet = false;
+                }
                 if (CharacterManager.Alignment != value) {
+                    IsAlignmentSet = true;
                     CharacterManager.Alignment = value;
                     OnPropertyChanged("Alignment");
                     MainPage.CharacterInfoView.Viewmodel.OnPropertyChanged("Alignment");
                 }
+                OnPropertyChanged("Page1CanMoveOn");
             }
         }
 
@@ -132,7 +171,7 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException();
             }
-        }));
+        }, () => Page1CanMoveOn));
 
         //Page 7 Commands
         private ICommand _page7next;
@@ -161,6 +200,7 @@ namespace FifthCharacter.Viewmodel {
             MainPage = mainPage;
 
             //TODO: Call to clear all cached data (after moving cahced data to save)
+            FeaturesManager.Features.Clear();
         }
 
         //Methods
@@ -184,17 +224,9 @@ namespace FifthCharacter.Viewmodel {
             set => Alignment = value.ParseToAlignment();
         }
 
-        /*public string PlayerClassString {
-            get {
-                if(PlayerClass != null) {
-                    return PlayerClass.Name;
-                } else {
-                    return null;
-                }
-            }
-            set => PlayerClass = App.Plugins.PlayerClasses.Where(n => n.Name == value).FirstOrDefault();
-        }*/
         private IPlayerClass _selectedPlayerClass = ClassManager.PrimaryClass;
+
+        private IRace _selectedRace = CharacterManager.Race;
 
         public IList<string> PossibleAlignments { get; } = new List<string>() {
             Alignment.LAWFUL_GOOD.DisplayString(),
@@ -209,5 +241,11 @@ namespace FifthCharacter.Viewmodel {
         };
 
         public IList<IPlayerClass> PossiblePlayerClasses { get; } = App.Plugins.PlayerClasses;
+
+        public IList<IRace> PossibleRaces { get; } = App.Plugins.Races;
+
+        //Validation
+        private bool IsNameSet = false, IsPlayernameSet = false, IsRaceSet = false, IsClassSet = false, IsAlignmentSet = false, IsBackgroundSet = true; //TODO: set BackgroundSet to false when implemented
+        public bool Page1CanMoveOn => IsNameSet && IsPlayernameSet && IsRaceSet && IsClassSet && IsAlignmentSet && IsBackgroundSet;
     }
 }

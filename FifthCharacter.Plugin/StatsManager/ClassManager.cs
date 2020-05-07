@@ -27,6 +27,7 @@ namespace FifthCharacter.Plugin.StatsManager {
         }
 
         public static void TakeInitialClass(IPlayerClass playerClass) {
+            FeaturesManager.RemoveClassFeatures();
             PrimaryClass = playerClass.TakeAsPrimaryClass();
             Classes.Clear();
             Classes.Add(PrimaryClass);

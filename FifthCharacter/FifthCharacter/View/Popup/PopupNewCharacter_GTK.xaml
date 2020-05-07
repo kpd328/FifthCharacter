@@ -39,7 +39,14 @@
                    Grid.Row="0"
                    Grid.Column="2"
                    Grid.ColumnSpan="2"/>
-            <!--Race Picker row 1, columm 0, colspan 2-->
+            <Picker Title="Race"
+                    ItemsSource="{Binding PossibleRaces}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding Race}"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
             <Picker Title="Class"
                     ItemsSource="{Binding PossiblePlayerClasses}"
                     ItemDisplayBinding="{Binding Name}"
@@ -60,6 +67,7 @@
                     HorizontalOptions="FillAndExpand"
                     Grid.Row="3"
                     Grid.Column="3"
+                    IsEnabled="{Binding Page1CanMoveOn}"
                     Command="{Binding Page1Next}"/>
         </Grid>
     </ContentPage.Content>

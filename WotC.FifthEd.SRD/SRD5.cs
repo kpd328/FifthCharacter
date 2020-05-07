@@ -7,6 +7,7 @@ using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon;
 using WotC.FifthEd.SRD.Features.PlayerClass.Fighter;
 using WotC.FifthEd.SRD.PlayerClass;
+using WotC.FifthEd.SRD.Race;
 using WotC.FifthEd.SRD.Spells.Abjuration;
 using WotC.FifthEd.SRD.Spells.Conjuration;
 using WotC.FifthEd.SRD.Spells.Enchantment;
@@ -27,7 +28,17 @@ namespace WotC.FifthEd.SRD {
         public string PluginVersion => Version;
         public string PluginID => ID;
 
-        public RaceDictionary Races => new RaceDictionary();
+        public RaceDictionary Races => new RaceDictionary() {
+            new HillDwarf(),
+            new HighElf(),
+            new LightfootHalfling(),
+            new Human(),
+            new Dragonborn(),
+            new RockGnome(),
+            new HalfElf(),
+            new HalfOrc(),
+            new Tiefling()
+        };
         public MagicDictionary Magic => new MagicDictionary() {
             //Abjuration Spells
             new Aid(),
@@ -51,7 +62,6 @@ namespace WotC.FifthEd.SRD {
             //Transmutation Spells
             new AlterSelf()
         };
-        //Only uncomment 'new' statements when their classes no longer throw 'NotImplementedException'
         public AttackDictionary Attacks => new AttackDictionary() {
             new MMWBattleaxe(),
             new MMWFlail(),

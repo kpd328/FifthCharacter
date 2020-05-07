@@ -1,17 +1,18 @@
-﻿using FifthCharacter.Plugin.Tools;
+﻿using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Tools;
 
 namespace FifthCharacter.Plugin.StatsManager {
     public static class CharacterManager {
         //TODO: Save information to static location
 
         //Character information, assignments are temporary
-        public static string CharacterName { get; set; } = "Hero";
-        public static string ClassLevel => ClassManager.ClassAndLevelText; //TODO: retrieve from character class(es)
+        public static string CharacterName { get; set; }
+        public static string ClassLevel => ClassManager.ClassAndLevelText;
         public static string Background { get; set; } = "Military Veteran"; //TODO: retrieve from character background
-        public static string PlayerName { get; set; } = "John Doe";
-        public static string Race { get; set; } = "Human"; //TODO: retrieve from character race
-        public static Alignment Alignment { get; set; } = Alignment.LAWFUL_GOOD;
-        public static string AlignmentText => Alignment.DisplayString(); //TODO: retrieve from enum
+        public static string PlayerName { get; set; }
+        public static IRace Race { get; set; }
+        public static Alignment Alignment { get; set; }
+        public static string AlignmentText => Alignment.DisplayString();
         public static int ExperiecePoints { get; set; } = 1200; //TODO: integrate with XP manager
 
         //Combat information
