@@ -40,6 +40,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Features\Race\RacialFeatures.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RacialFeatures.resx</DependentUpon>
+    </Compile>
     <Compile Update="Popup\PopupFeature.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -74,6 +79,10 @@
     <EmbeddedResource Update="Features\PlayerClass\Fighter\FightingStyleText.resx">
       <LastGenOutput>FightingStyleText.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Race\RacialFeatures.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RacialFeatures.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Spells\AtHigherLevelsDescriptions.resx">
       <Generator>ResXFileCodeGenerator</Generator>

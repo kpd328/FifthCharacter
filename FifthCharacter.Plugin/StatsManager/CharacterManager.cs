@@ -13,7 +13,7 @@ namespace FifthCharacter.Plugin.StatsManager {
         public static IRace Race { get; set; }
         public static Alignment Alignment { get; set; }
         public static string AlignmentText => Alignment.DisplayString();
-        public static int ExperiecePoints { get; set; } = 1200; //TODO: integrate with XP manager
+        public static int ExperiecePoints { get; set; } //TODO: integrate with XP manager
 
         //Combat information
         public static int ArmorClass { get; set; } //TODO: integrate with systems to produce value based on armor, race, class, dex, etc.
