@@ -38,5 +38,7 @@ namespace FifthCharacter.Viewmodel {
 
         //Methods
         void Bind(AbilityScore view);
+        void OnPropertyChanged(string propertyName);
+        void AllPropertiesChanged();
     }
 }

@@ -109,9 +109,16 @@ namespace FifthCharacter.Viewmodel {
                 if(CharacterManager.Race == null || CharacterManager.Race.GetType() != value.GetType()) {
                     IsRaceSet = true;
                     FeaturesManager.RemoveRaceFeatures();
+                    ProficiencyManager.RemoveRaceProficiencies();
                     CharacterManager.Race = value.GetInstance();
                     OnPropertyChanged("Race");
                     MainPage.CharacterInfoView.Viewmodel.OnPropertyChanged("Race");
+                    MainPage.StrengthAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.DexterityAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.ConstitutionAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.IntellegenceAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.WisdomAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.CharismaAbilityView.Viewmodel.AllPropertiesChanged();
                 }
                 OnPropertyChanged("Page1CanMoveOn");
             }
@@ -131,6 +138,12 @@ namespace FifthCharacter.Viewmodel {
                     OnPropertyChanged("PlayerClass");
                     MainPage.CharacterInfoView.Viewmodel.OnPropertyChanged("ClassLevel");
                     MainPage.FeaturesListView.Viewmodel.OnPropertyChanged("Features");
+                    MainPage.StrengthAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.DexterityAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.ConstitutionAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.IntellegenceAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.WisdomAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.CharismaAbilityView.Viewmodel.AllPropertiesChanged();
                 }
                 OnPropertyChanged("Page1CanMoveOn");
             }

@@ -1,7 +1,8 @@
 ﻿using FifthCharacter.Plugin.StatsManager;
+using System.ComponentModel;
 
 namespace FifthCharacter.Abilities {
-    public class IntelligenceAbility : AAbilityVM {
+    public class IntelligenceAbility : AAbilityVM, INotifyPropertyChanged {
         public override string AbilityName => "Intelligence";
         public override string AbilityScore => AbilityManager.IntelligenceScore.ToString();
         public override string AbilityModifier => AbilityManager.IntelligenceModifier;
@@ -31,5 +32,29 @@ namespace FifthCharacter.Abilities {
         public override bool Skill3Exists => true;
         public override bool Skill4Exists => true;
         public override bool Skill5Exists => true;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public override void OnPropertyChanged(string propertyName) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public override void AllPropertiesChanged() {
+            OnPropertyChanged("AbilityScore");
+            OnPropertyChanged("AbilityModifier");
+
+            OnPropertyChanged("SavingThrowModifier");
+            OnPropertyChanged("Skill1Modifier");
+            OnPropertyChanged("Skill2Modifier");
+            OnPropertyChanged("Skill3Modifier");
+            OnPropertyChanged("Skill4Modifier");
+            OnPropertyChanged("Skill5Modifier");
+
+            OnPropertyChanged("SavingThrowProficiency");
+            OnPropertyChanged("Skill1Proficiency");
+            OnPropertyChanged("Skill2Proficiency");
+            OnPropertyChanged("Skill3Proficiency");
+            OnPropertyChanged("Skill4Proficiency");
+            OnPropertyChanged("Skill5Proficiency");
+        }
     }
 }

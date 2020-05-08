@@ -1,4 +1,5 @@
 ﻿using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Proficiencies.Skills;
 using FifthCharacter.Plugin.StatsManager;
 using WotC.FifthEd.SRD.Features.Race.Elf;
 
@@ -12,7 +13,7 @@ namespace WotC.FifthEd.SRD.Race {
         protected AElf() {
             CharacterManager.Speed = 30;
 
-            //TODO: Add Perception Proficiency
+            ProficiencyManager.Proficiencies.Add(new ProfPerception(SOURCE_TEXT));
 
             FeaturesManager.Features.Add(new FElfAbilityScoreIncrease());
             FeaturesManager.Features.Add(new FElfDarkvision());

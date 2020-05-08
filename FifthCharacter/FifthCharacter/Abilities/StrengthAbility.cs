@@ -1,7 +1,8 @@
 ﻿using FifthCharacter.Plugin.StatsManager;
+using System.ComponentModel;
 
 namespace FifthCharacter.Abilities {
-    public class StrengthAbility : AAbilityVM {
+    public class StrengthAbility : AAbilityVM, INotifyPropertyChanged {
         public override string AbilityName => "Strength";
         public override string AbilityScore => AbilityManager.StrengthScore.ToString();
         public override string AbilityModifier => AbilityManager.StrengthModifier;
@@ -31,5 +32,21 @@ namespace FifthCharacter.Abilities {
         public override bool Skill3Exists => false;
         public override bool Skill4Exists => false;
         public override bool Skill5Exists => false;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public override void OnPropertyChanged(string propertyName) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public override void AllPropertiesChanged() {
+            OnPropertyChanged("AbilityScore");
+            OnPropertyChanged("AbilityModifier");
+
+            OnPropertyChanged("SavingThrowModifier");
+            OnPropertyChanged("Skill1Modifier");
+
+            OnPropertyChanged("SavingThrowProficiency");
+            OnPropertyChanged("Skill1Proficiency");
+        }
     }
 }

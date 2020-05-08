@@ -45,5 +45,8 @@ namespace FifthCharacter.Abilities {
             this.View = view;
             View.BindingContext = this;
         }
+
+        public abstract void AllPropertiesChanged();
+        public abstract void OnPropertyChanged(string propertyName);
     }
 }

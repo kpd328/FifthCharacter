@@ -13,6 +13,15 @@ namespace FifthCharacter.Plugin.StatsManager {
     public static class ClassManager {
         public static IList<IPlayerClass> Classes { get; private set; } = new List<IPlayerClass>();
         public static IPlayerClass PrimaryClass { get; private set; }
+        public static int TotalLevel {
+            get {
+                int _return = 0;
+                foreach(var c in Classes) {
+                    _return += c.Level;
+                }
+                return _return;
+            }
+        }
 
         public static string ClassAndLevelText {
             get {
@@ -28,6 +37,7 @@ namespace FifthCharacter.Plugin.StatsManager {
 
         public static void TakeInitialClass(IPlayerClass playerClass) {
             FeaturesManager.RemoveClassFeatures();
+            ProficiencyManager.RemoveClassProficiencies();
             PrimaryClass = playerClass.TakeAsPrimaryClass();
             Classes.Clear();
             Classes.Add(PrimaryClass);

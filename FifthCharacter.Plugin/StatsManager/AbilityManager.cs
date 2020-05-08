@@ -1,4 +1,6 @@
-﻿namespace FifthCharacter.Plugin.StatsManager {
+﻿using System;
+
+namespace FifthCharacter.Plugin.StatsManager {
     public static class AbilityManager {
         //TODO: Save scores to static location
 
@@ -9,7 +11,7 @@
         public static int IntelligenceScore { get; set; }
         public static int WisdomScore { get; set; }
         public static int CharismaScore { get; set; }
-        public static int ProficiencyBonus { get; set; }
+        public static int ProficiencyBonus => 1 + (int)Math.Ceiling(ClassManager.TotalLevel / 4.0);
 
         //Ability Score Modifiers
         public static int StrengthMod => (StrengthScore - 10) / 2;
@@ -49,13 +51,13 @@
         public static string CharismaSave => CharismaSaveVal.ToString("+0;-#");
 
         //Skills
-        public static bool AthleticsProficiency { get; set; }
+        public static bool AthleticsProficiency => ProficiencyManager.CheckByName("Athletics", Interface.ProficiencyType.SKILL);
         private static int AthleticsModifier => AthleticsProficiency ? StrengthMod + ProficiencyBonus : StrengthMod;
         public static string Athletics => AthleticsModifier.ToString("+0;-#");
 
-        public static bool AcrobaticsProficiency { get; set; }
-        public static bool SleightOfHandProficiency { get; set; }
-        public static bool StealthProficiency { get; set; }
+        public static bool AcrobaticsProficiency => ProficiencyManager.CheckByName("Acrobatics", Interface.ProficiencyType.SKILL);
+        public static bool SleightOfHandProficiency => ProficiencyManager.CheckByName("Sleight of Hand", Interface.ProficiencyType.SKILL);
+        public static bool StealthProficiency => ProficiencyManager.CheckByName("Stealth", Interface.ProficiencyType.SKILL);
         private static int AcrobaticsModifier => AcrobaticsProficiency ? DexterityMod + ProficiencyBonus : DexterityMod;
         private static int SleightOfHandModifier => SleightOfHandProficiency ? DexterityMod + ProficiencyBonus : DexterityMod;
         private static int StealthModifier => StealthProficiency ? DexterityMod + ProficiencyBonus : DexterityMod;
@@ -63,11 +65,11 @@
         public static string SleightOfHand => SleightOfHandModifier.ToString("+0;-#");
         public static string Stealth => StealthModifier.ToString("+0;-#");
 
-        public static bool ArcanaProficiency { get; set; }
-        public static bool HistoryProficiency { get; set; }
-        public static bool InvestigationProficiency { get; set; }
-        public static bool NatureProficiency { get; set; }
-        public static bool ReligionProficiency { get; set; }
+        public static bool ArcanaProficiency => ProficiencyManager.CheckByName("Arcana", Interface.ProficiencyType.SKILL);
+        public static bool HistoryProficiency => ProficiencyManager.CheckByName("History", Interface.ProficiencyType.SKILL);
+        public static bool InvestigationProficiency => ProficiencyManager.CheckByName("Investigation", Interface.ProficiencyType.SKILL);
+        public static bool NatureProficiency => ProficiencyManager.CheckByName("Nature", Interface.ProficiencyType.SKILL);
+        public static bool ReligionProficiency => ProficiencyManager.CheckByName("Religion", Interface.ProficiencyType.SKILL);
         private static int ArcanaModifier => ArcanaProficiency ? IntelligenceMod + ProficiencyBonus : IntelligenceMod;
         private static int HistoryModifier => HistoryProficiency ? IntelligenceMod + ProficiencyBonus : IntelligenceMod;
         private static int InvestigationModifier => InvestigationProficiency ? IntelligenceMod + ProficiencyBonus : IntelligenceMod;
@@ -80,11 +82,11 @@
         public static string Religion => ReligionModifier.ToString("+0;-#");
 
 
-        public static bool AnimalHandlingProficiency { get; set; }
-        public static bool InsightProficiency { get; set; }
-        public static bool MedicineProficiency { get; set; }
-        public static bool PerceptionProficiency { get; set; }
-        public static bool SurvivalProficiency { get; set; }
+        public static bool AnimalHandlingProficiency => ProficiencyManager.CheckByName("Animal Handling", Interface.ProficiencyType.SKILL);
+        public static bool InsightProficiency => ProficiencyManager.CheckByName("Insight", Interface.ProficiencyType.SKILL);
+        public static bool MedicineProficiency => ProficiencyManager.CheckByName("Medicine", Interface.ProficiencyType.SKILL);
+        public static bool PerceptionProficiency => ProficiencyManager.CheckByName("Perception", Interface.ProficiencyType.SKILL);
+        public static bool SurvivalProficiency => ProficiencyManager.CheckByName("Survival", Interface.ProficiencyType.SKILL);
         private static int AnimalHandlingModifier => AnimalHandlingProficiency ? WisdomMod + ProficiencyBonus : WisdomMod;
         private static int InsightModifier => InsightProficiency ? WisdomMod + ProficiencyBonus : WisdomMod;
         private static int MedicineModifier => MedicineProficiency ? WisdomMod + ProficiencyBonus : WisdomMod;
@@ -96,10 +98,10 @@
         public static string Perception => PerceptionModifier.ToString("+0;-#");
         public static string Survival => SurvivalModifier.ToString("+0;-#");
 
-        public static bool DeceptionProficiency { get; set; }
-        public static bool IntimidationProficiency { get; set; }
-        public static bool PerformanceProficiency { get; set; }
-        public static bool PersuasionProficiency { get; set; }
+        public static bool DeceptionProficiency => ProficiencyManager.CheckByName("Deception", Interface.ProficiencyType.SKILL);
+        public static bool IntimidationProficiency => ProficiencyManager.CheckByName("Intimidation", Interface.ProficiencyType.SKILL);
+        public static bool PerformanceProficiency => ProficiencyManager.CheckByName("Performance", Interface.ProficiencyType.SKILL);
+        public static bool PersuasionProficiency => ProficiencyManager.CheckByName("Persuasion", Interface.ProficiencyType.SKILL);
         private static int DeceptionModifier => DeceptionProficiency ? CharismaMod + ProficiencyBonus : CharismaMod;
         private static int IntimidationModifier => IntimidationProficiency ? CharismaMod + ProficiencyBonus : CharismaMod;
         private static int PerformanceModifier => PerformanceProficiency ? CharismaMod + ProficiencyBonus : CharismaMod;
