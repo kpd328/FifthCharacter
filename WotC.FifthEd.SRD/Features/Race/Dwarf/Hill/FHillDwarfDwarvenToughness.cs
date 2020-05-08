@@ -6,6 +6,7 @@ using WotC.FifthEd.SRD.Popup;
 using Xamarin.Forms;
 
 namespace WotC.FifthEd.SRD.Features.Race.Dwarf.Hill {
+    //TODO: link into HP system and implement feature's effects
     public class FHillDwarfDwarvenToughness : IFeature {
         public string Name => "Dwarven Toughness";
         public string ID => "SRD.Feature.Race.Dwarf.Hill.DwarvenToughness";
