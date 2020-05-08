@@ -10,7 +10,7 @@ namespace WotC.FifthEd.SRD.Race {
         public HillDwarf() { }
 
         protected HillDwarf(bool isRace) : base() {
-            //TODO: add asi
+            FeaturesManager.Features.Add(new FHillDwarfAbilityScoreIncrease());
             FeaturesManager.Features.Add(new FHillDwarfDwarvenToughness());
         }
 

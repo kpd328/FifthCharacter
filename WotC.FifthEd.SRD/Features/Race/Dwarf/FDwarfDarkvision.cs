@@ -5,12 +5,12 @@ using System.Windows.Input;
 using WotC.FifthEd.SRD.Popup;
 using Xamarin.Forms;
 
-namespace WotC.FifthEd.SRD.Features.Race.Dwarf.Hill {
-    public class FHillDwarfDwarvenToughness : IFeature {
-        public string Name => "Dwarven Toughness";
-        public string ID => "SRD.Feature.Race.Dwarf.Hill.DwarvenToughness";
-        public string Source => "Race Dwarf (Hill)";
-        public string Text => RacialFeatures.Dwarven_Toughness;
+namespace WotC.FifthEd.SRD.Features.Race.Dwarf {
+    public class FDwarfDarkvision : IFeature {
+        public string Name => "Darkvision";
+        public string ID => "SRD.Feature.Race.Dwarf.Darkvision";
+        public string Source => "Race Dwarf";
+        public string Text => RacialFeatures.Darkvision_Dwarf;
         public bool IsActive => false;
         public int ActiveUses => 0;
         public bool IsAbilityMod => false;
@@ -31,7 +31,7 @@ namespace WotC.FifthEd.SRD.Features.Race.Dwarf.Hill {
             }
         }));
 
-        public IFeature GetInstance() => new FHillDwarfDwarvenToughness();
+        public IFeature GetInstance() => new FDwarfDarkvision();
 
         public void ModAbility() => throw new NotImplementedException("IsAbilityMod is false, this method is invalid.");
     }

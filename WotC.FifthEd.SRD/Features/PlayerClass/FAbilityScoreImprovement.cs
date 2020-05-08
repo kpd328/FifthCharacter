@@ -9,5 +9,10 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass {
         public static string Name => "Ability Score Improvement";
         public static bool IsActive => false;
         public static int ActiveUses => 0;
+        public static bool IsAbilityMod => true;
+
+        public static void ModAbility() {
+            //TODO: prompt to pick ability(s) to improve or feat to take
+        }
     }
 }

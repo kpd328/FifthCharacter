@@ -15,13 +15,12 @@ using Xamarin.Forms;
  * Page 1:\
  * -Name
  * -Player Name
- * -Race
+ * -Race (with subrace)
  * -Class
  * -Background
  * -Allignment
  * 
  * Page 2 (if applicable):
- * -Subrace (if applicable)
  * -Race options (if applicable)
  * 
  * Page 3 (if applicable):

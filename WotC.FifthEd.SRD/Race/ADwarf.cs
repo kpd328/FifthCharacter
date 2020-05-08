@@ -1,5 +1,6 @@
 ﻿using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.StatsManager;
+using WotC.FifthEd.SRD.Features.Race.Dwarf;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.SimpleMeleeWeapon;
 
@@ -26,7 +27,10 @@ namespace WotC.FifthEd.SRD.Race {
             //Languages
             //TODO: add languages
 
-            //TODO: add asi and race features
+            FeaturesManager.Features.Add(new FDwarfAbilityScoreIncrease());
+            FeaturesManager.Features.Add(new FDwarfDarkvision());
+            FeaturesManager.Features.Add(new FDwarfDwarvenResilience());
+            FeaturesManager.Features.Add(new FDwarfStonecunning());
         }
 
         public abstract IRace GetInstance();

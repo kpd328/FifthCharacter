@@ -8,10 +8,12 @@ using Xamarin.Forms;
 namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
     public abstract class AFeatureFighter : IFeature {
         public abstract string Name { get; }
+        public string ID => string.Format("{0}.{1}.{2}", SRD5.Name, GetType().Name, Name);
         public string Source => "Class Fighter";
         public abstract string Text { get; }
         public abstract bool IsActive { get; }
         public abstract int ActiveUses { get; }
+        public bool IsAbilityMod => false;
 
         private ICommand _popup;
         public ICommand Popup => _popup ?? (_popup = new Command(() => {
@@ -29,8 +31,8 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
             }
         }));
 
-        public string ID => string.Format("{0}.{1}.{2}", SRD5.Name, GetType().Name, Name);
-
         public abstract IFeature GetInstance();
+
+        public void ModAbility() => throw new NotImplementedException("IsAbilityMod is false, this method is invalid.");
     }
 }

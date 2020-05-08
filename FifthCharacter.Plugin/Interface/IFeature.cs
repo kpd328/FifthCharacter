@@ -15,6 +15,10 @@ namespace FifthCharacter.Plugin.Interface {
         /// ActiveUses should only be initialized to something other than zero iff IsActive is set to true
         /// </summary>
         int ActiveUses { get; }
+        /// <summary>
+        /// IsAbilityMod determines whethe or not the feature modifies an ability score upon taking the feature.
+        /// </summary>
+        bool IsAbilityMod { get; }
 
         /// <summary>
         /// This must be implemented with a lambda containing the line:
@@ -25,5 +29,10 @@ namespace FifthCharacter.Plugin.Interface {
         ICommand Popup { get; }
 
         IFeature GetInstance();
+        /// <summary>
+        /// ModAbility is called when a feature is taken and has <c>IsAbilityMod</c> set to <c>true</c>.
+        /// If <c>IsAbilityMod</c> is <c>false</c> then ModAbility should throw an error if called.
+        /// </summary>
+        void ModAbility();
     }
 }
