@@ -70,6 +70,24 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Dexterity score increases by 2..
+        /// </summary>
+        internal static string Ability_Score_Increase_Elf {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Elf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Intelligence score increases by 1..
+        /// </summary>
+        internal static string Ability_Score_Increase_High_Elf {
+            get {
+                return ResourceManager.GetString("Ability Score Increase High Elf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your Wisdom score increases by 1..
         /// </summary>
         internal static string Ability_Score_Increase_Hill_Dwarf {
@@ -88,11 +106,29 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it..
+        /// </summary>
+        internal static string Cantrip {
+            get {
+                return ResourceManager.GetString("Cantrip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray..
         /// </summary>
         internal static string Darkvision_Dwarf {
             get {
                 return ResourceManager.GetString("Darkvision Dwarf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. Youcan see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray..
+        /// </summary>
+        internal static string Darkvision_Elf {
+            get {
+                return ResourceManager.GetString("Darkvision Elf", resourceCulture);
             }
         }
         
@@ -115,11 +151,29 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have advantage on saving throws against being charmed, and magic can’t put you to sleep..
+        /// </summary>
+        internal static string Fey_Ancestry {
+            get {
+                return ResourceManager.GetString("Fey Ancestry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus..
         /// </summary>
         internal static string Stonecunning {
             get {
                 return ResourceManager.GetString("Stonecunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep..
+        /// </summary>
+        internal static string Trance {
+            get {
+                return ResourceManager.GetString("Trance", resourceCulture);
             }
         }
     }
