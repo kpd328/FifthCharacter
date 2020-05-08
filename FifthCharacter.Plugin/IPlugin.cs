@@ -15,23 +15,26 @@ namespace FifthCharacter.Plugin {
         string PluginID { get; }
 
         /// <summary>
-        /// Add all races to this collection using the <c>Add(IRace)</c> method to expose them to the App.
+        /// Add all races to this collection to expose them to the App.
         /// </summary>
         RaceDictionary Races { get; }
         /// <summary>
-        /// Add all magic to this collection using the <c>Add(IMagic)</c> method to expose them to the App.
+        /// Add all magic to this collection to expose them to the App.
         /// </summary>
         MagicDictionary Magic { get; }
         /// <summary>
-        /// Add all attacks to this collection using the <c>Add(IAttack)</c> method to expose them to the App.
+        /// Add all attacks to this collection to expose them to the App.
         /// </summary>
         AttackDictionary Attacks { get; }
         /// <summary>
-        /// Add all features to this collection using the <c>Add(IFeature)</c> method to expose them to the App.
+        /// Add all feats to this collection to expose them to the App.
+        /// Note, features such as those found in classes or races do not need to be added here if they are properly
+        /// used in the respective class/race/etc. Only feats obtained by foregoing an Ability Score Improvement feature
+        /// are added here.
         /// </summary>
-        FeatureDictionary Features { get; }
+        FeatureDictionary Feats { get; }
         /// <summary>
-        /// Add all player classes to this collection using the <c>Add(PlayerClass)</c> method to expose them to the App.
+        /// Add all player classes to this collection to expose them to the App.
         /// </summary>
         PlayerClassDictionary PlayerClasses { get; }
     }

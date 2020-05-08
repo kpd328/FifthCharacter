@@ -101,16 +101,7 @@ namespace WotC.FifthEd.SRD {
             new SRWShortbow(),
             new SRWSling()
         };
-        public FeatureDictionary Features => new FeatureDictionary() {
-            //Fighter Class Features
-            new FFighterActionSurge(),
-            new FFighterFightingStyle(FightingStyle.ARCHERY),
-            new FFighterFightingStyle(FightingStyle.DEFENSE),
-            new FFighterFightingStyle(FightingStyle.DUELING),
-            new FFighterFightingStyle(FightingStyle.GREATWEAPONFIGHTING),
-            new FFighterFightingStyle(FightingStyle.PROTECTION),
-            new FFighterFightingStyle(FightingStyle.TWOWEAPONFIGHTING),
-            new FFighterSecondWind()
+        public FeatureDictionary Feats => new FeatureDictionary() {
         };
         public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
             new Barbarian(),

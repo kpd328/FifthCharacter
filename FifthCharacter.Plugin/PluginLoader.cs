@@ -40,7 +40,7 @@ namespace FifthCharacter.Plugin {
                 Races.AddAll(plugin.Races);
                 Magic.AddAll(plugin.Magic);
                 Attacks.AddAll(plugin.Attacks);
-                Features.AddAll(plugin.Features);
+                Features.AddAll(plugin.Feats);
                 PlayerClasses.AddAll(plugin.PlayerClasses);
             }
         }
