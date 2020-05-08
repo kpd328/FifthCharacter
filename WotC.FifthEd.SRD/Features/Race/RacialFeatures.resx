@@ -123,6 +123,9 @@
   <data name="Ability Score Increase Hill Dwarf" xml:space="preserve">
     <value>Your Wisdom score increases by 1.</value>
   </data>
+  <data name="Ability Score Increase Human" xml:space="preserve">
+    <value>Your ability scores each increase by 1.</value>
+  </data>
   <data name="Darkvision Dwarf" xml:space="preserve">
     <value>Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</value>
   </data>

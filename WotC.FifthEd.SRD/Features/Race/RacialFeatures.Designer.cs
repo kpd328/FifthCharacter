@@ -79,6 +79,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your ability scores each increase by 1..
+        /// </summary>
+        internal static string Ability_Score_Increase_Human {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Human", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray..
         /// </summary>
         internal static string Darkvision_Dwarf {
