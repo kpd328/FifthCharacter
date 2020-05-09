@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Ability Score Increase Dragonborn" xml:space="preserve">
+    <value>Your Strength score increases by 2, and your Charisma score increases by 1.</value>
+  </data>
   <data name="Ability Score Increase Dwarf" xml:space="preserve">
     <value>Your Constitution score increases by 2.</value>
   </data>
@@ -141,8 +144,74 @@
   <data name="Brave" xml:space="preserve">
     <value>You have advantage on saving throws against being frightened.</value>
   </data>
+  <data name="Breath Weapon" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon Black" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your black draconic ancestry, the exhalation is a 5 by 30ft. line dealing Acid damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon Blue" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your blue draconic ancestry, the exhalation is a 5 by 30ft. line dealing Lightning damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon Brass" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your brass draconic ancestry, the exhalation is a 5 by 30ft. line dealing Fire damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon Bronze" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your bronze draconic ancestry, the exhalation is a 5 by 30ft. line dealing Lightning damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon Copper" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your copper draconic ancestry, the exhalation is a 5 by 30ft. line dealing Acid damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon Gold" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your gold draconic ancestry, the exhalation is a 15 ft. cone dealing Fire damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon Green" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your green draconic ancestry, the exhalation is a 15 ft. cone dealing Poison damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon Red" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your red draconic ancestry, the exhalation is a 15 ft. cone dealing Fire damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon Silver" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your silver draconic ancestry, the exhalation is a 15 ft. cone dealing Cold damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
+  <data name="Breath Weapon White" xml:space="preserve">
+    <value>You can use your action to exhale destructive energy. Because of your white draconic ancestry, the exhalation is a 15 ft. cone dealing Cold damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\nAfter you use your breath weapon, you can’t use it again until you complete a short or long rest.</value>
+  </data>
   <data name="Cantrip" xml:space="preserve">
     <value>You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</value>
+  </data>
+  <data name="Damage Resistance" xml:space="preserve">
+    <value>You have resistance to the damage type associated with your draconic ancestry.</value>
+  </data>
+  <data name="Damage Resistance Black" xml:space="preserve">
+    <value>You have resistance to Acid damage.</value>
+  </data>
+  <data name="Damage Resistance Blue" xml:space="preserve">
+    <value>You have resistance to Lightning damage.</value>
+  </data>
+  <data name="Damage Resistance Brass" xml:space="preserve">
+    <value>You have resistance to Fire damage.</value>
+  </data>
+  <data name="Damage Resistance Bronze" xml:space="preserve">
+    <value>You have resistance to Lightning damage.</value>
+  </data>
+  <data name="Damage Resistance Copper" xml:space="preserve">
+    <value>You have resistance to Acid damage.</value>
+  </data>
+  <data name="Damage Resistance Gold" xml:space="preserve">
+    <value>You have resistance to Fire damage.</value>
+  </data>
+  <data name="Damage Resistance Green" xml:space="preserve">
+    <value>You have resistance to Poison damage.</value>
+  </data>
+  <data name="Damage Resistance Red" xml:space="preserve">
+    <value>You have resistance to Fire damage.</value>
+  </data>
+  <data name="Damage Resistance Silver" xml:space="preserve">
+    <value>You have resistance to Cold damage.</value>
+  </data>
+  <data name="Damage Resistance White" xml:space="preserve">
+    <value>You have resistance to Cold damage.</value>
   </data>
   <data name="Darkvision Dwarf" xml:space="preserve">
     <value>Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</value>

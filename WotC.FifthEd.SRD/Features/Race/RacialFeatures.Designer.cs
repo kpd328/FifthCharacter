@@ -61,6 +61,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Strength score increases by 2, and your Charisma score increases by 1..
+        /// </summary>
+        internal static string Ability_Score_Increase_Dragonborn {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Dragonborn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your Constitution score increases by 2..
         /// </summary>
         internal static string Ability_Score_Increase_Dwarf {
@@ -133,11 +142,209 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon {
+            get {
+                return ResourceManager.GetString("Breath Weapon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your black draconic ancestry, the exhalation is a 5 by 30ft. line dealing Acid damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_Black {
+            get {
+                return ResourceManager.GetString("Breath Weapon Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your blue draconic ancestry, the exhalation is a 5 by 30ft. line dealing Lightning damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th lev [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_Blue {
+            get {
+                return ResourceManager.GetString("Breath Weapon Blue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your brass draconic ancestry, the exhalation is a 5 by 30ft. line dealing Fire damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_Brass {
+            get {
+                return ResourceManager.GetString("Breath Weapon Brass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your bronze draconic ancestry, the exhalation is a 5 by 30ft. line dealing Lightning damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th l [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_Bronze {
+            get {
+                return ResourceManager.GetString("Breath Weapon Bronze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your copper draconic ancestry, the exhalation is a 5 by 30ft. line dealing Acid damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_Copper {
+            get {
+                return ResourceManager.GetString("Breath Weapon Copper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your gold draconic ancestry, the exhalation is a 15 ft. cone dealing Fire damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_Gold {
+            get {
+                return ResourceManager.GetString("Breath Weapon Gold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your green draconic ancestry, the exhalation is a 15 ft. cone dealing Poison damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_Green {
+            get {
+                return ResourceManager.GetString("Breath Weapon Green", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your red draconic ancestry, the exhalation is a 15 ft. cone dealing Fire damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_Red {
+            get {
+                return ResourceManager.GetString("Breath Weapon Red", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your silver draconic ancestry, the exhalation is a 15 ft. cone dealing Cold damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_Silver {
+            get {
+                return ResourceManager.GetString("Breath Weapon Silver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your white draconic ancestry, the exhalation is a 15 ft. cone dealing Cold damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, a [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Breath_Weapon_White {
+            get {
+                return ResourceManager.GetString("Breath Weapon White", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it..
         /// </summary>
         internal static string Cantrip {
             get {
                 return ResourceManager.GetString("Cantrip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to the damage type associated with your draconic ancestry..
+        /// </summary>
+        internal static string Damage_Resistance {
+            get {
+                return ResourceManager.GetString("Damage Resistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Acid damage..
+        /// </summary>
+        internal static string Damage_Resistance_Black {
+            get {
+                return ResourceManager.GetString("Damage Resistance Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Lightning damage..
+        /// </summary>
+        internal static string Damage_Resistance_Blue {
+            get {
+                return ResourceManager.GetString("Damage Resistance Blue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Fire damage..
+        /// </summary>
+        internal static string Damage_Resistance_Brass {
+            get {
+                return ResourceManager.GetString("Damage Resistance Brass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Lightning damage..
+        /// </summary>
+        internal static string Damage_Resistance_Bronze {
+            get {
+                return ResourceManager.GetString("Damage Resistance Bronze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Acid damage..
+        /// </summary>
+        internal static string Damage_Resistance_Copper {
+            get {
+                return ResourceManager.GetString("Damage Resistance Copper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Fire damage..
+        /// </summary>
+        internal static string Damage_Resistance_Gold {
+            get {
+                return ResourceManager.GetString("Damage Resistance Gold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Poison damage..
+        /// </summary>
+        internal static string Damage_Resistance_Green {
+            get {
+                return ResourceManager.GetString("Damage Resistance Green", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Fire damage..
+        /// </summary>
+        internal static string Damage_Resistance_Red {
+            get {
+                return ResourceManager.GetString("Damage Resistance Red", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Cold damage..
+        /// </summary>
+        internal static string Damage_Resistance_Silver {
+            get {
+                return ResourceManager.GetString("Damage Resistance Silver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to Cold damage..
+        /// </summary>
+        internal static string Damage_Resistance_White {
+            get {
+                return ResourceManager.GetString("Damage Resistance White", resourceCulture);
             }
         }
         
