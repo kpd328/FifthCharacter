@@ -1,13 +1,19 @@
 ﻿using FifthCharacter.Plugin.Interface;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using FifthCharacter.Plugin.StatsManager;
+using WotC.FifthEd.SRD.Features.Race.Halfling.Lightfoot;
 
 namespace WotC.FifthEd.SRD.Race {
     public class LightfootHalfling : AHalfling {
         public new string Name => "Lightfoot Halfling";
         public override string ID => "SRD.Race.Halfling.Lightfoot";
 
-        public override IRace GetInstance() => new LightfootHalfling();
+        public LightfootHalfling() { }
+
+        protected LightfootHalfling(bool isRace) : base() {
+            FeaturesManager.Features.Add(new FLightfootHalflingAbilityScoreIncrease());
+            FeaturesManager.Features.Add(new FLightfootHalflingNaturallyStealthy());
+        }
+
+        public override IRace GetInstance() => new LightfootHalfling(true);
     }
 }

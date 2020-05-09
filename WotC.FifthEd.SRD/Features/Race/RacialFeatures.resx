@@ -123,6 +123,9 @@
   <data name="Ability Score Increase Elf" xml:space="preserve">
     <value>Your Dexterity score increases by 2.</value>
   </data>
+  <data name="Ability Score Increase Halfling" xml:space="preserve">
+    <value>Your Dexterity score increases by 2.</value>
+  </data>
   <data name="Ability Score Increase High Elf" xml:space="preserve">
     <value>Your Intelligence score increases by 1.</value>
   </data>
@@ -131,6 +134,12 @@
   </data>
   <data name="Ability Score Increase Human" xml:space="preserve">
     <value>Your ability scores each increase by 1.</value>
+  </data>
+  <data name="Ability Score Increase Lightfoot Halfling" xml:space="preserve">
+    <value>Your Charisma score increases by 1.</value>
+  </data>
+  <data name="Brave" xml:space="preserve">
+    <value>You have advantage on saving throws against being frightened.</value>
   </data>
   <data name="Cantrip" xml:space="preserve">
     <value>You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</value>
@@ -149,6 +158,15 @@
   </data>
   <data name="Fey Ancestry" xml:space="preserve">
     <value>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</value>
+  </data>
+  <data name="Halfling Nimbleness" xml:space="preserve">
+    <value>You can move through the space of any creature that is of a size larger than yours.</value>
+  </data>
+  <data name="Lucky" xml:space="preserve">
+    <value>When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</value>
+  </data>
+  <data name="Naturally Stealthy" xml:space="preserve">
+    <value>You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</value>
   </data>
   <data name="Stonecunning" xml:space="preserve">
     <value>Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</value>

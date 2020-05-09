@@ -79,6 +79,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Dexterity score increases by 2..
+        /// </summary>
+        internal static string Ability_Score_Increase_Halfling {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Halfling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your Intelligence score increases by 1..
         /// </summary>
         internal static string Ability_Score_Increase_High_Elf {
@@ -102,6 +111,24 @@ namespace WotC.FifthEd.SRD.Features.Race {
         internal static string Ability_Score_Increase_Human {
             get {
                 return ResourceManager.GetString("Ability Score Increase Human", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Charisma score increases by 1..
+        /// </summary>
+        internal static string Ability_Score_Increase_Lightfoot_Halfling {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Lightfoot Halfling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have advantage on saving throws against being frightened..
+        /// </summary>
+        internal static string Brave {
+            get {
+                return ResourceManager.GetString("Brave", resourceCulture);
             }
         }
         
@@ -156,6 +183,33 @@ namespace WotC.FifthEd.SRD.Features.Race {
         internal static string Fey_Ancestry {
             get {
                 return ResourceManager.GetString("Fey Ancestry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can move through the space of any creature that is of a size larger than yours..
+        /// </summary>
+        internal static string Halfling_Nimbleness {
+            get {
+                return ResourceManager.GetString("Halfling Nimbleness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll..
+        /// </summary>
+        internal static string Lucky {
+            get {
+                return ResourceManager.GetString("Lucky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you..
+        /// </summary>
+        internal static string Naturally_Stealthy {
+            get {
+                return ResourceManager.GetString("Naturally Stealthy", resourceCulture);
             }
         }
         
