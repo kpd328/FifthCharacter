@@ -88,6 +88,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Intelligence score increases by 2..
+        /// </summary>
+        internal static string Ability_Score_Increase_Gnome {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Gnome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your Dexterity score increases by 2..
         /// </summary>
         internal static string Ability_Score_Increase_Halfling {
@@ -129,6 +138,24 @@ namespace WotC.FifthEd.SRD.Features.Race {
         internal static string Ability_Score_Increase_Lightfoot_Halfling {
             get {
                 return ResourceManager.GetString("Ability Score Increase Lightfoot Halfling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Constitution score increases by 1..
+        /// </summary>
+        internal static string Ability_Score_Increase_Rock_Gnome {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Rock Gnome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply..
+        /// </summary>
+        internal static string Artificer_s_Lore {
+            get {
+                return ResourceManager.GetString("Artificer\'s Lore", resourceCulture);
             }
         }
         
@@ -367,6 +394,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accustomed to life underground,you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray..
+        /// </summary>
+        internal static string Darkvision_Gnome {
+            get {
+                return ResourceManager.GetString("Darkvision Gnome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have advantage on saving throws against poison, and you have resistance against poison damage..
         /// </summary>
         internal static string Dwarven_Resilience {
@@ -390,6 +426,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         internal static string Fey_Ancestry {
             get {
                 return ResourceManager.GetString("Fey Ancestry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic..
+        /// </summary>
+        internal static string Gnome_Cunning {
+            get {
+                return ResourceManager.GetString("Gnome Cunning", resourceCulture);
             }
         }
         
@@ -426,6 +471,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         internal static string Stonecunning {
             get {
                 return ResourceManager.GetString("Stonecunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.\nWhen you create a device, choose one of the followi [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Tinker {
+            get {
+                return ResourceManager.GetString("Tinker", resourceCulture);
             }
         }
         
