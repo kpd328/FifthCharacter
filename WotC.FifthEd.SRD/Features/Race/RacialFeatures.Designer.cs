@@ -169,6 +169,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Intelligence score increases by 1, and your Charisma score increases by 2..
+        /// </summary>
+        internal static string Ability_Score_Increase_Tiefling {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Tiefling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply..
         /// </summary>
         internal static string Artificer_s_Lore {
@@ -439,6 +448,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, onlyshades of gray..
+        /// </summary>
+        internal static string Darkvision_Tiefling {
+            get {
+                return ResourceManager.GetString("Darkvision Tiefling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have advantage on saving throws against poison, and you have resistance against poison damage..
         /// </summary>
         internal static string Dwarven_Resilience {
@@ -480,6 +498,42 @@ namespace WotC.FifthEd.SRD.Features.Race {
         internal static string Halfling_Nimbleness {
             get {
                 return ResourceManager.GetString("Halfling Nimbleness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have resistance to fire damage..
+        /// </summary>
+        internal static string Hellish_Resistance {
+            get {
+                return ResourceManager.GetString("Hellish Resistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You know the thaumaturgy cantrip. Charisma is your spellcasting ability for this spell..
+        /// </summary>
+        internal static string Infernal_Legacy_1st {
+            get {
+                return ResourceManager.GetString("Infernal Legacy 1st", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You know the thaumaturgy cantrip. You can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells..
+        /// </summary>
+        internal static string Infernal_Legacy_3rd {
+            get {
+                return ResourceManager.GetString("Infernal Legacy 3rd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You know the thaumaturgy cantrip. You can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. You can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells..
+        /// </summary>
+        internal static string Infernal_Legacy_5th {
+            get {
+                return ResourceManager.GetString("Infernal Legacy 5th", resourceCulture);
             }
         }
         

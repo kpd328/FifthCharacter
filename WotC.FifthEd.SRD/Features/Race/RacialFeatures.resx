@@ -153,6 +153,9 @@
   <data name="Ability Score Increase Rock Gnome" xml:space="preserve">
     <value>Your Constitution score increases by 1.</value>
   </data>
+  <data name="Ability Score Increase Tiefling" xml:space="preserve">
+    <value>Your Intelligence score increases by 1, and your Charisma score increases by 2.</value>
+  </data>
   <data name="Artificer's Lore" xml:space="preserve">
     <value>Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.</value>
   </data>
@@ -243,6 +246,9 @@
   <data name="Darkvision Half Orc" xml:space="preserve">
     <value>Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</value>
   </data>
+  <data name="Darkvision Tiefling" xml:space="preserve">
+    <value>Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, onlyshades of gray.</value>
+  </data>
   <data name="Dwarven Resilience" xml:space="preserve">
     <value>You have advantage on saving throws against poison, and you have resistance against poison damage.</value>
   </data>
@@ -257,6 +263,18 @@
   </data>
   <data name="Halfling Nimbleness" xml:space="preserve">
     <value>You can move through the space of any creature that is of a size larger than yours.</value>
+  </data>
+  <data name="Hellish Resistance" xml:space="preserve">
+    <value>You have resistance to fire damage.</value>
+  </data>
+  <data name="Infernal Legacy 1st" xml:space="preserve">
+    <value>You know the thaumaturgy cantrip. Charisma is your spellcasting ability for this spell.</value>
+  </data>
+  <data name="Infernal Legacy 3rd" xml:space="preserve">
+    <value>You know the thaumaturgy cantrip. You can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.</value>
+  </data>
+  <data name="Infernal Legacy 5th" xml:space="preserve">
+    <value>You know the thaumaturgy cantrip. You can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. You can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.</value>
   </data>
   <data name="Lucky" xml:space="preserve">
     <value>When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</value>
