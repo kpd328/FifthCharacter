@@ -132,6 +132,9 @@
   <data name="Ability Score Increase Half Elf" xml:space="preserve">
     <value>Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.</value>
   </data>
+  <data name="Ability Score Increase Half Orc" xml:space="preserve">
+    <value>Your Strength score increases by 2, and your Constitution score increases by 1.</value>
+  </data>
   <data name="Ability Score Increase Halfling" xml:space="preserve">
     <value>Your Dexterity score increases by 2.</value>
   </data>
@@ -237,6 +240,9 @@
   <data name="Darkvision Half Elf" xml:space="preserve">
     <value>Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</value>
   </data>
+  <data name="Darkvision Half Orc" xml:space="preserve">
+    <value>Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</value>
+  </data>
   <data name="Dwarven Resilience" xml:space="preserve">
     <value>You have advantage on saving throws against poison, and you have resistance against poison damage.</value>
   </data>
@@ -257,6 +263,12 @@
   </data>
   <data name="Naturally Stealthy" xml:space="preserve">
     <value>You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</value>
+  </data>
+  <data name="Relentless Endurance" xml:space="preserve">
+    <value>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.</value>
+  </data>
+  <data name="Savage Attacks" xml:space="preserve">
+    <value>When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.</value>
   </data>
   <data name="Stonecunning" xml:space="preserve">
     <value>Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</value>

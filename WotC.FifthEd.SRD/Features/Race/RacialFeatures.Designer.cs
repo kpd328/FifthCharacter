@@ -106,6 +106,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Strength score increases by 2, and your Constitution score increases by 1..
+        /// </summary>
+        internal static string Ability_Score_Increase_Half_Orc {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Half Orc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your Dexterity score increases by 2..
         /// </summary>
         internal static string Ability_Score_Increase_Halfling {
@@ -421,6 +430,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray..
+        /// </summary>
+        internal static string Darkvision_Half_Orc {
+            get {
+                return ResourceManager.GetString("Darkvision Half Orc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have advantage on saving throws against poison, and you have resistance against poison damage..
         /// </summary>
         internal static string Dwarven_Resilience {
@@ -480,6 +498,24 @@ namespace WotC.FifthEd.SRD.Features.Race {
         internal static string Naturally_Stealthy {
             get {
                 return ResourceManager.GetString("Naturally Stealthy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest..
+        /// </summary>
+        internal static string Relentless_Endurance {
+            get {
+                return ResourceManager.GetString("Relentless Endurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit..
+        /// </summary>
+        internal static string Savage_Attacks {
+            get {
+                return ResourceManager.GetString("Savage Attacks", resourceCulture);
             }
         }
         

@@ -12,6 +12,7 @@ namespace WotC.FifthEd.SRD.Race {
         protected Human(bool isRace) {
             FeaturesManager.Features.Add(new FHumanAbilityScoreIncrease());
             CharacterManager.Speed = 30;
+            //TODO: add languages
         }
 
         public IRace GetInstance() => new Human(true);
