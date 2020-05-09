@@ -97,6 +97,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Charisma score increases by 2, and two other ability scores of your choice increase by 1..
+        /// </summary>
+        internal static string Ability_Score_Increase_Half_Elf {
+            get {
+                return ResourceManager.GetString("Ability Score Increase Half Elf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your Dexterity score increases by 2..
         /// </summary>
         internal static string Ability_Score_Increase_Halfling {
@@ -399,6 +408,15 @@ namespace WotC.FifthEd.SRD.Features.Race {
         internal static string Darkvision_Gnome {
             get {
                 return ResourceManager.GetString("Darkvision Gnome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray..
+        /// </summary>
+        internal static string Darkvision_Half_Elf {
+            get {
+                return ResourceManager.GetString("Darkvision Half Elf", resourceCulture);
             }
         }
         

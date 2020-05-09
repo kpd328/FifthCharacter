@@ -16,6 +16,6 @@ namespace WotC.FifthEd.SRD.Race {
             //TODO: add tinker's tools proficiency
         }
 
-        public override IRace GetInstance() => new RockGnome();
+        public override IRace GetInstance() => new RockGnome(true);
     }
 }
