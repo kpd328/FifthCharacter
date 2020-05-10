@@ -148,7 +148,30 @@ namespace FifthCharacter.Viewmodel {
                 OnPropertyChanged("Page1CanMoveOn");
             }
         }
-        //TODO: Background select
+        public IBackground Background {
+            get => _selectedBackground;
+            set {
+                if(value == null) {
+                    IsBackgroundSet = false;
+                    return;
+                }
+                _selectedBackground = value;
+                if(CharacterManager.Background == null || CharacterManager.Background.GetType() != value.GetType()) {
+                    IsBackgroundSet = true;
+                    FeaturesManager.RemoveBackgroundFeatures();
+                    ProficiencyManager.RemoveBackgroundProficiencies();
+                    CharacterManager.Background = value.GetInstance();
+                    MainPage.CharacterInfoView.Viewmodel.OnPropertyChanged("Background");
+                    MainPage.StrengthAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.DexterityAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.ConstitutionAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.IntellegenceAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.WisdomAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.CharismaAbilityView.Viewmodel.AllPropertiesChanged();
+                }
+                OnPropertyChanged("Page1CanMoveOn");
+            }
+        }
         public Alignment Alignment {
             get => CharacterManager.Alignment;
             set {
@@ -240,6 +263,8 @@ namespace FifthCharacter.Viewmodel {
 
         private IRace _selectedRace = CharacterManager.Race;
 
+        private IBackground _selectedBackground = CharacterManager.Background;
+
         public IList<string> PossibleAlignments { get; } = new List<string>() {
             Alignment.LAWFUL_GOOD.DisplayString(),
             Alignment.NEUTRAL_GOOD.DisplayString(),
@@ -256,8 +281,10 @@ namespace FifthCharacter.Viewmodel {
 
         public IList<IRace> PossibleRaces { get; } = App.Plugins.Races;
 
+        public IList<IBackground> PossibleBackgrounds { get; } = App.Plugins.Backgrounds;
+
         //Validation
-        private bool IsNameSet = false, IsPlayernameSet = false, IsRaceSet = false, IsClassSet = false, IsAlignmentSet = false, IsBackgroundSet = true; //TODO: set BackgroundSet to false when implemented
+        private bool IsNameSet = false, IsPlayernameSet = false, IsRaceSet = false, IsClassSet = false, IsAlignmentSet = false, IsBackgroundSet = false; //TODO: set BackgroundSet to false when implemented
         public bool Page1CanMoveOn => IsNameSet && IsPlayernameSet && IsRaceSet && IsClassSet && IsAlignmentSet && IsBackgroundSet;
     }
 }

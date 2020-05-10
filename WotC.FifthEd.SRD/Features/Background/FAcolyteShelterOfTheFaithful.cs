@@ -5,12 +5,12 @@ using System.Windows.Input;
 using WotC.FifthEd.SRD.Popup;
 using Xamarin.Forms;
 
-namespace WotC.FifthEd.SRD.Features.Race.Halfling.Lightfoot {
-    public class FLightfootHalflingNaturallyStealthy : IFeature {
-        public string Name => "Naturally Stealthy";
-        public string ID => "SRD.Feature.Race.Halfling.Lightfoot.NaturallyStealthy";
-        public string Source => "Race Halfling (Lightfoot)";
-        public string Text => RacialFeatures.Naturally_Stealthy;
+namespace WotC.FifthEd.SRD.Features.Background {
+    public class FAcolyteShelterOfTheFaithful : IFeature {
+        public string Name => "Shelter of the Faithful";
+        public string ID => "SRD.Feature.Background.Acolyte";
+        public string Source => "Background Acolyte";
+        public string Text => BackgroundFeatures.Acolyte;
         public bool IsActive => false;
         public int ActiveUses => 0;
         public bool IsAbilityMod => false;
@@ -31,7 +31,7 @@ namespace WotC.FifthEd.SRD.Features.Race.Halfling.Lightfoot {
             }
         }));
 
-        public IFeature GetInstance() => new FLightfootHalflingNaturallyStealthy();
+        public IFeature GetInstance() => new FAcolyteShelterOfTheFaithful();
 
         public void ModAbility() => throw new NotImplementedException("IsAbilityMod is false, this method is invalid.");
     }

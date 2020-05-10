@@ -14,6 +14,7 @@ namespace FifthCharacter.Plugin {
         public AttackDictionary Attacks { get; private set; } = new AttackDictionary();
         public FeatureDictionary Features { get; private set; } = new FeatureDictionary();
         public PlayerClassDictionary PlayerClasses { get; private set; } = new PlayerClassDictionary();
+        public BackgroundDictionary Backgrounds { get; private set; } = new BackgroundDictionary();
 
         public void LoadPlugins() {
             Plugins = new List<IPlugin>();
@@ -42,6 +43,7 @@ namespace FifthCharacter.Plugin {
                 Attacks.AddAll(plugin.Attacks);
                 Features.AddAll(plugin.Feats);
                 PlayerClasses.AddAll(plugin.PlayerClasses);
+                Backgrounds.AddAll(plugin.Backgrounds);
             }
         }
     }

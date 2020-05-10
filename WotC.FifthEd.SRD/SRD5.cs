@@ -1,11 +1,10 @@
 ﻿using FifthCharacter.Plugin;
-using FifthCharacter.Plugin.Features.Abstract;
 using FifthCharacter.Plugin.Tools;
 using WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.MartialRangedWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon;
-using WotC.FifthEd.SRD.Features.PlayerClass.Fighter;
+using WotC.FifthEd.SRD.Backgrounds;
 using WotC.FifthEd.SRD.PlayerClass;
 using WotC.FifthEd.SRD.Race;
 using WotC.FifthEd.SRD.Spells.Abjuration;
@@ -116,6 +115,10 @@ namespace WotC.FifthEd.SRD {
             new Sorcerer(),
             new Warlock(),
             new Wizard()
+        };
+
+        public BackgroundDictionary Backgrounds => new BackgroundDictionary() {
+            new Acolyte()
         };
     }
 }

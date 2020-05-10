@@ -68,7 +68,14 @@
                     Grid.Row="1"
                     Grid.Column="2"
                     Grid.ColumnSpan="2"/>
-            <!--Background Picker row 2, column 0, colspan 2-->
+            <Picker Title="Background"
+                    ItemsSource="{Binding PossibleBackgrounds}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding Background}"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
             <Picker Title="Alignment"
                     ItemsSource="{Binding PossibleAlignments}"
                     SelectedItem="{Binding AlignmentString}"

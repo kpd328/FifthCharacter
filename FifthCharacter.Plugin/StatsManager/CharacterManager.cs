@@ -8,7 +8,7 @@ namespace FifthCharacter.Plugin.StatsManager {
         //Character information, assignments are temporary
         public static string CharacterName { get; set; }
         public static string ClassLevel => ClassManager.ClassAndLevelText;
-        public static string Background { get; set; } = "Military Veteran"; //TODO: retrieve from character background
+        public static IBackground Background { get; set; }
         public static string PlayerName { get; set; }
         public static IRace Race { get; set; }
         public static Alignment Alignment { get; set; }

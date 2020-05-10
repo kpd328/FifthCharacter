@@ -30,6 +30,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Features\Background\BackgroundFeatures.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BackgroundFeatures.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\PlayerClass\Fighter\FeatureFighterText.Designer.cs">
       <DependentUpon>FeatureFighterText.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -71,6 +76,10 @@
     <EmbeddedResource Update="Attacks\Mechanics\Property\WeapPropTxt.resx">
       <LastGenOutput>WeapPropTxt.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Background\BackgroundFeatures.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BackgroundFeatures.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\PlayerClass\Fighter\FeatureFighterText.resx">
       <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>

@@ -62,4 +62,16 @@ namespace FifthCharacter.Plugin.Tools {
             }
         }
     }
+
+    public class BackgroundDictionary : KeyedCollection<string, IBackground> {
+        protected override string GetKeyForItem(IBackground item) => item.Name;
+        public void AddAll(IEnumerable<IBackground> toAdd) {
+            if(toAdd == null) {
+                return;
+            }
+            foreach(IBackground background in toAdd) {
+                Add(background);
+            }
+        }
+    }
 }

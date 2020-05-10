@@ -37,5 +37,9 @@ namespace FifthCharacter.Plugin {
         /// Add all player classes to this collection to expose them to the App.
         /// </summary>
         PlayerClassDictionary PlayerClasses { get; }
+        /// <summary>
+        /// Add all backgrounds to this collection to expose them to the App.
+        /// </summary>
+        BackgroundDictionary Backgrounds { get; }
     }
 }
