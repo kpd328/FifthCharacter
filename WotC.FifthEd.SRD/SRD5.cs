@@ -6,6 +6,11 @@ using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon;
 using WotC.FifthEd.SRD.Backgrounds;
 using WotC.FifthEd.SRD.PlayerClass;
+using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
+using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
+using WotC.FifthEd.SRD.Proficiencies.Attacks.SimpleMeleeWeapon;
+using WotC.FifthEd.SRD.Proficiencies.Attacks.SimpleRangedWeapon;
+using WotC.FifthEd.SRD.Proficiencies.Languages;
 using WotC.FifthEd.SRD.Race;
 using WotC.FifthEd.SRD.Spells.Abjuration;
 using WotC.FifthEd.SRD.Spells.Conjuration;
@@ -119,6 +124,54 @@ namespace WotC.FifthEd.SRD {
 
         public BackgroundDictionary Backgrounds => new BackgroundDictionary() {
             new Acolyte()
+        };
+
+        public ProficiencyDictionary Proficiencies => new ProficiencyDictionary() {
+            new ProfMMWBattleaxe(),
+            new ProfMMWFlail(),
+            new ProfMMWGlaive(),
+            new ProfMMWGreataxe(),
+            new ProfMMWGreatsword(),
+            new ProfMMWHalberd(),
+            new ProfMMWLance(),
+            new ProfMMWLongsword(),
+            new ProfMMWMaul(),
+            new ProfMMWMorningstar(),
+            new ProfMMWPike(),
+            new ProfMMWRapier(),
+            new ProfMMWScimitar(),
+            new ProfMMWShortsword(),
+            new ProfMMWTrident(),
+            new ProfMMWWarhammer(),
+            new ProfMMWWarPick(),
+            new ProfMMWWhip(),
+            new ProfMRWBlowgun(),
+            new ProfMRWHandCrossbow(),
+            new ProfMRWHeavyCrossbow(),
+            new ProfMRWLongbow(),
+            new ProfMRWNet(),
+            new ProfSMWClub(),
+            new ProfSMWDagger(),
+            new ProfSMWGreatclub(),
+            new ProfSMWHandaxe(),
+            new ProfSMWJavelin(),
+            new ProfSMWLightHammer(),
+            new ProfSMWMace(),
+            new ProfSMWQuarterstaff(),
+            new ProfSMWSickle(),
+            new ProfSMWSpear(),
+            new ProfSRWDart(),
+            new ProfSRWLightCrossbow(),
+            new ProfSRWShortbow(),
+            new ProfSRWSling(),
+            new ProfLangCommon(),
+            new ProfLangDraconic(),
+            new ProfLangDwarvish(),
+            new ProfLangElvish(),
+            new ProfLangGnomish(),
+            new ProfLangHalfling(),
+            new ProfLangInfernal(),
+            new ProfLangOrc()
         };
     }
 }

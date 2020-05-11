@@ -14,7 +14,7 @@ namespace FifthCharacter {
             InitializeComponent();
 
             try {
-                Plugins = new PluginLoader();
+                Plugins = PluginLoader.GetLoader();
                 Plugins.LoadPlugins();
             } catch(Exception e) {
                 System.Diagnostics.Debug.WriteLine(string.Format("Plugins could not be loaded: {0}", e.Message));

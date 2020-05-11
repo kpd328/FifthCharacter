@@ -1,14 +1,15 @@
 ﻿using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Popup;
 using FifthCharacter.Plugin.StatsManager;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using WotC.FifthEd.SRD.Features.Race.Tiefling;
+using WotC.FifthEd.SRD.Proficiencies.Languages;
 
 namespace WotC.FifthEd.SRD.Race {
     public class Tiefling : IRace {
+        private const string SOURCE_TEXT = "Race Tiefling";
         public string Name => "Tiefling";
         public string ID => "SRD.Race.Tiefling";
+        public bool HasChoices => false;
 
         public Tiefling() { }
 
@@ -18,10 +19,15 @@ namespace WotC.FifthEd.SRD.Race {
             FeaturesManager.Features.Add(new FTieflingDarkvision());
             FeaturesManager.Features.Add(new FTieflingHellishResistance());
             FeaturesManager.Features.Add(new FTieflingInfernalLegacy1st());
-            //TODO: add languages
+            ProficiencyManager.Proficiencies.Add(new ProfLangCommon(SOURCE_TEXT));
+            ProficiencyManager.Proficiencies.Add(new ProfLangInfernal(SOURCE_TEXT));
             //TODO: add level tracker for infernal legacy
         }
 
         public IRace GetInstance() => new Tiefling(true);
+
+        public void BuildPopup(PopupNCRaceOptions raceOptions) { }
+
+        public void ConfirmPopup() { }
     }
 }

@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace WotC.FifthEd.SRD.Attacks.Mechanics.Property {
     public abstract class APropertySpecial : IWeaponProperty {
-        public string TextDescription => WeapPropTxt.Special;
+        public virtual string TextDescription => WeapPropTxt.Special;
         public string PropertyName => WeapPropName.Special;
         public bool VisDescriptionShowing { get; set; } = false;
 

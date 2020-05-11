@@ -41,5 +41,9 @@ namespace FifthCharacter.Plugin {
         /// Add all backgrounds to this collection to expose them to the App.
         /// </summary>
         BackgroundDictionary Backgrounds { get; }
+        /// <summary>
+        /// Add all proficiencies to this collection to expose them to the App.
+        /// </summary>
+        ProficiencyDictionary Proficiencies { get; }
     }
 }

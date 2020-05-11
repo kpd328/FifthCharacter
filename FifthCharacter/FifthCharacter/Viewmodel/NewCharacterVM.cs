@@ -1,4 +1,5 @@
 ﻿using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Popup;
 using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using FifthCharacter.View.Popup;
@@ -195,6 +196,32 @@ namespace FifthCharacter.Viewmodel {
                 case Device.UWP:
                 case Device.iOS:
                 case Device.Android:
+                    if (CharacterManager.Race.HasChoices) {
+                        Page2 = new PopupNCRaceOptions() { BindingContext = this };
+                        CharacterManager.Race.BuildPopup(Page2);
+                        PopupNavigation.Instance.PushAsync(Page2);
+                    } else {
+                        //skip to next valid page
+                        Page7 = new PopupNCFinalize() { BindingContext = this };
+                        PopupNavigation.Instance.PushAsync(Page7);
+                    }
+                    break;
+                case Device.GTK:
+                    //TODO: mimic ^
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+        }, () => Page1CanMoveOn));
+
+        //Page 2 Commands
+        private ICommand _page2next;
+        public ICommand Page2Next => _page2next ?? (_page2next = new Command(() => {
+            CharacterManager.Race.ConfirmPopup();
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
                     //TODO: determine which page to move on to
                     Page7 = new PopupNCFinalize() { BindingContext = this };
                     PopupNavigation.Instance.PushAsync(Page7);
@@ -206,7 +233,23 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException();
             }
-        }, () => Page1CanMoveOn));
+        }));
+
+        private ICommand _page2back;
+        public ICommand Page2Back => _page2back ?? (_page2back = new Command(() => {
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
+                    PopupNavigation.Instance.PopAsync();
+                    break;
+                case Device.GTK:
+                    //TODO: pop this page and go to the previous page
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+        }));
 
         //Page 7 Commands
         private ICommand _page7next;

@@ -1,6 +1,7 @@
 ﻿using FifthCharacter.Plugin.Interface;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace FifthCharacter.Plugin.Tools {
     public class RaceDictionary : KeyedCollection<string, IRace> {
@@ -72,6 +73,21 @@ namespace FifthCharacter.Plugin.Tools {
             foreach(IBackground background in toAdd) {
                 Add(background);
             }
+        }
+    }
+
+    public class ProficiencyDictionary : KeyedCollection<string, IProficiency> {
+        protected override string GetKeyForItem(IProficiency item) => item.Name;
+        public void AddAll(IEnumerable<IProficiency> toAdd) {
+            if(toAdd == null) {
+                return;
+            }
+            foreach(IProficiency proficiency in toAdd) {
+                Add(proficiency);
+            }
+        }
+        public IEnumerable<IProficiency> GetAllForType(ProficiencyType type) {
+            return this.Where(p => p.ProficiencyType == type);
         }
     }
 }

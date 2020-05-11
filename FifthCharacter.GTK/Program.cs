@@ -7,6 +7,7 @@ namespace FifthCharacter.GTK {
         [STAThread]
         public static void Main(string[] args) {
             Gtk.Application.Init();
+            Forms.SetFlags("Markup_Experimental");
             Forms.Init();
 
             var app = new App();

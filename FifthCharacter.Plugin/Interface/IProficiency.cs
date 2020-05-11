@@ -1,7 +1,7 @@
 ﻿namespace FifthCharacter.Plugin.Interface {
     public interface IProficiency {
         string Name { get; }
-        string Source { get; }
+        string Source { get; set; }
         string ID { get; }
         ProficiencyType ProficiencyType { get; }
     }

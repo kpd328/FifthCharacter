@@ -3,7 +3,7 @@
 namespace FifthCharacter.Plugin.Proficiencies.Skills {
     public class ProfPersuasion : AProfSkill {
         public override string Name => "Persuasion";
-        public override string Source { get; }
+        public override string Source { get; set; }
         public override string ID => "Skill.Proficiency.Persuasion";
         public ProfPersuasion(string source) {
             Source = source;

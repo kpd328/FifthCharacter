@@ -21,6 +21,7 @@ namespace FifthCharacter.MacOS {
         public override NSWindow MainWindow => window;
 
         public override void DidFinishLaunching(NSNotification notification) {
+            Forms.SetFlags("Markup_Experimental");
             Forms.Init();
             LoadApplication(new App());
             base.DidFinishLaunching(notification);

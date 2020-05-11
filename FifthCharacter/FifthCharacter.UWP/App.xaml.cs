@@ -53,6 +53,7 @@ namespace FifthCharacter.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 Rg.Plugins.Popup.Popup.Init();
+                Xamarin.Forms.Forms.SetFlags("Markup_Experimental");
                 Xamarin.Forms.Forms.Init(e);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
