@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Popup\PopupNCBackgroundOptions.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
     <Compile Update="Popup\PopupNCRaceOptions.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -22,6 +25,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Popup\PopupAttack_GTK.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Popup\PopupNCBackgroundOptions_GTK.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Popup\PopupNCRaceOptions_GTK.xaml">

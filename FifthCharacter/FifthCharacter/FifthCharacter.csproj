@@ -57,9 +57,6 @@
     <EmbeddedResource Update="View\Popup\PopupNCAbilityScores.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Popup\PopupNCBackgroundOptions.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="View\Popup\PopupNCClassOptions.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

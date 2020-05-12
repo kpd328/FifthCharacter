@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FifthCharacter.Plugin.Popup.PopupNCBackgroundOptions_GTK">
+    <ContentPage.Content>
+        <Grid x:Name="Body"
+              x:FieldModifier="public"
+              BackgroundColor="{DynamicResource PopupWindowColor}"
+              WidthRequest="300"
+              MinimumWidthRequest="150"
+              HeightRequest="500"
+              MinimumHeightRequest="250"
+              VerticalOptions="Center"
+              HorizontalOptions="CenterAndExpand"
+              Margin="5"
+              Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Back"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Command="{Binding Page3Back}"/>
+            <Button Text="Next"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Command="{Binding Page3Next}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FifthCharacter.View.Popup {
+namespace FifthCharacter.Plugin.Popup {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PopupNCBackgroundOptions : ContentPage {
-        public PopupNCBackgroundOptions() {
+    public partial class PopupNCBackgroundOptions_GTK : ContentPage {
+        public PopupNCBackgroundOptions_GTK() {
             InitializeComponent();
         }
     }

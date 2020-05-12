@@ -123,6 +123,7 @@ namespace WotC.FifthEd.SRD {
         };
 
         public BackgroundDictionary Backgrounds => new BackgroundDictionary() {
+            new NoBackground(),
             new Acolyte()
         };
 

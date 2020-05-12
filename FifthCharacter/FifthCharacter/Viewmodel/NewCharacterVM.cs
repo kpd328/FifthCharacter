@@ -49,7 +49,7 @@ namespace FifthCharacter.Viewmodel {
         private PopupNCRaceOptions_GTK Page2_GTK;
 
         private PopupNCBackgroundOptions Page3;
-        //private PopupNCBackgroundOptions_GTK Page3_GTK;
+        private PopupNCBackgroundOptions_GTK Page3_GTK;
 
         private PopupNCClassOptions Page4;
         //private PopupNCClassOptions_GTK Page4_GTK;
@@ -200,8 +200,12 @@ namespace FifthCharacter.Viewmodel {
                         Page2 = new PopupNCRaceOptions() { BindingContext = this };
                         CharacterManager.Race.BuildPopup(Page2);
                         PopupNavigation.Instance.PushAsync(Page2);
+                    } else if (CharacterManager.Background.HasChoices) {
+                        Page3 = new PopupNCBackgroundOptions() { BindingContext = this };
+                        CharacterManager.Background.BuildPopup(Page3);
+                        PopupNavigation.Instance.PushAsync(Page3);
                     } else {
-                        //skip to next valid page
+                        //TODO: go to page 4 instead
                         Page7 = new PopupNCFinalize() { BindingContext = this };
                         PopupNavigation.Instance.PushAsync(Page7);
                     }
@@ -211,14 +215,18 @@ namespace FifthCharacter.Viewmodel {
                         Page2_GTK = new PopupNCRaceOptions_GTK() { BindingContext = this };
                         CharacterManager.Race.BuildPopup(Page2_GTK);
                         DependencyService.Get<IPopup>().PushAsync(Page2_GTK);
+                    } else if (CharacterManager.Background.HasChoices) {
+                        Page3_GTK = new PopupNCBackgroundOptions_GTK() { BindingContext = this };
+                        CharacterManager.Background.BuildPopup(Page3_GTK);
+                        DependencyService.Get<IPopup>().PushAsync(Page3_GTK);
                     } else {
-                        //skip to next valid page
+                        //TODO: go to page 4 instead
                         Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
                         DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
                     }
                     break;
                 default:
-                    throw new NotImplementedException();
+                    throw new NotImplementedException(Device.RuntimePlatform);
             }
         }, () => Page1CanMoveOn));
 
@@ -230,17 +238,29 @@ namespace FifthCharacter.Viewmodel {
                 case Device.UWP:
                 case Device.iOS:
                 case Device.Android:
-                    //TODO: determine which page to move on to
-                    Page7 = new PopupNCFinalize() { BindingContext = this };
-                    PopupNavigation.Instance.PushAsync(Page7);
+                    if (CharacterManager.Background.HasChoices) {
+                        Page3 = new PopupNCBackgroundOptions() { BindingContext = this };
+                        CharacterManager.Background.BuildPopup(Page3);
+                        PopupNavigation.Instance.PushAsync(Page3);
+                    } else {
+                        //TODO: go to page 4 instead
+                        Page7 = new PopupNCFinalize() { BindingContext = this };
+                        PopupNavigation.Instance.PushAsync(Page7);
+                    }
                     break;
                 case Device.GTK:
-                    //TODO: determine which page to move on to
-                    Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
-                    DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
+                    if (CharacterManager.Background.HasChoices) {
+                        Page3_GTK = new PopupNCBackgroundOptions_GTK() { BindingContext = this };
+                        CharacterManager.Background.BuildPopup(Page3_GTK);
+                        DependencyService.Get<IPopup>().PushAsync(Page3_GTK);
+                    } else {
+                        //TODO: go to page 4 instead
+                        Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
+                        DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
+                    }
                     break;
                 default:
-                    throw new NotImplementedException();
+                    throw new NotImplementedException(Device.RuntimePlatform);
             }
         }));
 
@@ -254,10 +274,49 @@ namespace FifthCharacter.Viewmodel {
                     break;
                 case Device.GTK:
                     //TODO: pop this page and go to the previous page
-                    DependencyService.Get<IPopup>().PopAsync(); //idk if this works, but it should make it work
+                    DependencyService.Get<IPopup>().PopAsync(); //idk if this works, but I should make it work
                     break;
                 default:
-                    throw new NotImplementedException();
+                    throw new NotImplementedException(Device.RuntimePlatform);
+            }
+        }));
+
+        //Page 3 Commands
+        private ICommand _page3next;
+        public ICommand Page3Next => _page3next ?? (_page3next = new Command(() => {
+            CharacterManager.Background.ConfirmPopup();
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
+                    //TODO: go to page 4 instead
+                    Page7 = new PopupNCFinalize() { BindingContext = this };
+                    PopupNavigation.Instance.PushAsync(Page7);
+                    break;
+                case Device.GTK:
+                    //TODO: go to page 4 instead
+                    Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
+                    DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
+                    break;
+                default:
+                    throw new NotImplementedException(Device.RuntimePlatform);
+            }
+        }));
+
+        private ICommand _page3back;
+        public ICommand Page3Back => _page3back ?? (_page3back = new Command(() => {
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
+                    PopupNavigation.Instance.PopAsync();
+                    break;
+                case Device.GTK:
+                    //TODO: pop this page and go to the previous page
+                    DependencyService.Get<IPopup>().PopAsync(); //idk if this works, but I should make it work
+                    break;
+                default:
+                    throw new NotImplementedException(Device.RuntimePlatform);
             }
         }));
 
@@ -274,7 +333,7 @@ namespace FifthCharacter.Viewmodel {
                     //TODO: figure out how to close the window completely
                     break;
                 default:
-                    throw new NotImplementedException();
+                    throw new NotImplementedException(Device.RuntimePlatform);
             }
         }));
 
@@ -291,7 +350,7 @@ namespace FifthCharacter.Viewmodel {
                     DependencyService.Get<IPopup>().PopAsync(); //idk if this works, but it should make it work
                     break;
                 default:
-                    throw new NotImplementedException();
+                    throw new NotImplementedException(Device.RuntimePlatform);
             }
         }));
 
