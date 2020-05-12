@@ -122,7 +122,8 @@
     <comment>4th Level</comment>
   </data>
   <data name="ActionSurge" xml:space="preserve">
-    <value>Starting at 2nd leveI, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again.\nStarting at 17th level, you can use it twice before a rest, but only once on the same turn.</value>
+    <value>Starting at 2nd leveI, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again.
+Starting at 17th level, you can use it twice before a rest, but only once on the same turn.</value>
     <comment>2nd Level, 17th Level</comment>
   </data>
   <data name="FightingStyle" xml:space="preserve">

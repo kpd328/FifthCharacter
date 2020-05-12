@@ -5,6 +5,9 @@ namespace FifthCharacter.Plugin.Proficiencies.Attacks {
         public override string Name => "Simple Melee Weapons";
         public override string Source { get; set; }
         public override string ID => "Weapon.Proficiency.SimpleMelee";
+
+        internal ProfSimpleMeleeWeapon() { }
+
         public ProfSimpleMeleeWeapon(string source) {
             Source = source;
         }

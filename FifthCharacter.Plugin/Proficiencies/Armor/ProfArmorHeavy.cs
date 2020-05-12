@@ -5,6 +5,8 @@ namespace FifthCharacter.Plugin.Proficiencies.Armor {
         public override string Name => "Heavy Armor";
         public override string Source { get; set; }
         public override string ID => "Armor.Proficiency.Heavy";
+
+        internal ProfArmorHeavy() { }
         
         public ProfArmorHeavy(string source) {
             Source = source;

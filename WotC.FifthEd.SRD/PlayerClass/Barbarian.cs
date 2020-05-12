@@ -29,14 +29,14 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfStrengthSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfConstitutionSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon(SOURCE_TEXT));
-                ProficiencyManager.Proficiencies.Add(new ProfMRWHandCrossbows(SOURCE_TEXT));
+                ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
                 //TODO: prompt to pick skills
             } else {
                 ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon(SOURCE_TEXT));
-                ProficiencyManager.Proficiencies.Add(new ProfMRWHandCrossbows(SOURCE_TEXT));
+                ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
             }
             IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();

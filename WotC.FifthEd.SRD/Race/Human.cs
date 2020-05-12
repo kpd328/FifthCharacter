@@ -33,9 +33,24 @@ namespace WotC.FifthEd.SRD.Race {
             Picker lang = new Picker() {
                 Title = "Extra Language",
                 ItemsSource = LanguageChoices,
-                SelectedItem = SelectedLanguage,
+                BindingContext = this,
                 ItemDisplayBinding = new Binding("Name")
             };
+            lang.SetBinding(Picker.SelectedItemProperty, "SelectedLanguage");
+            lang.Row(0);
+            lang.Column(0);
+            lang.ColumnSpan(2);
+            raceOptions.Body.Children.Add(lang);
+        }
+
+        public void BuildPopup(PopupNCRaceOptions_GTK raceOptions) {
+            Picker lang = new Picker() {
+                Title = "Extra Language",
+                ItemsSource = LanguageChoices,
+                BindingContext = this,
+                ItemDisplayBinding = new Binding("Name")
+            };
+            lang.SetBinding(Picker.SelectedItemProperty, "SelectedLanguage");
             lang.Row(0);
             lang.Column(0);
             lang.ColumnSpan(2);

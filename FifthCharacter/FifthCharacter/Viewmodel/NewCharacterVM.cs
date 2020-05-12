@@ -46,7 +46,7 @@ namespace FifthCharacter.Viewmodel {
         private PopupNewCharacter_GTK Page1_GTK;
 
         private PopupNCRaceOptions Page2;
-        //private PopupNCRaceOptions_GTK Page2_GTK;
+        private PopupNCRaceOptions_GTK Page2_GTK;
 
         private PopupNCBackgroundOptions Page3;
         //private PopupNCBackgroundOptions_GTK Page3_GTK;
@@ -61,7 +61,7 @@ namespace FifthCharacter.Viewmodel {
         //private PopupNCAbilityScores_GTK Page6_GTK;
 
         private PopupNCFinalize Page7;
-        //private PopupNCFinalize_GTK Page7_GTK;
+        private PopupNCFinalize_GTK Page7_GTK;
 
         private MainPage MainPage;
         public event PropertyChangedEventHandler PropertyChanged;
@@ -207,7 +207,15 @@ namespace FifthCharacter.Viewmodel {
                     }
                     break;
                 case Device.GTK:
-                    //TODO: mimic ^
+                    if (CharacterManager.Race.HasChoices) {
+                        Page2_GTK = new PopupNCRaceOptions_GTK() { BindingContext = this };
+                        CharacterManager.Race.BuildPopup(Page2_GTK);
+                        DependencyService.Get<IPopup>().PushAsync(Page2_GTK);
+                    } else {
+                        //skip to next valid page
+                        Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
+                        DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
+                    }
                     break;
                 default:
                     throw new NotImplementedException();
@@ -227,8 +235,9 @@ namespace FifthCharacter.Viewmodel {
                     PopupNavigation.Instance.PushAsync(Page7);
                     break;
                 case Device.GTK:
-                    //Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
-                    //DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
+                    //TODO: determine which page to move on to
+                    Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
+                    DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
                     break;
                 default:
                     throw new NotImplementedException();
@@ -245,6 +254,7 @@ namespace FifthCharacter.Viewmodel {
                     break;
                 case Device.GTK:
                     //TODO: pop this page and go to the previous page
+                    DependencyService.Get<IPopup>().PopAsync(); //idk if this works, but it should make it work
                     break;
                 default:
                     throw new NotImplementedException();
@@ -254,7 +264,18 @@ namespace FifthCharacter.Viewmodel {
         //Page 7 Commands
         private ICommand _page7next;
         public ICommand Page7Next => _page7next ?? (_page7next = new Command(() => {
-            PopupNavigation.Instance.PopAllAsync();
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
+                    PopupNavigation.Instance.PopAllAsync();
+                    break;
+                case Device.GTK:
+                    //TODO: figure out how to close the window completely
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
         }));
 
         private ICommand _page7back;
@@ -267,6 +288,7 @@ namespace FifthCharacter.Viewmodel {
                     break;
                 case Device.GTK:
                     //TODO: pop this page and go to the previous page
+                    DependencyService.Get<IPopup>().PopAsync(); //idk if this works, but it should make it work
                     break;
                 default:
                     throw new NotImplementedException();
@@ -279,6 +301,7 @@ namespace FifthCharacter.Viewmodel {
 
             //TODO: Call to clear all cached data (after moving cahced data to save)
             FeaturesManager.Features.Clear();
+            ProficiencyManager.Proficiencies.Clear();
         }
 
         //Methods

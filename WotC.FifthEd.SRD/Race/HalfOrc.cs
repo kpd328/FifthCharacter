@@ -28,6 +28,8 @@ namespace WotC.FifthEd.SRD.Race {
         public IRace GetInstance() => new HalfOrc(true);
 
         public void BuildPopup(PopupNCRaceOptions raceOptions) { }
+        
+        public void BuildPopup(PopupNCRaceOptions_GTK raceOptions) { }
 
         public void ConfirmPopup() { }
     }

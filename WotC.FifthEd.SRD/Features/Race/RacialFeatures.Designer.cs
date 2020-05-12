@@ -196,7 +196,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3 [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon {
             get {
@@ -205,7 +206,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your black draconic ancestry, the exhalation is a 5 by 30ft. line dealing Acid damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level,  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your black draconic ancestry, the exhalation is a 5 by 30ft. line dealing Acid damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level,  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_Black {
             get {
@@ -214,7 +216,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your blue draconic ancestry, the exhalation is a 5 by 30ft. line dealing Lightning damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th lev [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your blue draconic ancestry, the exhalation is a 5 by 30ft. line dealing Lightning damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th lev [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_Blue {
             get {
@@ -223,7 +226,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your brass draconic ancestry, the exhalation is a 5 by 30ft. line dealing Fire damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level,  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your brass draconic ancestry, the exhalation is a 5 by 30ft. line dealing Fire damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level,  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_Brass {
             get {
@@ -232,7 +236,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your bronze draconic ancestry, the exhalation is a 5 by 30ft. line dealing Lightning damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th l [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your bronze draconic ancestry, the exhalation is a 5 by 30ft. line dealing Lightning damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th l [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_Bronze {
             get {
@@ -241,7 +246,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your copper draconic ancestry, the exhalation is a 5 by 30ft. line dealing Acid damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your copper draconic ancestry, the exhalation is a 5 by 30ft. line dealing Acid damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_Copper {
             get {
@@ -250,7 +256,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your gold draconic ancestry, the exhalation is a 15 ft. cone dealing Fire damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5 [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your gold draconic ancestry, the exhalation is a 15 ft. cone dealing Fire damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_Gold {
             get {
@@ -259,7 +266,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your green draconic ancestry, the exhalation is a 15 ft. cone dealing Poison damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your green draconic ancestry, the exhalation is a 15 ft. cone dealing Poison damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_Green {
             get {
@@ -268,7 +276,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your red draconic ancestry, the exhalation is a 15 ft. cone dealing Fire damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your red draconic ancestry, the exhalation is a 15 ft. cone dealing Fire damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_Red {
             get {
@@ -277,7 +286,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your silver draconic ancestry, the exhalation is a 15 ft. cone dealing Cold damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level,  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your silver draconic ancestry, the exhalation is a 15 ft. cone dealing Cold damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level,  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_Silver {
             get {
@@ -286,7 +296,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your white draconic ancestry, the exhalation is a 15 ft. cone dealing Cold damgage.\nWhen you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, a [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can use your action to exhale destructive energy. Because of your white draconic ancestry, the exhalation is a 15 ft. cone dealing Cold damgage.
+        ///When you use your breath weapon, each creature in the area of the exhalation must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, a [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Breath_Weapon_White {
             get {
@@ -583,7 +594,8 @@ namespace WotC.FifthEd.SRD.Features.Race {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.\nWhen you create a device, choose one of the followi [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.
+        ///When you create a device, choose one of the followi [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Tinker {
             get {

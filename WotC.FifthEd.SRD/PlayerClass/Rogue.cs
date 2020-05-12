@@ -7,6 +7,7 @@ using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
+using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Rogue : IPlayerClass {
@@ -31,7 +32,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfDexteritySave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfIntelligenceSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon(SOURCE_TEXT));
-                ProficiencyManager.Proficiencies.Add(new ProfMRWHandCrossbows(SOURCE_TEXT));
+                ProficiencyManager.Proficiencies.Add(new ProfMRWHandCrossbow(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfMMWLongsword(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfMMWRapier(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfMMWShortsword(SOURCE_TEXT));

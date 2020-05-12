@@ -5,6 +5,9 @@ namespace FifthCharacter.Plugin.Proficiencies.SavingThrows {
         public override string Name => "Intelligence Saving Throws";
         public override string Source { get; set; }
         public override string ID => "SavingThrow.Proficiency.Intelligence";
+
+        internal ProfIntelligenceSave() { }
+
         public ProfIntelligenceSave(string source) {
             Source = source;
         }

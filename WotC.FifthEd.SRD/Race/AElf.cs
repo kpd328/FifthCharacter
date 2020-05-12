@@ -26,6 +26,7 @@ namespace WotC.FifthEd.SRD.Race {
 
         public abstract IRace GetInstance();
         public virtual void BuildPopup(PopupNCRaceOptions raceOptions) { }
+        public virtual void BuildPopup(PopupNCRaceOptions_GTK raceOptions) { }
 
         public virtual void ConfirmPopup() { }
     }

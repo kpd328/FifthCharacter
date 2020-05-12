@@ -4,7 +4,7 @@ using WotC.FifthEd.SRD.Features.Race.Halfling.Lightfoot;
 
 namespace WotC.FifthEd.SRD.Race {
     public class LightfootHalfling : AHalfling {
-        public new string Name => "Lightfoot Halfling";
+        public override string Name => "Lightfoot Halfling";
         public override string ID => "SRD.Race.Halfling.Lightfoot";
 
         public LightfootHalfling() { }

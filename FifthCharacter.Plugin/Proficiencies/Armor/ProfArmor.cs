@@ -5,6 +5,8 @@ namespace FifthCharacter.Plugin.Proficiencies.Armor {
         public override string Name => "All Armor";
         public override string Source { get; set; }
         public override string ID => "Armor.Proficiency.All";
+
+        internal ProfArmor() { }
         
         public ProfArmor(string source) {
             Source = source;

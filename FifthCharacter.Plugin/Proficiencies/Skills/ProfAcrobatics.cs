@@ -5,6 +5,9 @@ namespace FifthCharacter.Plugin.Proficiencies.Skills {
         public override string Name => "Acrobatics";
         public override string Source { get; set; }
         public override string ID => "Skill.Proficiency.Acrobatics";
+
+        internal ProfAcrobatics() { }
+
         public ProfAcrobatics(string source) {
             Source = source;
         }

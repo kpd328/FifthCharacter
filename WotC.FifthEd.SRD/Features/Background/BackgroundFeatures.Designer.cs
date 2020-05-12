@@ -61,7 +61,8 @@ namespace WotC.FifthEd.SRD.Features.Background {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.\nYou might also have ties to a specific temple dedicated to your chosen deity or pan [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.
+        ///You might also have ties to a specific temple dedicated to your chosen deity or pan [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Acolyte {
             get {

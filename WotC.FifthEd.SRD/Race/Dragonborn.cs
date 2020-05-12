@@ -1,6 +1,7 @@
 ﻿using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Popup;
 using FifthCharacter.Plugin.StatsManager;
+using System;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Features.Race.Dragonborn;
 using WotC.FifthEd.SRD.Proficiencies.Languages;
@@ -29,9 +30,22 @@ namespace WotC.FifthEd.SRD.Race {
         public void BuildPopup(PopupNCRaceOptions raceOptions) {
             Picker ancestry = new Picker() {
                 ItemsSource = AncestryOptions,
-                SelectedItem = ChosenAncestry,
                 Title = "Draconic Ancestry",
+                BindingContext = this
             };
+            ancestry.SetBinding(Picker.SelectedItemProperty, "ChosenAncestry");
+            ancestry.Row(0);
+            ancestry.Column(0);
+            ancestry.ColumnSpan(2);
+            raceOptions.Body.Children.Add(ancestry);
+        }
+        public void BuildPopup(PopupNCRaceOptions_GTK raceOptions) {
+            Picker ancestry = new Picker() {
+                ItemsSource = AncestryOptions,
+                Title = "Draconic Ancestry",
+                BindingContext = this
+            };
+            ancestry.SetBinding(Picker.SelectedItemProperty, "ChosenAncestry");
             ancestry.Row(0);
             ancestry.Column(0);
             ancestry.ColumnSpan(2);
@@ -45,58 +59,21 @@ namespace WotC.FifthEd.SRD.Race {
 
         //Popup stuff
         public List<string> AncestryOptions = new List<string>() {
-            "Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"
+            DraconicAncestry.BLACK.DisplayString(),
+            DraconicAncestry.BLUE.DisplayString(),
+            DraconicAncestry.BRASS.DisplayString(),
+            DraconicAncestry.BRONZE.DisplayString(),
+            DraconicAncestry.COPPER.DisplayString(),
+            DraconicAncestry.GOLD.DisplayString(),
+            DraconicAncestry.GREEN.DisplayString(),
+            DraconicAncestry.RED.DisplayString(),
+            DraconicAncestry.SILVER.DisplayString(),
+            DraconicAncestry.WHITE.DisplayString()
         };
 
         public string ChosenAncestry {
-            get => Ancestry switch {
-                DraconicAncestry.NONE => "",
-                DraconicAncestry.BLACK => "Black",
-                DraconicAncestry.BLUE => "Blue",
-                DraconicAncestry.BRASS => "Brass",
-                DraconicAncestry.BRONZE => "Bronze",
-                DraconicAncestry.COPPER => "Copper",
-                DraconicAncestry.GOLD => "Gold",
-                DraconicAncestry.GREEN => "Green",
-                DraconicAncestry.RED => "Red",
-                DraconicAncestry.SILVER => "Silver",
-                DraconicAncestry.WHITE => "White",
-                _ => ""
-            };
-            set {
-                switch (value) {
-                    case "Black":
-                        Ancestry = DraconicAncestry.BLACK; 
-                        break;
-                    case "Blue":
-                        Ancestry = DraconicAncestry.BLUE;
-                        break;
-                    case "Brass":
-                        Ancestry = DraconicAncestry.BRASS;
-                        break;
-                    case "Bronze":
-                        Ancestry = DraconicAncestry.BRONZE;
-                        break;
-                    case "Copper":
-                        Ancestry = DraconicAncestry.COPPER;
-                        break;
-                    case "Gold":
-                        Ancestry = DraconicAncestry.GOLD;
-                        break;
-                    case "Green":
-                        Ancestry = DraconicAncestry.GREEN;
-                        break;
-                    case "Red":
-                        Ancestry = DraconicAncestry.RED;
-                        break;
-                    case "Silver":
-                        Ancestry = DraconicAncestry.SILVER;
-                        break;
-                    case "White":
-                        Ancestry = DraconicAncestry.WHITE;
-                        break;
-                }
-            }
+            get => Ancestry.DisplayString();
+            set => Ancestry = value.ParseToDraconicAncestry();
         }
     }
 
@@ -112,5 +89,37 @@ namespace WotC.FifthEd.SRD.Race {
         RED,
         SILVER,
         WHITE
+    }
+
+    public static class DraconicAncestryExtension {
+        public static string DisplayString(this DraconicAncestry ancestry) => ancestry switch {
+            DraconicAncestry.NONE => "",
+            DraconicAncestry.BLACK => "Black",
+            DraconicAncestry.BLUE => "Blue",
+            DraconicAncestry.BRASS => "Brass",
+            DraconicAncestry.BRONZE => "Bronze",
+            DraconicAncestry.COPPER => "Copper",
+            DraconicAncestry.GOLD => "Gold",
+            DraconicAncestry.GREEN => "Green",
+            DraconicAncestry.RED => "Red",
+            DraconicAncestry.SILVER => "Silver",
+            DraconicAncestry.WHITE => "White",
+            _ => null
+        };
+        public static DraconicAncestry ParseToDraconicAncestry(this string stringancestry) => stringancestry switch {
+            "Black" => DraconicAncestry.BLACK,
+            "Blue" => DraconicAncestry.BLUE,
+            "Brass" => DraconicAncestry.BRASS,
+            "Bronze" => DraconicAncestry.BRONZE,
+            "Copper" => DraconicAncestry.COPPER,
+            "Gold" => DraconicAncestry.GOLD,
+            "Green" => DraconicAncestry.GREEN,
+            "Red" => DraconicAncestry.RED,
+            "Silver" => DraconicAncestry.SILVER,
+            "White" => DraconicAncestry.WHITE,
+            null => DraconicAncestry.NONE,
+            "" => DraconicAncestry.NONE,
+            _ => throw new InvalidCastException("Unable to convert string to draconic ancestry")
+        };
     }
 }

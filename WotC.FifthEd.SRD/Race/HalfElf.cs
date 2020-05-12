@@ -40,21 +40,59 @@ namespace WotC.FifthEd.SRD.Race {
             Picker choice1 = new Picker() {
                 Title = "Skill Varsatility",
                 ItemsSource = SkillChoices,
-                SelectedItem = SelectedSkill1,
+                BindingContext = this,
                 ItemDisplayBinding = new Binding("Name")
             };
+            choice1.SetBinding(Picker.SelectedItemProperty, "SelectedSkill1");
             Picker choice2 = new Picker() {
                 Title = "Skill Versatility",
                 ItemsSource = SkillChoices,
-                SelectedItem = SelectedSkill2,
+                BindingContext = this,
                 ItemDisplayBinding = new Binding("Name")
             };
+            choice2.SetBinding(Picker.SelectedItemProperty, "SelectedSkill2");
             Picker choice3 = new Picker() {
                 Title = "Extra Language",
                 ItemsSource = LanguageChoices,
-                SelectedItem = SelectedLanguage,
+                BindingContext = this,
                 ItemDisplayBinding = new Binding("Name")
             };
+            choice3.SetBinding(Picker.SelectedItemProperty, "SelectedLanguage");
+            StackLayout stackLayout = new StackLayout() {
+                Orientation = StackOrientation.Vertical
+            };
+            stackLayout.Children.Add(choice1);
+            stackLayout.Children.Add(choice2);
+            stackLayout.Children.Add(choice3);
+            stackLayout.Row(0);
+            stackLayout.Column(0);
+            stackLayout.ColumnSpan(2);
+            raceOptions.Body.Children.Add(stackLayout);
+        }
+
+        public void BuildPopup(PopupNCRaceOptions_GTK raceOptions) {
+            //TODO: add verification that skills 1 and 2 aren't the same
+            Picker choice1 = new Picker() {
+                Title = "Skill Varsatility",
+                ItemsSource = SkillChoices,
+                BindingContext = this,
+                ItemDisplayBinding = new Binding("Name")
+            };
+            choice1.SetBinding(Picker.SelectedItemProperty, "SelectedSkill1");
+            Picker choice2 = new Picker() {
+                Title = "Skill Versatility",
+                ItemsSource = SkillChoices,
+                BindingContext = this,
+                ItemDisplayBinding = new Binding("Name")
+            };
+            choice2.SetBinding(Picker.SelectedItemProperty, "SelectedSkill2");
+            Picker choice3 = new Picker() {
+                Title = "Extra Language",
+                ItemsSource = LanguageChoices,
+                BindingContext = this,
+                ItemDisplayBinding = new Binding("Name")
+            };
+            choice3.SetBinding(Picker.SelectedItemProperty, "SelectedLanguage");
             StackLayout stackLayout = new StackLayout() {
                 Orientation = StackOrientation.Vertical
             };
@@ -78,9 +116,9 @@ namespace WotC.FifthEd.SRD.Race {
 
         //Popup Stuff
         public List<IProficiency> SkillChoices;
-        public IProficiency SelectedSkill1;
-        public IProficiency SelectedSkill2;
+        public IProficiency SelectedSkill1 { get; set; }
+        public IProficiency SelectedSkill2 { get; set; }
         public List<IProficiency> LanguageChoices;
-        public IProficiency SelectedLanguage;
+        public IProficiency SelectedLanguage { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfWisdomSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfCharismaSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon(SOURCE_TEXT));
-                ProficiencyManager.Proficiencies.Add(new ProfMRWHandCrossbows(SOURCE_TEXT));
+                ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmor(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
                 //TODO: prompt to pick skills
@@ -38,7 +38,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon(SOURCE_TEXT));
-                ProficiencyManager.Proficiencies.Add(new ProfMRWHandCrossbows(SOURCE_TEXT));
+                ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon(SOURCE_TEXT));
             }
             IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
             if (AllClassFeatures.TryGetValue(1, out newFeatures)) {

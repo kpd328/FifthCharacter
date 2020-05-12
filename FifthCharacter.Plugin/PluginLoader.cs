@@ -1,10 +1,13 @@
-﻿using FifthCharacter.Plugin.Tools;
+﻿using FifthCharacter.Plugin.Proficiencies.Armor;
+using FifthCharacter.Plugin.Proficiencies.Attacks;
+using FifthCharacter.Plugin.Proficiencies.SavingThrows;
+using FifthCharacter.Plugin.Proficiencies.Skills;
+using FifthCharacter.Plugin.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Xamarin.Forms;
 
 namespace FifthCharacter.Plugin {
     public class PluginLoader {
@@ -16,7 +19,43 @@ namespace FifthCharacter.Plugin {
         public FeatureDictionary Features { get; private set; } = new FeatureDictionary();
         public PlayerClassDictionary PlayerClasses { get; private set; } = new PlayerClassDictionary();
         public BackgroundDictionary Backgrounds { get; private set; } = new BackgroundDictionary();
-        public ProficiencyDictionary Proficiencies { get; private set; } = new ProficiencyDictionary();
+        public ProficiencyDictionary Proficiencies { get; private set; } = new ProficiencyDictionary() {
+            new ProfArmor(),
+            new ProfArmorHeavy(),
+            new ProfArmorLight(),
+            new ProfArmorMedium(),
+            new ProfArmorShield(),
+            new ProfMartialMeleeWeapon(),
+            new ProfMartialRangedWeapon(),
+            new ProfMartialWeapon(),
+            new ProfSimpleMeleeWeapon(),
+            new ProfSimpleRangedWeapon(),
+            new ProfSimpleWeapon(),
+            new ProfCharismaSave(),
+            new ProfConstitutionSave(),
+            new ProfDexteritySave(),
+            new ProfIntelligenceSave(),
+            new ProfStrengthSave(),
+            new ProfWisdomSave(),
+            new ProfAcrobatics(),
+            new ProfAnimalHandling(),
+            new ProfArcana(),
+            new ProfAthletics(),
+            new ProfDeception(),
+            new ProfHistory(),
+            new ProfInsight(),
+            new ProfIntimidation(),
+            new ProfInvestigation(),
+            new ProfMedicine(),
+            new ProfNature(),
+            new ProfPerception(),
+            new ProfPerformance(),
+            new ProfPersuasion(),
+            new ProfReligion(),
+            new ProfSleightOfHand(),
+            new ProfStealth(),
+            new ProfSurvival()
+        };
         private bool loaded = false;
 
         private PluginLoader() { }

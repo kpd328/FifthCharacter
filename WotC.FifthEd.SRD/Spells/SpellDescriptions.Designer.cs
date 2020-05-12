@@ -70,7 +70,8 @@ namespace WotC.FifthEd.SRD.Spells {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.\nThis spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)..
+        ///   Looks up a localized string similar to You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.
+        ///This spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)..
         /// </summary>
         internal static string AcidSplash {
             get {
@@ -88,7 +89,8 @@ namespace WotC.FifthEd.SRD.Spells {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is mental or audible.\nA mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you ar [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is mental or audible.
+        ///A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you ar [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Alarm {
             get {
@@ -97,7 +99,9 @@ namespace WotC.FifthEd.SRD.Spells {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefitsof a different one.\nAquatic Adaptation. You adapt your body to an aquatic environment, sprouting gills and growing webbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed.\nChange Appearance. You transform your appearance. You de [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefitsof a different one.
+        ///    Aquatic Adaptation. You adapt your body to an aquatic environment, sprouting gills and growing webbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed.
+        ///    Change Appearance. You transform your appearance [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AlterSelf {
             get {
@@ -124,7 +128,8 @@ namespace WotC.FifthEd.SRD.Spells {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your magic turns others into beasts. Choose any number of willing creatures that you can see within range. You transform each target into the form of a Large or smaller beast with a challenge rating of 4 or lower. On subsequent turns, you can use your action to transform affected creatures into new forms.\nThe transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies. You can choose a different form for each target. A target’s game statistics are replaced by th [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Your magic turns others into beasts. Choose any number of willing creatures that you can see within range. You transform each target into the form of a Large or smaller beast with a challenge rating of 4 or lower. On subsequent turns, you can use your action to transform affected creatures into new forms.
+        ///The transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies. You can choose a different form for each target. A target’s game statistics are replaced by th [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AnimalShapes {
             get {

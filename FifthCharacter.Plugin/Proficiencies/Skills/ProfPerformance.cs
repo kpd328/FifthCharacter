@@ -5,6 +5,9 @@ namespace FifthCharacter.Plugin.Proficiencies.Skills {
         public override string Name => "Performance";
         public override string Source { get; set; }
         public override string ID => "Skill.Proficiency.Performance";
+
+        internal ProfPerformance() { }
+
         public ProfPerformance(string source) {
             Source = source;
         }

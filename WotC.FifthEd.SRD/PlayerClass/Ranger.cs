@@ -6,6 +6,7 @@ using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
+using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Ranger : IPlayerClass {
@@ -29,7 +30,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfStrengthSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfDexteritySave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon(SOURCE_TEXT));
-                ProficiencyManager.Proficiencies.Add(new ProfMRWHandCrossbows(SOURCE_TEXT));
+                ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
@@ -39,7 +40,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon(SOURCE_TEXT));
-                ProficiencyManager.Proficiencies.Add(new ProfMRWHandCrossbows(SOURCE_TEXT));
+                ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon(SOURCE_TEXT));
                 //TODO: prompt to pick skills
             }
             IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();

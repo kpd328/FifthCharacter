@@ -5,6 +5,9 @@ namespace FifthCharacter.Plugin.Proficiencies.Skills {
         public override string Name => "Deception";
         public override string Source { get; set; }
         public override string ID => "Skill.Proficiency.Deception";
+
+        internal ProfDeception() { }
+
         public ProfDeception(string source) {
             Source = source;
         }

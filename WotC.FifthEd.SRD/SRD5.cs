@@ -171,7 +171,15 @@ namespace WotC.FifthEd.SRD {
             new ProfLangGnomish(),
             new ProfLangHalfling(),
             new ProfLangInfernal(),
-            new ProfLangOrc()
+            new ProfLangOrc(),
+            new ProfLangGiant(),
+            new ProfLangGoblin(),
+            new ProfLangAbyssal(),
+            new ProfLangCelestial(),
+            new ProfLangDeepSpeech(),
+            new ProfLangPrimordial(),
+            new ProfLangSylvan(),
+            new ProfLangUndercommon()
         };
     }
 }

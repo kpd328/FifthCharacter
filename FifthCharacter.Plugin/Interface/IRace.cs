@@ -8,7 +8,7 @@ namespace FifthCharacter.Plugin.Interface {
 
         IRace GetInstance();
         void BuildPopup(PopupNCRaceOptions raceOptions);
-        //void BuildPopup_GTK(PopupNCRaceOptions_GTK raceOptions);
+        void BuildPopup(PopupNCRaceOptions_GTK raceOptions);
         void ConfirmPopup();
     }
 }
