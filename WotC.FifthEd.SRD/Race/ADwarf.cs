@@ -1,10 +1,14 @@
 ﻿using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Popup;
 using FifthCharacter.Plugin.StatsManager;
+using System.Collections.Generic;
 using WotC.FifthEd.SRD.Features.Race.Dwarf;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Languages;
+using WotC.FifthEd.SRD.Proficiencies.Tools.ArtisansTools;
+using Xamarin.Forms;
+using Xamarin.Forms.Markup;
 
 namespace WotC.FifthEd.SRD.Race {
     public abstract class ADwarf : IRace {
@@ -31,15 +35,43 @@ namespace WotC.FifthEd.SRD.Race {
         public abstract IRace GetInstance();
 
         public virtual void BuildPopup(PopupNCRaceOptions raceOptions) {
-            //TODO: Add picker for tool choice:
-            //smith's tools, brewer's supplies, or mason's tools
+            Picker tool = new Picker() {
+                Title = "Tool Proficiency",
+                ItemsSource = ToolChoices,
+                BindingContext = this,
+                ItemDisplayBinding = new Binding("Name")
+            };
+            tool.SetBinding(Picker.SelectedItemProperty, "ChosenTool");
+            tool.Row(0);
+            tool.Column(0);
+            tool.ColumnSpan(2);
+            raceOptions.Body.Children.Add(tool);
         }
         
         public virtual void BuildPopup(PopupNCRaceOptions_GTK raceOptions) {
-            //TODO: Add picker for tool choice:
-            //smith's tools, brewer's supplies, or mason's tools
+            Picker tool = new Picker() {
+                Title = "Tool Proficiency",
+                ItemsSource = ToolChoices,
+                BindingContext = this,
+                ItemDisplayBinding = new Binding("Name")
+            };
+            tool.SetBinding(Picker.SelectedItemProperty, "ChosenTool");
+            tool.Row(0);
+            tool.Column(0);
+            tool.ColumnSpan(2);
+            raceOptions.Body.Children.Add(tool);
         }
 
-        public virtual void ConfirmPopup() { }
+        public virtual void ConfirmPopup() {
+            ProficiencyManager.Proficiencies.Add(ChosenTool);
+        }
+
+        //Popup stuff
+        public List<IProficiency> ToolChoices = new List<IProficiency>() {
+            new ProfSmithsTools(SOURCE_TEXT),
+            new ProfBrewersSupplies(SOURCE_TEXT),
+            new ProfMasonsTools(SOURCE_TEXT)
+        };
+        public IProficiency ChosenTool { get; set; }
     }
 }

@@ -105,7 +105,6 @@
 
   <ItemGroup>
     <Folder Include="Proficiencies\Armor\" />
-    <Folder Include="Proficiencies\Tools\" />
   </ItemGroup>
 
 </Project>

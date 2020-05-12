@@ -11,6 +11,10 @@ using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.SimpleRangedWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Languages;
+using WotC.FifthEd.SRD.Proficiencies.Tools;
+using WotC.FifthEd.SRD.Proficiencies.Tools.ArtisansTools;
+using WotC.FifthEd.SRD.Proficiencies.Tools.GamingSet;
+using WotC.FifthEd.SRD.Proficiencies.Tools.MusicalInstrument;
 using WotC.FifthEd.SRD.Race;
 using WotC.FifthEd.SRD.Spells.Abjuration;
 using WotC.FifthEd.SRD.Spells.Conjuration;
@@ -180,7 +184,42 @@ namespace WotC.FifthEd.SRD {
             new ProfLangDeepSpeech(),
             new ProfLangPrimordial(),
             new ProfLangSylvan(),
-            new ProfLangUndercommon()
+            new ProfLangUndercommon(),
+            new ProfAlchemistsSupplies(),
+            new ProfBrewersSupplies(),
+            new ProfCalligraphersSupplies(),
+            new ProfCarpentersTools(),
+            new ProfCartographersTools(),
+            new ProfCobblersTools(),
+            new ProfCooksUtensils(),
+            new ProfGlassblowersTools(),
+            new ProfJewelersTools(),
+            new ProfLeatherworkersTools(),
+            new ProfMasonsTools(),
+            new ProfPaintersSupplies(),
+            new ProfPottersTools(),
+            new ProfSmithsTools(),
+            new ProfTinkersTools(),
+            new ProfWeaversTools(),
+            new ProfWoodcarversTools(),
+            new ProfDesguiseKit(),
+            new ProfForgeryKit(),
+            new ProfDiceSet(),
+            new ProfPlayingCardSet(),
+            new ProfHerbalismKit(),
+            new ProfBagpipes(),
+            new ProfDrum(),
+            new ProfDulcimer(),
+            new ProfFlute(),
+            new ProfLute(),
+            new ProfLyre(),
+            new ProfHorn(),
+            new ProfPanFlute(),
+            new ProfShawm(),
+            new ProfViol(),
+            new ProfNavigatorsTools(),
+            new ProfPoisonersKit(),
+            new ProfThievesTools()
         };
     }
 }
