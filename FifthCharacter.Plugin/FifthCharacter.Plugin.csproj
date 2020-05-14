@@ -12,6 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Popup\PopupFeature.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Popup\PopupFeature_GTK.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
     <Compile Update="Popup\PopupNCBackgroundOptions.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>

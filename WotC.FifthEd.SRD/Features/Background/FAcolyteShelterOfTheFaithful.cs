@@ -1,8 +1,8 @@
 ﻿using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Popup;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Windows.Input;
-using WotC.FifthEd.SRD.Popup;
 using Xamarin.Forms;
 
 namespace WotC.FifthEd.SRD.Features.Background {

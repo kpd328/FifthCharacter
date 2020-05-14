@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -49,12 +49,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>RacialFeatures.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Popup\PopupFeature.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Popup\PopupFeature_GTK.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Spells\AtHigherLevelsDescriptions.Designer.cs">
       <DesignTime>True</DesignTime>

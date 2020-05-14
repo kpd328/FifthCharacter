@@ -4,7 +4,7 @@ using Rg.Plugins.Popup.Services;
 using System;
 using Xamarin.Forms.Xaml;
 
-namespace WotC.FifthEd.SRD.Popup {
+namespace FifthCharacter.Plugin.Popup {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopupFeature : PopupPage {
         private IFeature Context;
