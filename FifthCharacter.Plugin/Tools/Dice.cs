@@ -37,22 +37,22 @@ namespace FifthCharacter.Plugin.Tools {
             foreach(Dice die in dice) {
                 switch (die.DieBase) {
                     case 4:
-                        d4s.Number++;
+                        d4s.Number += die.Number;
                         break;
                     case 6:
-                        d6s.Number++;
+                        d6s.Number += die.Number;
                         break;
                     case 8:
-                        d8s.Number++;
+                        d8s.Number += die.Number;
                         break;
                     case 10:
-                        d10s.Number++;
+                        d10s.Number += die.Number;
                         break;
                     case 12:
-                        d12s.Number++;
+                        d12s.Number += die.Number;
                         break;
                     case 20:
-                        d20s.Number++;
+                        d20s.Number += die.Number;
                         break;
                     default:
                         Misc.Add(new Dice(die));
@@ -106,6 +106,34 @@ namespace FifthCharacter.Plugin.Tools {
                 _return.Append(' ');
             }
             return _return.ToString().Trim();
+        }
+
+        public void AddDice(params Dice[] dice) {
+            foreach (Dice die in dice) {
+                switch (die.DieBase) {
+                    case 4:
+                        d4s.Number += die.Number;
+                        break;
+                    case 6:
+                        d6s.Number += die.Number;
+                        break;
+                    case 8:
+                        d8s.Number += die.Number;
+                        break;
+                    case 10:
+                        d10s.Number += die.Number;
+                        break;
+                    case 12:
+                        d12s.Number += die.Number;
+                        break;
+                    case 20:
+                        d20s.Number += die.Number;
+                        break;
+                    default:
+                        Misc.Add(new Dice(die));
+                        break;
+                }
+            }
         }
 
         public void ReduceDice(Dice die) {
