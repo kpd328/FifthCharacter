@@ -5,6 +5,7 @@ using WotC.FifthEd.SRD.Attacks.MartialRangedWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon;
 using WotC.FifthEd.SRD.Backgrounds;
+using WotC.FifthEd.SRD.Features.PlayerClass.Barbarian.PathOfTheBerserker;
 using WotC.FifthEd.SRD.PlayerClass;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
@@ -110,6 +111,9 @@ namespace WotC.FifthEd.SRD {
             new SRWSling()
         };
         public FeatureDictionary Feats => new FeatureDictionary() {
+        };
+        public FeatureDictionary Subclasses => new FeatureDictionary() {
+            new FBarbarianPrimalPathPathOfTheBerserker()
         };
         public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
             new Barbarian(),

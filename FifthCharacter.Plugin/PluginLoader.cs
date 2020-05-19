@@ -16,7 +16,8 @@ namespace FifthCharacter.Plugin {
         public RaceDictionary Races { get; private set; } = new RaceDictionary();
         public MagicDictionary Magic { get; private set; } = new MagicDictionary();
         public AttackDictionary Attacks { get; private set; } = new AttackDictionary();
-        public FeatureDictionary Features { get; private set; } = new FeatureDictionary();
+        public FeatureDictionary Feats { get; private set; } = new FeatureDictionary();
+        public FeatureDictionary Subclasses { get; private set; } = new FeatureDictionary();
         public PlayerClassDictionary PlayerClasses { get; private set; } = new PlayerClassDictionary();
         public BackgroundDictionary Backgrounds { get; private set; } = new BackgroundDictionary();
         public ProficiencyDictionary Proficiencies { get; private set; } = new ProficiencyDictionary() {
@@ -86,7 +87,8 @@ namespace FifthCharacter.Plugin {
                     Races.AddAll(plugin.Races);
                     Magic.AddAll(plugin.Magic);
                     Attacks.AddAll(plugin.Attacks);
-                    Features.AddAll(plugin.Feats);
+                    Feats.AddAll(plugin.Feats);
+                    Subclasses.AddAll(plugin.Subclasses);
                     PlayerClasses.AddAll(plugin.PlayerClasses);
                     Backgrounds.AddAll(plugin.Backgrounds);
                     Proficiencies.AddAll(plugin.Proficiencies);

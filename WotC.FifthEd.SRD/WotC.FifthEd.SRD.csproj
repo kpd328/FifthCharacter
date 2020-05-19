@@ -35,6 +35,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BackgroundFeatures.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Barbarian\FeatureBarbarianText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureBarbarianText.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Barbarian\PathOfTheBerserker\FeatureBarbarianPathOfTheBerserkerText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureBarbarianPathOfTheBerserkerText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\PlayerClass\Fighter\FeatureFighterText.Designer.cs">
       <DependentUpon>FeatureFighterText.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -74,6 +84,14 @@
     <EmbeddedResource Update="Features\Background\BackgroundFeatures.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>BackgroundFeatures.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Barbarian\FeatureBarbarianText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureBarbarianText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Barbarian\PathOfTheBerserker\FeatureBarbarianPathOfTheBerserkerText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureBarbarianPathOfTheBerserkerText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\PlayerClass\Fighter\FeatureFighterText.resx">
       <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>

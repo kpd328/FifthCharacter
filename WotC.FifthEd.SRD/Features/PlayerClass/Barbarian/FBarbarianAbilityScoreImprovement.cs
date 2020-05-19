@@ -1,15 +1,15 @@
 ﻿using FifthCharacter.Plugin.Interface;
-using System;
 
-namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
-    class FFighterAbilityScoreImprovement : AFeatureFighter {
+namespace WotC.FifthEd.SRD.Features.PlayerClass.Barbarian {
+    public class FBarbarianAbilityScoreImprovement : AFeatureBarbarian {
         public override string Name => FAbilityScoreImprovement.Name;
-        public override string Text => FeatureFighterText.AbilityScoreImprovement;
+        public override string Text => FeatureBarbarianText.Ability_Score_Improvement;
         public override bool IsActive => FAbilityScoreImprovement.IsActive;
         public override int ActiveUses => FAbilityScoreImprovement.ActiveUses;
         public override bool IsAbilityMod => FAbilityScoreImprovement.IsAbilityMod;
 
-        public override IFeature GetInstance() => new FFighterAbilityScoreImprovement();
+        public override IFeature GetInstance() => new FBarbarianAbilityScoreImprovement();
+
         public override void ModAbility() => FAbilityScoreImprovement.ModAbility();
     }
 }

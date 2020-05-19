@@ -145,6 +145,8 @@ namespace FifthCharacter.Viewmodel {
                     MainPage.IntellegenceAbilityView.Viewmodel.AllPropertiesChanged();
                     MainPage.WisdomAbilityView.Viewmodel.AllPropertiesChanged();
                     MainPage.CharismaAbilityView.Viewmodel.AllPropertiesChanged();
+                    MainPage.CharacterDefenseView.Viewmodel.OnPropertyChanged("HitDiceTotal");
+                    MainPage.CharacterDefenseView.Viewmodel.OnPropertyChanged("HitDiceCurrent");
                 }
                 OnPropertyChanged("Page1CanMoveOn");
             }

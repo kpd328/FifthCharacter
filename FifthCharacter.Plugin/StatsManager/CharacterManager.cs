@@ -25,8 +25,6 @@ namespace FifthCharacter.Plugin.StatsManager {
         public static int HitPointTemporary { get; set; } //TODO: integrate with health system to be used before HitPointCurrent when taking damage
         public static int HitPointShowing => HitPointCurrent + HitPointTemporary;
         public static bool HasTempHitPoints => HitPointTemporary > 0;
-        public static string HitDiceTotal { get; set; } = "4d10"; //TODO: retrieve from character class(es)
-        public static string HitDiceCurrent { get; set; } = "2d10"; //TODO: integrate with health system to be expendable
 
         //TODO: implement death saves feature
     }

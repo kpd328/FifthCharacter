@@ -34,6 +34,12 @@ namespace FifthCharacter.Plugin {
         /// </summary>
         FeatureDictionary Feats { get; }
         /// <summary>
+        /// Add all subclasses to this collection to expose them to the App.
+        /// Note, subclasses are features that extend each player class' abstract subclass feature which will be used to
+        /// identify each subclass' parent class
+        /// </summary>
+        FeatureDictionary Subclasses { get; }
+        /// <summary>
         /// Add all player classes to this collection to expose them to the App.
         /// </summary>
         PlayerClassDictionary PlayerClasses { get; }

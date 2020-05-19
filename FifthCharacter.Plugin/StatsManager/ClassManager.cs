@@ -1,18 +1,16 @@
 ﻿using FifthCharacter.Plugin.Interface;
+using FifthCharacter.Plugin.Tools;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FifthCharacter.Plugin.StatsManager {
-    /// <summary>
-    /// As a note, this is very TEMPORARY.
-    /// PLEASE, reimplement with something
-    /// more sophisticated, integrating
-    /// into player class classes ((eww))
-    /// </summary>
     public static class ClassManager {
         public static IList<IPlayerClass> Classes { get; private set; } = new List<IPlayerClass>();
         public static IPlayerClass PrimaryClass { get; private set; }
+        public static CompoundDice HitDiceTotal { get; private set; } = new CompoundDice();
+        public static CompoundDice HitDiceCurrent { get; private set; } = new CompoundDice();
         public static int TotalLevel {
             get {
                 int _return = 0;
@@ -41,6 +39,15 @@ namespace FifthCharacter.Plugin.StatsManager {
             PrimaryClass = playerClass.TakeAsPrimaryClass();
             Classes.Clear();
             Classes.Add(PrimaryClass);
+            HitDiceTotal = new CompoundDice(PrimaryClass.CurrentTotalHitDice);
+            HitDiceCurrent = new CompoundDice(HitDiceTotal);
+        }
+
+        public static int ClassLevel(string playerclass) {
+            if (Classes.Any(c => c.Name.Equals(playerclass))) {
+                return Classes.Where(c => c.Name.Equals(playerclass)).FirstOrDefault().Level;
+            }
+            return 0;
         }
     }
 }

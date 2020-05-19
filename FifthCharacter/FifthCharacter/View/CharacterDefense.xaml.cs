@@ -1,19 +1,16 @@
 ﻿using FifthCharacter.Viewmodel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace FifthCharacter.View {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CharacterDefense : ContentView {
-        public CharacterDefense(CharacterDefenseVM viewModel) {
+        internal CharacterDefenseVM Viewmodel;
+
+        public CharacterDefense(CharacterDefenseVM viewmodel) {
             InitializeComponent();
-            viewModel.Bind(this);
+            viewmodel.Bind(this);
+            Viewmodel = viewmodel;
         }
     }
 }
