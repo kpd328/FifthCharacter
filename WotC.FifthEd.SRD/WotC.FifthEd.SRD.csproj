@@ -45,6 +45,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeatureBarbarianPathOfTheBerserkerText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Bard\CollegeOfLore\FeatureBardCollegeOfLoreText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureBardCollegeOfLoreText.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Bard\FeatureBardText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureBardText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\PlayerClass\Fighter\FeatureFighterText.Designer.cs">
       <DependentUpon>FeatureFighterText.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -92,6 +102,14 @@
     <EmbeddedResource Update="Features\PlayerClass\Barbarian\PathOfTheBerserker\FeatureBarbarianPathOfTheBerserkerText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureBarbarianPathOfTheBerserkerText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Bard\CollegeOfLore\FeatureBardCollegeOfLoreText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureBardCollegeOfLoreText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Bard\FeatureBardText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureBardText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\PlayerClass\Fighter\FeatureFighterText.resx">
       <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>

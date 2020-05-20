@@ -89,6 +89,15 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Barbarian.PathOfTheBerserker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For some barbarians, rage is a means to an end—that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker’s rage, you thrill in the chaos of battle, heedless of your own health or well-being..
+        /// </summary>
+        internal static string Path_of_the_Berserker {
+            get {
+                return ResourceManager.GetString("Path of the Berserker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature..
         /// </summary>
         internal static string Retaliation {

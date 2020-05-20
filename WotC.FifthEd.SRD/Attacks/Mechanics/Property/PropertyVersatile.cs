@@ -8,7 +8,7 @@ namespace WotC.FifthEd.SRD.Attacks.Mechanics.Property {
         public string TextDescription => WeapPropTxt.Versatile;
         public string PropertyName => WeapPropName.Versatile;
         private Dice Dice { get; set; }
-        public string Die => Dice.ToString;
+        public string Die => Dice.ToString();
         public bool VisDescriptionShowing { get; set; } = false;
 
         private ICommand _tapDescription;
