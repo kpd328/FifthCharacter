@@ -55,6 +55,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeatureBardText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Cleric\FeatureClericText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureClericText.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Cleric\LifeDomain\FeatureClericLifeDomainText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureClericLifeDomainText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\PlayerClass\Fighter\FeatureFighterText.Designer.cs">
       <DependentUpon>FeatureFighterText.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -110,6 +120,14 @@
     <EmbeddedResource Update="Features\PlayerClass\Bard\FeatureBardText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureBardText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Cleric\FeatureClericText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureClericText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Cleric\LifeDomain\FeatureClericLifeDomainText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureClericLifeDomainText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\PlayerClass\Fighter\FeatureFighterText.resx">
       <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>

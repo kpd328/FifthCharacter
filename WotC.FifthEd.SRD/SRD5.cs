@@ -6,6 +6,8 @@ using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon;
 using WotC.FifthEd.SRD.Backgrounds;
 using WotC.FifthEd.SRD.Features.PlayerClass.Barbarian.PathOfTheBerserker;
+using WotC.FifthEd.SRD.Features.PlayerClass.Bard.CollegeOfLore;
+using WotC.FifthEd.SRD.Features.PlayerClass.Cleric.LifeDomain;
 using WotC.FifthEd.SRD.PlayerClass;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
@@ -113,7 +115,9 @@ namespace WotC.FifthEd.SRD {
         public FeatureDictionary Feats => new FeatureDictionary() {
         };
         public FeatureDictionary Subclasses => new FeatureDictionary() {
-            new FBarbarianPrimalPathPathOfTheBerserker()
+            new FBarbarianPrimalPathPathOfTheBerserker(),
+            new FBardBardCollegeCollegeOfLore(),
+            new FClericDivineDomainLifeDomain()
         };
         public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
             new Barbarian(),

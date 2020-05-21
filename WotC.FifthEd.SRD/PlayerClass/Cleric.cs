@@ -1,4 +1,5 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin;
+using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Proficiencies.Armor;
 using FifthCharacter.Plugin.Proficiencies.Attacks;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
@@ -6,6 +7,8 @@ using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
+using System.Linq;
+using WotC.FifthEd.SRD.Features.PlayerClass.Cleric;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Cleric : IPlayerClass {
@@ -18,13 +21,25 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         public Dice CurrentTotalHitDice { get; private set; }
         public IList<IFeature> ClassFeatures => new List<IFeature>();
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
-
+            { 1, new FClericSpellcasting() },
+            { 2, new FClericChannelDivinity() },
+            { 4, new FClericAbilityScoreImprovement() },
+            { 5, new FClericDestroyUndead() },
+            { 8, new FClericAbilityScoreImprovement() },
+            { 10, new FClericDivineIntervention() },
+            { 12, new FClericAbilityScoreImprovement() },
+            { 16, new FClericAbilityScoreImprovement() },
+            { 19, new FClericAbilityScoreImprovement() }
         };
+        private IList<FClericDivineDomain> DivineDomains;
+        private PluginLoader PluginLoader;
         public SpellcasterClass SpellcasterClass => SpellcasterClass.PRIMARY;
 
         internal Cleric() { }
 
         private Cleric(bool isPrimary) : base() {
+            PluginLoader = PluginLoader.GetLoader();
+            DivineDomains = new List<FClericDivineDomain>(PluginLoader.Subclasses.Where(f => f.GetType().IsSubclassOf(typeof(FClericDivineDomain))).Cast<FClericDivineDomain>());
             if (isPrimary) {
                 ProficiencyManager.Proficiencies.Add(new ProfWisdomSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfCharismaSave(SOURCE_TEXT));
