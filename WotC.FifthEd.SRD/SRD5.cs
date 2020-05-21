@@ -1,10 +1,12 @@
 ﻿using FifthCharacter.Plugin;
 using FifthCharacter.Plugin.Tools;
+using System.Text.RegularExpressions;
 using WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.MartialRangedWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon;
 using WotC.FifthEd.SRD.Backgrounds;
+using WotC.FifthEd.SRD.Features.Feat;
 using WotC.FifthEd.SRD.Features.PlayerClass.Barbarian.PathOfTheBerserker;
 using WotC.FifthEd.SRD.Features.PlayerClass.Bard.CollegeOfLore;
 using WotC.FifthEd.SRD.Features.PlayerClass.Cleric.LifeDomain;
@@ -27,11 +29,11 @@ using WotC.FifthEd.SRD.Spells.Transmutation;
 
 namespace WotC.FifthEd.SRD {
     public class SRD5 : IPlugin {
-        internal static string Name => "SRD5";
+        internal static string Name => "SRD";
         internal static string Description => "The Systems Reference Document 5.1 for Dungeons and Dragons";
-        internal static string Author => "Wizards of the Coast";
+        internal static string Author => "Wizards Of The Coast";
         internal static string Version => "1.0";
-        internal static string ID => IDGen.GetID(string.Format("{0}.{1}.{2}", Author, Name, Version));
+        internal static string ID => IDGen.GetID(string.Format("{0}.{1}.{2}", Regex.Replace(Author, @"[^0-9a-zA-Z]+", ""), Name, Version));
 
         public string PluginName => Name;
         public string PluginDescription => Description;
@@ -113,6 +115,7 @@ namespace WotC.FifthEd.SRD {
             new SRWSling()
         };
         public FeatureDictionary Feats => new FeatureDictionary() {
+            new FeatGrappler()
         };
         public FeatureDictionary Subclasses => new FeatureDictionary() {
             new FBarbarianPrimalPathPathOfTheBerserker(),

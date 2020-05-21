@@ -35,6 +35,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BackgroundFeatures.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\Feat\FeatureFeatText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureFeatText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\PlayerClass\Barbarian\FeatureBarbarianText.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -104,6 +109,10 @@
     <EmbeddedResource Update="Features\Background\BackgroundFeatures.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>BackgroundFeatures.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Feat\FeatureFeatText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureFeatText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\PlayerClass\Barbarian\FeatureBarbarianText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
