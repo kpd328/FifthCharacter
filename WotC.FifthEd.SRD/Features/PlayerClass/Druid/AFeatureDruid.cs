@@ -6,11 +6,11 @@ using System.Text.RegularExpressions;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace WotC.FifthEd.SRD.Features.PlayerClass.Cleric {
-    public abstract class AFeatureCleric : IFeature {
+namespace WotC.FifthEd.SRD.Features.PlayerClass.Druid {
+    public abstract class AFeatureDruid : IFeature {
         public abstract string Name { get; }
-        public virtual string ID => string.Format("SRD.Feature.Class.Cleric.{0}", Regex.Replace(Regex.Replace(Name, @"[^0-9a-zA-Z:]+", ""), @"[:]", "."));
-        public virtual string Source => "Class Cleric";
+        public virtual string ID => string.Format("SRD.Feature.Class.Druid.{0}", Regex.Replace(Regex.Replace(Name, @"[^0-9a-zA-Z:]+", ""), @"[:]", "."));
+        public virtual string Source => "Class Druid";
         public abstract string Text { get; }
         public abstract bool IsActive { get; }
         public abstract int ActiveUses { get; }

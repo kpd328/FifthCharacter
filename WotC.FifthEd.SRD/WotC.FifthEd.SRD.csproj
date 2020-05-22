@@ -70,6 +70,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeatureClericLifeDomainText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Druid\CircleOfTheLand\FeatureDruidCircleOfTheLandText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureDruidCircleOfTheLandText.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Druid\FeatureDruidText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureDruidText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\PlayerClass\Fighter\FeatureFighterText.Designer.cs">
       <DependentUpon>FeatureFighterText.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -137,6 +147,14 @@
     <EmbeddedResource Update="Features\PlayerClass\Cleric\LifeDomain\FeatureClericLifeDomainText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureClericLifeDomainText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Druid\CircleOfTheLand\FeatureDruidCircleOfTheLandText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureDruidCircleOfTheLandText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Druid\FeatureDruidText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureDruidText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\PlayerClass\Fighter\FeatureFighterText.resx">
       <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>

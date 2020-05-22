@@ -1,10 +1,13 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin;
+using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Proficiencies.Armor;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
 using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
+using System.Linq;
+using WotC.FifthEd.SRD.Features.PlayerClass.Druid;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.SimpleRangedWeapon;
@@ -20,13 +23,27 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         public Dice CurrentTotalHitDice { get; private set; }
         public IList<IFeature> ClassFeatures => new List<IFeature>();
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
-
+            { 1, new FDruidDruidic() },
+            { 1, new FDruidSpellcasting() },
+            { 2, new FDruidWildShape() },
+            { 4, new FDruidAbilityScoreIncrease() },
+            { 8, new FDruidAbilityScoreIncrease() },
+            { 12, new FDruidAbilityScoreIncrease() },
+            { 16, new FDruidAbilityScoreIncrease() },
+            { 18, new FDruidTimelessBody() },
+            { 18, new FDruidBeastSpells() },
+            { 19, new FDruidAbilityScoreIncrease() },
+            { 20, new FDruidArchdruid() }
         };
+        private IList<FDruidDruidCircle> DruidCircles;
+        private PluginLoader PluginLoader;
         public SpellcasterClass SpellcasterClass => SpellcasterClass.PRIMARY;
 
         internal Druid() { }
 
         private Druid(bool isPrimary) : base() {
+            PluginLoader = PluginLoader.GetLoader();
+            DruidCircles = new List<FDruidDruidCircle>(PluginLoader.Subclasses.Where(f => f.GetType().IsSubclassOf(typeof(FDruidDruidCircle))).Cast<FDruidDruidCircle>());
             if (isPrimary) {
                 ProficiencyManager.Proficiencies.Add(new ProfIntelligenceSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfWisdomSave(SOURCE_TEXT));
