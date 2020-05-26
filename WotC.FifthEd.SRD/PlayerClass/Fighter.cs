@@ -1,4 +1,5 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin;
+using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Proficiencies.Armor;
 using FifthCharacter.Plugin.Proficiencies.Attacks;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
@@ -6,6 +7,7 @@ using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
+using System.Linq;
 using WotC.FifthEd.SRD.Features.PlayerClass.Fighter;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
@@ -32,12 +34,16 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             { 16, new FFighterAbilityScoreImprovement() },
             { 19, new FFighterAbilityScoreImprovement() }
         };
+        private IList<FFighterMartialArchetype> MartialArchetypes;
+        private PluginLoader PluginLoader;
         private SpellcasterClass _CurrentSpellcasterClass = SpellcasterClass.NONE;
         public SpellcasterClass SpellcasterClass => SpellcasterClass.NONE;
 
         internal Fighter() { }
 
         private Fighter(bool isPrimary) : base() {
+            PluginLoader = PluginLoader.GetLoader();
+            MartialArchetypes = new List<FFighterMartialArchetype>(PluginLoader.Subclasses.Where(f => f.GetType().IsSubclassOf(typeof(FFighterMartialArchetype))).Cast<FFighterMartialArchetype>());
             if (isPrimary) {
                 ProficiencyManager.Proficiencies.Add(new ProfStrengthSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfConstitutionSave(SOURCE_TEXT));

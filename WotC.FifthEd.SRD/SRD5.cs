@@ -12,6 +12,7 @@ using WotC.FifthEd.SRD.Features.PlayerClass.Bard.CollegeOfLore;
 using WotC.FifthEd.SRD.Features.PlayerClass.Cleric.LifeDomain;
 using WotC.FifthEd.SRD.Features.PlayerClass.Druid.CircleOfTheLand;
 using WotC.FifthEd.SRD.Features.PlayerClass.Fighter.Champion;
+using WotC.FifthEd.SRD.Features.PlayerClass.Monk.WayOfTheOpenHand;
 using WotC.FifthEd.SRD.PlayerClass;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
@@ -31,11 +32,11 @@ using WotC.FifthEd.SRD.Spells.Transmutation;
 
 namespace WotC.FifthEd.SRD {
     public class SRD5 : IPlugin {
-        internal static string Name => "SRD";
+        internal static string Name => "SRD5";
         internal static string Description => "The Systems Reference Document 5.1 for Dungeons and Dragons";
-        internal static string Author => "Wizards Of The Coast";
+        internal static string Author => "Wizards of the Coast";
         internal static string Version => "1.0";
-        internal static string ID => IDGen.GetID(string.Format("{0}.{1}.{2}", Regex.Replace(Author, @"[^0-9a-zA-Z]+", ""), Name, Version));
+        internal static string ID => IDGen.GetID(string.Format("{0}.{1}.{2}", Author, Name, Version));
 
         public string PluginName => Name;
         public string PluginDescription => Description;
@@ -124,7 +125,8 @@ namespace WotC.FifthEd.SRD {
             new FBardBardCollegeCollegeOfLore(),
             new FClericDivineDomainLifeDomain(),
             new FDruidDruidCircleCircleOfTheLand(),
-            new FFighterMartialArchetypeChampion()
+            new FFighterMartialArchetypeChampion(),
+            new FMonkMonasticTraditionWayOfTheOpenHand()
         };
         public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
             new Barbarian(),

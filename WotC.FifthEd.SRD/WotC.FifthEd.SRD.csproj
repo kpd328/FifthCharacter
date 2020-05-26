@@ -95,6 +95,16 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Features\PlayerClass\Monk\FeatureMonkText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureMonkText.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Monk\WayOfTheOpenHand\FeatureMonkWayOfTheOpenHandText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureMonkWayOfTheOpenHandText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\Race\RacialFeatures.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -172,6 +182,14 @@
     <EmbeddedResource Update="Features\PlayerClass\Fighter\FightingStyleText.resx">
       <LastGenOutput>FightingStyleText.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Monk\FeatureMonkText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureMonkText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Monk\WayOfTheOpenHand\FeatureMonkWayOfTheOpenHandText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureMonkWayOfTheOpenHandText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\Race\RacialFeatures.resx">
       <Generator>ResXFileCodeGenerator</Generator>
