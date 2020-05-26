@@ -47,15 +47,19 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
                 case FightingStyle.TWOWEAPONFIGHTING:
                     return FightingStyleText.TwoWeaponFighting;
                 }
-                return FeatureFighterText.FightingStyle;
+                return FeatureFighterText.Fighting_Style;
             }
         }
         public FightingStyle FightingStyle { get; private set; }
         public override bool IsActive => false;
         public override int ActiveUses => 0;
 
-        public FFighterFightingStyle(FightingStyle style) => FightingStyle = style;
+        internal FFighterFightingStyle() { }
 
-        public override IFeature GetInstance() => new FFighterFightingStyle(FightingStyle);
+        public FFighterFightingStyle(bool itTaken) {
+            //TODO: Prompt to pick fighting style
+        }
+
+        public override IFeature GetInstance() => new FFighterFightingStyle();
     }
 }

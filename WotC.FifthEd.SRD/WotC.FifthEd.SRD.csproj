@@ -80,6 +80,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeatureDruidText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Fighter\Champion\FeatureFighterChampionText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureFighterChampionText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\PlayerClass\Fighter\FeatureFighterText.Designer.cs">
       <DependentUpon>FeatureFighterText.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -155,6 +160,10 @@
     <EmbeddedResource Update="Features\PlayerClass\Druid\FeatureDruidText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureDruidText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Fighter\Champion\FeatureFighterChampionText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureFighterChampionText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\PlayerClass\Fighter\FeatureFighterText.resx">
       <LastGenOutput>FeatureFighterText.Designer.cs</LastGenOutput>

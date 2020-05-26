@@ -19,10 +19,18 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         public Dice CurrentTotalHitDice { get; private set; }
         public IList<IFeature> ClassFeatures => new List<IFeature>();
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
+            { 1, new FFighterFightingStyle() },
             { 1, new FFighterSecondWind() },
             { 2, new FFighterActionSurge() },
-            { 4, new FFighterAbilityScoreImprovement() }
-            //Add other features as implemented
+            { 4, new FFighterAbilityScoreImprovement() },
+            { 5, new FFighterExtraAttack() },
+            { 6, new FFighterAbilityScoreImprovement() },
+            { 8, new FFighterAbilityScoreImprovement() },
+            { 9, new FFighterIndomitable() },
+            { 12, new FFighterAbilityScoreImprovement() },
+            { 14, new FFighterAbilityScoreImprovement() },
+            { 16, new FFighterAbilityScoreImprovement() },
+            { 19, new FFighterAbilityScoreImprovement() }
         };
         private SpellcasterClass _CurrentSpellcasterClass = SpellcasterClass.NONE;
         public SpellcasterClass SpellcasterClass => SpellcasterClass.NONE;

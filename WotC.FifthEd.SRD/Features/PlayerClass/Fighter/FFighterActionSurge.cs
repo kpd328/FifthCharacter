@@ -3,7 +3,7 @@
 namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
     public class FFighterActionSurge : AFeatureFighter {
         public override string Name => "Action Surge";
-        public override string Text => FeatureFighterText.ActionSurge;
+        public override string Text => FeatureFighterText.Action_Surge;
         public override bool IsActive => true;
         public override int ActiveUses => 1;
 

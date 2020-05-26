@@ -63,9 +63,9 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
         /// <summary>
         ///   Looks up a localized string similar to When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature..
         /// </summary>
-        internal static string AbilityScoreImprovement {
+        internal static string Ability_Score_Improvement {
             get {
-                return ResourceManager.GetString("AbilityScoreImprovement", resourceCulture);
+                return ResourceManager.GetString("Ability Score Improvement", resourceCulture);
             }
         }
         
@@ -73,36 +73,56 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
         ///   Looks up a localized string similar to Starting at 2nd leveI, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again.
         ///Starting at 17th level, you can use it twice before a rest, but only once on the same turn..
         /// </summary>
-        internal static string ActionSurge {
+        internal static string Action_Surge {
             get {
-                return ResourceManager.GetString("ActionSurge", resourceCulture);
+                return ResourceManager.GetString("Action Surge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.
+        ///The number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class..
+        /// </summary>
+        internal static string Extra_Attack {
+            get {
+                return ResourceManager.GetString("Extra Attack", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to You adopt a particular style of fighting as your specialty. Choose one of the following options (Archery, Defense, Dueling, Great Weapon Fighting, Protection, Two-Weapon Fighting). You can&apos;t take a Fighting Style option more than once, even if you later get to choose again..
         /// </summary>
-        internal static string FightingStyle {
+        internal static string Fighting_Style {
             get {
-                return ResourceManager.GetString("FightingStyle", resourceCulture);
+                return ResourceManager.GetString("Fighting Style", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can’t use this feature again until you finish a long rest.
+        ///You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level..
+        /// </summary>
+        internal static string Indomitable {
+            get {
+                return ResourceManager.GetString("Indomitable", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to At 3rd level, you choose an archetype that you strive toemulate in your combat styles and techniques, such as Champion. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level..
         /// </summary>
-        internal static string MartialArchetype {
+        internal static string Martial_Archetype {
             get {
-                return ResourceManager.GetString("MartialArchetype", resourceCulture);
+                return ResourceManager.GetString("Martial Archetype", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter leveI. Once you use this feature, you must finish a short or long rest before you can use it again..
         /// </summary>
-        internal static string SecondWind {
+        internal static string Second_Wind {
             get {
-                return ResourceManager.GetString("SecondWind", resourceCulture);
+                return ResourceManager.GetString("Second Wind", resourceCulture);
             }
         }
     }
