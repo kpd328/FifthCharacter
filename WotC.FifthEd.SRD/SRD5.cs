@@ -1,6 +1,5 @@
 ﻿using FifthCharacter.Plugin;
 using FifthCharacter.Plugin.Tools;
-using System.Text.RegularExpressions;
 using WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.MartialRangedWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
@@ -13,6 +12,8 @@ using WotC.FifthEd.SRD.Features.PlayerClass.Cleric.LifeDomain;
 using WotC.FifthEd.SRD.Features.PlayerClass.Druid.CircleOfTheLand;
 using WotC.FifthEd.SRD.Features.PlayerClass.Fighter.Champion;
 using WotC.FifthEd.SRD.Features.PlayerClass.Monk.WayOfTheOpenHand;
+using WotC.FifthEd.SRD.Features.PlayerClass.Paladin;
+using WotC.FifthEd.SRD.Features.PlayerClass.Paladin.OathOfDevotion;
 using WotC.FifthEd.SRD.PlayerClass;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
@@ -126,7 +127,8 @@ namespace WotC.FifthEd.SRD {
             new FClericDivineDomainLifeDomain(),
             new FDruidDruidCircleCircleOfTheLand(),
             new FFighterMartialArchetypeChampion(),
-            new FMonkMonasticTraditionWayOfTheOpenHand()
+            new FMonkMonasticTraditionWayOfTheOpenHand(),
+            new FPaladinSacredOathOathOfDevotion()
         };
         public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
             new Barbarian(),

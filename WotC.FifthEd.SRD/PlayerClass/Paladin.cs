@@ -1,4 +1,5 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin;
+using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Proficiencies.Armor;
 using FifthCharacter.Plugin.Proficiencies.Attacks;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
@@ -6,6 +7,8 @@ using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
+using System.Linq;
+using WotC.FifthEd.SRD.Features.PlayerClass.Paladin;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Paladin : IPlayerClass {
@@ -18,13 +21,32 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         public Dice CurrentTotalHitDice { get; private set; }
         public IList<IFeature> ClassFeatures => new List<IFeature>();
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
-
+            { 1, new FPaladinDivineSense() },
+            { 1, new FPaladinLayOnHands() },
+            { 2, new FPaladinFightingStyle() },
+            { 2, new FPaladinSpellcasting() },
+            { 2, new FPaladinDivineSmite() },
+            { 3, new FPaladinDivineHealth() },
+            { 4, new FPaladinAbilityScoreImprovement() },
+            { 5, new FPaladinExtraAttack() },
+            { 6, new FPaladinAuraOfProtection() },
+            { 8, new FPaladinAbilityScoreImprovement() },
+            { 10, new FPaladinAuraOfCourage() },
+            { 11, new FPaladinImprovedDivineSmite() },
+            { 12, new FPaladinAbilityScoreImprovement() },
+            { 14, new FPaladinCleansingTouch() },
+            { 16, new FPaladinAbilityScoreImprovement() },
+            { 19, new FPaladinAbilityScoreImprovement() }
         };
+        private IList<FPaladinSacredOath> SacredOaths;
+        private PluginLoader PluginLoader;
         public SpellcasterClass SpellcasterClass => SpellcasterClass.SECONDARY;
 
         internal Paladin() { }
 
         private Paladin(bool isPrimary) : base() {
+            PluginLoader = PluginLoader.GetLoader();
+            SacredOaths = new List<FPaladinSacredOath>(PluginLoader.Subclasses.Where(f => f.GetType().IsSubclassOf(typeof(FPaladinSacredOath))).Cast<FPaladinSacredOath>());
             if (isPrimary) {
                 ProficiencyManager.Proficiencies.Add(new ProfWisdomSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfCharismaSave(SOURCE_TEXT));

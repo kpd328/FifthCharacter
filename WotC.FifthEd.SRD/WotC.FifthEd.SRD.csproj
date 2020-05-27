@@ -105,6 +105,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeatureMonkWayOfTheOpenHandText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Paladin\FeaturePaladinText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeaturePaladinText.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Paladin\OathOfDevotion\FeaturePaladinOathOfDevotionText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeaturePaladinOathOfDevotionText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\Race\RacialFeatures.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -190,6 +200,14 @@
     <EmbeddedResource Update="Features\PlayerClass\Monk\WayOfTheOpenHand\FeatureMonkWayOfTheOpenHandText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureMonkWayOfTheOpenHandText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Paladin\FeaturePaladinText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeaturePaladinText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Paladin\OathOfDevotion\FeaturePaladinOathOfDevotionText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeaturePaladinOathOfDevotionText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\Race\RacialFeatures.resx">
       <Generator>ResXFileCodeGenerator</Generator>
