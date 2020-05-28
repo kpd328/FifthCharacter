@@ -6,7 +6,6 @@ using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
-using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Ranger : IPlayerClass {

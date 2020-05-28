@@ -65,13 +65,16 @@ namespace FifthCharacter.Plugin {
             if (!loaded) {
                 Plugins = new List<IPlugin>();
 
-                if (Directory.Exists(Constants.FolderName)) {
-                    string[] files = Directory.GetFiles(Constants.FolderName);
+                if (Directory.Exists(Constants.FolderPath)) {
+                    string[] files = Directory.GetFiles(Constants.FolderPath);
                     foreach (string file in files) {
                         if (file.EndsWith(".dll")) {
                             Assembly.UnsafeLoadFrom(Path.GetFullPath(file));
                         }
                     }
+                } else {
+                    Directory.CreateDirectory(Constants.FolderPath);
+                    return;
                 }
 
                 Type interfaceType = typeof(IPlugin);
