@@ -1,4 +1,5 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin;
+using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Proficiencies.Armor;
 using FifthCharacter.Plugin.Proficiencies.Attacks;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
@@ -6,6 +7,8 @@ using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
+using System.Linq;
+using WotC.FifthEd.SRD.Features.PlayerClass.Ranger;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Ranger : IPlayerClass {
@@ -18,13 +21,32 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         public Dice CurrentTotalHitDice { get; private set; }
         public IList<IFeature> ClassFeatures => new List<IFeature>();
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
-
+            { 1, new FRangerFavoredEnemy() },
+            { 1, new FRangerNaturalExplorer() },
+            { 2, new FRangerFightingStyle() },
+            { 2, new FRangerSpellcasting() },
+            { 3, new FRangerPrimevalAwareness() },
+            { 4, new FRangerAbilityScoreImprovement() },
+            { 5, new FRangerExtraAttack() },
+            { 8, new FRangerAbilityScoreImprovement() },
+            { 8, new FRangerLandsStride() },
+            { 10, new FRangerHideInPlainSight() },
+            { 12, new FRangerAbilityScoreImprovement() },
+            { 14, new FRangerVanish() },
+            { 16, new FRangerAbilityScoreImprovement() },
+            { 18, new FRangerFeralSenses() },
+            { 19, new FRangerAbilityScoreImprovement() },
+            { 20, new FRangerFoeSlayer() }
         };
+        private IList<FRangerRangerArchetype> RangerArchetypes;
+        private PluginLoader PluginLoader;
         public SpellcasterClass SpellcasterClass => SpellcasterClass.SECONDARY;
 
         internal Ranger() { }
 
         private Ranger(bool isPrimary) : base() {
+            PluginLoader = PluginLoader.GetLoader();
+            RangerArchetypes = new List<FRangerRangerArchetype>(PluginLoader.Subclasses.Where(f => f.GetType().IsSubclassOf(typeof(FRangerRangerArchetype))).Cast<FRangerRangerArchetype>());
             if (isPrimary) {
                 ProficiencyManager.Proficiencies.Add(new ProfStrengthSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfDexteritySave(SOURCE_TEXT));

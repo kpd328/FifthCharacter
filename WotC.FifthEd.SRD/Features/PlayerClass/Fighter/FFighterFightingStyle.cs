@@ -56,10 +56,10 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Fighter {
 
         internal FFighterFightingStyle() { }
 
-        public FFighterFightingStyle(bool itTaken) {
+        public FFighterFightingStyle(bool isTaken) {
             //TODO: Prompt to pick fighting style
         }
 
-        public override IFeature GetInstance() => new FFighterFightingStyle();
+        public override IFeature GetInstance() => new FFighterFightingStyle(true);
     }
 }

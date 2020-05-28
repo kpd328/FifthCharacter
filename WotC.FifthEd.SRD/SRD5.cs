@@ -14,6 +14,7 @@ using WotC.FifthEd.SRD.Features.PlayerClass.Fighter.Champion;
 using WotC.FifthEd.SRD.Features.PlayerClass.Monk.WayOfTheOpenHand;
 using WotC.FifthEd.SRD.Features.PlayerClass.Paladin;
 using WotC.FifthEd.SRD.Features.PlayerClass.Paladin.OathOfDevotion;
+using WotC.FifthEd.SRD.Features.PlayerClass.Ranger.Hunter;
 using WotC.FifthEd.SRD.PlayerClass;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
@@ -128,7 +129,8 @@ namespace WotC.FifthEd.SRD {
             new FDruidDruidCircleCircleOfTheLand(),
             new FFighterMartialArchetypeChampion(),
             new FMonkMonasticTraditionWayOfTheOpenHand(),
-            new FPaladinSacredOathOathOfDevotion()
+            new FPaladinSacredOathOathOfDevotion(),
+            new FRangerRangerArchetypeHunter()
         };
         public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
             new Barbarian(),

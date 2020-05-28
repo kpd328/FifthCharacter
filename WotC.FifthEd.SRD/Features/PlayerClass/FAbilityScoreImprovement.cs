@@ -1,7 +1,4 @@
-﻿using FifthCharacter.Plugin.Interface;
-using System.Windows.Input;
-
-namespace WotC.FifthEd.SRD.Features.PlayerClass {
+﻿namespace WotC.FifthEd.SRD.Features.PlayerClass {
     /// <summary>
     /// Use this class to help develop "Ability Score Improvement" classes using the content shared between different versions
     /// </summary>

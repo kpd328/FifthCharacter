@@ -115,6 +115,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeaturePaladinOathOfDevotionText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Ranger\FeatureRangerText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureRangerText.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Ranger\Hunter\FeatureRangerHunterText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureRangerHunterText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\Race\RacialFeatures.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -209,6 +219,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeaturePaladinOathOfDevotionText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Ranger\FeatureRangerText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureRangerText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Ranger\Hunter\FeatureRangerHunterText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureRangerHunterText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Features\Race\RacialFeatures.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RacialFeatures.Designer.cs</LastGenOutput>
@@ -224,7 +242,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\PlayerClass\Ranger\" />
     <Folder Include="Proficiencies\Armor\" />
   </ItemGroup>
 

@@ -63,9 +63,9 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Cleric {
         /// <summary>
         ///   Looks up a localized string similar to When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature..
         /// </summary>
-        internal static string Ability_Score_Increase {
+        internal static string Ability_Score_Improvement {
             get {
-                return ResourceManager.GetString("Ability Score Increase", resourceCulture);
+                return ResourceManager.GetString("Ability Score Improvement", resourceCulture);
             }
         }
         
