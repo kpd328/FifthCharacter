@@ -385,7 +385,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Note: this entry assumes you calculated the racial additions on your own and are already considered here. To remind:"
+                    <Label Text="Note: Racial ability scores are NOT included in these entries and WILL be added when submitted. Racial ability changes:"
                            LineBreakMode="WordWrap"
                            Grid.Row="0"
                            Grid.Column="0"
