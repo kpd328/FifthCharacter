@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<p:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:p="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:a="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FifthCharacter.Plugin.Popup.PopupNCAbilityScores">
+    <p:PopupPage.Animation>
+        <a:ScaleAnimation DurationIn="400"
+                          DurationOut="300"
+                          EasingIn="SinIn"
+                          EasingOut="SinOut"
+                          HasBackgroundAnimation="True"
+                          PositionIn="Center"
+                          PositionOut="Center"
+                          ScaleIn="1.2"
+                          ScaleOut="0.8"/>
+    </p:PopupPage.Animation>
+    <p:PopupPage.Content>
+        <Grid BackgroundColor="{DynamicResource PopupWindowColor}"
+              WidthRequest="300"
+              MinimumWidthRequest="150"
+              HeightRequest="500"
+              MinimumHeightRequest="250"
+              VerticalOptions="Center"
+              HorizontalOptions="CenterAndExpand"
+              Margin="5"
+              Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--Header-->
+            <Button x:Name="PointBuyButton"
+                    x:FieldModifier="public"
+                    Text="Point Buy"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Command="{Binding Page6Points}"
+                    IsEnabled="True"/>
+            <Button x:Name="StandardArrayButton"
+                    x:FieldModifier="public"
+                    Text="Standard Array"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Command="{Binding Page6Array}"
+                    IsEnabled="True"/>
+            <Button x:Name="RollButton"
+                    x:FieldModifier="public"
+                    Text="Roll"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Command="{Binding Page6Roll}"
+                    IsEnabled="True"/>
+            <Button x:Name="ManualEntryButton"
+                    x:FieldModifier="public"
+                    Text="Manual Entry"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Command="{Binding Page6Manual}"
+                    IsEnabled="True"/>
+            <!--Point Buy-->
+            <Frame x:Name="PointBuy"
+                   x:FieldModifier="public"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   IsVisible="False"
+                   Margin="0"
+                   Padding="0"
+                   VerticalOptions="Start">
+                <Grid VerticalOptions="Start"
+                      Margin="0"
+                      Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding RacialASI}"
+                           LineBreakMode="WordWrap"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="4"/>
+                    <Label Text="Points Left:"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           HorizontalOptions="End"/>
+                    <Label Text="{Binding PointsText}"
+                           Grid.Row="1"
+                           Grid.Column="3"/>
+                    <Label Text="Strength"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="2"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="StrSubButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="2"
+                                 Grid.Column="1"
+                                 IsEnabled="False"
+                                 Command="{Binding PointStrSubtract}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Remove}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Strength Score"
+                           Text="{Binding PointStr}"
+                           IsEnabled="False"
+                           Grid.Row="2"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="StrAddButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="2"
+                                 Grid.Column="3"
+                                 IsEnabled="True"
+                                 Command="{Binding PointStrAdd}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Add}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Text="Dexterity"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="3"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="DexSubButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="3"
+                                 Grid.Column="1"
+                                 IsEnabled="False"
+                                 Command="{Binding PointDexSubtract}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Remove}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Dexterity Score"
+                           Text="{Binding PointDex}"
+                           IsEnabled="False"
+                           Grid.Row="3"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="DexAddButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="3"
+                                 Grid.Column="3"
+                                 IsEnabled="True"
+                                 Command="{Binding PointDexAdd}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Add}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Text="Constitution"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="4"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="ConSubButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="4"
+                                 Grid.Column="1"
+                                 IsEnabled="False"
+                                 Command="{Binding PointConSubtract}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Remove}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Constitution Score"
+                           Text="{Binding PointCon}"
+                           IsEnabled="False"
+                           Grid.Row="4"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="ConAddButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="4"
+                                 Grid.Column="3"
+                                 IsEnabled="True"
+                                 Command="{Binding PointConAdd}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Add}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Text="Intelligence"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="5"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="IntSubButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="5"
+                                 Grid.Column="1"
+                                 IsEnabled="False"
+                                 Command="{Binding PointIntSubtract}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Remove}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Intelligence Score"
+                           Text="{Binding PointInt}"
+                           IsEnabled="False"
+                           Grid.Row="5"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="IntAddButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="5"
+                                 Grid.Column="3"
+                                 IsEnabled="True"
+                                 Command="{Binding PointIntAdd}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Add}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Text="Wisdom"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="6"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="WisSubButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="6"
+                                 Grid.Column="1"
+                                 IsEnabled="False"
+                                 Command="{Binding PointWisSubtract}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Remove}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Wisdom Score"
+                           Text="{Binding PointWis}"
+                           IsEnabled="False"
+                           Grid.Row="6"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="WisAddButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="6"
+                                 Grid.Column="3"
+                                 IsEnabled="True"
+                                 Command="{Binding PointWisAdd}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Add}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Text="Charisma"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="7"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="ChaSubButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="7"
+                                 Grid.Column="1"
+                                 IsEnabled="False"
+                                 Command="{Binding PointChaSubtract}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Remove}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Charisma Score"
+                           Text="{Binding PointCha}"
+                           IsEnabled="False"
+                           Grid.Row="7"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="ChaAddButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="7"
+                                 Grid.Column="3"
+                                 IsEnabled="True"
+                                 Command="{Binding PointChaAdd}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource Add}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                </Grid>
+            </Frame>
+            <!--Standard Array-->
+            <Frame x:Name="StandardArray"
+                   x:FieldModifier="public"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   IsVisible="False">
+
+            </Frame>
+            <!--Roll-->
+            <Frame x:Name="Roll"
+                   x:FieldModifier="public"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   IsVisible="False">
+
+            </Frame>
+            <!--Manual Entry-->
+            <Frame x:Name="ManualEntry"
+                   x:FieldModifier="public"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   IsVisible="False"
+                   Margin="0"
+                   Padding="0"
+                   VerticalOptions="Start">
+                <Grid VerticalOptions="Start"
+                      Margin="0"
+                      Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Note: this entry assumes you calculated the racial additions on your own and are already considered here. To remind:"
+                           LineBreakMode="WordWrap"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"/>
+                    <Label Text="{Binding RacialASI}"
+                           LineBreakMode="WordWrap"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"/>
+                    <Label Text="Strength"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="2"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="Strength Score"
+                           Text="{Binding ManualStr}"
+                           Keyboard="Numeric"
+                           Grid.Row="2"
+                           Grid.Column="1"/>
+                    <Label Text="Dexterity"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="3"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="Dexterity Score"
+                           Text="{Binding ManualDex}"
+                           Keyboard="Numeric"
+                           Grid.Row="3"
+                           Grid.Column="1"/>
+                    <Label Text="Constitution"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="4"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="Constitution Score"
+                           Text="{Binding ManualCon}"
+                           Keyboard="Numeric"
+                           Grid.Row="4"
+                           Grid.Column="1"/>
+                    <Label Text="Intelligence"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="5"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="Intelligence Score"
+                           Text="{Binding ManualInt}"
+                           Keyboard="Numeric"
+                           Grid.Row="5"
+                           Grid.Column="1"/>
+                    <Label Text="Wisdom"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="6"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="Wisdom Score"
+                           Text="{Binding ManualWis}"
+                           Keyboard="Numeric"
+                           Grid.Row="6"
+                           Grid.Column="1"/>
+                    <Label Text="Charisma"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="7"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="Charisma Score"
+                           Text="{Binding ManualCha}"
+                           Keyboard="Numeric"
+                           Grid.Row="7"
+                           Grid.Column="1"/>
+                </Grid>
+            </Frame>
+            <!--Footer-->
+            <Button Text="Back"
+                    VerticalOptions="End"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Command="{Binding Page6Back}"/>
+            <Button Text="Next"
+                    VerticalOptions="End"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    Command="{Binding Page6Next}"/>
+        </Grid>
+    </p:PopupPage.Content>
+</p:PopupPage>
