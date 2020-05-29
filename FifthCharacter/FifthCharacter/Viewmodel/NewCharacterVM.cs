@@ -226,6 +226,20 @@ namespace FifthCharacter.Viewmodel {
         private bool ChaPtMax => ChaAllocPts < 9;
         private bool HasPointsLeft => PointsLeft > 0;
 
+        public int RollStr { get; set; }
+        public int RollDex { get; set; }
+        public int RollCon { get; set; }
+        public int RollInt { get; set; }
+        public int RollWis { get; set; }
+        public int RollCha { get; set; }
+
+        private bool RollModernClickable { get; set; } = true;
+        private bool RollClassicClickable { get; set; } = true;
+        private bool RollMulliganClickable { get; set; } = true;
+
+        private RollMode CurrentRollMode = RollMode.NONE;
+        private bool CanRoll => CurrentRollMode != RollMode.NONE;
+
         public string ManualStr {
             get => AbilityManager.StrengthScore.ToString();
             set {
@@ -767,6 +781,143 @@ namespace FifthCharacter.Viewmodel {
             RefreshPoints();
         }, () => ChaPtMax && HasPointsLeft));
 
+        private ICommand _rollModernButton;
+        public ICommand RollModernButton => _rollModernButton ?? (_rollModernButton = new Command(() => {
+            CurrentRollMode = RollMode.MODERN;
+            RollModernClickable = false;
+            RollClassicClickable = true;
+            RollMulliganClickable = true;
+            OnPropertyChanged("RollModernClickable");
+            OnPropertyChanged("RollClassicClickable");
+            OnPropertyChanged("RollMulliganClickable");
+            OnPropertyChanged("CanRoll");
+        }, () => RollModernClickable));
+
+        private ICommand _rollClassicButton;
+        public ICommand RollClassicButton => _rollClassicButton ?? (_rollClassicButton = new Command(() => {
+            CurrentRollMode = RollMode.CLASSIC;
+            RollModernClickable = true;
+            RollClassicClickable = false;
+            RollMulliganClickable = true;
+            OnPropertyChanged("RollModernClickable");
+            OnPropertyChanged("RollClassicClickable");
+            OnPropertyChanged("RollMulliganClickable");
+            OnPropertyChanged("CanRoll");
+        }, () => RollClassicClickable));
+
+        private ICommand _rollMulliganButton;
+        public ICommand RollMulliganButton => _rollMulliganButton ?? (_rollMulliganButton = new Command(() => {
+            CurrentRollMode = RollMode.MULLIGAN;
+            RollModernClickable = true;
+            RollClassicClickable = true;
+            RollMulliganClickable = false;
+            OnPropertyChanged("RollModernClickable");
+            OnPropertyChanged("RollClassicClickable");
+            OnPropertyChanged("RollMulliganClickable");
+            OnPropertyChanged("CanRoll");
+        }, () => RollMulliganClickable));
+
+        private ICommand _rollButton;
+        public ICommand RollButton => _rollButton ?? (_rollButton = new Command(() => {
+            Random random = new Random();
+            switch (CurrentRollMode) {
+                case RollMode.MODERN:
+                    int[] _rolls = new int[6];
+                    for(int i = 0; i < 6; i++) {
+                        List<int> _temp = new List<int>() {
+                            random.Next(1, 7),
+                            random.Next(1, 7),
+                            random.Next(1, 7),
+                            random.Next(1, 7)
+                        };
+                        _temp.Remove(_temp.Min());
+                        _rolls[i] = _temp.Sum();
+                    }
+                    RollStr = _rolls[0];
+                    RollDex = _rolls[1];
+                    RollCon = _rolls[2];
+                    RollInt = _rolls[3];
+                    RollWis = _rolls[4];
+                    RollCha = _rolls[5];
+                    break;
+                case RollMode.CLASSIC:
+                    RollStr = random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7);
+                    RollDex = random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7);
+                    RollCon = random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7);
+                    RollInt = random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7);
+                    RollWis = random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7);
+                    RollCha = random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7);
+                    break;
+                case RollMode.MULLIGAN:
+                    RollStr = Math.Max(random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7),
+                        random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7));
+                    RollDex = Math.Max(random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7),
+                        random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7));
+                    RollCon = Math.Max(random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7),
+                        random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7));
+                    RollInt = Math.Max(random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7),
+                        random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7));
+                    RollWis = Math.Max(random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7),
+                        random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7));
+                    RollCha = Math.Max(random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7),
+                        random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7));
+                    break;
+                default:
+                    break;
+            }
+            OnPropertyChanged("RollStr");
+            OnPropertyChanged("RollDex");
+            OnPropertyChanged("RollCon");
+            OnPropertyChanged("RollInt");
+            OnPropertyChanged("RollWis");
+            OnPropertyChanged("RollCha");
+        }, () => CanRoll));
+
+        private ICommand _rollStrDexSwap;
+        public ICommand RollStrDexSwap => _rollStrDexSwap ?? (_rollStrDexSwap = new Command(() => {
+            var _temp = RollStr;
+            RollStr = RollDex;
+            RollDex = _temp;
+            OnPropertyChanged("RollStr");
+            OnPropertyChanged("RollDex");
+        }));
+
+        private ICommand _rollDexConSwap;
+        public ICommand RollDexConSwap => _rollDexConSwap ?? (_rollDexConSwap = new Command(() => {
+            var _temp = RollDex;
+            RollDex = RollCon;
+            RollCon = _temp;
+            OnPropertyChanged("RollDex");
+            OnPropertyChanged("RollCon");
+        }));
+
+        private ICommand _rollConIntSwap;
+        public ICommand RollConIntSwap => _rollConIntSwap ?? (_rollConIntSwap = new Command(() => {
+            var _temp = RollCon;
+            RollCon = RollInt;
+            RollInt = _temp;
+            OnPropertyChanged("RollCon");
+            OnPropertyChanged("RollInt");
+        }));
+
+        private ICommand _rollIntWisSwap;
+        public ICommand RollIntWisSwap => _rollIntWisSwap ?? (_rollIntWisSwap = new Command(() => {
+            var _temp = RollInt;
+            RollInt = RollWis;
+            RollWis = _temp;
+            OnPropertyChanged("RollInt");
+            OnPropertyChanged("RollWis");
+        }));
+
+        private ICommand _rollWisChaSwap;
+        public ICommand RollWisChaSwap => _rollWisChaSwap ?? (_rollWisChaSwap = new Command(() => {
+            var _temp = RollWis;
+            RollWis = RollCha;
+            RollCha = _temp;
+            OnPropertyChanged("RollWis");
+            OnPropertyChanged("RollCha");
+        }));
+
         //Page 7 Commands
         private ICommand _page7next;
         public ICommand Page7Next => _page7next ?? (_page7next = new Command(() => {
@@ -904,5 +1055,12 @@ namespace FifthCharacter.Viewmodel {
         //Validation
         private bool IsNameSet = false, IsPlayernameSet = false, IsRaceSet = false, IsClassSet = false, IsAlignmentSet = false, IsBackgroundSet = false; //TODO: set BackgroundSet to false when implemented
         public bool Page1CanMoveOn => IsNameSet && IsPlayernameSet && IsRaceSet && IsClassSet && IsAlignmentSet && IsBackgroundSet;
+
+        private enum RollMode {
+            NONE,
+            MODERN,
+            CLASSIC,
+            MULLIGAN
+        }
     }
 }
