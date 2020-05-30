@@ -346,8 +346,231 @@
                    Grid.Row="1"
                    Grid.Column="0"
                    Grid.ColumnSpan="4"
-                   IsVisible="False">
-
+                   IsVisible="False"
+                   Margin="0"
+                   Padding="0"
+                   VerticalOptions="Start">
+                <Grid VerticalOptions="Start"
+                      Margin="0"
+                      Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="15, 14, 13, 12, 10, 8"
+                           LineBreakMode="WordWrap"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding RacialASI}"
+                           LineBreakMode="WordWrap"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="4"/>
+                    <Label Text="Strength"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="2"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="ArrayStrDownButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="2"
+                                 Grid.Column="1"
+                                 Command="{Binding ArrayStrDexSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropDown}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Strength Score"
+                           Text="{Binding ArrayStr}"
+                           IsEnabled="False"
+                           Grid.Row="2"
+                           Grid.Column="2"/>
+                    <Label Text="Dexterity"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="3"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="ArrayDexDownButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="3"
+                                 Grid.Column="1"
+                                 Command="{Binding ArrayDexConSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropDown}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Dexterity Score"
+                           Text="{Binding ArrayDex}"
+                           IsEnabled="False"
+                           Grid.Row="3"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="ArrayDexUpButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="3"
+                                 Grid.Column="3"
+                                 Command="{Binding ArrayStrDexSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropUp}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Text="Constitution"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="4"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="ArrayConDownButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="4"
+                                 Grid.Column="1"
+                                 Command="{Binding ArrayConIntSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropDown}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Constitution Score"
+                           Text="{Binding ArrayCon}"
+                           IsEnabled="False"
+                           Grid.Row="4"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="ArrayConUpButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="4"
+                                 Grid.Column="3"
+                                 Command="{Binding ArrayDexConSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropUp}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Text="Intelligence"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="5"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="ArrayIntDownButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="5"
+                                 Grid.Column="1"
+                                 Command="{Binding ArrayIntWisSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropDown}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Intelligence Score"
+                           Text="{Binding ArrayInt}"
+                           IsEnabled="False"
+                           Grid.Row="5"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="ArrayIntUpButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="5"
+                                 Grid.Column="3"
+                                 Command="{Binding ArrayConIntSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropUp}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Text="Wisdom"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="6"
+                           Grid.Column="0"/>
+                    <ImageButton x:Name="ArrayWisDownButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="EndAndExpand"
+                                 Grid.Row="6"
+                                 Grid.Column="1"
+                                 Command="{Binding ArrayWisChaSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropDown}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Entry Placeholder="Wisdom Score"
+                           Text="{Binding ArrayWis}"
+                           IsEnabled="False"
+                           Grid.Row="6"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="ArrayWisUpButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="6"
+                                 Grid.Column="3"
+                                 Command="{Binding ArrayIntWisSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropUp}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Text="Charisma"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Row="7"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="Charisma Score"
+                           Text="{Binding ArrayCha}"
+                           IsEnabled="False"
+                           Grid.Row="7"
+                           Grid.Column="2"/>
+                    <ImageButton x:Name="ArrayChaUpButton"
+                                 x:FieldModifier="public"
+                                 Padding="{DynamicResource IconButtonPadding}"
+                                 HorizontalOptions="StartAndExpand"
+                                 Grid.Row="7"
+                                 Grid.Column="3"
+                                 Command="{Binding ArrayWisChaSwap}">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                             Glyph="{DynamicResource ArrowDropUp}"
+                                             Size="{DynamicResource SizeIconButton}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                </Grid>
             </Frame>
             <!--Roll-->
             <Frame x:Name="Roll"
@@ -406,7 +629,7 @@
                            HorizontalOptions="End"
                            Grid.Row="2"
                            Grid.Column="0"/>
-                    <ImageButton x:Name="StrDownButton"
+                    <ImageButton x:Name="RollStrDownButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="EndAndExpand"
@@ -429,7 +652,7 @@
                            HorizontalOptions="End"
                            Grid.Row="3"
                            Grid.Column="0"/>
-                    <ImageButton x:Name="DexDownButton"
+                    <ImageButton x:Name="RollDexDownButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="EndAndExpand"
@@ -447,7 +670,7 @@
                            IsEnabled="False"
                            Grid.Row="3"
                            Grid.Column="2"/>
-                    <ImageButton x:Name="DexUpButton"
+                    <ImageButton x:Name="RollDexUpButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="StartAndExpand"
@@ -465,7 +688,7 @@
                            HorizontalOptions="End"
                            Grid.Row="4"
                            Grid.Column="0"/>
-                    <ImageButton x:Name="ConDownButton"
+                    <ImageButton x:Name="RollConDownButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="EndAndExpand"
@@ -483,7 +706,7 @@
                            IsEnabled="False"
                            Grid.Row="4"
                            Grid.Column="2"/>
-                    <ImageButton x:Name="ConUpButton"
+                    <ImageButton x:Name="RollConUpButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="StartAndExpand"
@@ -501,7 +724,7 @@
                            HorizontalOptions="End"
                            Grid.Row="5"
                            Grid.Column="0"/>
-                    <ImageButton x:Name="IntDownButton"
+                    <ImageButton x:Name="RollIntDownButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="EndAndExpand"
@@ -519,7 +742,7 @@
                            IsEnabled="False"
                            Grid.Row="5"
                            Grid.Column="2"/>
-                    <ImageButton x:Name="IntUpButton"
+                    <ImageButton x:Name="RollIntUpButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="StartAndExpand"
@@ -537,7 +760,7 @@
                            HorizontalOptions="End"
                            Grid.Row="6"
                            Grid.Column="0"/>
-                    <ImageButton x:Name="WisDownButton"
+                    <ImageButton x:Name="RollWisDownButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="EndAndExpand"
@@ -555,7 +778,7 @@
                            IsEnabled="False"
                            Grid.Row="6"
                            Grid.Column="2"/>
-                    <ImageButton x:Name="WisUpButton"
+                    <ImageButton x:Name="RollWisUpButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="StartAndExpand"
@@ -578,7 +801,7 @@
                            IsEnabled="False"
                            Grid.Row="7"
                            Grid.Column="2"/>
-                    <ImageButton x:Name="ChaUpButton"
+                    <ImageButton x:Name="RollChaUpButton"
                                  x:FieldModifier="public"
                                  Padding="{DynamicResource IconButtonPadding}"
                                  HorizontalOptions="StartAndExpand"

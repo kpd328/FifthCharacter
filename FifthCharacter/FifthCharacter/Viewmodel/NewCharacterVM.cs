@@ -226,6 +226,13 @@ namespace FifthCharacter.Viewmodel {
         private bool ChaPtMax => ChaAllocPts < 9;
         private bool HasPointsLeft => PointsLeft > 0;
 
+        public int ArrayStr { get; set; } = 15;
+        public int ArrayDex { get; set; } = 14;
+        public int ArrayCon { get; set; } = 13;
+        public int ArrayInt { get; set; } = 12;
+        public int ArrayWis { get; set; } = 10;
+        public int ArrayCha { get; set; } = 8;
+
         public int RollStr { get; set; }
         public int RollDex { get; set; }
         public int RollCon { get; set; }
@@ -497,6 +504,7 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
+            RefreshPoints();
         }));
 
         private ICommand _page6array;
@@ -781,6 +789,56 @@ namespace FifthCharacter.Viewmodel {
             RefreshPoints();
         }, () => ChaPtMax && HasPointsLeft));
 
+        private ICommand _arrayStrDexSwap;
+        public ICommand ArrayStrDexSwap => _arrayStrDexSwap ?? (_arrayStrDexSwap = new Command(() => {
+            var _temp = ArrayStr;
+            ArrayStr = ArrayDex;
+            ArrayDex = _temp;
+            OnPropertyChanged("ArrayStr");
+            OnPropertyChanged("ArrayDex");
+            RefreshArray();
+        }));
+
+        private ICommand _arrayDexConSwap;
+        public ICommand ArrayDexConSwap => _arrayDexConSwap ?? (_arrayDexConSwap = new Command(() => {
+            var _temp = ArrayDex;
+            ArrayDex = ArrayCon;
+            ArrayCon = _temp;
+            OnPropertyChanged("ArrayDex");
+            OnPropertyChanged("ArrayCon");
+            RefreshArray();
+        }));
+
+        private ICommand _arrayConIntSwap;
+        public ICommand ArrayConIntSwap => _arrayConIntSwap ?? (_arrayConIntSwap = new Command(() => {
+            var _temp = ArrayCon;
+            ArrayCon = ArrayInt;
+            ArrayInt = _temp;
+            OnPropertyChanged("ArrayCon");
+            OnPropertyChanged("ArrayInt");
+            RefreshArray();
+        }));
+
+        private ICommand _arrayIntWisSwap;
+        public ICommand ArrayIntWisSwap => _arrayIntWisSwap ?? (_arrayIntWisSwap = new Command(() => {
+            var _temp = ArrayInt;
+            ArrayInt = ArrayWis;
+            ArrayWis = _temp;
+            OnPropertyChanged("ArrayInt");
+            OnPropertyChanged("ArrayWis");
+            RefreshArray();
+        }));
+
+        private ICommand _arrayWisChaSwap;
+        public ICommand ArrayWisChaSwap => _arrayWisChaSwap ?? (_arrayWisChaSwap = new Command(() => {
+            var _temp = ArrayWis;
+            ArrayWis = ArrayCha;
+            ArrayCha = _temp;
+            OnPropertyChanged("ArrayWis");
+            OnPropertyChanged("ArrayCha");
+            RefreshArray();
+        }));
+
         private ICommand _rollModernButton;
         public ICommand RollModernButton => _rollModernButton ?? (_rollModernButton = new Command(() => {
             CurrentRollMode = RollMode.MODERN;
@@ -981,6 +1039,15 @@ namespace FifthCharacter.Viewmodel {
             9 => 7,
             _ => points
         };
+
+        private void RefreshArray() {
+            AbilityManager.StrengthScore = ArrayStr;
+            AbilityManager.DexterityScore = ArrayDex;
+            AbilityManager.ConstitutionScore = ArrayCon;
+            AbilityManager.IntelligenceScore = ArrayInt;
+            AbilityManager.WisdomScore = ArrayWis;
+            AbilityManager.CharismaScore = ArrayCha;
+        }
 
         private void RefreshPoints() {
             OnPropertyChanged("StrPtMin");
