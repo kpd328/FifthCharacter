@@ -135,6 +135,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeatureRogueThiefText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Sorcerer\DraconicBloodline\FeatureSorcererDraconicBloodline.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureSorcererDraconicBloodline.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Sorcerer\FeatureSorcererText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureSorcererText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\Race\RacialFeatures.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -244,6 +254,14 @@
     <EmbeddedResource Update="Features\PlayerClass\Rogue\Thief\FeatureRogueThiefText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureRogueThiefText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Sorcerer\DraconicBloodline\FeatureSorcererDraconicBloodline.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureSorcererDraconicBloodline.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Sorcerer\FeatureSorcererText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureSorcererText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\Race\RacialFeatures.resx">
       <Generator>ResXFileCodeGenerator</Generator>

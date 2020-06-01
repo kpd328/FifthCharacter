@@ -17,6 +17,8 @@ using WotC.FifthEd.SRD.Features.PlayerClass.Paladin.OathOfDevotion;
 using WotC.FifthEd.SRD.Features.PlayerClass.Ranger.Hunter;
 using WotC.FifthEd.SRD.Features.PlayerClass.Rogue;
 using WotC.FifthEd.SRD.Features.PlayerClass.Rogue.Thief;
+using WotC.FifthEd.SRD.Features.PlayerClass.Sorcerer;
+using WotC.FifthEd.SRD.Features.PlayerClass.Sorcerer.DraconicBloodline;
 using WotC.FifthEd.SRD.PlayerClass;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
@@ -133,7 +135,8 @@ namespace WotC.FifthEd.SRD {
             new FMonkMonasticTraditionWayOfTheOpenHand(),
             new FPaladinSacredOathOathOfDevotion(),
             new FRangerRangerArchetypeHunter(),
-            new FRogueRoguishArchetypeThief()
+            new FRogueRoguishArchetypeThief(),
+            new FSorcererSorcerousOriginDraconicBloodline()
         };
         public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
             new Barbarian(),
