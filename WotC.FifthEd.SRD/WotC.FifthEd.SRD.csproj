@@ -145,6 +145,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeatureSorcererText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Warlock\EldritchInvocations\EldritchInvocationsText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EldritchInvocationsText.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Warlock\FeatureWarlockText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureWarlockText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\Race\RacialFeatures.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -262,6 +272,14 @@
     <EmbeddedResource Update="Features\PlayerClass\Sorcerer\FeatureSorcererText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureSorcererText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Warlock\EldritchInvocations\EldritchInvocationsText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EldritchInvocationsText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Warlock\FeatureWarlockText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureWarlockText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\Race\RacialFeatures.resx">
       <Generator>ResXFileCodeGenerator</Generator>
