@@ -19,6 +19,7 @@ using WotC.FifthEd.SRD.Features.PlayerClass.Rogue;
 using WotC.FifthEd.SRD.Features.PlayerClass.Rogue.Thief;
 using WotC.FifthEd.SRD.Features.PlayerClass.Sorcerer;
 using WotC.FifthEd.SRD.Features.PlayerClass.Sorcerer.DraconicBloodline;
+using WotC.FifthEd.SRD.Features.PlayerClass.Warlock.TheFiend;
 using WotC.FifthEd.SRD.PlayerClass;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
@@ -136,7 +137,8 @@ namespace WotC.FifthEd.SRD {
             new FPaladinSacredOathOathOfDevotion(),
             new FRangerRangerArchetypeHunter(),
             new FRogueRoguishArchetypeThief(),
-            new FSorcererSorcerousOriginDraconicBloodline()
+            new FSorcererSorcerousOriginDraconicBloodline(),
+            new FWarlockOtherworldlyPatronTheFiend()
         };
         public PlayerClassDictionary PlayerClasses => new PlayerClassDictionary() {
             new Barbarian(),

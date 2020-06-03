@@ -145,6 +145,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeatureSorcererText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Warlock\TheFiend\FeatureWarlockFiendText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureWarlockFiendText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\PlayerClass\Warlock\EldritchInvocations\EldritchInvocationsText.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -272,6 +277,10 @@
     <EmbeddedResource Update="Features\PlayerClass\Sorcerer\FeatureSorcererText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureSorcererText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Warlock\TheFiend\FeatureWarlockFiendText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureWarlockFiendText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\PlayerClass\Warlock\EldritchInvocations\EldritchInvocationsText.resx">
       <Generator>ResXFileCodeGenerator</Generator>

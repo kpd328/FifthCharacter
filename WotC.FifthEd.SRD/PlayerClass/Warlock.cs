@@ -1,4 +1,5 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin;
+using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Proficiencies.Armor;
 using FifthCharacter.Plugin.Proficiencies.Attacks;
 using FifthCharacter.Plugin.Proficiencies.SavingThrows;
@@ -6,6 +7,8 @@ using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
+using System.Linq;
+using WotC.FifthEd.SRD.Features.PlayerClass.Warlock;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Warlock : IPlayerClass {
@@ -18,13 +21,26 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         public Dice CurrentTotalHitDice { get; private set; }
         public IList<IFeature> ClassFeatures => new List<IFeature>();
         private MultiValueDictionary<int, IFeature> AllClassFeatures => new MultiValueDictionary<int, IFeature>() {
-
+            { 1, new FWarlockPactMagic() },
+            { 2, new FWarlockEldritchInvocations() },
+            { 3, new FWarlockPactBoon() },
+            { 4, new FWarlockAbilityScoreImprovement() },
+            { 8, new FWarlockAbilityScoreImprovement() },
+            { 11, new FWarlockMysticArcanum() },
+            { 12, new FWarlockAbilityScoreImprovement() },
+            { 16, new FWarlockAbilityScoreImprovement() },
+            { 19, new FWarlockAbilityScoreImprovement() },
+            { 20, new FWarlockEldritchMaster() }
         };
+        private IList<FWarlockOtherworldlyPatron> OtherworldlyPatrons;
+        private PluginLoader PluginLoader;
         public SpellcasterClass SpellcasterClass => SpellcasterClass.NONE;
 
         internal Warlock() { }
 
         private Warlock(bool isPrimary) : base() {
+            PluginLoader = PluginLoader.GetLoader();
+            OtherworldlyPatrons = new List<FWarlockOtherworldlyPatron>(PluginLoader.Subclasses.Where(f => f.GetType().IsSubclassOf(typeof(FWarlockOtherworldlyPatron))).Cast<FWarlockOtherworldlyPatron>());
             if (isPrimary) {
                 ProficiencyManager.Proficiencies.Add(new ProfWisdomSave(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfCharismaSave(SOURCE_TEXT));
