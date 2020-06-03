@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Rg.Plugins.Popup.Pages;
 using Xamarin.Forms.Xaml;
 
 namespace FifthCharacter.Plugin.Popup {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PopupNCClassOptions : ContentPage {
+    public partial class PopupNCClassOptions : PopupPage {
         public PopupNCClassOptions() {
             InitializeComponent();
         }

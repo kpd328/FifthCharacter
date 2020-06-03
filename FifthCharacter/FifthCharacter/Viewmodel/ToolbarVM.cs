@@ -10,7 +10,7 @@ namespace FifthCharacter.Viewmodel {
         private MainPage View;
 
         private ICommand _newCharacter;
-        public ICommand NewCharacter => _newCharacter ?? (_newCharacter = new Command(() => {
+        public ICommand NewCharacter => _newCharacter ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -23,7 +23,7 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException();
             }
-        }));
+        });
 
         public ToolbarVM(MainPage mainPage) {
             View = mainPage;

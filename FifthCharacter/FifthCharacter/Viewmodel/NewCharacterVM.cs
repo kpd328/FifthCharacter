@@ -53,7 +53,7 @@ namespace FifthCharacter.Viewmodel {
         private PopupNCBackgroundOptions_GTK Page3_GTK;
 
         private PopupNCClassOptions Page4;
-        //private PopupNCClassOptions_GTK Page4_GTK;
+        private PopupNCClassOptions_GTK Page4_GTK;
 
         private PopupNCMagicOptions Page5;
         //private PopupNCMagicOptions_GTK Page5_GTK;
@@ -312,7 +312,7 @@ namespace FifthCharacter.Viewmodel {
 
         //Page 1 Commands
         private ICommand _page1next;
-        public ICommand Page1Next => _page1next ?? (_page1next = new Command(() => {
+        public ICommand Page1Next => _page1next ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -326,9 +326,9 @@ namespace FifthCharacter.Viewmodel {
                         CharacterManager.Background.BuildPopup(Page3);
                         PopupNavigation.Instance.PushAsync(Page3);
                     } else {
-                        //TODO: go to page 4 instead
-                        Page7 = new PopupNCFinalize() { BindingContext = this };
-                        PopupNavigation.Instance.PushAsync(Page7);
+                        Page4 = new PopupNCClassOptions() { BindingContext = this };
+                        //TODO: send page to class to be built
+                        PopupNavigation.Instance.PushAsync(Page4);
                     }
                     break;
                 case Device.GTK:
@@ -341,19 +341,19 @@ namespace FifthCharacter.Viewmodel {
                         CharacterManager.Background.BuildPopup(Page3_GTK);
                         DependencyService.Get<IPopup>().PushAsync(Page3_GTK);
                     } else {
-                        //TODO: go to page 4 instead
-                        Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
-                        DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
+                        Page4_GTK = new PopupNCClassOptions_GTK() { BindingContext = this };
+                        //TODO: send page to class to be built
+                        DependencyService.Get<IPopup>().PushAsync(Page4_GTK);
                     }
                     break;
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }, () => Page1CanMoveOn));
+        }, () => Page1CanMoveOn);
 
         //Page 2 Commands
         private ICommand _page2next;
-        public ICommand Page2Next => _page2next ?? (_page2next = new Command(() => {
+        public ICommand Page2Next => _page2next ??= new Command(() => {
             CharacterManager.Race.ConfirmPopup();
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
@@ -364,9 +364,9 @@ namespace FifthCharacter.Viewmodel {
                         CharacterManager.Background.BuildPopup(Page3);
                         PopupNavigation.Instance.PushAsync(Page3);
                     } else {
-                        //TODO: go to page 4 instead
-                        Page7 = new PopupNCFinalize() { BindingContext = this };
-                        PopupNavigation.Instance.PushAsync(Page7);
+                        Page4 = new PopupNCClassOptions() { BindingContext = this };
+                        //TODO: send page to class to be built
+                        PopupNavigation.Instance.PushAsync(Page4);
                     }
                     break;
                 case Device.GTK:
@@ -375,18 +375,18 @@ namespace FifthCharacter.Viewmodel {
                         CharacterManager.Background.BuildPopup(Page3_GTK);
                         DependencyService.Get<IPopup>().PushAsync(Page3_GTK);
                     } else {
-                        //TODO: go to page 4 instead
-                        Page7_GTK = new PopupNCFinalize_GTK() { BindingContext = this };
-                        DependencyService.Get<IPopup>().PushAsync(Page7_GTK);
+                        Page4_GTK = new PopupNCClassOptions_GTK() { BindingContext = this };
+                        //TODO: send page to class to be built
+                        DependencyService.Get<IPopup>().PushAsync(Page4_GTK);
                     }
                     break;
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         private ICommand _page2back;
-        public ICommand Page2Back => _page2back ?? (_page2back = new Command(() => {
+        public ICommand Page2Back => _page2back ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -400,32 +400,70 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         //Page 3 Commands
         private ICommand _page3next;
-        public ICommand Page3Next => _page3next ?? (_page3next = new Command(() => {
+        public ICommand Page3Next => _page3next ??= new Command(() => {
             CharacterManager.Background.ConfirmPopup();
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
                 case Device.Android:
-                    //TODO: go to page 4 instead
+                    Page4 = new PopupNCClassOptions() { BindingContext = this };
+                    //TODO: send page to class to be built
+                    PopupNavigation.Instance.PushAsync(Page4);
+                    break;
+                case Device.GTK:
+                    Page4_GTK = new PopupNCClassOptions_GTK() { BindingContext = this };
+                    //TODO: send page to class to be built
+                    DependencyService.Get<IPopup>().PushAsync(Page4_GTK);
+                    break;
+                default:
+                    throw new NotImplementedException(Device.RuntimePlatform);
+            }
+        });
+
+        private ICommand _page3back;
+        public ICommand Page3Back => _page3back ??= new Command(() => {
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
+                    PopupNavigation.Instance.PopAsync();
+                    break;
+                case Device.GTK:
+                    //TODO: pop this page and go to the previous page
+                    DependencyService.Get<IPopup>().PopAsync(); //idk if this works, but I should make it work
+                    break;
+                default:
+                    throw new NotImplementedException(Device.RuntimePlatform);
+            }
+        });
+
+        //Page 4 Commands
+        private ICommand _page4next;
+        public ICommand Page4Next => _page4next ??= new Command(() => {
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
+                    //TODO: determine whether or not to go to page 5
                     Page6 = new PopupNCAbilityScores() { BindingContext = this };
                     PopupNavigation.Instance.PushAsync(Page6);
                     break;
                 case Device.GTK:
-                    //TODO: go to page 4 instead
+                    //TODO: determine whether or not to go to page 5
                     Page6_GTK = new PopupNCAbilityScores_GTK() { BindingContext = this };
                     DependencyService.Get<IPopup>().PushAsync(Page6_GTK);
                     break;
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
-        private ICommand _page3back;
-        public ICommand Page3Back => _page3back ?? (_page3back = new Command(() => {
+        private ICommand _page4back;
+        public ICommand Page4Back => _page4back ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -439,11 +477,11 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         //Page 6 Commands
         private ICommand _page6next;
-        public ICommand Page6Next => _page6next ?? (_page6next = new Command(() => {
+        public ICommand Page6Next => _page6next ??= new Command(() => {
             FeaturesManager.Features.Where(f => f.Name == "Ability Score Increase").FirstOrDefault().ModAbility();
             MainPage.StrengthAbilityView.Viewmodel.AllPropertiesChanged();
             MainPage.DexterityAbilityView.Viewmodel.AllPropertiesChanged();
@@ -465,10 +503,10 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         private ICommand _page6back;
-        public ICommand Page6Back => _page6back ?? (_page6back = new Command(() => {
+        public ICommand Page6Back => _page6back ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -482,10 +520,10 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         private ICommand _page6points;
-        public ICommand Page6Points => _page6points ?? (_page6points = new Command(() => {
+        public ICommand Page6Points => _page6points ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -505,10 +543,10 @@ namespace FifthCharacter.Viewmodel {
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
             RefreshPoints();
-        }));
+        });
 
         private ICommand _page6array;
-        public ICommand Page6Array => _page6array ?? (_page6array = new Command(() => {
+        public ICommand Page6Array => _page6array ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -527,10 +565,10 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         private ICommand _page6roll;
-        public ICommand Page6Roll => _page6roll ?? (_page6roll = new Command(() => {
+        public ICommand Page6Roll => _page6roll ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -549,10 +587,10 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         private ICommand _page6manual;
-        public ICommand Page6Manual => _page6manual ?? (_page6manual = new Command(() => {
+        public ICommand Page6Manual => _page6manual ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -571,10 +609,10 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         private ICommand _pointStrSubtract;
-        public ICommand PointStrSubtract => _pointStrSubtract ?? (_pointStrSubtract = new Command(() => {
+        public ICommand PointStrSubtract => _pointStrSubtract ??= new Command(() => {
             switch (StrAllocPts) {
                 case 7:
                 case 9:
@@ -589,10 +627,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => StrPtMin));
+        }, () => StrPtMin);
 
         private ICommand _pointStrAdd;
-        public ICommand PointStrAdd => _pointStrAdd ?? (_pointStrAdd = new Command(() => {
+        public ICommand PointStrAdd => _pointStrAdd ??= new Command(() => {
             switch (StrAllocPts) {
                 case 7:
                 case 5:
@@ -607,10 +645,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => StrPtMax && HasPointsLeft));
+        }, () => StrPtMax && HasPointsLeft);
 
         private ICommand _pointDexSubtract;
-        public ICommand PointDexSubtract => _pointDexSubtract ?? (_pointDexSubtract = new Command(() => {
+        public ICommand PointDexSubtract => _pointDexSubtract ??= new Command(() => {
             switch (DexAllocPts) {
                 case 7:
                 case 9:
@@ -625,10 +663,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => DexPtMin));
+        }, () => DexPtMin);
 
         private ICommand _pointDexAdd;
-        public ICommand PointDexAdd => _pointDexAdd ?? (_pointDexAdd = new Command(() => {
+        public ICommand PointDexAdd => _pointDexAdd ??= new Command(() => {
             switch (DexAllocPts) {
                 case 7:
                 case 5:
@@ -643,10 +681,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => DexPtMax && HasPointsLeft));
+        }, () => DexPtMax && HasPointsLeft);
 
         private ICommand _pointConSubtract;
-        public ICommand PointConSubtract => _pointConSubtract ?? (_pointConSubtract = new Command(() => {
+        public ICommand PointConSubtract => _pointConSubtract ??= new Command(() => {
             switch (ConAllocPts) {
                 case 7:
                 case 9:
@@ -661,10 +699,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => ConPtMin));
+        }, () => ConPtMin);
 
         private ICommand _pointConAdd;
-        public ICommand PointConAdd => _pointConAdd ?? (_pointConAdd = new Command(() => {
+        public ICommand PointConAdd => _pointConAdd ??= new Command(() => {
             switch (ConAllocPts) {
                 case 7:
                 case 5:
@@ -679,10 +717,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => ConPtMax && HasPointsLeft));
+        }, () => ConPtMax && HasPointsLeft);
 
         private ICommand _pointIntSubtract;
-        public ICommand PointIntSubtract => _pointIntSubtract ?? (_pointIntSubtract = new Command(() => {
+        public ICommand PointIntSubtract => _pointIntSubtract ??= new Command(() => {
             switch (IntAllocPts) {
                 case 7:
                 case 9:
@@ -697,10 +735,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => IntPtMin));
+        }, () => IntPtMin);
 
         private ICommand _pointIntAdd;
-        public ICommand PointIntAdd => _pointIntAdd ?? (_pointIntAdd = new Command(() => {
+        public ICommand PointIntAdd => _pointIntAdd ??= new Command(() => {
             switch (IntAllocPts) {
                 case 7:
                 case 5:
@@ -715,10 +753,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => IntPtMax && HasPointsLeft));
+        }, () => IntPtMax && HasPointsLeft);
 
         private ICommand _pointWisSubtract;
-        public ICommand PointWisSubtract => _pointWisSubtract ?? (_pointWisSubtract = new Command(() => {
+        public ICommand PointWisSubtract => _pointWisSubtract ??= new Command(() => {
             switch (WisAllocPts) {
                 case 7:
                 case 9:
@@ -733,10 +771,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => WisPtMin));
+        }, () => WisPtMin);
 
         private ICommand _pointWisAdd;
-        public ICommand PointWisAdd => _pointWisAdd ?? (_pointWisAdd = new Command(() => {
+        public ICommand PointWisAdd => _pointWisAdd ??= new Command(() => {
             switch (WisAllocPts) {
                 case 7:
                 case 5:
@@ -751,10 +789,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => WisPtMax && HasPointsLeft));
+        }, () => WisPtMax && HasPointsLeft);
 
         private ICommand _pointChaSubtract;
-        public ICommand PointChaSubtract => _pointChaSubtract ?? (_pointChaSubtract = new Command(() => {
+        public ICommand PointChaSubtract => _pointChaSubtract ??= new Command(() => {
             switch (ChaAllocPts) {
                 case 7:
                 case 9:
@@ -769,10 +807,10 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => ChaPtMin));
+        }, () => ChaPtMin);
 
         private ICommand _pointChaAdd;
-        public ICommand PointChaAdd => _pointChaAdd ?? (_pointChaAdd = new Command(() => {
+        public ICommand PointChaAdd => _pointChaAdd ??= new Command(() => {
             switch (ChaAllocPts) {
                 case 7:
                 case 5:
@@ -787,60 +825,60 @@ namespace FifthCharacter.Viewmodel {
                     break;
             }
             RefreshPoints();
-        }, () => ChaPtMax && HasPointsLeft));
+        }, () => ChaPtMax && HasPointsLeft);
 
         private ICommand _arrayStrDexSwap;
-        public ICommand ArrayStrDexSwap => _arrayStrDexSwap ?? (_arrayStrDexSwap = new Command(() => {
+        public ICommand ArrayStrDexSwap => _arrayStrDexSwap ??= new Command(() => {
             var _temp = ArrayStr;
             ArrayStr = ArrayDex;
             ArrayDex = _temp;
             OnPropertyChanged("ArrayStr");
             OnPropertyChanged("ArrayDex");
             RefreshArray();
-        }));
+        });
 
         private ICommand _arrayDexConSwap;
-        public ICommand ArrayDexConSwap => _arrayDexConSwap ?? (_arrayDexConSwap = new Command(() => {
+        public ICommand ArrayDexConSwap => _arrayDexConSwap ??= new Command(() => {
             var _temp = ArrayDex;
             ArrayDex = ArrayCon;
             ArrayCon = _temp;
             OnPropertyChanged("ArrayDex");
             OnPropertyChanged("ArrayCon");
             RefreshArray();
-        }));
+        });
 
         private ICommand _arrayConIntSwap;
-        public ICommand ArrayConIntSwap => _arrayConIntSwap ?? (_arrayConIntSwap = new Command(() => {
+        public ICommand ArrayConIntSwap => _arrayConIntSwap ??= new Command(() => {
             var _temp = ArrayCon;
             ArrayCon = ArrayInt;
             ArrayInt = _temp;
             OnPropertyChanged("ArrayCon");
             OnPropertyChanged("ArrayInt");
             RefreshArray();
-        }));
+        });
 
         private ICommand _arrayIntWisSwap;
-        public ICommand ArrayIntWisSwap => _arrayIntWisSwap ?? (_arrayIntWisSwap = new Command(() => {
+        public ICommand ArrayIntWisSwap => _arrayIntWisSwap ??= new Command(() => {
             var _temp = ArrayInt;
             ArrayInt = ArrayWis;
             ArrayWis = _temp;
             OnPropertyChanged("ArrayInt");
             OnPropertyChanged("ArrayWis");
             RefreshArray();
-        }));
+        });
 
         private ICommand _arrayWisChaSwap;
-        public ICommand ArrayWisChaSwap => _arrayWisChaSwap ?? (_arrayWisChaSwap = new Command(() => {
+        public ICommand ArrayWisChaSwap => _arrayWisChaSwap ??= new Command(() => {
             var _temp = ArrayWis;
             ArrayWis = ArrayCha;
             ArrayCha = _temp;
             OnPropertyChanged("ArrayWis");
             OnPropertyChanged("ArrayCha");
             RefreshArray();
-        }));
+        });
 
         private ICommand _rollModernButton;
-        public ICommand RollModernButton => _rollModernButton ?? (_rollModernButton = new Command(() => {
+        public ICommand RollModernButton => _rollModernButton ??= new Command(() => {
             CurrentRollMode = RollMode.MODERN;
             RollModernClickable = false;
             RollClassicClickable = true;
@@ -849,10 +887,10 @@ namespace FifthCharacter.Viewmodel {
             OnPropertyChanged("RollClassicClickable");
             OnPropertyChanged("RollMulliganClickable");
             OnPropertyChanged("CanRoll");
-        }, () => RollModernClickable));
+        }, () => RollModernClickable);
 
         private ICommand _rollClassicButton;
-        public ICommand RollClassicButton => _rollClassicButton ?? (_rollClassicButton = new Command(() => {
+        public ICommand RollClassicButton => _rollClassicButton ??= new Command(() => {
             CurrentRollMode = RollMode.CLASSIC;
             RollModernClickable = true;
             RollClassicClickable = false;
@@ -861,10 +899,10 @@ namespace FifthCharacter.Viewmodel {
             OnPropertyChanged("RollClassicClickable");
             OnPropertyChanged("RollMulliganClickable");
             OnPropertyChanged("CanRoll");
-        }, () => RollClassicClickable));
+        }, () => RollClassicClickable);
 
         private ICommand _rollMulliganButton;
-        public ICommand RollMulliganButton => _rollMulliganButton ?? (_rollMulliganButton = new Command(() => {
+        public ICommand RollMulliganButton => _rollMulliganButton ??= new Command(() => {
             CurrentRollMode = RollMode.MULLIGAN;
             RollModernClickable = true;
             RollClassicClickable = true;
@@ -873,10 +911,10 @@ namespace FifthCharacter.Viewmodel {
             OnPropertyChanged("RollClassicClickable");
             OnPropertyChanged("RollMulliganClickable");
             OnPropertyChanged("CanRoll");
-        }, () => RollMulliganClickable));
+        }, () => RollMulliganClickable);
 
         private ICommand _rollButton;
-        public ICommand RollButton => _rollButton ?? (_rollButton = new Command(() => {
+        public ICommand RollButton => _rollButton ??= new Command(() => {
             Random random = new Random();
             switch (CurrentRollMode) {
                 case RollMode.MODERN:
@@ -929,56 +967,56 @@ namespace FifthCharacter.Viewmodel {
             OnPropertyChanged("RollInt");
             OnPropertyChanged("RollWis");
             OnPropertyChanged("RollCha");
-        }, () => CanRoll));
+        }, () => CanRoll);
 
         private ICommand _rollStrDexSwap;
-        public ICommand RollStrDexSwap => _rollStrDexSwap ?? (_rollStrDexSwap = new Command(() => {
+        public ICommand RollStrDexSwap => _rollStrDexSwap ??= new Command(() => {
             var _temp = RollStr;
             RollStr = RollDex;
             RollDex = _temp;
             OnPropertyChanged("RollStr");
             OnPropertyChanged("RollDex");
-        }));
+        });
 
         private ICommand _rollDexConSwap;
-        public ICommand RollDexConSwap => _rollDexConSwap ?? (_rollDexConSwap = new Command(() => {
+        public ICommand RollDexConSwap => _rollDexConSwap ??= new Command(() => {
             var _temp = RollDex;
             RollDex = RollCon;
             RollCon = _temp;
             OnPropertyChanged("RollDex");
             OnPropertyChanged("RollCon");
-        }));
+        });
 
         private ICommand _rollConIntSwap;
-        public ICommand RollConIntSwap => _rollConIntSwap ?? (_rollConIntSwap = new Command(() => {
+        public ICommand RollConIntSwap => _rollConIntSwap ??= new Command(() => {
             var _temp = RollCon;
             RollCon = RollInt;
             RollInt = _temp;
             OnPropertyChanged("RollCon");
             OnPropertyChanged("RollInt");
-        }));
+        });
 
         private ICommand _rollIntWisSwap;
-        public ICommand RollIntWisSwap => _rollIntWisSwap ?? (_rollIntWisSwap = new Command(() => {
+        public ICommand RollIntWisSwap => _rollIntWisSwap ??= new Command(() => {
             var _temp = RollInt;
             RollInt = RollWis;
             RollWis = _temp;
             OnPropertyChanged("RollInt");
             OnPropertyChanged("RollWis");
-        }));
+        });
 
         private ICommand _rollWisChaSwap;
-        public ICommand RollWisChaSwap => _rollWisChaSwap ?? (_rollWisChaSwap = new Command(() => {
+        public ICommand RollWisChaSwap => _rollWisChaSwap ??= new Command(() => {
             var _temp = RollWis;
             RollWis = RollCha;
             RollCha = _temp;
             OnPropertyChanged("RollWis");
             OnPropertyChanged("RollCha");
-        }));
+        });
 
         //Page 7 Commands
         private ICommand _page7next;
-        public ICommand Page7Next => _page7next ?? (_page7next = new Command(() => {
+        public ICommand Page7Next => _page7next ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -991,10 +1029,10 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         private ICommand _page7back;
-        public ICommand Page7Back => _page7back ?? (_page7back = new Command(() => {
+        public ICommand Page7Back => _page7back ??= new Command(() => {
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:
@@ -1008,7 +1046,7 @@ namespace FifthCharacter.Viewmodel {
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
             }
-        }));
+        });
 
         //Constructors
         public NewCharacterVM(MainPage mainPage) {
