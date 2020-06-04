@@ -7,7 +7,6 @@ using Xamarin.Forms;
 
 namespace FifthCharacter.Viewmodel {
     public class CharacterDefenseVM : INotifyPropertyChanged {
-        //TODO: Set color of HitPointCurrent based on CharacterManager.HasTempHitPoints
         public string ArmorClass => CharacterManager.ArmorClass.ToString();
         public string InitiativeBonus => CharacterManager.Initiative;
         public string Speed => CharacterManager.Speed.ToString();

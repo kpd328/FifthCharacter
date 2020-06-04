@@ -12,6 +12,7 @@ using WotC.FifthEd.SRD.Features.PlayerClass.Rogue;
 using WotC.FifthEd.SRD.Features.PlayerClass.Rogue.Thief;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
+using WotC.FifthEd.SRD.Proficiencies.Tools;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Rogue : IPlayerClass {
@@ -62,11 +63,11 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfMMWRapier(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfMMWShortsword(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
-                //TODO: add theives' tools
+                ProficiencyManager.Proficiencies.Add(new ProfThievesTools(SOURCE_TEXT));
                 //TODO: prompt to pick skills
             } else {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
-                //TODO: add theivs' tools
+                ProficiencyManager.Proficiencies.Add(new ProfThievesTools(SOURCE_TEXT));
                 //TODO: prompt to pick skills
             }
             IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
