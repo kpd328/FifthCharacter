@@ -25,6 +25,22 @@ namespace FifthCharacter.Viewmodel {
             }
         });
 
+        private ICommand _levelUp;
+        public ICommand LevelUp => _levelUp ??= new Command(() => {
+            switch (Device.RuntimePlatform) {
+                case Device.UWP:
+                case Device.iOS:
+                case Device.Android:
+                    //TODO: popup level up prompt
+                    break;
+                case Device.GTK:
+                    //TODO: popup level up prompt
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+        });
+
         public ToolbarVM(MainPage mainPage) {
             View = mainPage;
             View.BindingContext = this;

@@ -12,7 +12,23 @@
         <ToolbarItem Text="New Character"
                      Order="Primary"
                      Priority="0"
-                     Command="{Binding NewCharacter}"/>
+                     Command="{Binding NewCharacter}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                 Glyph="{DynamicResource PersonAdd}"
+                                 Size="{DynamicResource SizeIconButton}"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem Text="Level Up"
+                     Order="Primary"
+                     Priority="1"
+                     Command="{Binding LevelUp}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{DynamicResource MaterialIcons}"
+                                 Glyph="{DynamicResource Upgrade}"
+                                 Size="{DynamicResource SizeIconButton}"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView VerticalOptions="Start">
