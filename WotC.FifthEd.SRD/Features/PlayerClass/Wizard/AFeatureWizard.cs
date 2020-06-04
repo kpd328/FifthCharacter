@@ -6,11 +6,11 @@ using System.Text.RegularExpressions;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace WotC.FifthEd.SRD.Features.PlayerClass.Rogue {
-    public abstract class AFeatureRogue : IFeature {
+namespace WotC.FifthEd.SRD.Features.PlayerClass.Wizard {
+    public abstract class AFeatureWizard : IFeature {
         public abstract string Name { get; }
-        public virtual string ID => string.Format("SRD.Feature.Class.Rogue.{0}", Regex.Replace(Name, @"[^0-9a-zA-Z:.]+", "").Replace(':', '.'));
-        public virtual string Source => "Class Rogue";
+        public virtual string ID => string.Format("SRD.Feature.Class.Wizard.{0}", Regex.Replace(Name, @"[^0-9a-zA-Z:.]+", "").Replace(':', '.'));
+        public virtual string Source => "Class Wizard";
         public abstract string Text { get; }
         public abstract bool IsActive { get; }
         public abstract int ActiveUses { get; }

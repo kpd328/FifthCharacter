@@ -160,6 +160,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FeatureWarlockText.resx</DependentUpon>
     </Compile>
+    <Compile Update="Features\PlayerClass\Wizard\FeatureWizardText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureWizardText.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Features\PlayerClass\Wizard\SchoolOfEvocation\FeatureWizardSchoolOfEvocationText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FeatureWizardSchoolOfEvocationText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Features\Race\RacialFeatures.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -289,6 +299,14 @@
     <EmbeddedResource Update="Features\PlayerClass\Warlock\FeatureWarlockText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeatureWarlockText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Wizard\FeatureWizardText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureWizardText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\PlayerClass\Wizard\SchoolOfEvocation\FeatureWizardSchoolOfEvocationText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeatureWizardSchoolOfEvocationText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Features\Race\RacialFeatures.resx">
       <Generator>ResXFileCodeGenerator</Generator>

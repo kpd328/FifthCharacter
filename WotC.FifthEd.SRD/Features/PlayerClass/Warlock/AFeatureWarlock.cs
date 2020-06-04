@@ -9,7 +9,7 @@ using Xamarin.Forms;
 namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock {
     public abstract class AFeatureWarlock : IFeature {
         public abstract string Name { get; }
-        public virtual string ID => string.Format("SRD.Feature.Class.Warlock.{0}", Regex.Replace(Regex.Replace(Name, @"[^0-9a-zA-Z:]+", ""), @"[:]", "."));
+        public virtual string ID => string.Format("SRD.Feature.Class.Warlock.{0}", Regex.Replace(Name, @"[^0-9a-zA-Z:.]+", "").Replace(':', '.'));
         public virtual string Source => "Class Warlock";
         public abstract string Text { get; }
         public abstract bool IsActive { get; }

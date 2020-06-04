@@ -9,7 +9,7 @@ using Xamarin.Forms;
 namespace WotC.FifthEd.SRD.Features.PlayerClass.Cleric {
     public abstract class AFeatureCleric : IFeature {
         public abstract string Name { get; }
-        public virtual string ID => string.Format("SRD.Feature.Class.Cleric.{0}", Regex.Replace(Regex.Replace(Name, @"[^0-9a-zA-Z:]+", ""), @"[:]", "."));
+        public virtual string ID => string.Format("SRD.Feature.Class.Cleric.{0}", Regex.Replace(Name, @"[^0-9a-zA-Z:.]+", "").Replace(':', '.'));
         public virtual string Source => "Class Cleric";
         public abstract string Text { get; }
         public abstract bool IsActive { get; }
