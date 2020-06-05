@@ -71,7 +71,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast mage armor on yourself at will, without expending a spell slot or material components..
+        ///   Looks up a localized string similar to You can cast mage armor on yourself at will, without expending a spell slot or material components.
+        ///
+        /// Mage Armor
+        ///1st-level abjuration
+        ///Casting Time: 1 action
+        ///Range: Touch
+        ///Components: V, S
+        ///Duration: 8 hours
+        ///
+        ///If you are not wearing armor, a protective magical force surrounds you until the spell ends. Your base AC becomes 13 + your Dexterity modifier. The spell ends if you don armor or if you dismiss the spell as an action..
         /// </summary>
         internal static string Armor_of_Shadows {
             get {
@@ -80,7 +89,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast levitate on yourself at will, without expending a spell slot or material components..
+        ///   Looks up a localized string similar to You can cast levitate on yourself at will, without expending a spell slot or material components.
+        ///
+        /// Levitate
+        ///2nd-level transmutation
+        ///Casting Time: 1 action
+        ///Range: Self
+        ///Components: V, S
+        ///Duration: Concentration, up to 10 minutes
+        ///
+        ///You rise vertically, up to 20 feet, and remains suspended there for the duration. You can move only by pushing or pulling against a fixed object or surface within reach (such as a wall or a ceiling), which allows you to move as if you were climbing. You can move up or down a [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Ascendant_Step {
             get {
@@ -89,7 +107,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast speak with animals at will, without expending a spell slot..
+        ///   Looks up a localized string similar to You can cast speak with animals at will, without expending a spell slot.
+        ///
+        /// Speak with Animals
+        ///1st-level divination
+        ///Casting Time: 1 action
+        ///Range: Self
+        ///Components: V, S
+        ///Duration: 10 minutes
+        ///
+        ///You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Beast_Speech {
             get {
@@ -107,7 +134,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast compulsion once using a warlock spell slot. You can’t do so again until you finish a long rest..
+        ///   Looks up a localized string similar to You can cast compulsion once using a warlock spell slot. You can&apos;t do so again until you finish a long rest.
+        ///
+        /// Compulsion
+        ///4th-level enchantment
+        ///Casting Time: 1 action
+        ///Range: 30 feet
+        ///Components: V, S
+        ///Duration: Concentration, up to 1 minute
+        ///
+        ///Creatures of your choice that you can see within range and that can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can&apos;t be charmed. On a failed save, a target is affected by this spell. Until the spell ends,  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Bewitching_Whispers {
             get {
@@ -125,7 +161,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast hold monsterat will—targeting a celestial, fiend, or elemental—without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again..
+        ///   Looks up a localized string similar to You can cast hold monster at will—targeting a celestial, fiend, or elemental—without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.
+        ///
+        /// Hold Monster
+        ///5th-level enchantment
+        ///Casting Time: 1 action
+        ///Range: 90 feet
+        ///Components: V, S
+        ///Duration: Concentration, up to 1 minute
+        ///
+        ///Choose a celestial, fiend, or elemental that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the dur [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Chains_of_Carceri {
             get {
@@ -143,7 +188,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast confusiononce using a warlock spell slot. You can’t do so again until you finish a long rest..
+        ///   Looks up a localized string similar to You can cast confusion once using a warlock spell slot. You can&apos;t do so again until you finish a long rest.
+        ///
+        /// Confusion
+        ///4th-level enchantment
+        ///Casting Time: 1 action
+        ///Range: 90 feet
+        ///Components: V, S, M (three nut shells)
+        ///Duration: Concentration, up to 1 minute
+        ///
+        ///This spell assaults and twists creatures&apos; minds, spawning delusions and provoking uncontrolled action. Each creature in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast thi [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Dreadful_Word {
             get {
@@ -152,7 +206,17 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast detect magic at will, without expending a spell slot..
+        ///   Looks up a localized string similar to You can cast detect magic at will, without expending a spell slot.
+        ///
+        /// Detect Magic
+        ///1st-level divination
+        ///Casting Time: 1 action
+        ///Range: Self
+        ///Components: V, S
+        ///Duration: Concentration, up to 10 minutes
+        ///
+        ///For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.
+        ///The spell can penetrate most barriers, but i [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Eldritch_Sight {
             get {
@@ -179,7 +243,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast false life on yourself at will as a 1st-level spell, without expending a spell slot or material components..
+        ///   Looks up a localized string similar to You can cast false life on yourself at will as a 1st-level spell, without expending a spell slot or material components.
+        ///
+        /// False Life
+        ///1st-level necromancy
+        ///Casting Time: 1 action
+        ///Range: Self
+        ///Components: V, S, M (a small amount of alcohol or distilled spirits)
+        ///Duration: 1 hour
+        ///
+        ///Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 temporary hit points for the duration..
         /// </summary>
         internal static string Fiendish_Vigor {
             get {
@@ -206,7 +279,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast disguise self at will, without expending a spell slot..
+        ///   Looks up a localized string similar to You can cast disguise self at will, without expending a spell slot.
+        ///
+        /// Disguise Self
+        ///1st-level illusion
+        ///Casting Time: 1 action
+        ///Range: Self
+        ///Components: V, S
+        ///Duration: 1 hour
+        ///
+        ///You make yourself—including your clothing, armor, weapons, and other belongings on your person—look different until the spell ends or until you use your action to dismiss it. You can seem 1 foot shorter or taller and can appear thin, fat, or in between. You can&apos;t change your body type, so you must adopt a form that has the same  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Mask_of_Many_Faces {
             get {
@@ -215,7 +297,17 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast alter selfat will, without expending a spell slot..
+        ///   Looks up a localized string similar to You can cast alter self at will, without expending a spell slot.
+        ///
+        /// Alter Self
+        ///2nd-level transmutation
+        ///Casting Time: 1 action
+        ///Range: Self
+        ///Components: V, S
+        ///Duration: Concentration, up to 1 hour
+        ///
+        ///You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.
+        /// Aquatic Adaptation. You adapt your body to an aquatic enviro [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Master_of_Myriad_Forms {
             get {
@@ -224,7 +316,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast conjure elemental once using a warlock spell slot. You can’t do so again until you finish a long rest..
+        ///   Looks up a localized string similar to You can cast conjure elemental once using a warlock spell slot. You can&apos;t do so again until you finish a long rest.
+        ///
+        /// Conjure Elemental
+        ///5th-level conjuration
+        ///Casting Time: 1 minute
+        ///Range: 90 feet
+        ///Components: V, S, M (burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water)
+        ///Duration: Concentration, up to 1 hour
+        ///
+        ///You call forth an elemental servant. Choose an area of air, earth, fire, or water that fills a 10-foot cube within range. An elemental of ch [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Minions_of_Chaos {
             get {
@@ -233,7 +334,17 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast slowonce using a warlock spell slot. You can’t do so again until you finish a long rest..
+        ///   Looks up a localized string similar to You can cast slow once using a warlock spell slot. You can&apos;t do so again until you finish a long rest.
+        ///
+        /// Slow
+        ///3rd-level transmutation
+        ///Casting Time: 1 action
+        ///Range:120 feet
+        ///Components:V, S, M (a drop of molasses)
+        ///Duration:Concentration, up to 1 minute
+        ///
+        ///You alter time around up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Wisdom saving throw or be affected by this spell for the duration.
+        ///An affected target&apos;s speed is halved, it takes a −2 penalty to A [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Mire_the_Mind {
             get {
@@ -242,7 +353,17 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast silent image at will, without expending a spell slot or material components..
+        ///   Looks up a localized string similar to You can cast silent image at will, without expending a spell slot or material components.
+        ///
+        /// Silent Image
+        ///1st-level illusion
+        ///Casting Time: 1 action
+        ///Range: 60 feet
+        ///Components: V, S
+        ///Duration: Concentration, up to 10 minutes
+        ///
+        ///You create the image of anobject, a creature, or some other visible phenomenon that is no larger than a 15-foot cube. The image appears at a spot within range and lasts for the duration. The image is purely visual; it isn&apos;t accompanied by sound, smell, or other sensory effects.
+        ///Y [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Misty_Visions {
             get {
@@ -260,7 +381,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast jumpon yourself at will, without expending a spell slot or material components..
+        ///   Looks up a localized string similar to You can cast jump on yourself at will, without expending a spell slot or material components.
+        ///
+        /// Jump
+        ///1st-level transmutation
+        ///Casting Time: 1 action
+        ///Range: Self
+        ///Components: V, S
+        ///Duration: 1 minute
+        ///
+        ///Your jump distance is tripled until the spell ends..
         /// </summary>
         internal static string Otherworldy_Leap {
             get {
@@ -278,7 +408,17 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast polymorph once using a warlock spell slot. You can’t do so again until you finish a long rest..
+        ///   Looks up a localized string similar to You can cast polymorph once using a warlock spell slot. You can&apos;t do so again until you finish a long rest.
+        ///
+        /// Polymorph
+        ///4th-level transmutation
+        ///Casting Time: 1 action
+        ///Range: 60 feet
+        ///Components: V, S, M (a caterpillar cocoon)
+        ///Duration: Concentration, up to 1 hour
+        ///
+        ///This spell transforms a creature that you can see within range into a new form. An unwilling creature must make a Wisdom saving throw to avoid the effect. The spell has no effect on a shapechanger or a creature with 0 hit points.
+        ///The tran [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Sculptor_of_Flesh {
             get {
@@ -287,7 +427,18 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast bestow curse once using a warlock spell slot. You can’t do so again until you finish a long rest..
+        ///   Looks up a localized string similar to You can cast bestow curse once using a warlock spell slot. You can&apos;t do so again until you finish a long rest.
+        ///
+        /// Bestow Curse
+        ///3rd-level necromancy
+        ///Casting Time: 1 action
+        ///Range: Touch
+        ///Components: V, S
+        ///Duration: Concentration, up to 1 minute
+        ///You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. 
+        ///
+        ///When you cast this spell, choose the nature of the curse from the following options:
+        /// • Choose one ability score. While cursed, the t [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Sign_of_Ill_Omen {
             get {
@@ -296,7 +447,16 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast baneonce using a warlock spell slot. You can’t do so again until you finish a long rest..
+        ///   Looks up a localized string similar to You can cast bane once using a warlock spell slot. You can’t do so again until you finish a long rest.
+        ///
+        /// Bane
+        ///1st-level enchantment
+        ///Casting Time: 1 action
+        ///Range: 30 feet
+        ///Components: V, S, M (a drop of blood)
+        ///Duration: Concentration, up to 1 minute
+        ///
+        ///Up to three creatures of your choice that you can see within range must make Charisma saving throws. Whenever a target that fails this saving throw makes an attack roll or a saving throw before the spell ends, the target must roll a d4 and subtract the n [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Thief_of_Five_Fates {
             get {
@@ -314,7 +474,18 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast arcane eyeat will, without expending a spell slot..
+        ///   Looks up a localized string similar to You can cast arcane eyeat will, without expending a spell slot.
+        ///
+        /// Arcane Eye
+        ///4th-level divination
+        ///Casting Time :1 action
+        ///Range: 30 feet
+        ///Components: V, S, M (a bit of bat fur)
+        ///Duration: Concentration, up to 1 hour
+        ///
+        ///You create an invisible, magical eye within range that hovers in the air for the duration.
+        ///You mentally receive visual information from the eye, which has normal vision and darkvision out to 30 feet. The eye can look in every direction.
+        ///As an action, you can move the eye up to 30 feet i [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Visions_of_Distant_Realms {
             get {
@@ -333,7 +504,17 @@ namespace WotC.FifthEd.SRD.Features.PlayerClass.Warlock.EldritchInvocations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can cast speak with dead at will, without expending a spell slot..
+        ///   Looks up a localized string similar to You can cast speak with dead at will, without expending a spell slot.
+        ///
+        /// Speak with Dead
+        ///3rd-level necromancy
+        ///Casting Time: 1 action
+        ///Range: 10 feet
+        ///Components: V, S, M (burning incense)
+        ///Duration: 10 minutes
+        ///
+        ///You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can&apos;t be undead. The spell fails if the corpse was the target of this spell within the last 10 days.
+        ///Until the spell end [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Whispers_of_the_Grave {
             get {
