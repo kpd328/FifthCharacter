@@ -20,6 +20,7 @@ namespace FifthCharacter.Plugin {
         public FeatureDictionary Subclasses { get; private set; } = new FeatureDictionary();
         public PlayerClassDictionary PlayerClasses { get; private set; } = new PlayerClassDictionary();
         public BackgroundDictionary Backgrounds { get; private set; } = new BackgroundDictionary();
+        public ArmorDictionary Armors { get; private set; } = new ArmorDictionary();
         public ProficiencyDictionary Proficiencies { get; private set; } = new ProficiencyDictionary() {
             new ProfArmor(),
             new ProfArmorHeavy(),
@@ -95,6 +96,7 @@ namespace FifthCharacter.Plugin {
                     PlayerClasses.AddAll(plugin.PlayerClasses);
                     Backgrounds.AddAll(plugin.Backgrounds);
                     Proficiencies.AddAll(plugin.Proficiencies);
+                    Armors.AddAll(plugin.Armors);
                 }
                 loaded = true;
             }

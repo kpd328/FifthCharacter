@@ -1,5 +1,9 @@
 ﻿using FifthCharacter.Plugin;
 using FifthCharacter.Plugin.Tools;
+using WotC.FifthEd.SRD.Armor;
+using WotC.FifthEd.SRD.Armor.Heavy;
+using WotC.FifthEd.SRD.Armor.Light;
+using WotC.FifthEd.SRD.Armor.Medium;
 using WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.MartialRangedWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
@@ -12,12 +16,9 @@ using WotC.FifthEd.SRD.Features.PlayerClass.Cleric.LifeDomain;
 using WotC.FifthEd.SRD.Features.PlayerClass.Druid.CircleOfTheLand;
 using WotC.FifthEd.SRD.Features.PlayerClass.Fighter.Champion;
 using WotC.FifthEd.SRD.Features.PlayerClass.Monk.WayOfTheOpenHand;
-using WotC.FifthEd.SRD.Features.PlayerClass.Paladin;
 using WotC.FifthEd.SRD.Features.PlayerClass.Paladin.OathOfDevotion;
 using WotC.FifthEd.SRD.Features.PlayerClass.Ranger.Hunter;
-using WotC.FifthEd.SRD.Features.PlayerClass.Rogue;
 using WotC.FifthEd.SRD.Features.PlayerClass.Rogue.Thief;
-using WotC.FifthEd.SRD.Features.PlayerClass.Sorcerer;
 using WotC.FifthEd.SRD.Features.PlayerClass.Sorcerer.DraconicBloodline;
 using WotC.FifthEd.SRD.Features.PlayerClass.Warlock.TheFiend;
 using WotC.FifthEd.SRD.Features.PlayerClass.Wizard.SchoolOfEvocation;
@@ -251,6 +252,22 @@ namespace WotC.FifthEd.SRD {
             new ProfNavigatorsTools(),
             new ProfPoisonersKit(),
             new ProfThievesTools()
+        };
+
+        public ArmorDictionary Armors => new ArmorDictionary() {
+            new LAPadded(),
+            new LALeather(),
+            new LAStuddedLeather(),
+            new MAHide(),
+            new MAChainShirt(),
+            new MAScaleMail(),
+            new MABreastplate(),
+            new MAHalfPlate(),
+            new HARingMail(),
+            new HAChainMail(),
+            new HASplint(),
+            new HAPlate(),
+            new ArmorShield()
         };
     }
 }

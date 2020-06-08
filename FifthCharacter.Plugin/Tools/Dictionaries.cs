@@ -90,4 +90,19 @@ namespace FifthCharacter.Plugin.Tools {
             return this.Where(p => p.ProficiencyType == type);
         }
     }
+
+    public class ArmorDictionary : KeyedCollection<string, IArmor> {
+        protected override string GetKeyForItem(IArmor item) => item.Name;
+        public void AddAll(IEnumerable<IArmor> toAdd) {
+            if(toAdd == null) {
+                return;
+            }
+            foreach(IArmor armor in toAdd) {
+                Add(armor);
+            }
+        }
+        public IEnumerable<IArmor> GetAllForType(ArmorWeightClass type) {
+            return this.Where(a => a.ArmorWeightClass == type);
+        }
+    }
 }

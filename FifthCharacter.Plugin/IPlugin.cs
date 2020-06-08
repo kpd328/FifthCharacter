@@ -51,5 +51,9 @@ namespace FifthCharacter.Plugin {
         /// Add all proficiencies to this collection to expose them to the App.
         /// </summary>
         ProficiencyDictionary Proficiencies { get; }
+        /// <summary>
+        /// Add all armors (incl. shields) to this collection to expose them to the App.
+        /// </summary>
+        ArmorDictionary Armors { get; }
     }
 }
