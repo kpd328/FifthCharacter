@@ -1,6 +1,7 @@
 ﻿using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace FifthCharacter.Plugin.Interface {
     public interface IPlayerClass {
@@ -15,5 +16,7 @@ namespace FifthCharacter.Plugin.Interface {
         IPlayerClass TakeAsPrimaryClass();
         IPlayerClass TakeAsSecondaryClass();
         void LevelUp();
+        void BuildNewCharacterPopup(Frame frame);
+        void ConfirmNewCharacterPopup();
     }
 }

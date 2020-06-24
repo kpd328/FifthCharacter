@@ -9,6 +9,7 @@ using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using WotC.FifthEd.SRD.Features.PlayerClass.Barbarian;
+using Xamarin.Forms;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Barbarian : IPlayerClass {
@@ -91,6 +92,53 @@ namespace WotC.FifthEd.SRD.PlayerClass {
 
         private void SelectSubclass() {
             //Popup a prompt to select a subclass (or add prompt to levelup popup queue)
+        }
+
+        public IProficiency SkillChoice1 { get; set; }
+        public IProficiency SkillChoice2 { get; set; }
+        public void BuildNewCharacterPopup(Frame frame) {
+            List<IProficiency> choices = PluginLoader.Proficiencies.GetAllForType(ProficiencyType.SKILL)
+                .Where(p => p.ID == "Skill.Proficiency.AnimalHandling"
+                || p.ID == "Skill.Proficiency.Athletics"
+                || p.ID == "Skill.Proficiency.Intimidation"
+                || p.ID == "Skill.Proficiency.Nature"
+                || p.ID == "Skill.Proficiency.Perception"
+                || p.ID == "Skill.Proficiency.Survival").ToList();
+            for(int i = 0; i < choices.Count; i++) {
+                if (ProficiencyManager.CheckByName(choices[i].Name)) {
+                    choices.RemoveAt(i);
+                    i--;
+                }
+            }
+
+            Picker skillChoice1 = new Picker() {
+                ItemsSource = choices,
+                Title = "Skill Proficiency",
+                BindingContext = this,
+                ItemDisplayBinding = new Binding("Name")
+            };
+            skillChoice1.SetBinding(Picker.SelectedItemProperty, "SkillChoice1");
+            Picker skillChoice2 = new Picker() {
+                ItemsSource = choices,
+                Title = "Skill Proficiency",
+                BindingContext = this,
+                ItemDisplayBinding = new Binding("Name")
+            };
+            skillChoice2.SetBinding(Picker.SelectedItemProperty, "SkillChoice2");
+            //TODO: add equipment choices: a Martial Melee Weapon; Two Handaxes or another Simple Weapon
+            StackLayout stackLayout = new StackLayout() {
+                Orientation = StackOrientation.Vertical
+            };
+            stackLayout.Children.Add(skillChoice1);
+            stackLayout.Children.Add(skillChoice2);
+            frame.Content = stackLayout;
+        }
+
+        public void ConfirmNewCharacterPopup() {
+            SkillChoice1.Source = SOURCE_TEXT;
+            SkillChoice2.Source = SOURCE_TEXT;
+            ProficiencyManager.Proficiencies.Add(SkillChoice1);
+            ProficiencyManager.Proficiencies.Add(SkillChoice2);
         }
     }
 }

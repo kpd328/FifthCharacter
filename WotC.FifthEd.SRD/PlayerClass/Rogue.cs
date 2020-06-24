@@ -13,6 +13,7 @@ using WotC.FifthEd.SRD.Features.PlayerClass.Rogue.Thief;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialMeleeWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Attacks.MartialRangedWeapon;
 using WotC.FifthEd.SRD.Proficiencies.Tools;
+using Xamarin.Forms;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Rogue : IPlayerClass {
@@ -99,6 +100,14 @@ namespace WotC.FifthEd.SRD.PlayerClass {
 
         private void SelectSubclass() {
             //Popup a prompt to select a subclass (or add prompt to levelup popup queue
+        }
+
+        public void BuildNewCharacterPopup(Frame frame) {
+
+        }
+
+        public void ConfirmNewCharacterPopup() {
+
         }
     }
 }

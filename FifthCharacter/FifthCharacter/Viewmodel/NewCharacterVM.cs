@@ -327,7 +327,7 @@ namespace FifthCharacter.Viewmodel {
                         PopupNavigation.Instance.PushAsync(Page3);
                     } else {
                         Page4 = new PopupNCClassOptions() { BindingContext = this };
-                        //TODO: send page to class to be built
+                        ClassManager.PrimaryClass.BuildNewCharacterPopup(Page4.Body);
                         PopupNavigation.Instance.PushAsync(Page4);
                     }
                     break;
@@ -342,7 +342,7 @@ namespace FifthCharacter.Viewmodel {
                         DependencyService.Get<IPopup>().PushAsync(Page3_GTK);
                     } else {
                         Page4_GTK = new PopupNCClassOptions_GTK() { BindingContext = this };
-                        //TODO: send page to class to be built
+                        ClassManager.PrimaryClass.BuildNewCharacterPopup(Page4.Body);
                         DependencyService.Get<IPopup>().PushAsync(Page4_GTK);
                     }
                     break;
@@ -365,7 +365,7 @@ namespace FifthCharacter.Viewmodel {
                         PopupNavigation.Instance.PushAsync(Page3);
                     } else {
                         Page4 = new PopupNCClassOptions() { BindingContext = this };
-                        //TODO: send page to class to be built
+                        ClassManager.PrimaryClass.BuildNewCharacterPopup(Page4.Body);
                         PopupNavigation.Instance.PushAsync(Page4);
                     }
                     break;
@@ -376,7 +376,7 @@ namespace FifthCharacter.Viewmodel {
                         DependencyService.Get<IPopup>().PushAsync(Page3_GTK);
                     } else {
                         Page4_GTK = new PopupNCClassOptions_GTK() { BindingContext = this };
-                        //TODO: send page to class to be built
+                        ClassManager.PrimaryClass.BuildNewCharacterPopup(Page4.Body);
                         DependencyService.Get<IPopup>().PushAsync(Page4_GTK);
                     }
                     break;
@@ -411,12 +411,12 @@ namespace FifthCharacter.Viewmodel {
                 case Device.iOS:
                 case Device.Android:
                     Page4 = new PopupNCClassOptions() { BindingContext = this };
-                    //TODO: send page to class to be built
+                    ClassManager.PrimaryClass.BuildNewCharacterPopup(Page4.Body);
                     PopupNavigation.Instance.PushAsync(Page4);
                     break;
                 case Device.GTK:
                     Page4_GTK = new PopupNCClassOptions_GTK() { BindingContext = this };
-                    //TODO: send page to class to be built
+                    ClassManager.PrimaryClass.BuildNewCharacterPopup(Page4.Body);
                     DependencyService.Get<IPopup>().PushAsync(Page4_GTK);
                     break;
                 default:
@@ -444,6 +444,7 @@ namespace FifthCharacter.Viewmodel {
         //Page 4 Commands
         private ICommand _page4next;
         public ICommand Page4Next => _page4next ??= new Command(() => {
+            ClassManager.PrimaryClass.ConfirmNewCharacterPopup();
             switch (Device.RuntimePlatform) {
                 case Device.UWP:
                 case Device.iOS:

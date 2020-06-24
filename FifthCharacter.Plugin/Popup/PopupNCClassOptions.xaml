@@ -19,9 +19,7 @@
                           ScaleOut="0.8"/>
     </p:PopupPage.Animation>
     <p:PopupPage.Content>
-        <Grid x:Name="Body"
-              x:FieldModifier="public"
-              BackgroundColor="{DynamicResource PopupWindowColor}"
+        <Grid BackgroundColor="{DynamicResource PopupWindowColor}"
               WidthRequest="300"
               MinimumWidthRequest="150"
               HeightRequest="500"
@@ -38,6 +36,13 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Frame x:Name="Body"
+                   x:FieldModifier="public"
+                   BackgroundColor="Transparent"
+                   BorderColor="Transparent"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"/>
             <Button Text="Back"
                     Grid.Row="1"
                     Grid.Column="0"

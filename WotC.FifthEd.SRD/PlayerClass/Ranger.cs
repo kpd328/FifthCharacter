@@ -9,6 +9,7 @@ using Microsoft.Collections.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using WotC.FifthEd.SRD.Features.PlayerClass.Ranger;
+using Xamarin.Forms;
 
 namespace WotC.FifthEd.SRD.PlayerClass {
     public class Ranger : IPlayerClass {
@@ -93,6 +94,14 @@ namespace WotC.FifthEd.SRD.PlayerClass {
 
         private void SelectSubclass() {
             //Popup a prompt to select a subclass (or add prompt to levelup popup queue
+        }
+
+        public void BuildNewCharacterPopup(Frame frame) {
+
+        }
+
+        public void ConfirmNewCharacterPopup() {
+
         }
     }
 }
