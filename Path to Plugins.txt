@@ -3,3 +3,5 @@ x86 UWP (Debug): %RepositoryDirectory%\FifthCharacter\FifthCharacter\FifthCharac
 x64 UWP (Debug): %RepositoryDirectory%\FifthCharacter\FifthCharacter\FifthCharacter.UWP\bin\x64\Debug\AppX\Plugins
 
 GTK (Debug) %RepositoryDirectory%\FifthCharacter\FifthCharacter.GTK\bin\Debug\Plugins
+
+Android: //Android/data/com.kpd328.fifthcharacter/files/Plugins
