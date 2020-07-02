@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:abilities="clr-namespace:FifthCharacter.Abilities"
+             xmlns:tabview="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
              xmlns:vm="clr-namespace:FifthCharacter.Viewmodel"
              xmlns:v="clr-namespace:FifthCharacter.View"
              mc:Ignorable="d"
@@ -123,32 +124,45 @@
                        Padding="-5"/>
                 <!---->
 
-                <v:AttacksList x:Name="AttacksListView"
-                               x:FieldModifier="internal"
-                               FlexLayout.Basis="300"
-                               FlexLayout.Grow="1">
-                    <x:Arguments>
-                        <vm:AttacksListVM/>
-                    </x:Arguments>
-                </v:AttacksList>
+                <tabview:TabViewControl HeaderBackgroundColor="DarkRed"
+                                        HeaderSelectionUnderlineColor="White"
+                                        HeaderTabTextColor="White"
+                                        HeaderTabTextFontAttributes="Bold"
+                                        HorizontalOptions="FillAndExpand"
+                                        IsSwipeEnabled="True"
+                                        TabHeaderSpacing="100"
+                                        VerticalOptions="FillAndExpand"
+                                        FlexLayout.Basis="300"
+                                        FlexLayout.Grow="1">
+                    <tabview:TabViewControl.ItemSource>
+                        <tabview:TabItem HeaderText="Attacks">
+                            <v:AttacksList x:Name="AttacksListView"
+                                           x:FieldModifier="internal">
+                                <x:Arguments>
+                                    <vm:AttacksListVM/>
+                                </x:Arguments>
+                            </v:AttacksList>
+                        </tabview:TabItem>
 
-                <v:SpellList x:Name="SpellListView"
-                             x:FieldModifier="internal"
-                             FlexLayout.Basis="300"
-                             FlexLayout.Grow="1">
-                    <x:Arguments>
-                        <vm:SpellListVM/>
-                    </x:Arguments>
-                </v:SpellList>
+                        <tabview:TabItem HeaderText="Spells">
+                            <v:SpellList x:Name="SpellListView"
+                                         x:FieldModifier="internal">
+                                <x:Arguments>
+                                    <vm:SpellListVM/>
+                                </x:Arguments>
+                            </v:SpellList>
+                        </tabview:TabItem>
 
-                <v:FeaturesList x:Name="FeaturesListView"
-                                x:FieldModifier="internal"
-                                FlexLayout.Basis="300"
-                                FlexLayout.Grow="1">
-                    <x:Arguments>
-                        <vm:FeaturesListVM/>
-                    </x:Arguments>
-                </v:FeaturesList>
+                        <tabview:TabItem HeaderText="Features">
+                            <v:FeaturesList x:Name="FeaturesListView"
+                                            x:FieldModifier="internal">
+                                <x:Arguments>
+                                    <vm:FeaturesListVM/>
+                                </x:Arguments>
+                            </v:FeaturesList>
+                        </tabview:TabItem>
+                    </tabview:TabViewControl.ItemSource>
+                </tabview:TabViewControl>
             </FlexLayout>
         </ScrollView>
     </ContentPage.Content>

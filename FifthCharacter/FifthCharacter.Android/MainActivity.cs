@@ -1,14 +1,10 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using CarouselView.FormsPlugin.Android;
 
-namespace FifthCharacter.Droid
-{
+namespace FifthCharacter.Droid {
     [Activity(Label = "FifthCharacter", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -23,6 +19,7 @@ namespace FifthCharacter.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.SetFlags("Markup_Experimental");
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CarouselViewRenderer.Init();
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
