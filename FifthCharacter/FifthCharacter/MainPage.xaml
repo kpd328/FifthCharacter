@@ -124,12 +124,22 @@
                        Padding="-5"/>
                 <!---->
 
-                <tabview:SfTabView BackgroundColor="DarkRed"
+                <tabview:SfTabView BackgroundColor="Accent"
                                    HorizontalOptions="FillAndExpand"
-                                   VerticalOptions="FillAndExpand"
+                                   VerticalOptions="Start"
+                                   EnableSwiping="True"
+                                   VisibleHeaderCount="3"
+                                   TabHeaderPosition="Top"
                                    FlexLayout.Basis="300"
                                    FlexLayout.Grow="1">
-                    <tabview:SfTabItem Title="Attacks">
+                    <tabview:SfTabItem.SelectionIndicatorSettings>
+                        <tabview:SelectionIndicatorSettings Color="{DynamicResource InvertColor}"
+                                                            Position="Bottom"/>
+                    </tabview:SfTabItem.SelectionIndicatorSettings>
+                    <!--TODO: Change Background Color to Accent-->
+                    <tabview:SfTabItem Title="Attacks"
+                                       SelectionColor="{DynamicResource InvertColor}"
+                                       TitleFontColor="{DynamicResource InvertColor}">
                         <tabview:SfTabItem.Content>
                             <v:AttacksList x:Name="AttacksListView"
                                            x:FieldModifier="internal">
@@ -140,7 +150,9 @@
                         </tabview:SfTabItem.Content>
                     </tabview:SfTabItem>
 
-                    <tabview:SfTabItem Title="Spells">
+                    <tabview:SfTabItem Title="Spells"
+                                       SelectionColor="{DynamicResource InvertColor}"
+                                       TitleFontColor="{DynamicResource InvertColor}">
                         <tabview:SfTabItem.Content>
                             <v:SpellList x:Name="SpellListView"
                                          x:FieldModifier="internal">
@@ -151,7 +163,9 @@
                         </tabview:SfTabItem.Content>
                     </tabview:SfTabItem>
 
-                    <tabview:SfTabItem Title="Features">
+                    <tabview:SfTabItem Title="Features"
+                                       SelectionColor="{DynamicResource InvertColor}"
+                                       TitleFontColor="{DynamicResource InvertColor}">
                         <tabview:SfTabItem.Content>
                             <v:FeaturesList x:Name="FeaturesListView"
                                                 x:FieldModifier="internal">
