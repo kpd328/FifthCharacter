@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>8.0</LangVersion>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -325,5 +326,9 @@
   <ItemGroup>
     <Folder Include="Proficiencies\Armor\" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)FifthCharacter\FifthCharacter.UWP\bin\x86\Debug\AppX\Plugins\&quot; /i /y /v&#xD;&#xA;xcopy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)FifthCharacter\FifthCharacter.UWP\bin\x64\Debug\AppX\Plugins\&quot; /i /y /v&#xD;&#xA;xcopy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)FifthCharacter.GTK\bin\x64\Debug\Plugins\&quot; /i /y /v" />
+  </Target>
 
 </Project>
