@@ -1,5 +1,4 @@
-﻿using CarouselView.FormsPlugin.iOS;
-using Foundation;
+﻿using Foundation;
 using UIKit;
 
 namespace FifthCharacter.iOS {
@@ -21,7 +20,7 @@ namespace FifthCharacter.iOS {
             Rg.Plugins.Popup.Popup.Init();
             Xamarin.Forms.Forms.SetFlags("Markup_Experimental");
             global::Xamarin.Forms.Forms.Init();
-            CarouselViewRenderer.Init();
+            Syncfusion.XForms.iOS.TabView.SfTabViewRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

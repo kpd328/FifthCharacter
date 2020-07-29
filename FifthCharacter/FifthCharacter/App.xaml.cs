@@ -11,6 +11,8 @@ namespace FifthCharacter {
         internal static PluginLoader Plugins;
 
         public App() {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjk1ODI0QDMxMzgyZTMyMmUzMGxXdW1FampZaXhHUUJQY0E4bkZNK3E0d0JmL0doTElSYmcrTHFGKzZONXc9");
+
             InitializeComponent();
 
             try {

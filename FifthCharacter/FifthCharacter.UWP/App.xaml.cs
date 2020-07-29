@@ -1,5 +1,4 @@
-﻿using CarouselView.FormsPlugin.UWP;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Windows.ApplicationModel;
@@ -47,7 +46,7 @@ namespace FifthCharacter.UWP {
                 Rg.Plugins.Popup.Popup.Init();
                 Xamarin.Forms.Forms.SetFlags("Markup_Experimental");
                 List<Assembly> assembliesToInclude = new List<Assembly>();
-                assembliesToInclude.Add(typeof(CarouselViewRenderer).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(Syncfusion.XForms.UWP.TabView.SfTabViewRenderer).GetTypeInfo().Assembly);
                 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
