@@ -1,7 +1,4 @@
-﻿using FifthCharacter.Utilities;
-using FifthCharacter.Viewmodel;
-using Rg.Plugins.Popup.Services;
-using System;
+﻿using FifthCharacter.Viewmodel;
 using System.ComponentModel;
 using Xamarin.Forms;
 

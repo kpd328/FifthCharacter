@@ -63,6 +63,18 @@
     <Reference Include="Rg.Plugins.Popup, Version=2.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Rg.Plugins.Popup.2.0.0.2\lib\xamarinmac20\Rg.Plugins.Popup.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.Core.XForms, Version=18.2451.0.47, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.Core.18.2.0.47\lib\Xamarin.Mac\Syncfusion.Core.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms.macOS, Version=18.2451.0.47, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.Core.18.2.0.47\lib\Xamarin.Mac\Syncfusion.Core.XForms.macOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=18.2.0.47, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.18.2.0.47\lib\Xamarin.Mac\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfTabView.XForms, Version=18.2451.0.47, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTabView.18.2.0.47\lib\netstandard2.0\Syncfusion.SfTabView.XForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

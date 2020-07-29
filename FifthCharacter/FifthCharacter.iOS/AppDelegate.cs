@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿using Foundation;
 using UIKit;
 
-namespace FifthCharacter.iOS
-{
+namespace FifthCharacter.iOS {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
@@ -25,6 +20,7 @@ namespace FifthCharacter.iOS
             Rg.Plugins.Popup.Popup.Init();
             Xamarin.Forms.Forms.SetFlags("Markup_Experimental");
             global::Xamarin.Forms.Forms.Init();
+            Syncfusion.XForms.iOS.TabView.SfTabViewRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
