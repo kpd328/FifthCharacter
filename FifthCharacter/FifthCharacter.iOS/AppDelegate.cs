@@ -21,6 +21,8 @@ namespace FifthCharacter.iOS {
             Xamarin.Forms.Forms.SetFlags("Markup_Experimental");
             global::Xamarin.Forms.Forms.Init();
             Syncfusion.XForms.iOS.TabView.SfTabViewRenderer.Init();
+            Syncfusion.XForms.iOS.Buttons.SfChipRenderer.Init();
+            Syncfusion.XForms.iOS.Buttons.SfChipGroupRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

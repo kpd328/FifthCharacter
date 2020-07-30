@@ -194,6 +194,13 @@ namespace FifthCharacter.Viewmodel {
         }
 
         //Ability Score (Page 6) Properties
+        private enum ScoreType {
+            POINT_BUY,
+            STANDARD_ARRAY,
+            ROLL,
+            MANUAL_ENTRY
+        }
+        private ScoreType scoreType { get; set; } = ScoreType.POINT_BUY;
         public int PointsLeft { get; set; } = 27;
 
         public string PointsText => PointsLeft.ToString();
@@ -247,62 +254,68 @@ namespace FifthCharacter.Viewmodel {
         private RollMode CurrentRollMode = RollMode.NONE;
         private bool CanRoll => CurrentRollMode != RollMode.NONE;
 
+        private int ManStr;
         public string ManualStr {
             get => AbilityManager.StrengthScore.ToString();
             set {
                 int _str;
                 if (int.TryParse(value, out _str)) {
-                    AbilityManager.StrengthScore = _str;
+                    ManStr = _str;
                     MainPage.StrengthAbilityView.Viewmodel.AllPropertiesChanged();
                 }
             }
         }
+        private int ManDex;
         public string ManualDex {
             get => AbilityManager.DexterityScore.ToString();
             set {
                 int _dex;
                 if (int.TryParse(value, out _dex)) {
-                    AbilityManager.DexterityScore = _dex;
+                    ManDex = _dex;
                     MainPage.DexterityAbilityView.Viewmodel.AllPropertiesChanged();
                 }
             }
         }
+        private int ManCon;
         public string ManualCon {
             get => AbilityManager.ConstitutionScore.ToString();
             set {
                 int _con;
                 if (int.TryParse(value, out _con)) {
-                    AbilityManager.ConstitutionScore = _con;
+                    ManCon = _con;
                     MainPage.ConstitutionAbilityView.Viewmodel.AllPropertiesChanged();
                 }
             }
         }
+        private int ManInt;
         public string ManualInt {
             get => AbilityManager.IntelligenceScore.ToString();
             set {
                 int _int;
                 if (int.TryParse(value, out _int)) {
-                    AbilityManager.IntelligenceScore = _int;
+                    ManInt = _int;
                     MainPage.IntellegenceAbilityView.Viewmodel.AllPropertiesChanged();
                 }
             }
         }
+        private int ManWis;
         public string ManualWis {
             get => AbilityManager.WisdomScore.ToString();
             set {
                 int _wis;
                 if (int.TryParse(value, out _wis)) {
-                    AbilityManager.WisdomScore = _wis;
+                    ManWis = _wis;
                     MainPage.WisdomAbilityView.Viewmodel.AllPropertiesChanged();
                 }
             }
         }
+        private int ManCha;
         public string ManualCha {
             get => AbilityManager.CharismaScore.ToString();
             set {
                 int _cha;
                 if (int.TryParse(value, out _cha)) {
-                    AbilityManager.CharismaScore = _cha;
+                    ManCha = _cha;
                     MainPage.CharismaAbilityView.Viewmodel.AllPropertiesChanged();
                 }
             }
@@ -450,7 +463,7 @@ namespace FifthCharacter.Viewmodel {
                 case Device.iOS:
                 case Device.Android:
                     //TODO: determine whether or not to go to page 5
-                    Page6 = new PopupNCAbilityScores() { BindingContext = this };
+                    Page6 = new PopupNCAbilityScores() { BindingContext = this, Callback = new Action<string>(StringToScoreType) };
                     PopupNavigation.Instance.PushAsync(Page6);
                     break;
                 case Device.GTK:
@@ -483,6 +496,41 @@ namespace FifthCharacter.Viewmodel {
         //Page 6 Commands
         private ICommand _page6next;
         public ICommand Page6Next => _page6next ??= new Command(() => {
+            //finalize
+            switch (scoreType) {
+                case ScoreType.POINT_BUY:
+                    AbilityManager.StrengthScore = PointStr;
+                    AbilityManager.DexterityScore = PointDex;
+                    AbilityManager.ConstitutionScore = PointCon;
+                    AbilityManager.IntelligenceScore = PointInt;
+                    AbilityManager.WisdomScore = PointWis;
+                    AbilityManager.CharismaScore = PointCha;
+                    break;
+                case ScoreType.STANDARD_ARRAY:
+                    AbilityManager.StrengthScore = ArrayStr;
+                    AbilityManager.DexterityScore = ArrayDex;
+                    AbilityManager.ConstitutionScore = ArrayCon;
+                    AbilityManager.IntelligenceScore = ArrayInt;
+                    AbilityManager.WisdomScore = ArrayWis;
+                    AbilityManager.CharismaScore = ArrayCha;
+                    break;
+                case ScoreType.ROLL:
+                    AbilityManager.StrengthScore = RollStr;
+                    AbilityManager.DexterityScore = RollDex;
+                    AbilityManager.ConstitutionScore = RollCon;
+                    AbilityManager.IntelligenceScore = RollInt;
+                    AbilityManager.WisdomScore = RollWis;
+                    AbilityManager.CharismaScore = RollCha;
+                    break;
+                case ScoreType.MANUAL_ENTRY:
+                    AbilityManager.StrengthScore = ManStr;
+                    AbilityManager.DexterityScore = ManDex;
+                    AbilityManager.ConstitutionScore = ManCon;
+                    AbilityManager.IntelligenceScore = ManInt;
+                    AbilityManager.WisdomScore = ManWis;
+                    AbilityManager.CharismaScore = ManCha;
+                    break;
+            }
             FeaturesManager.Features.Where(f => f.Name == "Ability Score Increase").FirstOrDefault().ModAbility();
             MainPage.StrengthAbilityView.Viewmodel.AllPropertiesChanged();
             MainPage.DexterityAbilityView.Viewmodel.AllPropertiesChanged();
@@ -517,95 +565,6 @@ namespace FifthCharacter.Viewmodel {
                 case Device.GTK:
                     //TODO: pop this page and go to the previous page
                     DependencyService.Get<IPopup>().PopAsync(); //idk if this works, but I should make it work
-                    break;
-                default:
-                    throw new NotImplementedException(Device.RuntimePlatform);
-            }
-        });
-
-        private ICommand _page6points;
-        public ICommand Page6Points => _page6points ??= new Command(() => {
-            switch (Device.RuntimePlatform) {
-                case Device.UWP:
-                case Device.iOS:
-                case Device.Android:
-                    Page6.PointBuy.IsVisible = true;
-                    Page6.StandardArray.IsVisible = false;
-                    Page6.Roll.IsVisible = false;
-                    Page6.ManualEntry.IsVisible = false;
-                    Page6.PointBuyButton.IsEnabled = false;
-                    Page6.StandardArrayButton.IsEnabled = true;
-                    Page6.RollButton.IsEnabled = true;
-                    Page6.ManualEntryButton.IsEnabled = true;
-                    break;
-                case Device.GTK:
-                    break;
-                default:
-                    throw new NotImplementedException(Device.RuntimePlatform);
-            }
-            RefreshPoints();
-        });
-
-        private ICommand _page6array;
-        public ICommand Page6Array => _page6array ??= new Command(() => {
-            switch (Device.RuntimePlatform) {
-                case Device.UWP:
-                case Device.iOS:
-                case Device.Android:
-                    Page6.PointBuy.IsVisible = false;
-                    Page6.StandardArray.IsVisible = true;
-                    Page6.Roll.IsVisible = false;
-                    Page6.ManualEntry.IsVisible = false;
-                    Page6.PointBuyButton.IsEnabled = true;
-                    Page6.StandardArrayButton.IsEnabled = false;
-                    Page6.RollButton.IsEnabled = true;
-                    Page6.ManualEntryButton.IsEnabled = true;
-                    break;
-                case Device.GTK:
-                    break;
-                default:
-                    throw new NotImplementedException(Device.RuntimePlatform);
-            }
-        });
-
-        private ICommand _page6roll;
-        public ICommand Page6Roll => _page6roll ??= new Command(() => {
-            switch (Device.RuntimePlatform) {
-                case Device.UWP:
-                case Device.iOS:
-                case Device.Android:
-                    Page6.PointBuy.IsVisible = false;
-                    Page6.StandardArray.IsVisible = false;
-                    Page6.Roll.IsVisible = true;
-                    Page6.ManualEntry.IsVisible = false;
-                    Page6.PointBuyButton.IsEnabled = true;
-                    Page6.StandardArrayButton.IsEnabled = true;
-                    Page6.RollButton.IsEnabled = false;
-                    Page6.ManualEntryButton.IsEnabled = true;
-                    break;
-                case Device.GTK:
-                    break;
-                default:
-                    throw new NotImplementedException(Device.RuntimePlatform);
-            }
-        });
-
-        private ICommand _page6manual;
-        public ICommand Page6Manual => _page6manual ??= new Command(() => {
-            switch (Device.RuntimePlatform) {
-                case Device.UWP:
-                case Device.iOS:
-                case Device.Android:
-                    Page6.PointBuy.IsVisible = false;
-                    Page6.StandardArray.IsVisible = false;
-                    Page6.Roll.IsVisible = false;
-                    Page6.ManualEntry.IsVisible = true;
-                    Page6.PointBuyButton.IsEnabled = true;
-                    Page6.StandardArrayButton.IsEnabled = true;
-                    Page6.RollButton.IsEnabled = true;
-                    Page6.ManualEntryButton.IsEnabled = false;
-                    break;
-                case Device.GTK:
                     break;
                 default:
                     throw new NotImplementedException(Device.RuntimePlatform);
@@ -1120,12 +1079,6 @@ namespace FifthCharacter.Viewmodel {
             ((Command)_pointWisAdd).ChangeCanExecute();
             ((Command)_pointChaSubtract).ChangeCanExecute();
             ((Command)_pointChaAdd).ChangeCanExecute();
-            AbilityManager.StrengthScore = PointStr;
-            AbilityManager.DexterityScore = PointDex;
-            AbilityManager.ConstitutionScore = PointCon;
-            AbilityManager.IntelligenceScore = PointInt;
-            AbilityManager.WisdomScore = PointWis;
-            AbilityManager.CharismaScore = PointCha;
         }
 
         //Picker Utility
@@ -1167,6 +1120,25 @@ namespace FifthCharacter.Viewmodel {
             MODERN,
             CLASSIC,
             MULLIGAN
+        }
+
+        public void StringToScoreType(string s) {
+            switch (s) {
+                case "Point Buy":
+                    scoreType = ScoreType.POINT_BUY;
+                    break;
+                case "Standard Array":
+                    scoreType = ScoreType.STANDARD_ARRAY;
+                    break;
+                case "Roll":
+                    scoreType = ScoreType.ROLL;
+                    break;
+                case "Manual Entry":
+                    scoreType = ScoreType.MANUAL_ENTRY;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

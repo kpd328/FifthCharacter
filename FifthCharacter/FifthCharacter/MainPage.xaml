@@ -136,7 +136,6 @@
                         <tabview:SelectionIndicatorSettings Color="{DynamicResource InvertColor}"
                                                             Position="Bottom"/>
                     </tabview:SfTabItem.SelectionIndicatorSettings>
-                    <!--TODO: Change Background Color to Accent-->
                     <tabview:SfTabItem Title="Attacks"
                                        SelectionColor="{DynamicResource InvertColor}"
                                        TitleFontColor="{DynamicResource InvertColor}">
