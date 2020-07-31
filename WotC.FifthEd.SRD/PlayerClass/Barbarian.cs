@@ -6,7 +6,10 @@ using FifthCharacter.Plugin.Proficiencies.SavingThrows;
 using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
+using Syncfusion.XForms.Buttons;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using WotC.FifthEd.SRD.Features.PlayerClass.Barbarian;
 using Xamarin.Forms;
@@ -57,7 +60,6 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
-                //TODO: prompt to pick skills
             } else {
                 ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon(SOURCE_TEXT));
@@ -94,8 +96,10 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             //Popup a prompt to select a subclass (or add prompt to levelup popup queue)
         }
 
-        public IProficiency SkillChoice1 { get; set; }
-        public IProficiency SkillChoice2 { get; set; }
+        public IList<IProficiency> ChosenSkills { get; set; } = new List<IProficiency>();
+        private int SelectedCount = 0;
+        private const int TOTAL_SKILLS = 2;
+        private SfChipGroup SkillChoices;
         public void BuildNewCharacterPopup(Frame frame) {
             List<IProficiency> choices = PluginLoader.Proficiencies.GetAllForType(ProficiencyType.SKILL)
                 .Where(p => p.ID == "Skill.Proficiency.AnimalHandling"
@@ -111,34 +115,70 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 }
             }
 
-            Picker skillChoice1 = new Picker() {
-                ItemsSource = choices,
-                Title = "Skill Proficiency",
-                BindingContext = this,
-                ItemDisplayBinding = new Binding("Name")
+            var skillTitle = new Label() {
+                Text = "Choose 2 Skill Proficiencies",
+                HorizontalOptions = LayoutOptions.StartAndExpand,
+                VerticalOptions = LayoutOptions.Start
+                //TODO: format
             };
-            skillChoice1.SetBinding(Picker.SelectedItemProperty, "SkillChoice1");
-            Picker skillChoice2 = new Picker() {
+
+            SkillChoices = new SfChipGroup() { 
+                Type = SfChipsType.Filter,
                 ItemsSource = choices,
-                Title = "Skill Proficiency",
-                BindingContext = this,
-                ItemDisplayBinding = new Binding("Name")
+                DisplayMemberPath = "Name",
+                ChipLayout = new FlexLayout() {
+                    Direction = FlexDirection.Row,
+                    Wrap = FlexWrap.Wrap,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    AlignContent = FlexAlignContent.SpaceEvenly,
+                    JustifyContent = FlexJustify.Center,
+                    AlignItems = FlexAlignItems.Center
+                }
             };
-            skillChoice2.SetBinding(Picker.SelectedItemProperty, "SkillChoice2");
+            SkillChoices.SelectionChanging += SkillChoices_SelectionChanging;
+
             //TODO: add equipment choices: a Martial Melee Weapon; Two Handaxes or another Simple Weapon
             StackLayout stackLayout = new StackLayout() {
                 Orientation = StackOrientation.Vertical
             };
-            stackLayout.Children.Add(skillChoice1);
-            stackLayout.Children.Add(skillChoice2);
+            stackLayout.Children.Add(skillTitle);
+            stackLayout.Children.Add(SkillChoices);
             frame.Content = stackLayout;
         }
 
+        private void SkillChoices_SelectionChanging(object sender, Syncfusion.Buttons.XForms.SfChip.SelectionChangingEventArgs e) {
+            if(SelectedCount >= TOTAL_SKILLS) {
+                e.Cancel = true;
+            } 
+            if(e.AddedItem != null && !e.Cancel) {
+                ChosenSkills.Add(e.AddedItem as IProficiency);
+                SelectedCount++;
+            }
+            if(e.RemovedItem != null) {
+                ChosenSkills.Remove(e.RemovedItem as IProficiency);
+                SelectedCount--;
+                
+            }
+            if(SelectedCount >= TOTAL_SKILLS) {
+                foreach (var c in SkillChoices.GetChips()) {
+                    if (!c.IsChecked) {
+                        c.IsCheckable = false;
+                    }
+                }
+            }
+            if(SelectedCount < TOTAL_SKILLS) {
+                foreach (var c in SkillChoices.GetChips()) {
+                    c.IsCheckable = true;
+                }
+            }
+        }
+
         public void ConfirmNewCharacterPopup() {
-            SkillChoice1.Source = SOURCE_TEXT;
-            SkillChoice2.Source = SOURCE_TEXT;
-            ProficiencyManager.Proficiencies.Add(SkillChoice1);
-            ProficiencyManager.Proficiencies.Add(SkillChoice2);
+            foreach(var s in ChosenSkills) {
+                s.Source = SOURCE_TEXT;
+                ProficiencyManager.Proficiencies.Add(s);
+            }
         }
     }
 }
