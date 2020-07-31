@@ -7,9 +7,7 @@ using FifthCharacter.Plugin.StatsManager;
 using FifthCharacter.Plugin.Tools;
 using Microsoft.Collections.Extensions;
 using Syncfusion.XForms.Buttons;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using WotC.FifthEd.SRD.Features.PlayerClass.Barbarian;
 using Xamarin.Forms;
@@ -132,8 +130,8 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     VerticalOptions = LayoutOptions.FillAndExpand,
                     AlignContent = FlexAlignContent.SpaceEvenly,
-                    JustifyContent = FlexJustify.Center,
-                    AlignItems = FlexAlignItems.Center
+                    JustifyContent = FlexJustify.Start,
+                    AlignItems = FlexAlignItems.Start
                 }
             };
             SkillChoices.SelectionChanging += SkillChoices_SelectionChanging;
