@@ -100,11 +100,11 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         public IList<IProficiency> ChosenInstruments { get; set; } = new List<IProficiency>();
         private int SelectedInstrCount = 0;
         private const int TOTAL_INSTRUMENTS = 3;
-        private SfChipGroup SkillChoices;
+        private SfChipGroup InstrumentChoices;
         public IList<IProficiency> ChosenSkills { get; set; } = new List<IProficiency>();
         private int SelectedSkillCount = 0;
         private const int TOTAL_SKILLS = 3;
-        private SfChipGroup InstrumentChoices;
+        private SfChipGroup SkillChoices;
         public void BuildNewCharacterPopup(Frame frame) {
             List<IProficiency> choices_instrprof = PluginLoader.Proficiencies.GetAllForType(ProficiencyType.TOOL)
                 .Where(p => p.ID.StartsWith("SRD.Proficiency.Tool.MusicalInstrument.")).ToList();
