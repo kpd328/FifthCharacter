@@ -61,10 +61,8 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfMMWRapier(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfMMWShortsword(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
-                //TODO: prompt to pick skills
             } else {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
-                //TODO: prompt to pick skills
             }
             IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
             if (AllClassFeatures.TryGetValue(1, out newFeatures)) {

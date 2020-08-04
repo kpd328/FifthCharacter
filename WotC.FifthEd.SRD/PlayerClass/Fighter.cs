@@ -1,4 +1,5 @@
 ﻿using FifthCharacter.Plugin;
+using FifthCharacter.Plugin.Features.Abstract;
 using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Proficiencies.Armor;
 using FifthCharacter.Plugin.Proficiencies.Attacks;
@@ -53,7 +54,6 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmor(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
-                //TODO: Add prompt to pick skills
             } else {
                 ProficiencyManager.Proficiencies.Add(new ProfSimpleWeapon(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfMartialWeapon(SOURCE_TEXT));
@@ -61,7 +61,6 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
             }
-            //TODO: Add prompt to pick fighting style
             IReadOnlyCollection<IFeature> newFeatures = new List<IFeature>();
             if(AllClassFeatures.TryGetValue(1, out newFeatures)) {
                 foreach (IFeature f in newFeatures) {
@@ -98,13 +97,13 @@ namespace WotC.FifthEd.SRD.PlayerClass {
         private const int TOTAL_SKILLS = 2;
         private SfChipGroup SkillChoices;
         public void BuildNewCharacterPopup(Frame frame) {
-            List<IProficiency> choices = PluginLoader.Proficiencies.GetAllForType(ProficiencyType.SKILL)
+            List<IProficiency> choicesSkills = PluginLoader.Proficiencies.GetAllForType(ProficiencyType.SKILL)
                 .Where(p => p.Name == "Acrobatics" || p.Name == "Animal Handling" || p.Name == "Athletics" 
                 || p.Name == "History" || p.Name == "Insight" || p.Name == "Intimidation" || p.Name == "Perception"
                 || p.Name == "Survival").ToList();
-            for(int i = 0; i < choices.Count; i++) {
-                if (ProficiencyManager.CheckByName(choices[i].Name)) {
-                    choices.RemoveAt(i);
+            for(int i = 0; i < choicesSkills.Count; i++) {
+                if (ProficiencyManager.CheckByName(choicesSkills[i].Name)) {
+                    choicesSkills.RemoveAt(i);
                     i--;
                 }
             }
@@ -118,7 +117,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
 
             SkillChoices = new SfChipGroup() {
                 Type = SfChipsType.Filter,
-                ItemsSource = choices,
+                ItemsSource = choicesSkills,
                 DisplayMemberPath = "Name",
                 ChipLayout = new FlexLayout() {
                     Direction = FlexDirection.Row,
@@ -139,6 +138,7 @@ namespace WotC.FifthEd.SRD.PlayerClass {
             stackLayout.Children.Add(Title);
             stackLayout.Children.Add(SkillChoices);
             frame.Content = stackLayout;
+            //TODO: Add prompt to pick fighting style
         }
 
         private void SkillChoices_SelectionChanging(object sender, Syncfusion.Buttons.XForms.SfChip.SelectionChangingEventArgs e) {

@@ -49,7 +49,6 @@ namespace WotC.FifthEd.SRD.PlayerClass {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorShield(SOURCE_TEXT));
-                //TODO: prompt to pick skills
             } else {
                 ProficiencyManager.Proficiencies.Add(new ProfArmorLight(SOURCE_TEXT));
                 ProficiencyManager.Proficiencies.Add(new ProfArmorMedium(SOURCE_TEXT));
