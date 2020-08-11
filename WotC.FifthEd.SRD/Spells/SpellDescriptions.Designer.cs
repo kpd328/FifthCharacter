@@ -136,5 +136,15 @@ namespace WotC.FifthEd.SRD.Spells {
                 return ResourceManager.GetString("AnimalShapes", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target witha foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or Not for resale. Permission granted to print or photocopy this document for personal use only.System Reference Document 5.1116a zombie if you chose a corpse (the GM has the creature’s game statistics).
+        ///On each of your turns, you can use a bonus action  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AnimateDead {
+            get {
+                return ResourceManager.GetString("AnimateDead", resourceCulture);
+            }
+        }
     }
 }

@@ -10,19 +10,23 @@ using Xamarin.Forms;
 
 namespace WotC.FifthEd.SRD.Spells.Evocation {
     public class AcidArrow : ASchoolEvocation, IRangedSpellAttack {
-        public override SpellLevel SpellLevel => throw new NotImplementedException();
-        public override bool Ritual => throw new NotImplementedException();
-        public override string CastingTime => throw new NotImplementedException();
-        public override string Range => throw new NotImplementedException();
-        public override IList<string> Components => throw new NotImplementedException();
-        public override string Duration => throw new NotImplementedException();
-        public override string Targets => throw new NotImplementedException();
-        public override string AreaOfEffect => throw new NotImplementedException();
-        public override string Name => throw new NotImplementedException();
+        public override SpellLevel SpellLevel => SpellLevel.SECOND_LEVEL;
+        public override bool Ritual => false;
+        public override string CastingTime => "1 action";
+        public override string Range => "90 feet";
+        public override IList<string> Components => new List<string>() { 
+            "V",
+            "S",
+            "M (powdered rhubarb leaf and an adder's stomach)"
+        };
+        public override string Duration => "Instantaneous";
+        public override string Targets => "A target within range";
+        public override string AreaOfEffect => "N/A";
+        public override string Name => "Acid Arrow";
 
         public string AttackBonus { get; }
-        public string DamageDice => throw new NotImplementedException();
-        public string DamageType => throw new NotImplementedException();
+        public string DamageDice => "4d4";
+        public string DamageType => "Acid";
         public string WeaponType => "Ranged Spell Attack";
 
         private ICommand _addAttack;
@@ -32,7 +36,8 @@ namespace WotC.FifthEd.SRD.Spells.Evocation {
 
         public IList<IWeaponProperty> Properties => new List<IWeaponProperty>();
 
-        public override string Description => throw new NotImplementedException();
+        public override string Description => SpellDescriptions.AcidArrow;
+        public new string AtHigherLevels => AtHigherLevelsDescriptions.AcidArrow;
 
         public override IMagic GetInstance() => new AcidArrow();
         IAttack IAttack.GetInstance() => new AcidArrow();
