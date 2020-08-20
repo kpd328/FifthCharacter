@@ -7,6 +7,7 @@
              xmlns:tabview="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
              xmlns:vm="clr-namespace:FifthCharacter.Viewmodel"
              xmlns:v="clr-namespace:FifthCharacter.View"
+             xmlns:i="clr-namespace:FifthCharacter.Plugin.Interface;assembly=FifthCharacter.Plugin"
              mc:Ignorable="d"
              x:Class="FifthCharacter.MainPage">
     <ContentPage.ToolbarItems>
@@ -128,7 +129,7 @@
                                    HorizontalOptions="FillAndExpand"
                                    VerticalOptions="Start"
                                    EnableSwiping="True"
-                                   VisibleHeaderCount="3"
+                                   VisibleHeaderCount="4"
                                    TabHeaderPosition="Top"
                                    FlexLayout.Basis="300"
                                    FlexLayout.Grow="1">
@@ -167,11 +168,94 @@
                                        TitleFontColor="{DynamicResource InvertColor}">
                         <tabview:SfTabItem.Content>
                             <v:FeaturesList x:Name="FeaturesListView"
-                                                x:FieldModifier="internal">
+                                            x:FieldModifier="internal">
                                 <x:Arguments>
                                     <vm:FeaturesListVM/>
                                 </x:Arguments>
                             </v:FeaturesList>
+                        </tabview:SfTabItem.Content>
+                    </tabview:SfTabItem>
+
+                    <tabview:SfTabItem Title="Proficiencies"
+                                       SelectionColor="{DynamicResource InvertColor}"
+                                       TitleFontColor="{DynamicResource InvertColor}">
+                        <tabview:SfTabItem.Content>
+                            <tabview:SfTabView EnableSwiping="False"
+                                               VisibleHeaderCount="4"
+                                               BackgroundColor="Transparent"
+                                               TabHeaderPosition="Top">
+                                <tabview:SfTabView.SelectionIndicatorSettings>
+                                    <tabview:SelectionIndicatorSettings Color="{DynamicResource InvertColor}"
+                                                                        Position="Bottom"/>
+                                </tabview:SfTabView.SelectionIndicatorSettings>
+                                <tabview:SfTabItem Title="Armor Proficiencies"
+                                                   SelectionColor="{DynamicResource InvertColor}"
+                                                   TitleFontColor="{DynamicResource InvertColor}">
+                                    <tabview:SfTabItem.Content>
+                                        <v:ProficienciesList x:Name="ArmorProficienciesListView"
+                                                             x:FieldModifier="internal">
+                                            <x:Arguments>
+                                                <vm:ProficienciesListVM>
+                                                    <x:Arguments>
+                                                        <i:ProficiencyType>ARMOR</i:ProficiencyType>
+                                                    </x:Arguments>
+                                                </vm:ProficienciesListVM>
+                                            </x:Arguments>
+                                        </v:ProficienciesList>
+                                    </tabview:SfTabItem.Content>
+                                </tabview:SfTabItem>
+
+                                <tabview:SfTabItem Title="Weapon Proficiencies"
+                                                   SelectionColor="{DynamicResource InvertColor}"
+                                                   TitleFontColor="{DynamicResource InvertColor}">
+                                    <tabview:SfTabItem.Content>
+                                        <v:ProficienciesList x:Name="WeaponProficienciesListView"
+                                                             x:FieldModifier="internal">
+                                            <x:Arguments>
+                                                <vm:ProficienciesListVM>
+                                                    <x:Arguments>
+                                                        <i:ProficiencyType>WEAPON</i:ProficiencyType>
+                                                    </x:Arguments>
+                                                </vm:ProficienciesListVM>
+                                            </x:Arguments>
+                                        </v:ProficienciesList>
+                                    </tabview:SfTabItem.Content>
+                                </tabview:SfTabItem>
+
+                                <tabview:SfTabItem Title="Tool Proficiencies"
+                                                   SelectionColor="{DynamicResource InvertColor}"
+                                                   TitleFontColor="{DynamicResource InvertColor}">
+                                    <tabview:SfTabItem.Content>
+                                        <v:ProficienciesList x:Name="ToolProficienciesListView"
+                                                             x:FieldModifier="internal">
+                                            <x:Arguments>
+                                                <vm:ProficienciesListVM>
+                                                    <x:Arguments>
+                                                        <i:ProficiencyType>TOOL</i:ProficiencyType>
+                                                    </x:Arguments>
+                                                </vm:ProficienciesListVM>
+                                            </x:Arguments>
+                                        </v:ProficienciesList>
+                                    </tabview:SfTabItem.Content>
+                                </tabview:SfTabItem>
+
+                                <tabview:SfTabItem Title="Language Proficiencies"
+                                                   SelectionColor="{DynamicResource InvertColor}"
+                                                   TitleFontColor="{DynamicResource InvertColor}">
+                                    <tabview:SfTabItem.Content>
+                                        <v:ProficienciesList x:Name="LanguageProficienciesListView"
+                                                             x:FieldModifier="internal">
+                                            <x:Arguments>
+                                                <vm:ProficienciesListVM>
+                                                    <x:Arguments>
+                                                        <i:ProficiencyType>LANGUAGE</i:ProficiencyType>
+                                                    </x:Arguments>
+                                                </vm:ProficienciesListVM>
+                                            </x:Arguments>
+                                        </v:ProficienciesList>
+                                    </tabview:SfTabItem.Content>
+                                </tabview:SfTabItem>
+                            </tabview:SfTabView>
                         </tabview:SfTabItem.Content>
                     </tabview:SfTabItem>
                 </tabview:SfTabView>

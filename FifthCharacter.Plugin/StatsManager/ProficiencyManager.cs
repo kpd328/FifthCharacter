@@ -1,15 +1,30 @@
 ﻿using FifthCharacter.Plugin.Interface;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using System.Collections.ObjectModel;
 
 namespace FifthCharacter.Plugin.StatsManager {
     public static class ProficiencyManager {
-        //TODO: Save scores to static location
+        //TODO: Save proficiencies to static location
 
         public static ObservableCollection<IProficiency> Proficiencies { get; private set; } = new ObservableCollection<IProficiency>();
+        public static ObservableCollection<IProficiency> ArmorProficiencies => new ObservableCollection<IProficiency>(Proficiencies.Where(p => p.ProficiencyType == ProficiencyType.ARMOR));
+        public static ObservableCollection<IProficiency> WeaponProficiencies => new ObservableCollection<IProficiency>(Proficiencies.Where(p => p.ProficiencyType == ProficiencyType.WEAPON));
+        public static ObservableCollection<IProficiency> ToolProficiencies => new ObservableCollection<IProficiency>(Proficiencies.Where(p => p.ProficiencyType == ProficiencyType.TOOL));
+        public static ObservableCollection<IProficiency> SavingThrowProficiencies => new ObservableCollection<IProficiency>(Proficiencies.Where(p => p.ProficiencyType == ProficiencyType.SAVING_THROW));
+        public static ObservableCollection<IProficiency> SkillProficiencies => new ObservableCollection<IProficiency>(Proficiencies.Where(p => p.ProficiencyType == ProficiencyType.SKILL));
+        public static ObservableCollection<IProficiency> LanguageProficiencies => new ObservableCollection<IProficiency>(Proficiencies.Where(p => p.ProficiencyType == ProficiencyType.LANGUAGE));
+
+        public static ObservableCollection<IProficiency> AllProficienciesOfType(ProficiencyType type) => type switch
+        {
+            ProficiencyType.ARMOR => ArmorProficiencies,
+            ProficiencyType.WEAPON => WeaponProficiencies,
+            ProficiencyType.TOOL => ToolProficiencies,
+            ProficiencyType.SAVING_THROW => ToolProficiencies,
+            ProficiencyType.SKILL => SkillProficiencies,
+            ProficiencyType.LANGUAGE => LanguageProficiencies,
+            _ => throw new System.NotImplementedException(),
+        };
 
         public static bool CheckByName(string name) => Proficiencies.Any(n => n.Name == name);
         public static bool CheckByName(string name, ProficiencyType type) => Proficiencies.Where(t => t.ProficiencyType == type).Any(n => n.Name == name);
