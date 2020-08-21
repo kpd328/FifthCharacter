@@ -11,6 +11,8 @@ namespace WotC.FifthEd.SRD.Armor.Heavy {
         public override int ArmorClass => 17 + Bonus;
         public override bool CanWear => AbilityManager.StrengthScore >= 15;
 
+        public override string Description => ArmorDescriptionText.Splint;
+
         public override IArmor GetInstance() => new HASplint();
     }
 }

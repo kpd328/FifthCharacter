@@ -22,6 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Armor\ArmorDescriptionText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ArmorDescriptionText.resx</DependentUpon>
+    </Compile>
     <Compile Update="Attacks\Mechanics\Property\WeapPropName.Designer.cs">
       <DependentUpon>WeapPropName.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -190,6 +195,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Armor\ArmorDescriptionText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ArmorDescriptionText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Attacks\Mechanics\Property\WeapPropName.resx">
       <LastGenOutput>WeapPropName.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>

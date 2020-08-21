@@ -9,6 +9,7 @@ using WotC.FifthEd.SRD.Attacks.MartialRangedWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleMeleeWeapon;
 using WotC.FifthEd.SRD.Attacks.SimpleRangedWeapon;
 using WotC.FifthEd.SRD.Backgrounds;
+using WotC.FifthEd.SRD.Equipment.Currency;
 using WotC.FifthEd.SRD.Features.Feat;
 using WotC.FifthEd.SRD.Features.PlayerClass.Barbarian.PathOfTheBerserker;
 using WotC.FifthEd.SRD.Features.PlayerClass.Bard.CollegeOfLore;
@@ -268,6 +269,15 @@ namespace WotC.FifthEd.SRD {
             new HASplint(),
             new HAPlate(),
             new ArmorShield()
+        };
+
+        public EquipmentDictionary Equipment => new EquipmentDictionary() {
+            //Currency
+            new CopperPiece(),
+            new SilverPiece(),
+            new ElectrumPiece(),
+            new GoldPiece(),
+            new PlatinumPiece()
         };
     }
 }

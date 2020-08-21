@@ -13,6 +13,8 @@ namespace WotC.FifthEd.SRD.Armor.Medium {
         protected override int ArmorClassDexRestrict => 15 + Math.Min(2, AbilityManager.DexterityMod) + Bonus;
         public override bool StealthDisadvantage => true; //TODO: set this to false if the PHB Medium Armor Master feat is enabled
 
+        public override string Description => ArmorDescriptionText.HalfPlate;
+
         public override IArmor GetInstance() => new MAHalfPlate();
     }
 }

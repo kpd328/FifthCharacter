@@ -11,6 +11,8 @@ namespace WotC.FifthEd.SRD.Armor.Heavy {
         public override int ArmorClass => 16 + Bonus;
         public override bool CanWear => AbilityManager.StrengthScore >= 13;
 
+        public override string Description => ArmorDescriptionText.ChainMail;
+
         public override IArmor GetInstance() => new HAChainMail();
     }
 }

@@ -58,6 +58,7 @@ namespace FifthCharacter.Plugin {
             new ProfStealth(),
             new ProfSurvival()
         };
+        public EquipmentDictionary Equipment { get; private set; } = new EquipmentDictionary();
         private bool loaded = false;
 
         private PluginLoader() { }
@@ -97,6 +98,7 @@ namespace FifthCharacter.Plugin {
                     Backgrounds.AddAll(plugin.Backgrounds);
                     Proficiencies.AddAll(plugin.Proficiencies);
                     Armors.AddAll(plugin.Armors);
+                    Equipment.AddAll(plugin.Equipment);
                 }
                 loaded = true;
             }

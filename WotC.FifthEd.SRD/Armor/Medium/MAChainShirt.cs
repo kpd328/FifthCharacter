@@ -13,6 +13,8 @@ namespace WotC.FifthEd.SRD.Armor.Medium {
         protected override int ArmorClassDexRestrict => 13 + Math.Min(2, AbilityManager.DexterityMod) + Bonus;
         public override bool StealthDisadvantage => false;
 
+        public override string Description => ArmorDescriptionText.ChainShirt;
+
         public override IArmor GetInstance() => new MAChainShirt();
     }
 }

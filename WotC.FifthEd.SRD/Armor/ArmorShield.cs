@@ -9,6 +9,8 @@ namespace WotC.FifthEd.SRD.Armor {
         public override string Weight => "6 lbs.";
         public override int Bonus { get; set; } = 2;
 
+        public override string Description => ArmorDescriptionText.Shield;
+
         public override IArmor GetInstance() => new ArmorShield();
     }
 }

@@ -55,5 +55,9 @@ namespace FifthCharacter.Plugin {
         /// Add all armors (incl. shields) to this collection to expose them to the App.
         /// </summary>
         ArmorDictionary Armors { get; }
+        /// <summary>
+        /// Add all equipment (not incl. weapons, armors, or other equipment in other dictionaries) to expose them to the App.
+        /// </summary>
+        EquipmentDictionary Equipment { get; }
     }
 }

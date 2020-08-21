@@ -8,7 +8,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace FifthCharacter.Plugin.Attacks.Abstract {
-    public abstract class ASimpleWeapon : IAttack {
+    public abstract class ASimpleWeapon : IAttack, IEquipment {
         public abstract string Name { get; }
         public string ID => string.Format("{0}.{1}", GetType().Name, Name);
         public abstract string AttackBonus { get; }
@@ -42,6 +42,9 @@ namespace FifthCharacter.Plugin.Attacks.Abstract {
             AttacksManager.Attacks.Add(this);
             PopupNavigation.Instance.PopAsync();
         }));
+
+        public virtual string Description => "";
+        public int Count { get; set; }
 
         public abstract IAttack GetInstance();
     }

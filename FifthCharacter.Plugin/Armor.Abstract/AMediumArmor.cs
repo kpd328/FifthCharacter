@@ -1,7 +1,7 @@
 ﻿using FifthCharacter.Plugin.Interface;
 
 namespace FifthCharacter.Plugin.Armor.Abstract {
-    public abstract class AMediumArmor : IArmor, IArmorClass {
+    public abstract class AMediumArmor : IArmor, IArmorClass, IEquipment {
         public abstract string Name { get; }
         public abstract string ID { get; }
         public ArmorWeightClass ArmorWeightClass => ArmorWeightClass.MEDIUM;
@@ -21,6 +21,8 @@ namespace FifthCharacter.Plugin.Armor.Abstract {
         public virtual bool CanWear => true;
         public abstract bool StealthDisadvantage { get; }
         public int Bonus { get; set; } = 0;
+        public abstract string Description { get; }
+        public int Count { get; set; }
 
         public abstract IArmor GetInstance();
     }

@@ -11,6 +11,8 @@ namespace WotC.FifthEd.SRD.Armor.Light {
         public override int ArmorClass => 12 + AbilityManager.DexterityMod + Bonus;
         public override bool StealthDisadvantage => false;
 
+        public override string Description => ArmorDescriptionText.StuddedLeather;
+
         public override IArmor GetInstance() => new LAStuddedLeather();
     }
 }

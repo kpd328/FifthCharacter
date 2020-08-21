@@ -10,6 +10,8 @@ namespace WotC.FifthEd.SRD.Armor.Heavy {
         public override int ArmorClass => 14 + Bonus;
         public override bool CanWear => true;
 
+        public override string Description => ArmorDescriptionText.RingMail;
+
         public override IArmor GetInstance() => new HARingMail();
     }
 }

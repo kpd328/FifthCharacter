@@ -105,4 +105,16 @@ namespace FifthCharacter.Plugin.Tools {
             return this.Where(a => a.ArmorWeightClass == type);
         }
     }
+
+    public class EquipmentDictionary : KeyedCollection<string, IEquipment> {
+        protected override string GetKeyForItem(IEquipment item) => item.Name;
+        public void AddAll(IEnumerable<IEquipment> toAdd) {
+            if(toAdd == null) {
+                return;
+            }
+            foreach(IEquipment equipment in toAdd) {
+                Add(equipment);
+            }
+        }
+    }
 }
