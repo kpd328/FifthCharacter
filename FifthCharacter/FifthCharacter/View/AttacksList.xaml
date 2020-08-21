@@ -29,27 +29,29 @@
                     </ImageButton.Source>
                 </ImageButton>
             </StackLayout>
-            <StackLayout Orientation="Vertical"
-                         BindableLayout.ItemsSource="{Binding Attacks}">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Frame BackgroundColor="Transparent"
-                               BorderColor="Accent"
-                               Padding="{DynamicResource ListFramePadding}">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Popup}"/>
-                            </Frame.GestureRecognizers>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Name}"
-                                       HorizontalOptions="StartAndExpand"/>
-                                <Label Text="{Binding AttackBonus}"/>
-                                <Label Text="{Binding DamageDice}"/>
-                                <Label Text="{Binding DamageType}"/>
-                            </StackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
+            <ScrollView>
+                <StackLayout Orientation="Vertical"
+                             BindableLayout.ItemsSource="{Binding Attacks}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="Transparent"
+                                   BorderColor="Accent"
+                                   Padding="{DynamicResource ListFramePadding}">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Popup}"/>
+                                </Frame.GestureRecognizers>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}"
+                                           HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding AttackBonus}"/>
+                                    <Label Text="{Binding DamageDice}"/>
+                                    <Label Text="{Binding DamageType}"/>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

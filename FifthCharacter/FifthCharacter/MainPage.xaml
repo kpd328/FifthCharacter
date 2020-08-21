@@ -132,7 +132,9 @@
                                    VisibleHeaderCount="4"
                                    TabHeaderPosition="Top"
                                    FlexLayout.Basis="300"
-                                   FlexLayout.Grow="1">
+                                   FlexLayout.Grow="1"
+                                   HeightRequest="400"
+                                   TabHeight="35">
                     <tabview:SfTabItem.SelectionIndicatorSettings>
                         <tabview:SelectionIndicatorSettings Color="{DynamicResource InvertColor}"
                                                             Position="Bottom"/>
@@ -183,7 +185,8 @@
                             <tabview:SfTabView EnableSwiping="False"
                                                VisibleHeaderCount="4"
                                                BackgroundColor="Transparent"
-                                               TabHeaderPosition="Top">
+                                               TabHeaderPosition="Top"
+                                               TabHeight="35">
                                 <tabview:SfTabView.SelectionIndicatorSettings>
                                     <tabview:SelectionIndicatorSettings Color="{DynamicResource InvertColor}"
                                                                         Position="Bottom"/>

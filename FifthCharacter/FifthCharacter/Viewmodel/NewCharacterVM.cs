@@ -56,7 +56,7 @@ namespace FifthCharacter.Viewmodel {
         private PopupNCClassOptions_GTK Page4_GTK;
 
         private PopupNCMagicOptions Page5;
-        //private PopupNCMagicOptions_GTK Page5_GTK;
+        private PopupNCMagicOptions_GTK Page5_GTK;
 
         private PopupNCAbilityScores Page6;
         private PopupNCAbilityScores_GTK Page6_GTK;

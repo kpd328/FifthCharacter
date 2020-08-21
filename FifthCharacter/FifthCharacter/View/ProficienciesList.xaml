@@ -15,26 +15,28 @@
                  HorizontalOptions="FillAndExpand"
                  FontAttributes="Bold"
                  HorizontalTextAlignment="Center"/>
-            <StackLayout Orientation="Vertical"
-                         BindableLayout.ItemsSource="{Binding Proficiencies}">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Frame BackgroundColor="Transparent"
-                               BorderColor="Accent"
-                               Padding="{DynamicResource ListFramePadding}">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Popup}"/>
-                            </Frame.GestureRecognizers>
-                            <StackLayout Orientation="Horizontal"
-                                         HorizontalOptions="FillAndExpand">
-                                <Label Text="{Binding Name}"
-                                       HorizontalOptions="FillAndExpand"
-                                       HorizontalTextAlignment="Start"/>
-                            </StackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
+            <ScrollView>
+                <StackLayout Orientation="Vertical"
+                             BindableLayout.ItemsSource="{Binding Proficiencies}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="Transparent"
+                                   BorderColor="Accent"
+                                   Padding="{DynamicResource ListFramePadding}">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Popup}"/>
+                                </Frame.GestureRecognizers>
+                                <StackLayout Orientation="Horizontal"
+                                             HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding Name}"
+                                           HorizontalOptions="FillAndExpand"
+                                           HorizontalTextAlignment="Start"/>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
   </ContentView.Content>
 </ContentView>

@@ -54,6 +54,9 @@
     <EmbeddedResource Update="Popup\PopupNCClassOptions_GTK.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Popup\PopupNCMagicOptions_GTK.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Popup\PopupNCRaceOptions_GTK.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
