@@ -1,8 +1,9 @@
 ﻿using FifthCharacter.Plugin.Attacks.Abstract;
+using FifthCharacter.Plugin.Equipment.Abstract;
 using FifthCharacter.Plugin.Interface;
-using System;
 using System.Collections.Generic;
 using WotC.FifthEd.SRD.Attacks.Mechanics.Property;
+using WotC.FifthEd.SRD.Equipment.Currency;
 
 namespace WotC.FifthEd.SRD.Attacks.MartialRangedWeapon {
     public class MRWHeavyCrossbow : AMartialRangedWeapon {
@@ -10,7 +11,7 @@ namespace WotC.FifthEd.SRD.Attacks.MartialRangedWeapon {
         public override string DamageDice => "1d10";
         public override string DamageType => "Piercing";
         public override string Range => "100/400 ft";
-        public override string Cost => "50 gp";
+        public override ACurrency Cost => new GoldPiece(50);
         public override string Weight => "18 lb.";
         public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>() {
             new PropertyAmmunition(100, 400),

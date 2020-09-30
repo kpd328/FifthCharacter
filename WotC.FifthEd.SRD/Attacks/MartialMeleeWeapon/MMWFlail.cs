@@ -1,14 +1,15 @@
 ﻿using FifthCharacter.Plugin.Attacks.Abstract;
+using FifthCharacter.Plugin.Equipment.Abstract;
 using FifthCharacter.Plugin.Interface;
-using System;
 using System.Collections.Generic;
+using WotC.FifthEd.SRD.Equipment.Currency;
 
 namespace WotC.FifthEd.SRD.Attacks.MartialMeleeWeapon {
     public class MMWFlail : AMartialMeleeWeapon {
         public override string Name => "Flail";
         public override string DamageDice => "1d8";
         public override string DamageType => "Bludgeoning";
-        public override string Cost => "10 gp";
+        public override ACurrency Cost => new GoldPiece(10);
         public override string Weight => "2 lb.";
         public override IList<IWeaponProperty> Properties => new List<IWeaponProperty>();
 

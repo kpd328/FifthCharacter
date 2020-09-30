@@ -1,4 +1,5 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin.Equipment.Abstract;
+using FifthCharacter.Plugin.Interface;
 using FifthCharacter.Plugin.Popup;
 using FifthCharacter.Plugin.StatsManager;
 using Rg.Plugins.Popup.Services;
@@ -16,7 +17,7 @@ namespace FifthCharacter.Plugin.Attacks.Abstract {
         public abstract string DamageType { get; }
         public abstract string Range { get; }
 
-        public abstract string Cost { get; }
+        public abstract ACurrency Cost { get; }
         public abstract string Weight { get; }
         public abstract string WeaponType { get; }
         public abstract IList<IWeaponProperty> Properties { get; }
