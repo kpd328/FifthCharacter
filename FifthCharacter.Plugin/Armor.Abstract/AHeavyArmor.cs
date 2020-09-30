@@ -1,11 +1,12 @@
-﻿using FifthCharacter.Plugin.Interface;
+﻿using FifthCharacter.Plugin.Equipment.Abstract;
+using FifthCharacter.Plugin.Interface;
 
 namespace FifthCharacter.Plugin.Armor.Abstract {
     public abstract class AHeavyArmor : IArmor, IArmorClass, IEquipment {
         public abstract string Name { get; }
         public abstract string ID { get; }
         public ArmorWeightClass ArmorWeightClass => ArmorWeightClass.HEAVY;
-        public abstract string Cost { get; }
+        public abstract ACurrency Cost { get; }
         public abstract string Weight { get; }
         public abstract int ArmorClass { get; }
         public abstract bool CanWear { get; }

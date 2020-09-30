@@ -1,9 +1,11 @@
-﻿namespace FifthCharacter.Plugin.Interface {
+﻿using FifthCharacter.Plugin.Equipment.Abstract;
+
+namespace FifthCharacter.Plugin.Interface {
     public interface IArmor {
         string Name { get; }
         string ID { get; }
         ArmorWeightClass ArmorWeightClass { get; }
-        string Cost { get; }
+        ACurrency Cost { get; }
         string Weight { get; }
         /// <summary>
         /// This boolean is used to determine if the strength requirement is met, set to <c>true</c> if so, <c>false</c> otherwise.

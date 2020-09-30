@@ -4,10 +4,11 @@ namespace FifthCharacter.Plugin.Equipment.Abstract {
     public abstract class ACurrency : IEquipment {
         public abstract string Name { get; }
         public abstract string ID { get; }
+        public abstract string ShortName { get; }
         /// <summary>
-        /// This should be used to convey it's value in Gold Pieces (gp).
+        /// This should be used to convey it's value in Copper Pieces (cp).
         /// </summary>
-        public abstract string Cost { get; }
+        public abstract ACurrency Cost { get; }
         /// <summary>
         /// For all SRD currency this is 1/3 oz per piece, but may be overridden by other modules
         /// </summary>
@@ -17,5 +18,7 @@ namespace FifthCharacter.Plugin.Equipment.Abstract {
         /// </summary>
         public virtual string Description => "";
         public int Count { get; set; }
+
+        public override string ToString() => string.Format("{0} {1}", Count, ShortName);
     }
 }
