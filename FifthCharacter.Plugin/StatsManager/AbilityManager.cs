@@ -14,12 +14,12 @@ namespace FifthCharacter.Plugin.StatsManager {
         public static int ProficiencyBonus => 1 + (int)Math.Ceiling(ClassManager.TotalLevel / 4.0);
 
         //Ability Score Modifiers
-        public static int StrengthMod => (StrengthScore - 10) / 2;
-        public static int DexterityMod => (DexterityScore - 10) / 2;
-        public static int ConstitutionMod => (ConstitutionScore - 10) / 2;
-        public static int IntelligenceMod => (IntelligenceScore - 10) / 2;
-        public static int WisdomMod => (WisdomScore - 10) / 2;
-        public static int CharismaMod => (CharismaScore - 10) / 2;
+        public static int StrengthMod => (int)Math.Floor((StrengthScore - 10.0) / 2.0);
+        public static int DexterityMod => (int)Math.Floor((DexterityScore - 10.0) / 2.0);
+        public static int ConstitutionMod => (int)Math.Floor((ConstitutionScore - 10.0) / 2.0);
+        public static int IntelligenceMod => (int)Math.Floor((IntelligenceScore - 10.0) / 2.0);
+        public static int WisdomMod => (int)Math.Floor((WisdomScore - 10.0) / 2.0);
+        public static int CharismaMod => (int)Math.Floor((CharismaScore - 10.0) / 2.0);
 
         public static string StrengthModifier => StrengthMod.ToString("+0;-#");
         public static string DexterityModifier => DexterityMod.ToString("+0;-#");
